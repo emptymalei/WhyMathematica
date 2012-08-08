@@ -1,0 +1,1938 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     65511,       1929]
+NotebookOptionsPosition[     57869,       1674]
+NotebookOutlinePosition[     59057,       1714]
+CellTagsIndexPosition[     58971,       1709]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Evaluate the whole notebook first.(CRTL+A, then SHIFT+ENTER, or try \
+Evaluation>>Evaluate Notebook)\
+\>", "Text",
+ CellChangeTimes->{{3.5533925993245955`*^9, 3.5533926699856367`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Why Mathematica", "Title",
+ CellChangeTimes->{{3.5524861515845995`*^9, 3.5524861559768505`*^9}}],
+
+Cell[TextData[{
+ "Some example to show ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " can be useful in daily life, for Geeks of course."
+}], "Subtitle",
+ CellChangeTimes->{{3.552486161085143*^9, 3.552486198718295*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["What is Mathematica", "Section",
+ CellChangeTimes->{{3.5524862230266857`*^9, 3.5524862297100677`*^9}}],
+
+Cell["\<\
+Well, just check this link out. http://www.wolfram.com/mathematica/\
+\>", "Text",
+ CellChangeTimes->{{3.552486232802245*^9, 3.5524862895994935`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What are we going to do", "Section",
+ CellChangeTimes->{{3.5524862977019567`*^9, 3.5524863068564806`*^9}}],
+
+Cell[TextData[{
+ "Information, which you recieve and deal with everyday, is an necessity for \
+lief. So we are going to show you is how to process and present data with the \
+help of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5524863096276393`*^9, 3.552486346670758*^9}, {
+  3.552486775912308*^9, 3.5524868810623226`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Let\[CloseCurlyQuote]s move", "Section",
+ CellChangeTimes->{{3.5524863642927656`*^9, 3.5524863680419803`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Preparation", "Subsection",
+ CellChangeTimes->{{3.5524875290523853`*^9, 3.5524875342576833`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What do you have to know about Mathmatica before we start\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.5524878252963295`*^9, 3.55248785362895*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+What is a notebook?\[LineSeparator]A notebook is a file ending with \
+\[OpenCurlyDoubleQuote].nb\[CloseCurlyDoubleQuote]. Right now, what you are \
+reading is a notebook.\
+\>", "Item",
+ CellChangeTimes->{{3.5524878659766564`*^9, 3.552488019928462*^9}}],
+
+Cell["\<\
+What is a cell?\[LineSeparator]Each cell has a square bracket on its right \
+side. Cell can be put inside cells.\[LineSeparator]What I want you to know is \
+that each can be formatted individually. Choose Format>>Style to format a \
+cell. Or follow the advanced methods provided in documentation.\
+\>", "Item",
+ CellChangeTimes->{{3.5524881034602394`*^9, 3.552488250518651*^9}, {
+  3.553394917770203*^9, 3.553394917775203*^9}}],
+
+Cell[TextData[{
+ "What is the use of different kinds of cells?\[LineSeparator]",
+ StyleBox["Just try it yourself. Cells are very import",
+  FontWeight->"Bold"],
+ " when writing and document. ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is a good tool for word precessing, especially for scientific subjects."
+}], "Item",
+ CellChangeTimes->{{3.5533949186822553`*^9, 3.553395032545768*^9}}],
+
+Cell[TextData[{
+ "What do you mean by documentation here?\[LineSeparator]Mathematica\
+\[CloseCurlyQuote]s documentation can be find at Help>>Documentation. Once \
+you start to work with mathematica, you will find that they have written a \
+marvelous documentation for ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Item",
+ CellChangeTimes->{{3.5524882369108725`*^9, 3.5524883211276894`*^9}, {
+  3.5524883560596876`*^9, 3.5524884072886176`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["What else", "Subsubsection",
+ CellChangeTimes->{{3.5524878591542664`*^9, 3.552487860466341*^9}}],
+
+Cell["\<\
+Lets start with several documentation pages. For example,\
+\>", "Text",
+ CellChangeTimes->{{3.5524863725502377`*^9, 3.552486410806425*^9}, {
+   3.552486443394289*^9, 3.5524865760478764`*^9}, {3.5524866284278727`*^9, 
+   3.5524867057942977`*^9}, {3.5524867459115925`*^9, 3.552486773957196*^9}, {
+   3.5524868962441907`*^9, 3.552486910063981*^9}, 3.5524872678154435`*^9, {
+   3.552487320612463*^9, 3.5524873650110025`*^9}}],
+
+Cell[TextData[ButtonBox["guide/DataVisualization",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["http://reference.wolfram.com/mathematica/guide/Statistics.html"], 
+   None},
+ ButtonNote->
+  "http://reference.wolfram.com/mathematica/guide/Statistics.html"]], "Item",
+ CellChangeTimes->{3.5524873541963844`*^9}],
+
+Cell[TextData[StyleBox["Keep using the Documentation Center in the Help menu, \
+for that is really the best reference book.",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.5524873697402735`*^9, 3.552487423655357*^9}}],
+
+Cell["\<\
+Sometimes I do not want to move my mouse or something, I use the following \
+command just inside the notebook to get help. Try them yourself. (Notes: \
+Output is immediately printed below your codes if no hiding results commands \
+are used.)\
+\>", "Text",
+ CellChangeTimes->{{3.5524874402033033`*^9, 3.5524875179937525`*^9}, {
+  3.5533911170148125`*^9, 3.5533911882548866`*^9}}],
+
+Cell[TextData[StyleBox["One question mark before a function or command to \
+find the usage.",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.5533917358132057`*^9, 3.5533917670899944`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "Plot"}]], "Input",
+ CellChangeTimes->{{3.5524874988056555`*^9, 3.552487500078728*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Plot\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\
+\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) generates a plot of \
+\!\(\*StyleBox[\\\"f\\\", \\\"TI\\\"]\) as a function of \!\(\*StyleBox[\\\"x\
+\\\", \\\"TI\\\"]\) from \!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]]\) to \
+\!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]\). \\n\!\(\*RowBox[{\\\"Plot\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"f\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) plots several functions \
+\!\(\*SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\). \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Plot"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.553392616759593*^9},
+ CellTags->"Info3553421416-6424835"]
+}, Open  ]],
+
+Cell[TextData[StyleBox["Use two question marks to get more information.",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.553391663494069*^9, 3.553391706124507*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "Plot"}]], "Input",
+ CellChangeTimes->{{3.5524872223438425`*^9, 3.552487223792926*^9}, 
+   3.5524874450495806`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox["\<\"\!\(\*RowBox[{\\\"Plot\\\", \\\"[\\\", RowBox[{StyleBox[\\\"f\
+\\\", \\\"TI\\\"], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \
+\\\"TI\\\"], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) generates a plot of \
+\!\(\*StyleBox[\\\"f\\\", \\\"TI\\\"]\) as a function of \!\(\*StyleBox[\\\"x\
+\\\", \\\"TI\\\"]\) from \!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]]\) to \
+\!\(\*SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]\). \\n\!\(\*RowBox[{\\\"Plot\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"f\\\", \
+\\\"TI\\\"], StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], StyleBox[\\\"2\\\", \
+\\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\
+\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{StyleBox[\\\"x\\\", \\\"TI\\\"], \
+\\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"min\\\", \\\"TI\\\"]], \\\",\\\", \
+SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"max\\\", \
+\\\"TI\\\"]]}], \\\"}\\\"}]}], \\\"]\\\"}]\) plots several functions \
+\!\(\*SubscriptBox[StyleBox[\\\"f\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \
+\\\"TI\\\"]]\). \"\>", "MSG"], "\[NonBreakingSpace]", 
+  ButtonBox[
+   StyleBox["\[RightSkeleton]", "SR"],
+   Active->True,
+   BaseStyle->"Link",
+   ButtonData->"paclet:ref/Plot"]}]], "Print", "PrintUsage",
+ CellChangeTimes->{3.5533926170336084`*^9},
+ CellTags->"Info3553421416-6424835"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     RowBox[{
+      RowBox[{"Attributes", "[", "Plot", "]"}], "=", 
+      RowBox[{"{", 
+       RowBox[{"HoldAll", ",", "Protected"}], "}"}]}]},
+    {" "},
+    {GridBox[{
+       {
+        RowBox[{
+         RowBox[{"Options", "[", "Plot", "]"}], "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"AlignmentPoint", "\[Rule]", "Center"}], ",", 
+           RowBox[{"AspectRatio", "\[Rule]", 
+            FractionBox["1", "GoldenRatio"]}], ",", 
+           RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+           RowBox[{"AxesLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"AxesOrigin", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"AxesStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"Background", "\[Rule]", "None"}], ",", 
+           RowBox[{"BaselinePosition", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"BaseStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"ClippingStyle", "\[Rule]", "None"}], ",", 
+           RowBox[{"ColorFunction", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"ColorFunctionScaling", "\[Rule]", "True"}], ",", 
+           RowBox[{"ColorOutput", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"ContentSelectable", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"CoordinatesToolOptions", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"DisplayFunction", "\[RuleDelayed]", "$DisplayFunction"}], 
+           ",", 
+           RowBox[{"Epilog", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"Evaluated", "\[Rule]", "System`Private`$Evaluated"}], ",", 
+           RowBox[{"EvaluationMonitor", "\[Rule]", "None"}], ",", 
+           RowBox[{"Exclusions", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"ExclusionsStyle", "\[Rule]", "None"}], ",", 
+           RowBox[{"Filling", "\[Rule]", "None"}], ",", 
+           RowBox[{"FillingStyle", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{
+           "FormatType", "\[RuleDelayed]", "\<\"TraditionalForm\"\>"}], ",", 
+           RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+           RowBox[{"FrameLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"FrameStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"FrameTicks", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"FrameTicksStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"GridLines", "\[Rule]", "None"}], ",", 
+           RowBox[{"GridLinesStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"ImageMargins", "\[Rule]", "0.`"}], ",", 
+           RowBox[{"ImagePadding", "\[Rule]", "All"}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"ImageSizeRaw", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"LabelStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"MaxRecursion", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"Mesh", "\[Rule]", "None"}], ",", 
+           RowBox[{"MeshFunctions", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"#1", "&"}], "}"}]}], ",", 
+           RowBox[{"MeshShading", "\[Rule]", "None"}], ",", 
+           RowBox[{"MeshStyle", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"Method", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"PerformanceGoal", "\[RuleDelayed]", "$PerformanceGoal"}], 
+           ",", 
+           RowBox[{"PlotLabel", "\[Rule]", "None"}], ",", 
+           RowBox[{"PlotPoints", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"Full", ",", "Automatic"}], "}"}]}], ",", 
+           RowBox[{"PlotRangeClipping", "\[Rule]", "True"}], ",", 
+           RowBox[{"PlotRangePadding", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"PlotRegion", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"PreserveImageOptions", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"Prolog", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"RegionFunction", "\[Rule]", 
+            RowBox[{"(", 
+             RowBox[{"True", "&"}], ")"}]}], ",", 
+           RowBox[{"RotateLabel", "\[Rule]", "True"}], ",", 
+           RowBox[{"Ticks", "\[Rule]", "Automatic"}], ",", 
+           RowBox[{"TicksStyle", "\[Rule]", 
+            RowBox[{"{", "}"}]}], ",", 
+           RowBox[{"WorkingPrecision", "\[Rule]", "MachinePrecision"}]}], 
+          "}"}]}]}
+      },
+      BaselinePosition->{Baseline, {1, 1}},
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxItemSize->{"Columns" -> {{
+           Scaled[0.999]}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+        "RowsIndexed" -> {}}]}
+   },
+   BaselinePosition->{Baseline, {1, 1}},
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}}],
+  Definition[Plot],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.553392617110613*^9},
+ CellTags->"Info3553421416-6424835"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Import Data", "Subsection",
+ CellChangeTimes->{{3.552487545845346*^9, 3.552487552168708*^9}, {
+  3.5524875923590064`*^9, 3.552487596740257*^9}}],
+
+Cell["\<\
+First thing first, we have to get data in this notebook so we can analys or \
+present it..\
+\>", "Text",
+ CellChangeTimes->{{3.552487603215627*^9, 3.5524877426506023`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Data input manually.", "Subsubsection",
+ CellChangeTimes->{{3.552487767553027*^9, 3.552487808767384*^9}}],
+
+Cell["\<\
+If the data is really simple, for example,\
+\>", "Text",
+ CellChangeTimes->{{3.5524884527452173`*^9, 3.5524884650699224`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0.00", ",", "0.00"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1.00", ",", "2.00"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2.00", ",", "4.01"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3.00", ",", "6.05"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4.00", ",", "7.85"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"5.00", ",", "9.70"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"6.00", ",", "11.83"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"7.00", ",", "13.75"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"8.00", ",", "16.02"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"9.00", ",", "17.86"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.5418570073331933`*^9, 3.541857180452095*^9}, 
+   3.5418572455648193`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", "2.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2.`", ",", "4.01`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "6.05`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4.`", ",", "7.85`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.`", ",", "9.7`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6.`", ",", "11.83`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "13.75`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "16.02`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9.`", ",", "17.86`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.541857160031927*^9, 3.5418571810541296`*^9}, 
+   3.5418572465318747`*^9, 3.54207885063883*^9, 3.5533910777195644`*^9, 
+   3.553392580834538*^9, 3.553392617253621*^9}]
+}, Open  ]],
+
+Cell["\<\
+you can just type it in. Give it a name. Here I use \
+\[OpenCurlyDoubleQuote]datasimple1\[CloseCurlyDoubleQuote]. Then press Shift \
++ Enter, or more conveniently, press Enter on your numeric keypad.\
+\>", "Text",
+ CellChangeTimes->{{3.552488511205561*^9, 3.5524886248900633`*^9}, {
+  3.552488687316634*^9, 3.552488700687399*^9}, {3.552488764601055*^9, 
+  3.552488775799695*^9}}],
+
+Cell["\<\
+Somehow, we do not want anything to show bellow the data I input. Put a \
+semicolon at the end of your data will do.\
+\>", "Text",
+ CellChangeTimes->{{3.5524885425373535`*^9, 3.552488552588928*^9}, {
+  3.5524887810829973`*^9, 3.55248886382873*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.00", ",", "0.00"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1.00", ",", "2.00"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2.00", ",", "4.01"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3.00", ",", "6.05"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4.00", ",", "7.85"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"5.00", ",", "9.70"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6.00", ",", "11.83"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7.00", ",", "13.75"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"8.00", ",", "16.02"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9.00", ",", "17.86"}], "}"}]}], "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{
+  3.552488870202095*^9, {3.5524899189850817`*^9, 3.5524899192860985`*^9}, {
+   3.5533912078920097`*^9, 3.5533912085230465`*^9}}],
+
+Cell[TextData[{
+ "Reassigning a variable gives it another value. ",
+ StyleBox["AND THERE WILL NOT BE A WARNING!",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.5533924076856346`*^9, 3.553392526068405*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data from a file.", "Subsubsection",
+ CellChangeTimes->{{3.552488882127777*^9, 3.5524888908992786`*^9}}],
+
+Cell["\<\
+Most of the time, we get data in files. Import is what we will use. Before I \
+show you the power of Import, lets set the working directory first (modify it \
+to suit your computer).\
+\>", "Text",
+ CellChangeTimes->{{3.552488894280472*^9, 3.5524889672996483`*^9}, {
+  3.552489355718865*^9, 3.5524893773931046`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\<D:\\\\Kuaipan\\\\Other\\\\GEEK\\\\WhyMathematica\>\"", "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.55248901855258*^9, {3.552489295457418*^9, 3.5524892984825907`*^9}, 
+   3.5524893515766277`*^9, 3.5533912292562323`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataimport", "=", 
+  RowBox[{"Import", "[", "\"\<Data\\\\SimpleData.dat\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.552488937492944*^9, 3.55248893918004*^9}, {
+   3.55248904285697*^9, 3.5524890602919674`*^9}, {3.5524892706569996`*^9, 
+   3.552489288872041*^9}, 3.552489383641462*^9, {3.5524894474651127`*^9, 
+   3.5524894504232817`*^9}, {3.553391241392926*^9, 3.5533912515045047`*^9}, {
+   3.553391915461481*^9, 3.553391931275385*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", "2.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2.`", ",", "4.01`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "6.05`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4.`", ",", "7.85`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.`", ",", "9.7`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6.`", ",", "11.83`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7.`", ",", "13.75`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8.`", ",", "16.02`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9.`", ",", "17.86`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.552489276473332*^9, 3.552489310826297*^9}, 
+   3.552489384029484*^9, {3.5524894512443285`*^9, 3.5524894585697474`*^9}, 
+   3.5524895643097954`*^9, 3.552489966421795*^9, 3.5524900730138917`*^9, 
+   3.552490106968834*^9, 3.5524902000631585`*^9, 3.5524902667339716`*^9, {
+   3.553391235226574*^9, 3.5533912523765545`*^9}, {3.55339132293259*^9, 
+   3.5533913393275275`*^9}, {3.553391917180579*^9, 3.553391932128434*^9}, 
+   3.5533919673454485`*^9, {3.553392014023118*^9, 3.5533920165462627`*^9}, 
+   3.553392051139241*^9, {3.553392166226824*^9, 3.5533921686649632`*^9}, {
+   3.5533925894570312`*^9, 3.5533926174036293`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "As you can see the two methods are identical. ",
+ StyleBox["The only problem is we need to format the file properly before we \
+import it.",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.5524894628949947`*^9, 3.552489511521776*^9}, {
+   3.552489617955864*^9, 3.5524896831065903`*^9}, {3.5524898165962257`*^9, 
+   3.552489859927704*^9}, 3.5533912765579376`*^9, {3.5533921932183676`*^9, 
+   3.553392272359894*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More", "Subsubsection",
+ CellChangeTimes->{{3.553392326991019*^9, 3.553392340605798*^9}}],
+
+Cell[TextData[{
+ "Previously we constructed a variable called data and another called \
+dataimport. Those data formatted by curly braces are called ",
+ StyleBox["tables",
+  FontWeight->"Bold"],
+ ". Manipulating table is a very basic skill. Check out the documentation \
+center."
+}], "Text",
+ CellChangeTimes->{{3.553392347102169*^9, 3.553392396910018*^9}, {
+  3.5533927053616605`*^9, 3.553392828909727*^9}}],
+
+Cell["\<\
+One example is to extract the second element of the table.\
+\>", "Text",
+ CellChangeTimes->{{3.5533928330059614`*^9, 3.5533928495659084`*^9}, {
+  3.5533929256522603`*^9, 3.553392927547369*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "[", 
+  RowBox[{"[", "2", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5533928532041163`*^9, 3.5533928558812695`*^9}, {
+  3.5533929302625237`*^9, 3.5533929306545467`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.`", ",", "2.`"}], "}"}]], "Output",
+ CellChangeTimes->{3.553392856340296*^9, 3.5533929310665703`*^9}]
+}, Open  ]],
+
+Cell["\<\
+We can even print the first element of the second element of the table.\
+\>", "Text",
+ CellChangeTimes->{{3.553392862622655*^9, 3.553392893619428*^9}, {
+  3.5533929356278305`*^9, 3.553392937634946*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "[", 
+   RowBox[{"[", "2", "]"}], "]"}], "[", 
+  RowBox[{"[", "1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.553392896459591*^9, 3.553392902325926*^9}, {
+  3.5533929417201796`*^9, 3.553392942478223*^9}}],
+
+Cell[BoxData["1.`"], "Output",
+ CellChangeTimes->{3.5533929059531336`*^9, 3.5533929433462725`*^9}]
+}, Open  ]],
+
+Cell["Or", "Text",
+ CellChangeTimes->{{3.553392908875301*^9, 3.553392910363386*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "[", 
+  RowBox[{"[", 
+   RowBox[{"2", ",", "1"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5533929124965076`*^9, 3.553392916222721*^9}, {
+  3.5533929470544844`*^9, 3.55339294715049*^9}}],
+
+Cell[BoxData["1.`"], "Output",
+ CellChangeTimes->{3.5533929168547573`*^9, 3.5533929476915207`*^9}]
+}, Open  ]],
+
+Cell["\<\
+We can also easily calculate the length of the data table\
+\>", "Text",
+ CellChangeTimes->{{3.54207855056096*^9, 3.5420785508699775`*^9}, {
+  3.5420788130271645`*^9, 3.542078827285589*^9}, {3.55339299436419*^9, 
+  3.55339299960349*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"len", "=", 
+  RowBox[{"Length", "[", "data", "]"}]}]], "Input",
+ CellChangeTimes->{{3.541857248299976*^9, 3.5418572586155663`*^9}}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{
+  3.541857259457614*^9, 3.5420788507324305`*^9, {3.553392574489175*^9, 
+   3.553392617455632*^9}, 3.5533930042227545`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Here the value is passed to a variable called \[OpenCurlyDoubleQuote]len\
+\[CloseCurlyDoubleQuote]. We can reuse this value just by typing \
+\[OpenCurlyDoubleQuote]len\[CloseCurlyDoubleQuote]\
+\>", "Text",
+ CellChangeTimes->{{3.5533930102751007`*^9, 3.553393061081006*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{"%", "\[IndentingNewLine]", "len"}], "Input",
+ CellChangeTimes->{{3.553393062526089*^9, 3.553393088016547*^9}}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{{3.553393063669154*^9, 3.553393089770647*^9}}],
+
+Cell[BoxData["10"], "Output",
+ CellChangeTimes->{{3.553393063669154*^9, 3.5533930897756476`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Here I also showed the power of %. % show the last value evaluated. Use the \
+documentation center.\
+\>", "Text",
+ CellChangeTimes->{{3.553393074160754*^9, 3.553393150801138*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Visualization", "Subsection",
+ CellChangeTimes->{{3.552489711729227*^9, 3.552489717476556*^9}}],
+
+Cell[TextData[{
+ "These scattered data can be visualized with ",
+ StyleBox["ListPlot",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.552489732512416*^9, 3.5524897541216516`*^9}, {
+  3.553392968387705*^9, 3.5533929688917336`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt0", "=", 
+  RowBox[{"ListPlot", "[", "data", "]"}]}]], "Input",
+ CellChangeTimes->{{3.5418571919637537`*^9, 3.5418572854411*^9}, {
+  3.5418573925492263`*^9, 3.541857414487481*^9}, {3.5420788449136205`*^9, 
+  3.542078846738824*^9}, {3.553393972454134*^9, 3.553393974709263*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.5418572632978334`*^9, 3.541857286607167*^9}, {
+   3.5418574055109677`*^9, 3.5418574150465136`*^9}, {3.5420788481116257`*^9, 
+   3.5420788507948303`*^9}, 3.5533926176446433`*^9, 3.553393168072126*^9, 
+   3.553393975848328*^9}]
+}, Open  ]],
+
+Cell["\<\
+Somehow we don\[CloseCurlyQuote]t like this plot. We would like to add some \
+axes labels.\
+\>", "Text",
+ CellChangeTimes->{{3.5533931793907733`*^9, 3.5533932191670485`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt1", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "d"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533932214961815`*^9, 3.5533932680108423`*^9}, {
+  3.5533935153179874`*^9, 3.553393517741126*^9}, {3.553393978485479*^9, 
+  3.5533939803175836`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["t", TraditionalForm], 
+    FormBox["d", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.553393268799887*^9, 3.553393518285157*^9, 
+  3.5533939810136237`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Lets format the axes labels. I will pass this plot to \
+\[OpenCurlyDoubleQuote]plt\[CloseCurlyDoubleQuote].\
+\>", "Text",
+ CellChangeTimes->{{3.5533933153495493`*^9, 3.553393338924898*^9}, {
+  3.553393529369791*^9, 3.553393600087836*^9}, {3.5533938058596053`*^9, 
+  3.5533938183683205`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt2", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], 
+      "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.55339334857845*^9, 3.5533933526886854`*^9}, {
+   3.553393405251692*^9, 3.553393508038571*^9}, {3.5533936093003626`*^9, 
+   3.5533936663796277`*^9}, {3.5533937957770286`*^9, 3.553393801432352*^9}, 
+   3.5533939841028004`*^9},
+ FontWeight->"Plain"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.5533933532977204`*^9, {3.553393422810696*^9, 3.553393463484022*^9}, {
+   3.5533934956878643`*^9, 3.5533935222203817`*^9}, {3.5533936128635664`*^9, 
+   3.5533936671926737`*^9}, 3.5533938022283974`*^9, 3.5533939843078117`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The ticks are also changable. But do we have to redefine \
+\[OpenCurlyDoubleQuote]plt\[CloseCurlyDoubleQuote]?  Now I will show you \
+something more powerful, which is a way of replot something wihout changing \
+its defination. Let\[CloseCurlyQuote]s show a plot with bold ticks labels.\
+\>", "Text",
+ CellChangeTimes->{{3.5533936805114355`*^9, 3.5533937725727015`*^9}, {
+  3.553393823469612*^9, 3.553393856484501*^9}, {3.5533938933306084`*^9, 
+  3.553393920355154*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt3", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plt", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.553393863077878*^9, 3.553393882276976*^9}, {
+  3.5533939864539347`*^9, 3.553393987910018*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.553393882905012*^9, 3.5533939885310535`*^9}]
+}, Open  ]],
+
+Cell["\<\
+What about the size of the plot?\
+\>", "Text",
+ CellChangeTimes->{{3.553393928258606*^9, 3.5533939353620124`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt4", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plt", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533939369491034`*^9, 3.5533939591743746`*^9}, {
+  3.5533939922222643`*^9, 3.5533939943813877`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  ImageSize->500,
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.553393952991021*^9, 3.553393959849413*^9}, 
+   3.553393995220436*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Maybe you do not like this plot because it doesn\[CloseCurlyQuote]t look \
+symmetric. We can use ",
+ StyleBox["frames",
+  FontWeight->"Bold"],
+ " then."
+}], "Text",
+ CellChangeTimes->{{3.553394016663663*^9, 3.553394070743756*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt5", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plt", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533940866836677`*^9, 3.5533941501903*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Frame->True,
+  FrameLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  ImageSize->500,
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.5533941014015093`*^9, 3.5533941509753447`*^9}, 
+   3.5533943329227514`*^9}]
+}, Open  ]],
+
+Cell["\<\
+What about join the data points?\
+\>", "Text",
+ CellChangeTimes->{{3.553394165302164*^9, 3.5533941736296406`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"plt6", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plt", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}], ",", 
+    RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533941833711977`*^9, 3.553394215076011*^9}, {
+  3.553394329330546*^9, 3.5533943298095737`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {Hue[0.67, 0.6, 0.6], 
+    PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}, {}},
+  Joined -> True,
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Frame->True,
+  FrameLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  ImageSize->500,
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.553394198395057*^9, 3.553394215739049*^9}, {
+  3.553394330074589*^9, 3.5533943345118427`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Well, I failed. Why is that? Because Joined is parameter of ",
+ StyleBox["ListPlot",
+  FontWeight->"Bold"],
+ ". % show up again. (% stands for the last calcuated result.)"
+}], "Text",
+ CellChangeTimes->{{3.5533942728303146`*^9, 3.5533942983077717`*^9}, {
+  3.553394403108766*^9, 3.5533944414739604`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"plt7", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"Joined", "\[Rule]", "True"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"plt8", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.5533943390651026`*^9, 3.553394397725458*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], 
+    LineBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.5533943501957397`*^9, 3.553394398355494*^9}, 
+   3.5533944452071743`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], 
+    LineBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+     9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 17.86}}]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Frame->True,
+  FrameLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  ImageSize->500,
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.5533943501957397`*^9, 3.553394398355494*^9}, 
+   3.553394445280178*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Joined hides the data points. We can use ",
+ StyleBox["PlotMarkers",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.5533945252417517`*^9, 3.5533945490011106`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"plt9", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", 
+     RowBox[{"{", "\"\<\!\(\*
+StyleBox[\"+\",
+FontSize->18]\)\>\"", "}"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"plt10", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"LabelStyle", "\[Rule]", 
+     RowBox[{"{", "Bold", "}"}]}], ",", 
+    RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"t", ",", "15", ",", "Bold", ",", "Orange"}], "]"}], ",", 
+       RowBox[{"Style", "[", 
+        RowBox[{"d", ",", "15", ",", "Bold", ",", "Green"}], "]"}]}], "}"}]}],
+     ",", 
+    RowBox[{"ImageSize", "\[Rule]", "500"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.553394488076626*^9, 3.553394514580142*^9}, {
+  3.5533945618798475`*^9, 3.5533946218872795`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  GraphicsComplexBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 
+   7.85}, {5., 9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 
+   17.86}}, {{{}, {}, 
+     {Hue[0.67, 0.6, 0.6], LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]}}, {
+     {Hue[0.67, 0.6, 0.6], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 1],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 2],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 3],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 4],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 5],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 6],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 7],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 8],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 9],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 10],
+       "InsetString"]}, {}}}],
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  ImageSize->500,
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.55339449723915*^9, 3.553394515297183*^9}, {
+  3.5533945904334803`*^9, 3.5533946222473*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  GraphicsComplexBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 
+   7.85}, {5., 9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 
+   17.86}}, {{{}, {}, 
+     {Hue[0.67, 0.6, 0.6], LineBox[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]}}, {
+     {Hue[0.67, 0.6, 0.6], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 1],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 2],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 3],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 4],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 5],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 6],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 7],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 8],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 9],
+       "InsetString"], 
+      TagBox[InsetBox[
+        StyleBox["+",
+         FontSize->18], 10],
+       "InsetString"]}, {}}}],
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Frame->True,
+  FrameLabel->{
+    FormBox[
+     StyleBox["t", 15, Bold, 
+      RGBColor[1, 0.5, 0], StripOnInput -> False], TraditionalForm], 
+    FormBox[
+     StyleBox["d", 15, Bold, 
+      RGBColor[0, 1, 0], StripOnInput -> False], TraditionalForm]},
+  ImageSize->500,
+  LabelStyle->{Bold},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{{3.55339449723915*^9, 3.553394515297183*^9}, {
+  3.5533945904334803`*^9, 3.553394622323304*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["DATA FITTING?", "Subsubsection",
+ CellChangeTimes->{{3.5533947005587792`*^9, 3.5533947068621397`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is an excellent tool for data fitting. However since data fitting is not \
+so commonly used, I will callapse this subsubsection."
+}], "Text",
+ CellChangeTimes->{{3.553394712006434*^9, 3.5533947808443713`*^9}}],
+
+Cell["Data fitting", "Text",
+ CellChangeTimes->{{3.542078874194872*^9, 3.542078884007289*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"line", " ", "=", " ", 
+  RowBox[{"Fit", "[", 
+   RowBox[{"data", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "t"}], "}"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.541857536309449*^9, 3.5418575450169473`*^9}, {
+  3.5418579425856867`*^9, 3.5418579657860136`*^9}, {3.5533947975533266`*^9, 
+  3.5533948458160877`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "0.004909090909089867`"}], "+", 
+  RowBox[{"1.9804242424242426`", " ", "t"}]}]], "Output",
+ CellChangeTimes->{
+  3.5418574842674723`*^9, 3.541857545463973*^9, {3.5418579380514274`*^9, 
+   3.5418579588366165`*^9}, 3.542078850857231*^9, 3.553392617775651*^9, {
+   3.553394789236851*^9, 3.5533948617960014`*^9}}]
+}, Open  ]],
+
+Cell["Plot the fitting line", "Text",
+ CellChangeTimes->{{3.5420788884220967`*^9, 3.542078899981717*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"data", ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", "Red"}]}], "]"}], ",", " ", 
+   RowBox[{"Plot", "[", 
+    RowBox[{"line", ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", " ", "0", ",", " ", "9"}], "}"}]}], "]"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.541857512947113*^9, 3.541857518376423*^9}, {
+  3.5418575684132853`*^9, 3.5418575687343035`*^9}, {3.553394864471154*^9, 
+  3.5533948650221863`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[1, 0, 0], 
+     PointBox[{{0., 0.}, {1., 2.}, {2., 4.01}, {3., 6.05}, {4., 7.85}, {5., 
+      9.7}, {6., 11.83}, {7., 13.75}, {8., 16.02}, {9., 
+      17.86}}]}, {}}, {{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwV0Hk41HkAx/EhCTO5mWGG/FxDKX5rc6T1/aBU2somdDmS1FRLF6lnkyMq
+1hM5yjRKOSoPtqLYppCaEuXIho2KtmSExzSubLTtH+/n9f+bColYv0ORwWCs
++d7/ju63GJwsOuU6FlcpsOEeqglNMQrk5oYRp1+EcbwV7sSgfIHmgCiKuOsb
+J8tLosno4x8EraIkcunTb2+XBaSTXu87ehJRNunuKt9b3JNPOvUmP1WLisi0
+zzr7ANPbxGeS0yEW3SEszdxsh4cSki64/vNd0WOiO+yxMl+nnSScyJIsSusg
+Imh0DNp8JIfnqZqrxPUS2R/bjmq6yYgXlxW21OgjCfPnMx2ax4mnCrVigf0Q
+EY30O3x4+ZWsGZOy0vfJiO+U8t6WJQpgBT2TCE6MEtdItprcUwmGHC3y/vQE
+0bpnJOhaNgd/NZrfDNkyRbyrXip6aajBLPrBgWrBNNlXytw9rTcXZ85k62uY
+MjDtL2c6SjVQkTzdpnFKAUt27nLk+mvBTNHa+ThrFvqMs9fd79BG/7hYOBKl
+hBU3eYlXXHUxsVOnoOXbbBgghCp+qIcyhig1Lm4OeipML2a6sSHW//3gj1IV
+BCgtdaor5ED7OhT8ItSw2lvXWdvKEDVVW1OOdDExHLXcvzCNi8plP91nhs3F
+LOHi7s1sI/hNrm0Ol6qDlZ/nJs82RqHu+2GBtSYakkIfNX2dh+WfFBt8hjQR
+Uy73C6s1QVqsb75rgRZkadteJUVSKLteO5jur43AXlYTh2+Kz5rqyTxDHSjd
+YI+JP5qi1+GMxbVmHSgPNhXHXjDDmPCz7p5MXZCiDxl+geZ4fTb8ULavHg62
+OQ/lGlkgYpXxizpVfSiEL3mp3GIBvuuNBMvn+qhPEo7EplsiWRZpn5LAxgDr
+qpDnyUet0wafjQ4cKCvLKqwn+OBV6z7ZOsnBlmNCxZWVVt//qjqHlBqAGTLy
+5uRua6w78Xbm4n5DyB8VDnfazIelRFrXbcWFY9ac1NXv5qMlhzUR383Foc6i
+C7aZC5BXonU8+BIPAzmFr819bcCN8ZpNfI0grvcuc1FdCHHqjrcbDI3xKHLL
+re3PFsKWzrFu6zJGfVa+5XTKIqzNYBxYnzYPfLPz1lWutnhqYHFSab4Jgtjj
+tu4MO7g93b4hONEEnT5R2n9utkN+XdmmkTcmaF6lV7qr3A7srgEVHii8m9ne
+m6dDo/cFHOuFFK4MqLwW/EpDZLVaP0BEwWbhOclUOI2NMb5jslwKdyIsylL2
+0Wix3l3OvUyhcdTteOlBGtWxGbYRVynIZ45SsiM0hIv6+PoVFNx1hnZEJ9Hw
+SU7hhD6n8I9L63DSJRrqPVkTk00U9sYEdbAv02hYnNee2kJhvHao5toVGu69
+FZmVbRSYnmrpDYU07JzeaDJfUbD39rBXL6HB6rNTvdVHISH09uGsKhr1Li79
+nv0U5l71CLa8SyMhffmTLimFc9LWlZViGlNLNyfOHqJQHD5s8Hc1jf6MBIVN
+cgovovn3eBIaBdLUnqFRCgHi2wWlj2kEkfM18eMU+qY9Ul3rabQPlBwr+UJh
+Kj44MLiRxllUbnX7l0KiZNhT9ozG2uwHLu1fKWioHLONb6KhNthouGeGQo4X
+k6PTQkPi1v7l2zcKZqk5jIJWGv8BysEc7Q==
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  PlotRange->{{0., 9.}, {0., 17.86}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.5418575193564796`*^9, 3.5418575689613166`*^9, 3.542078851075631*^9, 
+   3.553392618321682*^9, {3.5533948526744795`*^9, 3.5533948652672*^9}}]
+}, Open  ]],
+
+Cell["Fitting model parameters", "Text",
+ CellChangeTimes->{{3.5420789179529486`*^9, 3.5420789253317614`*^9}, {
+  3.542079077822029*^9, 3.5420790781340303`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fitting", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "t"}], "}"}], ",", "t"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.541857677814543*^9, 3.5418577101723933`*^9}, {
+  3.5533948719745836`*^9, 3.5533948730616455`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"FittedModel", "[", 
+  PanelBox[
+   TagBox[
+    RowBox[{
+     RowBox[{"-", "0.004909090909089867`"}], "+", 
+     RowBox[{"1.9804242424242426`", " ", "t"}]}],
+    Short],
+   FrameMargins->5], "]"}]], "Output",
+ CellChangeTimes->{{3.5418576789486074`*^9, 3.541857711542472*^9}, 
+   3.5420788514344316`*^9, 3.55339261881171*^9, 3.553394873513672*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fitting", "[", "\"\<BestFit\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.541857715939723*^9, 3.541857716829774*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "0.004909090909089867`"}], "+", 
+  RowBox[{"1.9804242424242426`", " ", "t"}]}]], "Output",
+ CellChangeTimes->{3.5418577180538445`*^9, 3.5420788514812317`*^9, 
+  3.553392618853712*^9, 3.5533948767158546`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fitting", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "\"\<RSquared\>\"", ",", "\"\<FitResiduals\>\"", ",", 
+    "\"\<ANOVATable\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.541857727746399*^9, 3.5418577285474443`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.9996651163242514`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "0.004909090909089867`", ",", "0.02448484848484722`", ",", 
+     "0.05406060606060459`", ",", "0.11363636363636154`", ",", 
+     RowBox[{"-", "0.06678787878788128`"}], ",", 
+     RowBox[{"-", "0.1972121212121234`"}], ",", 
+     RowBox[{"-", "0.04763636363636614`"}], ",", 
+     RowBox[{"-", "0.10806060606060797`"}], ",", "0.18151515151514808`", ",", 
+     "0.041090909090904404`"}], "}"}], ",", 
+   StyleBox[
+    TagBox[GridBox[{
+       {"\<\"\"\>", "\<\"DF\"\>", "\<\"SS\"\>", "\<\"MS\"\>", \
+"\<\"F\[Hyphen]Statistic\"\>", "\<\"P\[Hyphen]Value\"\>"},
+       {"t", "1", "323.57161484848484`", "323.57161484848484`", 
+        "23880.89211191387`", "3.439475101520281`*^-15"},
+       {"\<\"Error\"\>", "8", "0.10839515151515101`", "0.013549393939393877`",
+         "", ""},
+       {"\<\"Total\"\>", "9", "323.68001`", "", "", ""}
+      },
+      AutoDelete->False,
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+      GridBoxDividers->{
+       "ColumnsIndexed" -> {2 -> GrayLevel[0.7]}, 
+        "RowsIndexed" -> {2 -> GrayLevel[0.7]}},
+      GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings->{
+       "ColumnsIndexed" -> {2 -> 1}, "RowsIndexed" -> {2 -> 0.75}}],
+     "Grid"], "DialogStyle",
+    StripOnInput->False]}], "}"}]], "Output",
+ CellChangeTimes->{3.541857729265486*^9, 3.542078851574832*^9, 
+  3.553392618948718*^9, 3.5533948792850018`*^9}]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solve an equaiton", "Subsection",
+ CellChangeTimes->{{3.5533953400043535`*^9, 3.553395342355488*^9}, {
+  3.5533958992173386`*^9, 3.5533959021205044`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ " is originally developed for algebra, Equation solving is one of the \
+virtues of ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.5533953465797296`*^9, 3.553395401258857*^9}, {
+  3.553395455792976*^9, 3.5533954931291113`*^9}, {3.55339553960877*^9, 
+  3.553395613070972*^9}}],
+
+Cell["\<\
+Search \[OpenCurlyDoubleQuote]equation solving\[CloseCurlyDoubleQuote] in \
+documentation center.\
+\>", "Text",
+ CellChangeTimes->{{3.553395676966626*^9, 3.5533957162668743`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Solve", "Subsubsection",
+ CellChangeTimes->{{3.5533959110650163`*^9, 3.5533959154562674`*^9}}],
+
+Cell["\<\
+As an example, I would like to solve a very simple equaiton. Suppose we have \
+an equaiton\
+\>", "Text",
+ CellChangeTimes->{{3.5533957197070713`*^9, 3.553395750154813*^9}, {
+  3.5533959234007215`*^9, 3.5533959271519365`*^9}, {3.5533959633840084`*^9, 
+  3.5533959652721167`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqns", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "+", "y"}], "\[Equal]", "2"}], ",", 
+    RowBox[{
+     RowBox[{"x", "-", "y"}], "==", "1"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.55339596654519*^9, 3.553396009321636*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "+", "y"}], "\[Equal]", "2"}], ",", 
+   RowBox[{
+    RowBox[{"x", "-", "y"}], "\[Equal]", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.553395988300434*^9, 3.553396009890669*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eqnssol", "=", 
+  RowBox[{"Solve", "[", "eqns", "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533959198825207`*^9, 3.5533959213706055`*^9}, {
+  3.5533959992960625`*^9, 3.5533960123208075`*^9}, {3.5533960485528803`*^9, 
+  3.5533960529521313`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", 
+     FractionBox["3", "2"]}], ",", 
+    RowBox[{"y", "\[Rule]", 
+     FractionBox["1", "2"]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.553396001553192*^9, 3.553396012502818*^9}, 
+   3.5533960777045474`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Now we get a table. Extract the elements\
+\>", "Text",
+ CellChangeTimes->{{3.5533960206402836`*^9, 3.553396033709031*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"x", ",", "y"}], "}"}], "/.", 
+  RowBox[{"eqnssol", "[", 
+   RowBox[{"[", "1", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5533960395143633`*^9, 3.5533960840889125`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["3", "2"], ",", 
+   FractionBox["1", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.553396062566682*^9, 3.553396084717949*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Why is that? \[OpenCurlyDoubleQuote]/.\[CloseCurlyDoubleQuote] is the simbol \
+of replacement. That means we can replace something using \
+\[OpenCurlyDoubleQuote]/.\[CloseCurlyDoubleQuote]. For example, we would like \
+to replace temp with 1\
+\>", "Text",
+ CellChangeTimes->{{3.5533960922373786`*^9, 3.553396164794529*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"temp", "/.", 
+  RowBox[{"{", 
+   RowBox[{"temp", "\[Rule]", "1"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.5533961450373983`*^9, 3.5533961526618347`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.553396153246868*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Differential equations", "Subsubsection",
+ CellChangeTimes->{{3.553396185290701*^9, 3.553396188929909*^9}}],
+
+Cell["\<\
+Differential equaitons are the most commonly used equations in physical \
+system.\
+\>", "Text",
+ CellChangeTimes->{{3.5533961951542654`*^9, 3.55339621744254*^9}}],
+
+Cell["\<\
+Search \[OpenCurlyDoubleQuote]differential equation\[CloseCurlyDoubleQuote] \
+in documentation center and read them.\
+\>", "Text",
+ CellChangeTimes->{{3.5533962479472847`*^9, 3.5533962675944085`*^9}}],
+
+Cell["Examples,", "Text",
+ CellChangeTimes->{{3.553396277710987*^9, 3.5533962798231077`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowToolbars->{},
+WindowSize->{1272, 713},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+DockedCells->{},
+PrintingCopies->1,
+PrintingPageRange->{32000, 32000},
+PrintingOptions->{"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.1999999999999, 841.98}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[
+    StyleDefinitions -> 
+     FrontEnd`FileName[{"Creative"}, "PastelColor.nb", CharacterEncoding -> 
+       "CP936"]]]}, Visible -> False, FrontEndVersion -> 
+  "8.0 for Microsoft Windows (32-bit) (February 23, 2011)", StyleDefinitions -> 
+  "PrivateStylesheetFormatting.nb"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Info3553421416-6424835"->{
+  Cell[5834, 175, 1740, 30, 62, "Print",
+   CellTags->"Info3553421416-6424835"],
+  Cell[7953, 221, 1742, 30, 62, "Print",
+   CellTags->"Info3553421416-6424835"],
+  Cell[9698, 253, 5182, 107, 223, "Print",
+   CellTags->"Info3553421416-6424835"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Info3553421416-6424835", 58702, 1699}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 194, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[776, 28, 102, 1, 65, "Title"],
+Cell[881, 31, 226, 6, 23, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1132, 41, 108, 1, 75, "Section"],
+Cell[1243, 44, 159, 3, 29, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1439, 52, 112, 1, 75, "Section"],
+Cell[1554, 55, 370, 9, 29, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1961, 69, 116, 1, 75, "Section"],
+Cell[CellGroupData[{
+Cell[2102, 74, 103, 1, 36, "Subsection"],
+Cell[CellGroupData[{
+Cell[2230, 79, 157, 3, 27, "Subsubsection"],
+Cell[CellGroupData[{
+Cell[2412, 86, 262, 5, 45, "Item"],
+Cell[2677, 93, 437, 7, 61, "Item"],
+Cell[3117, 102, 398, 9, 45, "Item"],
+Cell[3518, 113, 459, 10, 45, "Item"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4026, 129, 102, 1, 27, "Subsubsection"],
+Cell[4131, 132, 431, 7, 29, "Text"],
+Cell[4565, 141, 311, 7, 29, "Item"],
+Cell[4879, 150, 224, 3, 29, "Text"],
+Cell[5106, 155, 388, 7, 47, "Text"],
+Cell[5497, 164, 194, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[5716, 171, 115, 2, 41, "Input"],
+Cell[5834, 175, 1740, 30, 62, "Print",
+ CellTags->"Info3553421416-6424835"]
+}, Open  ]],
+Cell[7589, 208, 170, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[7784, 214, 144, 3, 41, "Input"],
+Cell[CellGroupData[{
+Cell[7953, 221, 1742, 30, 62, "Print",
+ CellTags->"Info3553421416-6424835"],
+Cell[9698, 253, 5182, 107, 223, "Print",
+ CellTags->"Info3553421416-6424835"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14953, 368, 150, 2, 36, "Subsection"],
+Cell[15106, 372, 182, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[15313, 380, 111, 1, 27, "Subsubsection"],
+Cell[15427, 383, 136, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[15588, 390, 849, 25, 41, "Input"],
+Cell[16440, 417, 891, 25, 40, "Output"]
+}, Open  ]],
+Cell[17346, 445, 389, 7, 29, "Text"],
+Cell[17738, 454, 258, 5, 29, "Text"],
+Cell[17999, 461, 942, 27, 41, "Input"],
+Cell[18944, 490, 215, 5, 29, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19196, 500, 110, 1, 27, "Subsubsection"],
+Cell[19309, 503, 325, 6, 29, "Text"],
+Cell[19637, 511, 292, 8, 41, "Input"],
+Cell[CellGroupData[{
+Cell[19954, 523, 462, 7, 41, "Input"],
+Cell[20419, 532, 1345, 31, 40, "Output"]
+}, Open  ]],
+Cell[21779, 566, 440, 9, 29, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22256, 580, 95, 1, 27, "Subsubsection"],
+Cell[22354, 583, 407, 9, 47, "Text"],
+Cell[22764, 594, 203, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[22992, 602, 203, 4, 41, "Input"],
+Cell[23198, 608, 143, 3, 40, "Output"]
+}, Open  ]],
+Cell[23356, 614, 212, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[23593, 622, 249, 6, 41, "Input"],
+Cell[23845, 630, 98, 1, 40, "Output"]
+}, Open  ]],
+Cell[23958, 634, 84, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[24067, 639, 222, 5, 41, "Input"],
+Cell[24292, 646, 98, 1, 40, "Output"]
+}, Open  ]],
+Cell[24405, 650, 246, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[24676, 659, 155, 3, 41, "Input"],
+Cell[24834, 664, 172, 3, 40, "Output"]
+}, Open  ]],
+Cell[25021, 670, 283, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[25329, 679, 125, 1, 62, "Input"],
+Cell[25457, 682, 95, 1, 40, "Output"],
+Cell[25555, 685, 97, 1, 40, "Output"]
+}, Open  ]],
+Cell[25667, 689, 189, 4, 29, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25905, 699, 101, 1, 36, "Subsection"],
+Cell[26009, 702, 239, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[26273, 712, 304, 5, 41, "Input"],
+Cell[26580, 719, 687, 16, 255, "Output"]
+}, Open  ]],
+Cell[27282, 738, 184, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[27491, 746, 378, 9, 41, "Input"],
+Cell[27872, 757, 617, 17, 265, "Output"]
+}, Open  ]],
+Cell[28504, 777, 301, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[28830, 787, 671, 16, 40, "Input"],
+Cell[29504, 805, 927, 23, 271, "Output"]
+}, Open  ]],
+Cell[30446, 831, 480, 8, 47, "Text"],
+Cell[CellGroupData[{
+Cell[30951, 843, 295, 7, 41, "Input"],
+Cell[31249, 852, 766, 21, 271, "Output"]
+}, Open  ]],
+Cell[32030, 876, 124, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[32179, 883, 352, 8, 41, "Input"],
+Cell[32534, 893, 810, 23, 357, "Output"]
+}, Open  ]],
+Cell[33359, 919, 248, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[33632, 930, 640, 16, 41, "Input"],
+Cell[34275, 948, 1071, 31, 351, "Output"]
+}, Open  ]],
+Cell[35361, 982, 124, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[35510, 989, 742, 18, 41, "Input"],
+Cell[36255, 1009, 1108, 32, 351, "Output"]
+}, Open  ]],
+Cell[37378, 1044, 322, 7, 29, "Text"],
+Cell[CellGroupData[{
+Cell[37725, 1055, 1092, 28, 62, "Input"],
+Cell[38820, 1085, 773, 21, 271, "Output"],
+Cell[39596, 1108, 1066, 31, 351, "Output"]
+}, Open  ]],
+Cell[40677, 1142, 190, 5, 29, "Text"],
+Cell[CellGroupData[{
+Cell[40892, 1151, 1266, 33, 62, "Input"],
+Cell[42161, 1186, 1872, 64, 357, "Output"],
+Cell[44036, 1252, 2151, 73, 351, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46224, 1330, 108, 1, 27, "Subsubsection"],
+Cell[46335, 1333, 277, 6, 29, "Text"],
+Cell[46615, 1341, 94, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[46734, 1346, 359, 8, 41, "Input"],
+Cell[47096, 1356, 348, 7, 40, "Output"]
+}, Open  ]],
+Cell[47459, 1366, 105, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[47589, 1371, 507, 13, 41, "Input"],
+Cell[48099, 1386, 2374, 46, 255, "Output"]
+}, Open  ]],
+Cell[50488, 1435, 161, 2, 29, "Text"],
+Cell[CellGroupData[{
+Cell[50674, 1441, 305, 7, 41, "Input"],
+Cell[50982, 1450, 370, 10, 62, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51389, 1465, 140, 2, 41, "Input"],
+Cell[51532, 1469, 246, 5, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51815, 1479, 245, 6, 41, "Input"],
+Cell[52063, 1487, 1524, 33, 130, "Output"]
+}, Open  ]]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53648, 1527, 160, 2, 36, "Subsection"],
+Cell[53811, 1531, 384, 11, 29, "Text"],
+Cell[54198, 1544, 189, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[54412, 1552, 100, 1, 27, "Subsubsection"],
+Cell[54515, 1555, 288, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[54828, 1565, 274, 8, 41, "Input"],
+Cell[55105, 1575, 251, 7, 40, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55393, 1587, 266, 5, 41, "Input"],
+Cell[55662, 1594, 301, 9, 57, "Output"]
+}, Open  ]],
+Cell[55978, 1606, 132, 3, 29, "Text"],
+Cell[CellGroupData[{
+Cell[56135, 1613, 225, 6, 41, "Input"],
+Cell[56363, 1621, 183, 5, 57, "Output"]
+}, Open  ]],
+Cell[56561, 1629, 333, 6, 29, "Text"],
+Cell[CellGroupData[{
+Cell[56919, 1639, 179, 4, 41, "Input"],
+Cell[57101, 1645, 70, 1, 40, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57220, 1652, 113, 1, 27, "Subsubsection"],
+Cell[57336, 1655, 172, 4, 29, "Text"],
+Cell[57511, 1661, 210, 4, 29, "Text"],
+Cell[57724, 1667, 93, 1, 29, "Text"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
