@@ -1,0 +1,1184 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     40127,       1175]
+NotebookOptionsPosition[     39746,       1157]
+NotebookOutlinePosition[     40080,       1172]
+CellTagsIndexPosition[     40037,       1169]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+   "SetDirectory", "[", 
+    "\"\<D:\\\\Kuaipan\\\\Other\\\\GEEK\\\\WhyMathematica\>\"", "]"}], ";"}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.574582577548387*^9, 3.574582615533663*^9}, {
+  3.574582649556885*^9, 3.574582652615055*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Import", "[", "\"\<Data/qatest.csv\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.574582621536985*^9, 3.574582644159112*^9}, 
+   3.574583658511397*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{"ChartBaseStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"EdgeForm", "[", "None", "]"}], ",", 
+      RowBox[{"Opacity", "[", "0.5", "]"}]}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<No. of Answers\>\"", ",", "\"\<Percent of Vote-ups\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<An Example of Analyzing Q&A Data\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.574581675533369*^9, 3.5745816814926567`*^9}, {
+  3.5745817279811316`*^9, 3.574581733472414*^9}, {3.57458192799012*^9, 
+  3.5745819365077934`*^9}, {3.574582663491672*^9, 3.574582698555804*^9}, {
+  3.574582902282018*^9, 3.574583009146787*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.459183673}, {4.100000000000001, 
+             0.10000000000000003`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.459183673}, {4.788160157470543, 
+                   0.11678439408464739`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{458.2934177629094, 
+         547.5020000000001}, {-34.882012065423694`, 54.326570171666916`}}],
+       StatusArea[#, 180]& ,
+       TagBoxNote->"180"],
+      StyleBox["180", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[180, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.293367347}, {3.2997924365729077`, 
+             0.08048274235543679}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.293367347}, {3.987952594043449, 
+                   0.09726713644008414}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{466.99895218104695`, 538.7964655818624}, {
+         47.78471912382993, 119.58223252464549`}}],
+       StatusArea[#, 115]& ,
+       TagBoxNote->"115"],
+      StyleBox["115", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[115, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.061224490000000006`}, {1.568727585157447, 
+             0.038261648418474195`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.061224490000000006`}, {2.2568877426279883`, 
+                   0.05504604250312155}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{485.8313718341242, 519.9640459287853}, {
+         170.1628145240955, 204.2954886187565}}],
+       StatusArea[#, 24]& ,
+       TagBoxNote->"24"],
+      StyleBox["24", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[24, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{5., 0.534883721}, {1.538073310196899, 
+             0.037513983175534116`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{5., 0.534883721}, {2.2262334676674405`, 
+                   0.05429837726018147}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{72.75923761452596, 
+         106.22493014608064`}, {-40.77603699945426, -7.310344467899579}}],
+       StatusArea[#, 23]& ,
+       TagBoxNote->"23"],
+      StyleBox["23", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[23, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{5., 0.395348837}, {1.33814764816284, 
+             0.032637747516166826`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{5., 0.395348837}, {2.0263078056333814`, 
+                   0.04942214160081418}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{74.93424796365646, 104.04991979695014`}, {
+         23.63751922096073, 52.7531910542544}}],
+       StatusArea[#, 17]& ,
+       TagBoxNote->"17"],
+      StyleBox["17", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[17, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{5., 0.888888889}, {1.3015622070700337`, 
+             0.03174541968463496}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{5., 0.888888889}, {1.989722364540575, 
+                   0.04852981376928231}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{75.33226446736474, 
+         103.65190329324186`}, {-196.10450585603078`, -167.78486703015366`}}],
+       StatusArea[#, 16]& ,
+       TagBoxNote->"16"],
+      StyleBox["16", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[16, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.035714286}, {1.2247860369273482`, 
+             0.029872830168959655`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.035714286}, {1.9129461943978896`, 
+                   0.04665722425360701}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{489.5731447475433, 516.2222730153661}, {
+         185.28323309460941`, 211.9323613624322}}],
+       StatusArea[#, 14]& ,
+       TagBoxNote->"14"],
+      StyleBox["14", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[14, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.035714286}, {1.2247860369273482`, 
+             0.029872830168959655`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.035714286}, {1.9129461943978896`, 
+                   0.04665722425360701}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{489.5731447475433, 516.2222730153661}, {
+         185.28323309460941`, 211.9323613624322}}],
+       StatusArea[#, 14]& ,
+       TagBoxNote->"14"],
+      StyleBox["14", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[14, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{4., 0.619047619}, {1.1843370152622723`, 
+             0.02888626866493349}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{4., 0.619047619}, {1.872497172732814, 
+                   0.04567066274958084}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{65.72847311694412, 
+         91.49750385412821}, {-74.4684161829045, -48.69938544572038}}],
+       StatusArea[#, 13]& ,
+       TagBoxNote->"13"],
+      StyleBox["13", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[13, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.022959184}, {1.0043748047133576`, 
+             0.024496946456423314`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.022959184}, {1.692534962183899, 
+                   0.04128134054107067}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{491.97101956887747`, 513.8243981940319}, {
+         193.37043074449096`, 215.2238093696454}}],
+       StatusArea[#, 9]& ,
+       TagBoxNote->"9"],
+      StyleBox["9", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[9, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.022959184}, {1.0043748047133576`, 
+             0.024496946456423314`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.022959184}, {1.692534962183899, 
+                   0.04128134054107067}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{491.97101956887747`, 513.8243981940319}, {
+         193.37043074449096`, 215.2238093696454}}],
+       StatusArea[#, 9]& ,
+       TagBoxNote->"9"],
+      StyleBox["9", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[9, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{11., 0.470588235}, {0.9533855076018103, 
+             0.023253305063458796`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{11., 0.470588235}, {1.6415456650723517`, 
+                   0.04003769914810615}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{144.39468436371754`, 
+         165.13862813409472`}, {-5.736616867341979, 15.00732690303521}}],
+       StatusArea[#, 8]& ,
+       TagBoxNote->"8"],
+      StyleBox["8", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[8, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.017857143}, {0.8990965570603819, 
+             0.021929184318545923`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.017857143}, {1.5872567145309233`, 
+                   0.038713578403193276`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{493.1163516680881, 512.6790660948213}, {
+         196.79149206432913`, 216.35420649106234`}}],
+       StatusArea[#, 7]& ,
+       TagBoxNote->"7"],
+      StyleBox["7", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[7, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.017857143}, {0.8990965570603819, 
+             0.021929184318545923`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.017857143}, {1.5872567145309233`, 
+                   0.038713578403193276`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{493.1163516680881, 512.6790660948213}, {
+         196.79149206432913`, 216.35420649106234`}}],
+       StatusArea[#, 7]& ,
+       TagBoxNote->"7"],
+      StyleBox["7", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[7, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{4., 0.333333333}, {0.8990965570603828, 
+             0.021929184318545902`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{4., 0.333333333}, {1.5872567145309242`, 
+                   0.038713578403193255`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{68.83163127216956, 88.39434569890277}, {
+         56.075573867034066`, 75.63828829376726}}],
+       StatusArea[#, 7]& ,
+       TagBoxNote->"7"],
+      StyleBox["7", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[7, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.012755101999999997`}, {0.7773438313694356, 
+             0.018959605643156956`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.012755101999999997`}, {1.465503988839977, 
+                   0.03574399972780431}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{494.4409111854528, 511.35450657745656`}, {
+         200.3917808023214, 217.30537619432513`}}],
+       StatusArea[#, 5]& ,
+       TagBoxNote->"5"],
+      StyleBox["5", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[5, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{3., 0.714285714}, {0.7773438313694352, 
+             0.018959605643156907`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{3., 0.714285714}, {1.4655039888399766`, 
+                   0.03574399972780426}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{59.277095394767144`, 
+         76.19069078677089}, {-112.52097565987098`, -95.60738026786728}}],
+       StatusArea[#, 5]& ,
+       TagBoxNote->"5"],
+      StyleBox["5", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[5, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            Disk[{2., 1.}, {0.7773438313694352, 0.018959605643156907`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{2., 1.}, {1.4655039888399766`, 
+                   0.03574399972780426}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{48.397999999999996`, 
+         65.31159539200374}, {-239.96180755458408`, -223.0482121625804}}],
+       StatusArea[#, 5]& ,
+       TagBoxNote->"5"],
+      StyleBox["5", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[5, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.010204082}, {0.7071874023566806, 
+             0.017248473228211658`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.010204082}, {1.395347559827222, 
+                   0.03403286731285901}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{495.2041496692388, 510.59126809367064`}, {
+         202.29288367339973`, 217.68000209783148`}}],
+       StatusArea[#, 4]& ,
+       TagBoxNote->"4"],
+      StyleBox["4", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[4, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{11., 0.235294118}, {0.7071874023566771, 
+             0.017248473228211658`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{11., 0.235294118}, {1.3953475598272185`, 
+                   0.03403286731285901}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{147.07309703669029`, 162.460215461122}, {
+         101.89306873712133`, 117.28018716155307`}}],
+       StatusArea[#, 4]& ,
+       TagBoxNote->"4"],
+      StyleBox["4", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[4, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{11., 0.176470588}, {0.6275562778945041, 
+             0.015306250680353739`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{11., 0.176470588}, {1.3157164353650455`, 
+                   0.03209064476500109}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{147.93941163610683`, 161.59390086170544`}, {
+         128.99720190394268`, 142.6516911295413}}],
+       StatusArea[#, 3]& ,
+       TagBoxNote->"3"],
+      StyleBox["3", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[3, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{5., 0.069767442}, {0.6275562778945023, 
+             0.015306250680353725`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{5., 0.069767442}, {1.3157164353650437`, 
+                   0.03209064476500108}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{82.66483926750401, 96.31932849310259}, {
+         176.59138377842913`, 190.24587300402771`}}],
+       StatusArea[#, 3]& ,
+       TagBoxNote->"3"],
+      StyleBox["3", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[3, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{43., 0.005102040999999998}, {0.5330990526225676, 
+             0.01300241591762356}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.005102040999999998}, {1.221259210093109, 
+                   0.029786810002270913`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{497.0980734331138, 508.6973443297956}, {
+         206.46253665790226`, 218.06180755458402`}}],
+       StatusArea[#, 2]& ,
+       TagBoxNote->"2"],
+      StyleBox["2", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[2, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{5., 0.111111111}, {0.5330990526225658, 
+             0.013002415917623564`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{5., 0.111111111}, {1.2212592100931072`, 
+                   0.029786810002270916`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{83.69244843196242, 95.29171932864418}, {
+         159.1779424630398, 170.77721335972157`}}],
+       StatusArea[#, 2]& ,
+       TagBoxNote->"2"],
+      StyleBox["2", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[2, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{3., 0.285714286}, {0.5330990526225658, 
+             0.013002415917623578`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{3., 0.285714286}, {1.2212592100931072`, 
+                   0.02978681000227093}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{61.934257642428136`, 73.53352853910991}, {
+         81.29743398381669, 92.89670488049848}}],
+       StatusArea[#, 2]& ,
+       TagBoxNote->"2"],
+      StyleBox["2", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[2, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            Disk[{43., 0.0025510199999999993`}, {0.4100000000000037, 0.01}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.0025510199999999993`}, {1.098160157470545, 
+                   0.026784394084647355`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{498.43727976960014`, 507.3581379933093}, {
+         208.93960782772382`, 217.86046605143287`}}],
+       StatusArea[#, 1]& ,
+       TagBoxNote->"1"],
+      StyleBox["1", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[1, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            Disk[{43., 0.0025510199999999993`}, {0.4100000000000037, 0.01}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{43., 0.0025510199999999993`}, {1.098160157470545, 
+                   0.026784394084647355`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{498.43727976960014`, 507.3581379933093}, {
+         208.93960782772382`, 217.86046605143287`}}],
+       StatusArea[#, 1]& ,
+       TagBoxNote->"1"],
+      StyleBox["1", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[1, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{11., 0.058823529}, {0.41000000000000014`, 
+             0.009999999999999995}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{11., 0.058823529}, {1.0981601574705415`, 
+                   0.026784394084647348`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{150.30622713705162`, 159.22708536076067`}, {
+         183.83965409365422`, 192.76051231736326`}}],
+       StatusArea[#, 1]& ,
+       TagBoxNote->"1"],
+      StyleBox["1", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[1, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            
+            Disk[{11., 0.058823529}, {0.41000000000000014`, 
+             0.009999999999999995}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{11., 0.058823529}, {1.0981601574705415`, 
+                   0.026784394084647348`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{150.30622713705162`, 159.22708536076067`}, {
+         183.83965409365422`, 192.76051231736326`}}],
+       StatusArea[#, 1]& ,
+       TagBoxNote->"1"],
+      StyleBox["1", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[1, {
+        GrayLevel[0]}], "Tooltip"]& ]}, 
+   {RGBColor[0.5, 0.5, 1], Opacity[0.5], EdgeForm[None], 
+    TagBox[
+     TooltipBox[
+      TagBox[
+       DynamicBox[{
+         FEPrivate`If[
+          CurrentValue["MouseOver"], 
+          EdgeForm[{
+            GrayLevel[0.5], 
+            AbsoluteThickness[1.5], 
+            Opacity[0.66]}], {}, {}], 
+         DynamicBox[
+          Typeset`ToBoxes[{
+            Disk[{4., 0.047619048}, {0.41000000000000014`, 
+             0.010000000000000002`}], 
+            If[
+             CurrentValue["MouseOver"], 
+             Quiet[
+              OptionValue[
+              System`BarFunctionDump`mouseover, {
+               "Highlight" -> "Post", "Post" -> {
+                  Thickness[0.06403124237432849], 
+                  
+                  Circle[{4., 0.047619048}, {1.0981601574705415`, 
+                   0.026784394084647355`}]}}, "Post"]], {}]}, StandardForm, 
+           Graphics]]},
+        ImageSizeCache->{{74.15255937368164, 83.0734175973907}, {
+         188.8373334172163, 197.75819164092536`}}],
+       StatusArea[#, 1]& ,
+       TagBoxNote->"1"],
+      StyleBox["1", {
+        GrayLevel[0]}, StripOnInput -> False]],
+     Annotation[#, 
+      Style[1, {
+        GrayLevel[0]}], "Tooltip"]& ]}},
+  AspectRatio->1,
+  AxesOrigin->{0., 0.},
+  Frame->True,
+  FrameLabel->{
+    FormBox["\"No. of Answers\"", TraditionalForm], 
+    FormBox["\"Percent of Vote-ups\"", TraditionalForm]},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  ImageSize->{559., Automatic},
+  PlotLabel->FormBox["\"An Example of Analyzing Q&A Data\"", TraditionalForm],
+  PlotRange->{{1.2226561686305648`, 47.1}, {-0.05395018745881179, 
+   1.0650094181843452`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->Scaled[0.02],
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.5745816822414412`*^9, 3.5745817346736035`*^9, 3.5745818962437553`*^9, 
+   3.5745819378182015`*^9, 3.574582571536085*^9, {3.574582664631206*^9, 
+   3.574582699529854*^9}, 3.574582936421843*^9, {3.574582978473687*^9, 
+   3.5745830103018*^9}, 3.574583041639596*^9, 3.574583661652323*^9}]
+}, Open  ]]
+},
+WindowSize->{707, 713},
+WindowMargins->{{9, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 291, 8, 30, "Input"],
+Cell[851, 30, 218, 5, 30, "Input"],
+Cell[CellGroupData[{
+Cell[1094, 39, 777, 18, 69, "Input"],
+Cell[1874, 59, 37856, 1095, 585, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
