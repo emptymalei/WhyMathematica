@@ -1,0 +1,558 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     23115,        549]
+NotebookOptionsPosition[     22725,        531]
+NotebookOutlinePosition[     23060,        546]
+CellTagsIndexPosition[     23017,        543]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "x", ",", "y", ",", "sols", ",", "diffs", ",", "xmax", ",", "ymax", ",",
+        "NoAir", ",", "vy", ",", "vx", ",", "R", ",", "H"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"vx", "=", 
+       RowBox[{
+        RowBox[{"v", " ", 
+         RowBox[{"Cos", "[", "\[Theta]", "]"}]}], "//", "N"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"vy", "=", 
+       RowBox[{
+        RowBox[{"v", " ", 
+         RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "//", "N"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"R", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"v", "^", "2"}], "/", "g"}], ")"}], " ", 
+         RowBox[{"Sin", "[", 
+          RowBox[{"2", "\[Theta]"}], "]"}]}], "//", "N"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"H", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", "vy", ")"}], "^", "2"}], "/", 
+        RowBox[{"(", 
+         RowBox[{"2", "g"}], ")"}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"NoAir", "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"Tan", "[", "\[Theta]", "]"}], ")"}], " ", "x"}], ")"}], 
+        "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"g", "/", 
+           RowBox[{"(", 
+            RowBox[{"2", " ", 
+             RowBox[{"(", " ", 
+              RowBox[{"vx", "^", "2"}], ")"}]}], ")"}]}], ")"}], " ", 
+         RowBox[{"x", "^", "2"}]}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"diffs", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "''"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{"b", " ", 
+              RowBox[{
+               RowBox[{"x", "'"}], "[", "t", "]"}]}], ")"}]}], "/", "m"}]}], 
+         ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "'"}], "[", "0", "]"}], "\[Equal]", 
+          RowBox[{"v", " ", 
+           RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"x", "[", "0", "]"}], "\[Equal]", "0"}], ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "''"}], "[", "t", "]"}], "\[Equal]", 
+          RowBox[{
+           RowBox[{"-", "g"}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"b", " ", 
+              RowBox[{
+               RowBox[{"y", "'"}], "[", "t", "]"}]}], ")"}], "/", "m"}]}]}], 
+         ",", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"y", "'"}], "[", "0", "]"}], "\[Equal]", 
+          RowBox[{"v", " ", 
+           RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ",", 
+         RowBox[{
+          RowBox[{"y", "[", "0", "]"}], "\[Equal]", "0"}]}], "}"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"sols", "=", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"Quiet", "@", 
+         RowBox[{"NDSolve", "[", 
+          RowBox[{"diffs", ",", 
+           RowBox[{"{", 
+            RowBox[{"x", ",", "y"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Method", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{"\"\<EventLocator\>\"", ",", "\[IndentingNewLine]", 
+              RowBox[{"\"\<Event\>\"", "\[Rule]", 
+               RowBox[{"y", "[", "t", "]"}]}], ",", "\[IndentingNewLine]", 
+              RowBox[{"\"\<EventAction\>\"", "\[RuleDelayed]", 
+               RowBox[{"Throw", "[", 
+                RowBox[{
+                 RowBox[{"tf", "=", "t"}], ",", "\"\<StopIntegration\>\""}], 
+                "]"}]}], ",", 
+              RowBox[{"\"\<Direction\>\"", "\[Rule]", 
+               RowBox[{"-", "1"}]}]}], "}"}]}], ",", 
+           RowBox[{"MaxSteps", "\[Rule]", "Infinity"}]}], "]"}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"ymax", "=", 
+       RowBox[{"First", "@", 
+        RowBox[{"Quiet", "@", 
+         RowBox[{"FindMaximum", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"y", "[", "t", "]"}], "/.", "sols"}], ",", 
+             RowBox[{"0", "\[LessEqual]", "t", "\[LessEqual]", "tf"}]}], 
+            "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"t", ",", 
+             RowBox[{"tf", "/", "2"}]}], "}"}]}], "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"xmax", "=", 
+       RowBox[{
+        RowBox[{"x", "[", "tf", "]"}], "/.", "sols"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Column", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"Show", "[", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"Plot", "[", "\[IndentingNewLine]", 
+              RowBox[{"NoAir", ",", 
+               RowBox[{"{", 
+                RowBox[{"x", ",", "0", ",", 
+                 RowBox[{"1.1", "R"}]}], "}"}], ",", 
+               RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+               RowBox[{"AxesLabel", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<distance\>\"", ",", "\"\<height\>\""}], "}"}]}],
+                ",", "\[IndentingNewLine]", 
+               RowBox[{"ImageSize", "\[Rule]", 
+                RowBox[{".85", 
+                 RowBox[{"{", 
+                  RowBox[{"500", ",", "350"}], "}"}]}]}], ",", 
+               RowBox[{"PlotStyle", "\[Rule]", "Gray"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"ParametricPlot", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"x", "[", "t", "]"}], ",", 
+                  RowBox[{"y", "[", "t", "]"}]}], "}"}], "/.", "sols"}], ",", 
+               
+               RowBox[{"{", 
+                RowBox[{"t", ",", "0", ",", 
+                 RowBox[{"3", 
+                  RowBox[{"Min", "[", 
+                   RowBox[{"tf", ",", "end"}], "]"}]}]}], "}"}], ",", 
+               RowBox[{"PlotStyle", "\[Rule]", "Dashed"}], ",", 
+               RowBox[{"PlotRange", "\[Rule]", 
+                RowBox[{
+                 RowBox[{"Max", "[", 
+                  RowBox[{
+                   RowBox[{"2.5", "xmax"}], ",", 
+                   RowBox[{"1.5", "ymax"}]}], "]"}], 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}]}], ",", 
+               RowBox[{"AxesLabel", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<distance\>\"", ",", "\"\<height\>\""}], 
+                 "}"}]}]}], "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], ",",
+           "\[IndentingNewLine]", 
+          RowBox[{"Style", "[", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"Text", "@", 
+             RowBox[{"Grid", "[", 
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<travel time: \>\"", ",", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"tf", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"6", ",", "3"}], "}"}]}], "]"}], ",", 
+                    "\"\< s\>\""}], "}"}], "]"}], ",", 
+                  RowBox[{"Spacer", "[", "20", "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{"\"\<total distance (with resistance): \>\"", ",", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"xmax", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"6", ",", "3"}], "}"}]}], "]"}], ",", 
+                    "\"\< m\>\""}], "}"}], "]"}]}], "}"}], ",", 
+                "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"Style", "[", 
+                    RowBox[{"\"\<y\>\"", ",", "Italic"}], "]"}], ",", 
+                    "\"\< displacement: \>\"", ",", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"ymax", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"6", ",", "3"}], "}"}]}], "]"}], ",", 
+                    "\"\< m\>\""}], "}"}], "]"}], ",", 
+                  RowBox[{"Spacer", "[", "20", "]"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"Row", "[", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    "\"\<total distance (without resistance): \>\"", ",", " ", 
+                    RowBox[{"NumberForm", "[", 
+                    RowBox[{"R", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"6", ",", "3"}], "}"}]}], "]"}], ",", " ", 
+                    "\"\< m\>\""}], "}"}], "]"}]}], "}"}]}], 
+               "\[IndentingNewLine]", "}"}], "]"}]}], ",", "12"}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"v", ",", "10", ",", "\"\<initial velocity (m/s)\>\""}], "}"}], 
+     ",", "1", ",", "30", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Theta]", ",", 
+       RowBox[{"45", "\[Degree]"}], ",", "\"\<initial angle (degrees)\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"15", "\[Degree]"}], ",", 
+       RowBox[{"20", "\[Degree]"}], ",", 
+       RowBox[{"45", "\[Degree]"}], ",", 
+       RowBox[{"65", "\[Degree]"}], ",", 
+       RowBox[{"75", "\[Degree]"}], ",", 
+       RowBox[{"89", "\[Degree]"}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "RadioButton"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"b", ",", "0.3", ",", "\"\<drag coefficient\>\""}], "}"}], ",", 
+     
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "\[Rule]", "\"\<none\>\""}], ",", 
+       RowBox[{"0.2", "\[Rule]", "\"\<wing shape\>\""}], ",", 
+       RowBox[{"0.5", "\[Rule]", "\"\<sphere\>\""}], ",", 
+       RowBox[{"1.28", "\[Rule]", "\"\<flat plate\>\""}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "RadioButton"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m", ",", ".5", ",", "\"\<mass (kg)\>\""}], "}"}], ",", "0.05", 
+     ",", "10", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "g", ",", "9.8", ",", 
+       "\"\<gravitational acceleration (m/\!\(\*SuperscriptBox[\(s\), \
+\(2\)]\))\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"1.62", "\[Rule]", "\"\<Moon\>\""}], ",", 
+       RowBox[{"9.8", "\[Rule]", "\"\<Earth\>\""}], ",", 
+       RowBox[{"274.14", "\[Rule]", "\"\<Sun\>\""}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "RadioButton"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"end", ",", ".001", ",", "\"\<Lift off!\>\""}], "}"}], ",", 
+     "0.000001", ",", 
+     RowBox[{"Dynamic", "[", "tf", "]"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", "Trigger"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"tf", ",", "0", ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "None"}]}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.574722729594101*^9, 3.574722814715593*^9}, {
+   3.574723042477945*^9, 3.574723069332574*^9}, {3.574723100057829*^9, 
+   3.574723170673341*^9}, {3.57472322861169*^9, 3.574723423124872*^9}, 
+   3.574723760776547*^9, {3.5747237955378*^9, 3.574723797335876*^9}, {
+   3.574723864588203*^9, 3.57472387921352*^9}, {3.574724153073889*^9, 
+   3.574724171800139*^9}, {3.574724336657527*^9, 3.574724404768239*^9}, {
+   3.57472443582721*^9, 3.574724486825793*^9}, {3.574724671940243*^9, 
+   3.574724675431624*^9}, {3.574724755228122*^9, 3.574724786093358*^9}, {
+   3.574724838066378*^9, 3.574724881389413*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`b$$ = 0.3, $CellContext`end$$ = 
+    1.2806581136441337`, $CellContext`g$$ = 9.8, $CellContext`m$$ = 
+    0.5, $CellContext`tf$$ = 1.2806581136441337`, $CellContext`v$$ = 
+    10, $CellContext`\[Theta]$$ = 45 Degree, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`v$$], 10, "initial velocity (m/s)"}, 1, 30}, {{
+       Hold[$CellContext`\[Theta]$$], 45 Degree, "initial angle (degrees)"}, {
+      15 Degree, 20 Degree, 45 Degree, 65 Degree, 75 Degree, 89 Degree}}, {{
+       Hold[$CellContext`b$$], 0.3, "drag coefficient"}, {
+      0 -> "none", 0.2 -> "wing shape", 0.5 -> "sphere", 1.28 -> 
+       "flat plate"}}, {{
+       Hold[$CellContext`m$$], 0.5, "mass (kg)"}, 0.05, 10}, {{
+       Hold[$CellContext`g$$], 9.8, 
+       "gravitational acceleration (m/\!\(\*SuperscriptBox[\(s\), \
+\(2\)]\))"}, {1.62 -> "Moon", 9.8 -> "Earth", 274.14 -> "Sun"}}, {{
+       Hold[$CellContext`end$$], 0.001, "Lift off!"}, 1.*^-6, 
+      Dynamic[$CellContext`tf$$]}, {
+      Hold[$CellContext`tf$$], 0}}, Typeset`size$$ = {443., {165.5, 170.5}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`v$458248$$ = 0, $CellContext`\[Theta]$458249$$ = 
+    0, $CellContext`b$458250$$ = False, $CellContext`m$458251$$ = 
+    0, $CellContext`g$458252$$ = False, $CellContext`end$458253$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`b$$ = 0.3, $CellContext`end$$ = 
+        0.001, $CellContext`g$$ = 9.8, $CellContext`m$$ = 
+        0.5, $CellContext`tf$$ = 0, $CellContext`v$$ = 
+        10, $CellContext`\[Theta]$$ = 45 Degree}, "ControllerVariables" :> {
+        Hold[$CellContext`v$$, $CellContext`v$458248$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$458249$$, 0], 
+        Hold[$CellContext`b$$, $CellContext`b$458250$$, False], 
+        Hold[$CellContext`m$$, $CellContext`m$458251$$, 0], 
+        Hold[$CellContext`g$$, $CellContext`g$458252$$, False], 
+        Hold[$CellContext`end$$, $CellContext`end$458253$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`x$, $CellContext`y$, $CellContext`sols$, \
+$CellContext`diffs$, $CellContext`xmax$, $CellContext`ymax$, \
+$CellContext`NoAir$, $CellContext`vy$, $CellContext`vx$, $CellContext`R$, \
+$CellContext`H$}, $CellContext`vx$ = 
+         N[$CellContext`v$$ Cos[$CellContext`\[Theta]$$]]; $CellContext`vy$ = 
+         N[$CellContext`v$$ Sin[$CellContext`\[Theta]$$]]; $CellContext`R$ = 
+         N[($CellContext`v$$^2/$CellContext`g$$) 
+           Sin[2 $CellContext`\[Theta]$$]]; $CellContext`H$ = \
+$CellContext`vy$^2/(2 $CellContext`g$$); $CellContext`NoAir$ = 
+         Tan[$CellContext`\[Theta]$$] $CellContext`x$ - ($CellContext`g$$/(
+           2 $CellContext`vx$^2)) $CellContext`x$^2; $CellContext`diffs$ = {
+          Derivative[
+            2][$CellContext`x$][$CellContext`t] == (-($CellContext`b$$ 
+              Derivative[
+               1][$CellContext`x$][$CellContext`t]))/$CellContext`m$$, 
+           Derivative[1][$CellContext`x$][0] == $CellContext`v$$ 
+            Cos[$CellContext`\[Theta]$$], $CellContext`x$[0] == 0, 
+           Derivative[
+            2][$CellContext`y$][$CellContext`t] == -$CellContext`g$$ - \
+($CellContext`b$$ 
+             Derivative[1][$CellContext`y$][$CellContext`t])/$CellContext`m$$,
+            Derivative[1][$CellContext`y$][0] == $CellContext`v$$ 
+            Sin[$CellContext`\[Theta]$$], $CellContext`y$[0] == 
+           0}; $CellContext`sols$ = Flatten[
+           Quiet[
+            
+            NDSolve[$CellContext`diffs$, {$CellContext`x$, $CellContext`y$}, \
+{$CellContext`t, 0, Infinity}, 
+             Method -> {
+              "EventLocator", "Event" -> $CellContext`y$[$CellContext`t], 
+               "EventAction" :> 
+               Throw[$CellContext`tf$$ = $CellContext`t, "StopIntegration"], 
+               "Direction" -> -1}, MaxSteps -> 
+             Infinity]]]; $CellContext`ymax$ = First[
+           Quiet[
+            FindMaximum[{
+              ReplaceAll[
+               $CellContext`y$[$CellContext`t], $CellContext`sols$], 
+              0 <= $CellContext`t <= $CellContext`tf$$}, {$CellContext`t, \
+$CellContext`tf$$/2}]]]; $CellContext`xmax$ = ReplaceAll[
+           $CellContext`x$[$CellContext`tf$$], $CellContext`sols$]; Column[{
+           Show[{
+             
+             Plot[$CellContext`NoAir$, {$CellContext`x$, 0, 
+               1.1 $CellContext`R$}, PlotRange -> All, 
+              AxesLabel -> {"distance", "height"}, ImageSize -> 
+              0.85 {500, 350}, PlotStyle -> Gray], 
+             ParametricPlot[
+              ReplaceAll[{
+                $CellContext`x$[$CellContext`t], 
+                $CellContext`y$[$CellContext`t]}, $CellContext`sols$], \
+{$CellContext`t, 0, 3 Min[$CellContext`tf$$, $CellContext`end$$]}, PlotStyle -> 
+              Dashed, PlotRange -> 
+              Max[2.5 $CellContext`xmax$, 1.5 $CellContext`ymax$] {{0, 1}, {0,
+                 1}}, AxesLabel -> {"distance", "height"}]}], 
+           Style[
+            Text[
+             Grid[{{
+                Row[{"travel time: ", 
+                  NumberForm[$CellContext`tf$$, {6, 3}], " s"}], 
+                Spacer[20], 
+                Row[{"total distance (with resistance): ", 
+                  NumberForm[$CellContext`xmax$, {6, 3}], " m"}]}, {
+                Row[{
+                  Style["y", Italic], " displacement: ", 
+                  NumberForm[$CellContext`ymax$, {6, 3}], " m"}], 
+                Spacer[20], 
+                Row[{"total distance (without resistance): ", 
+                  NumberForm[$CellContext`R$, {6, 3}], " m"}]}}]], 12]}, 
+          Alignment -> Center]], 
+      "Specifications" :> {{{$CellContext`v$$, 10, "initial velocity (m/s)"}, 
+         1, 30, Appearance -> 
+         "Labeled"}, {{$CellContext`\[Theta]$$, 45 Degree, 
+          "initial angle (degrees)"}, {
+         15 Degree, 20 Degree, 45 Degree, 65 Degree, 75 Degree, 89 Degree}, 
+         ControlType -> 
+         RadioButton}, {{$CellContext`b$$, 0.3, "drag coefficient"}, {
+         0 -> "none", 0.2 -> "wing shape", 0.5 -> "sphere", 1.28 -> 
+          "flat plate"}, ControlType -> 
+         RadioButton}, {{$CellContext`m$$, 0.5, "mass (kg)"}, 0.05, 10, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`g$$, 9.8, 
+          "gravitational acceleration (m/\!\(\*SuperscriptBox[\(s\), \
+\(2\)]\))"}, {1.62 -> "Moon", 9.8 -> "Earth", 274.14 -> "Sun"}, ControlType -> 
+         RadioButton}, {{$CellContext`end$$, 0.001, "Lift off!"}, 1.*^-6, 
+         Dynamic[$CellContext`tf$$], ControlType -> 
+         Trigger}, {$CellContext`tf$$, 0, ControlType -> None}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{594., {267., 272.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.574721308913097*^9, 3.5747227614797*^9, {3.574722791485448*^9, 
+   3.574722815169726*^9}, {3.574723052448949*^9, 3.574723069780482*^9}, {
+   3.574723104480888*^9, 3.574723127641262*^9}, 3.574723171123873*^9, 
+   3.574723267720656*^9, {3.574723299842573*^9, 3.574723423589704*^9}, 
+   3.574723761293189*^9, 3.574723800366938*^9, {3.574723867356762*^9, 
+   3.574723885828219*^9}, {3.574724163629352*^9, 3.574724172155503*^9}, {
+   3.574724339099997*^9, 3.574724405224144*^9}, {3.57472443887409*^9, 
+   3.574724487586672*^9}, 3.574724676026876*^9, {3.574724764421936*^9, 
+   3.574724787188018*^9}, {3.574724844208122*^9, 3.574724881834187*^9}}]
+}, Open  ]],
+
+Cell["Air resistance", "Text",
+ CellChangeTimes->{{3.574721719050534*^9, 3.574721721674317*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ParametricPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "[", "t", "]"}], ",", 
+      RowBox[{"y", "[", "t", "]"}]}], "}"}], "/.", "sols"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", 
+     RowBox[{"3", 
+      RowBox[{"Min", "[", 
+       RowBox[{"tf", ",", "end"}], "]"}]}]}], "}"}], ",", 
+   RowBox[{"PlotStyle", "\[Rule]", "Dashed"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{
+     RowBox[{"Max", "[", 
+      RowBox[{
+       RowBox[{"2.5", "xmax"}], ",", 
+       RowBox[{"1.5", "ymax"}]}], "]"}], 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<distance\>\"", ",", "\"\<height\>\""}], "}"}]}]}], 
+  "]"}]], "Input"]
+},
+WindowSize->{1280, 776},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 12877, 319, 880, "Input"],
+Cell[13459, 343, 8236, 151, 556, "Output"]
+}, Open  ]],
+Cell[21710, 497, 96, 1, 30, "Text"],
+Cell[21809, 500, 912, 29, 50, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
