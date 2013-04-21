@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[      1517,         56]
-NotebookOptionsPosition[      1131,         37]
-NotebookOutlinePosition[      1477,         52]
-CellTagsIndexPosition[      1434,         49]
+NotebookDataLength[      3071,        100]
+NotebookOptionsPosition[      2439,         75]
+NotebookOutlinePosition[      2884,         92]
+CellTagsIndexPosition[      2841,         89]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -31,12 +31,52 @@ Cell["\:7ea7\:6570", "Subsection",
 Cell["\:6211\:4eec\:5e38\:5e38\:4f7f\:7528\:7ea7\:6570\:3002\:90a3\:4e48\:7ea7\
 \:6570\:5982\:4f55\:5f62\:8c61\:7684\:53bb\:7406\:89e3\:5462\:ff1f", "Text",
  CellChangeTimes->{{3.5755272324559593`*^9, 3.575527245688716*^9}, {
-  3.5755273708978777`*^9, 3.5755273829425664`*^9}}]
+  3.5755273708978777`*^9, 3.5755273829425664`*^9}}],
+
+Cell["\:4e3e\:4e2a\:4f8b\:5b50\:8bf4\:660e\:ff0c\:6bd4\:5982\:6211\:4eec\:6709\
+\:4e00\:4e2a\:8fd9\:6837\:7684\:6570\:5217\:ff1a", "Text",
+ CellChangeTimes->{{3.575530175733305*^9, 3.575530198129586*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"2", ",", 
+   FractionBox["1", "2"], ",", 
+   FractionBox["4", "3"], ",", 
+   FractionBox["3", "4"], ",", "...", ",", 
+   FractionBox[
+    RowBox[{"n", "+", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], 
+      RowBox[{"n", "-", "1"}]]}], "n"], ",", "..."}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.57553021987983*^9, 3.575530278591188*^9}}],
+
+Cell["\:6211\:4eec\:53ef\:4ee5\:628a\:8fd9\:4e9b\:6570\:753b\:5728\:4e00\:4e2a\
+\:5750\:6807\:7cfb\:4e2d\:3002", "Text",
+ CellChangeTimes->{{3.5755302825184126`*^9, 3.575530296001184*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"example1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"n", "+", 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"n", "-", "1"}]]}], "n"], ",", 
+     RowBox[{"{", "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", "]"}]}], "Input",
+ CellChangeTimes->{{3.575530298191309*^9, 3.5755303681133084`*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{707, 817},
-WindowMargins->{{383, Automatic}, {52, Automatic}},
+WindowSize->{944, 1002},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
 FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
 StyleDefinitions->"Default.nb"
 ]
@@ -52,10 +92,14 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[579, 22, 117, 1, 71, "Section"],
+Cell[579, 22, 117, 1, 88, "Section"],
 Cell[CellGroupData[{
-Cell[721, 27, 102, 1, 36, "Subsection"],
-Cell[826, 30, 277, 3, 29, "Text"]
+Cell[721, 27, 102, 1, 46, "Subsection"],
+Cell[826, 30, 277, 3, 34, "Text"],
+Cell[1106, 35, 204, 2, 34, "Text"],
+Cell[1313, 39, 461, 13, 48, "Text"],
+Cell[1777, 54, 188, 2, 34, "Text"],
+Cell[1968, 58, 443, 13, 79, "Input"]
 }, Open  ]]
 }, Open  ]]
 }
