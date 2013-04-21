@@ -1,0 +1,65 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1517,         56]
+NotebookOptionsPosition[      1131,         37]
+NotebookOutlinePosition[      1477,         52]
+CellTagsIndexPosition[      1434,         49]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\:5c55\:5f00\:548c\:53d8\:6362", "Section",
+ CellChangeTimes->{{3.5755271145212135`*^9, 3.575527148955183*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["\:7ea7\:6570", "Subsection",
+ CellChangeTimes->{{3.575527157374665*^9, 3.5755271626709676`*^9}}],
+
+Cell["\:6211\:4eec\:5e38\:5e38\:4f7f\:7528\:7ea7\:6570\:3002\:90a3\:4e48\:7ea7\
+\:6570\:5982\:4f55\:5f62\:8c61\:7684\:53bb\:7406\:89e3\:5462\:ff1f", "Text",
+ CellChangeTimes->{{3.5755272324559593`*^9, 3.575527245688716*^9}, {
+  3.5755273708978777`*^9, 3.5755273829425664`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{707, 817},
+WindowMargins->{{383, Automatic}, {52, Automatic}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 117, 1, 71, "Section"],
+Cell[CellGroupData[{
+Cell[721, 27, 102, 1, 36, "Subsection"],
+Cell[826, 30, 277, 3, 29, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
