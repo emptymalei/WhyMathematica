@@ -1,0 +1,3 @@
+[submodule "DataVisualization/Other/Exoplanet/Data/oec"]
+	path = DataVisualization/Other/Exoplanet/Data/oec
+	url = https://github.com/emptymalei/oec_tables.git
