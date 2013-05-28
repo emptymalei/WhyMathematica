@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    180886,       4135]
-NotebookOptionsPosition[    176083,       3981]
-NotebookOutlinePosition[    176418,       3996]
-CellTagsIndexPosition[    176375,       3993]
+NotebookDataLength[    204629,       4644]
+NotebookOptionsPosition[    199442,       4477]
+NotebookOutlinePosition[    199777,       4492]
+CellTagsIndexPosition[    199734,       4489]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -38,7 +38,8 @@ Cell[BoxData["\<\"https://www.edx.org/course-list/allschools/allsubjects/new\"\
 \>"], "Output",
  CellChangeTimes->{{3.578696651090086*^9, 3.578696655454486*^9}, 
    3.578697675430804*^9, 3.578699080893314*^9, 3.578701013753096*^9, 
-   3.578701369543719*^9, 3.578702247919702*^9, 3.578702973571018*^9}]
+   3.578701369543719*^9, 3.578702247919702*^9, 3.578702973571018*^9, 
+   3.578707368220409*^9, 3.578707628479354*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -53,7 +54,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.578702276237824*^9, 3.578702277795059*^9}}],
 
 Cell[BoxData["3"], "Output",
- CellChangeTimes->{3.578702278169145*^9, 3.578702975238044*^9}]
+ CellChangeTimes->{3.578702278169145*^9, 3.578702975238044*^9, 
+  3.578707369265605*^9, 3.578707628845766*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -82,7 +84,8 @@ Cell[BoxData[
    ",", "\<\"https://www.edx.org/course-list/allschools/allsubjects/new/?page=\
 3\"\>"}], "}"}]], "Output",
  CellChangeTimes->{{3.578702236925661*^9, 3.578702279000783*^9}, 
-   3.578702894953486*^9, 3.578702976325596*^9}]
+   3.578702894953486*^9, 3.578702976325596*^9, 3.578707370565509*^9, 
+   3.578707628941426*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -368,6 +371,40 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
+  RowBox[{"idList", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Cases", "[", 
+       RowBox[{
+        RowBox[{"rawData", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"XMLElement", "[", 
+          RowBox[{"\"\<div\>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<title\>\""}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"XMLElement", "[", 
+             RowBox[{"\"\<h1\>\"", ",", 
+              RowBox[{"{", "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"XMLElement", "[", 
+                 RowBox[{"\"\<span\>\"", ",", 
+                  RowBox[{"{", "}"}], ",", 
+                  RowBox[{"{", "id_", "}"}]}], "]"}], ",", "name_"}], "}"}]}],
+              "]"}], "}"}]}], "]"}], "\[RuleDelayed]", "id"}], ",", 
+        "Infinity"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", 
+        RowBox[{"pages", "+", "1"}]}], "}"}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.578708072135131*^9, 3.578708087109399*^9}, {
+  3.578708128908186*^9, 3.578708133581626*^9}}],
+
+Cell[BoxData[
+ RowBox[{
   RowBox[{"linkList", "=", 
    RowBox[{"Table", "[", 
     RowBox[{
@@ -404,10 +441,10 @@ Cell[BoxData[
    3.578704836637962*^9}, 3.578706169619167*^9}],
 
 Cell["\<\
-XMLElement[a,{shape\[Rule]rect,href\[Rule]/course/cs212},{
+XMLElement[a,{shape\[Rule]rect,href\[Rule]/course/cs212},{\[LineSeparator]
 \t\t\t\t\t\t}]\
 \>", "Text",
- CellChangeTimes->{3.578699892406966*^9}],
+ CellChangeTimes->{3.578699892406966*^9, 3.578707376756721*^9}],
 
 Cell[CellGroupData[{
 
@@ -430,22 +467,9 @@ Cell[BoxData["25"], "Output",
  CellChangeTimes->{{3.578699645541459*^9, 3.578699660870132*^9}, 
    3.578699828962156*^9, 3.578700208827407*^9, 3.578701543409469*^9, {
    3.578702743563086*^9, 3.578702745243303*^9}, {3.578702782446279*^9, 
-   3.578702785524277*^9}, 3.578702924648965*^9, 3.578704492634207*^9}]
+   3.578702785524277*^9}, 3.578702924648965*^9, 3.578704492634207*^9, 
+   3.57870739021819*^9, 3.578707643504366*^9}]
 }, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"desList", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"deslinkList", "[", 
-       RowBox[{"[", "i", "]"}], "]"}], "[", 
-      RowBox[{"[", "1", "]"}], "]"}], ",", 
-     RowBox[{"{", 
-      RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.57870437385518*^9, 3.57870438937329*^9}, 
-   3.578706165158276*^9}],
 
 Cell[CellGroupData[{
 
@@ -458,7 +482,17 @@ Cell[BoxData[
 Cell[BoxData["25"], "Output",
  CellChangeTimes->{
   3.578704398832747*^9, 3.578704810544633*^9, {3.578704862991586*^9, 
-   3.578704869923609*^9}}]
+   3.578704869923609*^9}, 3.578707391220346*^9, 3.578707644010206*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", "idList", "]"}]], "Input",
+ CellChangeTimes->{{3.578708108352721*^9, 3.578708142217124*^9}}],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{{3.578708116158649*^9, 3.578708143046829*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -480,7 +514,7 @@ Cell[BoxData["True"], "Output",
    3.57870441555125*^9, {3.578704462813321*^9, 3.578704477067076*^9}, 
    3.578704524652171*^9, 3.578704590208735*^9, 3.578704674376442*^9, {
    3.578704720086101*^9, 3.578704730193559*^9}, 3.578705183419644*^9, 
-   3.578706180880988*^9}]
+   3.578706180880988*^9, 3.578707391331974*^9, 3.578707644042002*^9}]
 }, Open  ]],
 
 Cell["\<\
@@ -511,7 +545,8 @@ Cell[BoxData[{
 
 Cell[BoxData["True"], "Output",
  CellChangeTimes->{{3.578700410441033*^9, 3.578700417822029*^9}, 
-   3.578704963885683*^9, 3.57870518462474*^9, 3.578706185354974*^9}]
+   3.578704963885683*^9, 3.57870518462474*^9, 3.578706185354974*^9, 
+   3.578707391502365*^9, 3.578707644067093*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -569,11 +604,125 @@ Cell[BoxData[
    ",", "\<\"01/27/2014\"\>", ",", "\<\"03/04/2014\"\>", 
    ",", "\<\"September 2014\"\>"}], "}"}]], "Output",
  CellChangeTimes->{{3.578706593207561*^9, 3.578706613096719*^9}, {
-  3.57870665447424*^9, 3.578706666006292*^9}}],
+   3.57870665447424*^9, 3.578706666006292*^9}, 3.578707747262321*^9}],
 
 Cell[BoxData["True"], "Output",
  CellChangeTimes->{{3.578706593207561*^9, 3.578706613096719*^9}, {
-  3.57870665447424*^9, 3.578706666009881*^9}}]
+   3.57870665447424*^9, 3.578706666006292*^9}, 3.578707747266915*^9}]
+}, Open  ]],
+
+Cell["\<\
+Duration
+XMLElement[div,{class\[Rule]info},{XMLElement[div,{class\[Rule]institution},{\
+XMLElement[div,{class\[Rule]field},{School:}],GeorgetownX}],XMLElement[div,{\
+class\[Rule]code},{XMLElement[div,{class\[Rule]field},{Course \
+code:}],PHLX101-01}],XMLElement[div,{class\[Rule]startdate},{XMLElement[div,{\
+class\[Rule]field},{Classes start:}],15 Oct 2013}],XMLElement[div,{class\
+\[Rule]duration last},{XMLElement[div,{class\[Rule]field},{Course length:}],6 \
+weeks}]}]\
+\>", "Text",
+ CellChangeTimes->{{3.578707805662754*^9, 3.578707810456562*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"durList", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"couRawData", ",", 
+     RowBox[{
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<div\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<info\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<institution\>\""}], 
+             "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<field\>\""}], "}"}],
+                 ",", 
+                RowBox[{"{", "\"\<School:\>\"", "}"}]}], "]"}], ",", 
+              "school_"}], "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<code\>\""}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<field\>\""}], "}"}],
+                 ",", 
+                RowBox[{"{", "\"\<Course code:\>\"", "}"}]}], "]"}], ",", 
+              "id_"}], "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<startdate\>\""}], "}"}],
+             ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<field\>\""}], "}"}],
+                 ",", 
+                RowBox[{"{", "\"\<Classes start:\>\"", "}"}]}], "]"}], ",", 
+              "date_"}], "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<duration last\>\""}], 
+             "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<field\>\""}], "}"}],
+                 ",", 
+                RowBox[{"{", "\"\<Course length:\>\"", "}"}]}], "]"}], ",", 
+              "length_"}], "}"}]}], "]"}]}], "}"}]}], "]"}], "\[RuleDelayed]", 
+      RowBox[{"{", 
+       RowBox[{"school", ",", "id", ",", "date", ",", "length"}], "}"}]}], 
+     ",", "Infinity"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", "%", "]"}]}], "Input",
+ CellChangeTimes->{{3.57870781243298*^9, 3.578707921651355*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"GeorgetownX\"\>", "\<\"PHLX101-01\"\>", "\<\"15 Oct 2013\"\>", \
+"\<\"6 weeks\"\>"},
+    {"\<\"GeorgetownX\"\>", "\<\"INFX523-01\"\>", "\<\"1 Oct 2013\"\>", \
+"\<\"7 weeks\"\>"},
+    {"\<\"UTAustinX\"\>", "\<\"UT.4.01x\"\>", "\<\"16 Sep 2013\"\>", "\<\"13 \
+weeks\"\>"},
+    {"\<\"MITx\"\>", "\<\"3.086x\"\>", "\<\"16 Sep 2013\"\>", "\<\"13 weeks\"\
+\>"},
+    {"\<\"UTAustinX\"\>", "\<\"UT.2.01x\"\>", "\<\"15 Sep 2013\"\>", "\<\"13 \
+weeks\"\>"},
+    {"\<\"UTAustinX\"\>", "\<\"UT.1.01x\"\>", "\<\"15 Sep 2013\"\>", "\<\"11 \
+weeks\"\>"},
+    {"\<\"UTAustinX\"\>", "\<\"UT.3.01x\"\>", "\<\"1 Sep 2013\"\>", "\<\"15 \
+weeks\"\>"},
+    {"\<\"UC BerkeleyX\"\>", "\<\"Stat2.3x\"\>", "\<\"31 May 2013\"\>", \
+"\<\"4 weeks\"\>"},
+    {"\<\"UC BerkeleyX\"\>", "\<\"Stat2.2x\"\>", "\<\"12 Apr 2013\"\>", \
+"\<\"5 weeks\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.578707907732425*^9, 3.578707921992944*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -590,6 +739,8 @@ Cell[BoxData[{
        RowBox[{"startList", "[", 
         RowBox[{"[", "i", "]"}], "]"}], ",", 
        RowBox[{"linkCleanList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"idList", "[", 
         RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", 
      RowBox[{"{", 
       RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], 
@@ -597,12 +748,14 @@ Cell[BoxData[{
  RowBox[{"Length", "[", "fullTable", "]"}]}], "Input",
  CellChangeTimes->{{3.578700037979957*^9, 3.578700041852566*^9}, {
   3.578700533936043*^9, 3.578700651687767*^9}, {3.578704976062597*^9, 
-  3.578704993137751*^9}, {3.578706672381604*^9, 3.578706678537374*^9}}],
+  3.578704993137751*^9}, {3.578706672381604*^9, 3.578706678537374*^9}, {
+  3.578708152545994*^9, 3.578708155799817*^9}}],
 
 Cell[BoxData["25"], "Output",
  CellChangeTimes->{
   3.57870065241764*^9, 3.578704995856388*^9, {3.578705168679343*^9, 
-   3.578705196895682*^9}, 3.578706187351549*^9, 3.578706679183752*^9}]
+   3.578705196895682*^9}, 3.578706187351549*^9, 3.578706679183752*^9, 
+   3.578707747288111*^9, 3.578708156671167*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -610,15 +763,26 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"exp", "=", 
   RowBox[{"Export", "[", 
-   RowBox[{"\"\<Desktop/edX.xls\>\"", ",", "fullTable"}], "]"}]}]], "Input",
+   RowBox[{"\"\<edX.xls\>\"", ",", "fullTable"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.578700660390946*^9, 3.578700682561115*^9}, {
   3.578705122859453*^9, 3.578705124523527*^9}, {3.578705209789157*^9, 
-  3.578705226010642*^9}}],
+  3.578705226010642*^9}, {3.578707792653672*^9, 3.578707793967465*^9}}],
 
-Cell[BoxData["\<\"Desktop/edX.xls\"\>"], "Output",
- CellChangeTimes->{
-  3.578700685977171*^9, 3.578704998953886*^9, 3.57870512533402*^9, {
-   3.578705197925964*^9, 3.578705226691497*^9}, 3.578706680261401*^9}]
+Cell[BoxData["\<\"edX.xls\"\>"], "Output",
+ CellChangeTimes->{3.578707747720208*^9, 3.578707795682638*^9, 
+  3.578708158147778*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"expDur", "=", 
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<edXDur.xls\>\"", ",", "durList"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.5787079593666*^9, 3.578707980292219*^9}}],
+
+Cell[BoxData["\<\"edXDur.xls\"\>"], "Output",
+ CellChangeTimes->{3.578707982671307*^9, 3.578708158838312*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -632,91 +796,95 @@ Cell[BoxData[
     {"\<\" Science & Cooking: From Haute Cuisine to Soft Matter Science\"\>", \
 "\<\"October 2013\"\>", \
 "\<\"https://www.edx.org/course/harvard-university/spu27x/science-cooking-\
-haute-cuisine/639\"\>"},
+haute-cuisine/639\"\>", "\<\"SPU27x:\"\>"},
     {"\<\" Introduction to Bioethics\"\>", "\<\"15 Oct 2013\"\>", \
 "\<\"https://www.edx.org/course/georgetown-university/phlx101-01/introduction-\
-bioethics/811\"\>"},
+bioethics/811\"\>", "\<\"PHLX101-01:\"\>"},
     {"\<\" Electricity & Magnetism\"\>", "\<\"7 Oct 2013\"\>", \
 "\<\"https://www.edx.org/course/rice-university/phys102x/electricity-\
-magnetism/863\"\>"},
+magnetism/863\"\>", "\<\"PHYS102x:\"\>"},
     {"\<\" Globalization\[CloseCurlyQuote]s Winners and Losers: Challenges \
 for Developed and Developing Countries\"\>", "\<\"1 Oct 2013\"\>", \
 "\<\"https://www.edx.org/course/georgetown-university/infx523-01/\
-globalization%E2%80%99s-winners-and/797\"\>"},
+globalization%E2%80%99s-winners-and/797\"\>", "\<\"INFX523-01:\"\>"},
     {"\<\" Introduction to Philosophy: God, Knowledge and Consciousness\"\>", \
 "\<\"1 Oct 2013\"\>", \
 "\<\"https://www.edx.org/course/mit/24-00x/introduction-philosophy-god/888\"\>\
-"},
+", "\<\"24.00x:\"\>"},
     {"\<\" Introduction to Human Evolution\"\>", "\<\"25 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/wellesley/anth207x/introduction-human-\
-evolution/873\"\>"},
+evolution/873\"\>", "\<\"ANTH207x:\"\>"},
     {"\<\" A Global History of Architecture: Part 1\"\>", "\<\"17 Sep \
 2013\"\>", \
 "\<\"https://www.edx.org/course/mit/4-605x/global-history-architecture-part/\
-884\"\>"},
+884\"\>", "\<\"4.605x:\"\>"},
     {"\<\" Take Your Medicine - The Impact of Drug Development\"\>", "\<\"16 \
 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/utaustin/ut-4-01x/take-your-medicine-impact-\
-drug/669\"\>"},
+drug/669\"\>", "\<\"UT.4.01x:\"\>"},
     {"\<\" Solar Energy\"\>", "\<\"16 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/delft-university-technology/et3034tux/solar-\
-energy/770\"\>"},
+energy/770\"\>", "\<\"ET3034TUx:\"\>"},
     {"\<\" Introduction to Water Treatment\"\>", "\<\"16 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/delft-university-technology/ctb3365x/\
-introduction-water-treatment/786\"\>"},
+introduction-water-treatment/786\"\>", "\<\"CTB3365x:\"\>"},
     {"\<\" Innovation and Commercialization\"\>", "\<\"16 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/mit/3-086x/innovation-and-commercialization/\
-880\"\>"},
+880\"\>", "\<\"3.086x:\"\>"},
     {"\<\" Ideas of the Twentieth Century\"\>", "\<\"15 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/utaustin/ut-2-01x/ideas-twentieth-century/661\
-\"\>"},
+\"\>", "\<\"UT.2.01x:\"\>"},
     {"\<\" Energy 101\"\>", "\<\"15 Sep 2013\"\>", \
-"\<\"https://www.edx.org/course/utaustin/ut-1-01x/energy-101/667\"\>"},
+"\<\"https://www.edx.org/course/utaustin/ut-1-01x/energy-101/667\"\>", \
+"\<\"UT.1.01x:\"\>"},
     {"\<\" Introduction to Aerodynamics\"\>", "\<\"9 Sep 2013\"\>", \
 "\<\"https://www.edx.org/course/mit/16-101x/introduction-aerodynamics/890\"\>\
-"},
+", "\<\"16.101x:\"\>"},
     {"\<\" Age of Globalization\"\>", "\<\"1 Sep 2013\"\>", \
-"\<\"https://www.edx.org/course/utaustin/ut-3-01x/age-globalization/665\"\>"},\
-
+"\<\"https://www.edx.org/course/utaustin/ut-3-01x/age-globalization/665\"\>", \
+"\<\"UT.3.01x:\"\>"},
     {"\<\" Mechanics ReView \"\>", "\<\"1 Jun 2013\"\>", \
-"\<\"https://www.edx.org/course/mit/8-mrevx/mechanics-review/748\"\>"},
+"\<\"https://www.edx.org/course/mit/8-mrevx/mechanics-review/748\"\>", \
+"\<\"8.MReVx:\"\>"},
     {"\<\" Introduction to Statistics: Inference\"\>", "\<\"31 May 2013\"\>", \
 "\<\"https://www.edx.org/course/uc-berkeley/stat2-3x/introduction-statistics/\
-825\"\>"},
+825\"\>", "\<\"Stat2.3x:\"\>"},
     {"\<\" Human Health and Global Environmental Change\"\>", "\<\"15 May \
 2013\"\>", \
 "\<\"https://www.edx.org/course/harvard-university/ph278x/human-health-and-\
-global/573\"\>"},
+global/573\"\>", "\<\"PH278x:\"\>"},
     {"\<\" Introduction to Statistics: Probability\"\>", "\<\"12 Apr \
 2013\"\>", \
 "\<\"https://www.edx.org/course/uc-berkeley/stat2-2x/introduction-statistics/\
-685\"\>"},
+685\"\>", "\<\"Stat2.2x:\"\>"},
     {"\<\" Classical Mechanics\"\>", "\<\"09/09/2013\"\>", \
-"\<\"https://www.edx.org/course/mit/8-01x/classical-mechanics/853\"\>"},
+"\<\"https://www.edx.org/course/mit/8-01x/classical-mechanics/853\"\>", \
+"\<\"8.01x:\"\>"},
     {"\<\" Flight Vehicle Aerodynamics\"\>", "\<\"09/09/2013\"\>", \
 "\<\"https://www.edx.org/course/mit/16-110x/flight-vehicle-aerodynamics/871\"\
-\>"},
+\>", "\<\"16.110x:\"\>"},
     {"\<\" Shakespeare: On the Page and in Performance\"\>", "\<\"October \
 2014\"\>", \
 "\<\"https://www.edx.org/course/wellesley/eng112x/shakespeare-page-and-\
-performance/877\"\>"},
+performance/877\"\>", "\<\"ENG112x:\"\>"},
     {"\<\" Was Alexander Great? The Life, Leadership, and Legacies of History\
 \[CloseCurlyQuote]s Greatest Warrior\"\>", "\<\"01/27/2014\"\>", \
 "\<\"https://www.edx.org/course/wellesley/hist229x/was-alexander-great-life/\
-850\"\>"},
+850\"\>", "\<\"HIST229x:\"\>"},
     {"\<\" Genomic Medicine Gets Personal\"\>", "\<\"03/04/2014\"\>", \
 "\<\"https://www.edx.org/course/georgetown-university/medx202-01/genomic-\
-medicine-gets-personal/837\"\>"},
+medicine-gets-personal/837\"\>", "\<\"MEDX202-01:\"\>"},
     {"\<\" Introduction to Global Sociology\"\>", "\<\"September 2014\"\>", "\
 \<\"https://www.edx.org/course/wellesley/soc108x/introduction-global-\
-sociology/830\"\>"}
+sociology/830\"\>", "\<\"SOC108x:\"\>"}
    },
    AutoDelete->False,
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Grid"]], "Output",
  CellChangeTimes->{{3.578700636970901*^9, 3.578700654612962*^9}, 
    3.578705001533518*^9, 3.578705126877798*^9, {3.578705187912688*^9, 
-   3.578705199216792*^9}, 3.578706681282685*^9}]
+   3.578705199216792*^9}, 3.578706681282685*^9, 3.578707747904112*^9, 
+   3.578708159761718*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -731,10 +899,11 @@ Cell[BoxData[
  RowBox[{"Import", "[", 
   RowBox[{
    RowBox[{"linkCleanList", "[", 
-    RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<XMLObject\>\""}], 
+    RowBox[{"[", "2", "]"}], "]"}], ",", "\"\<XMLObject\>\""}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.578705366267583*^9, 3.578705371967938*^9}, {
-  3.578706282865533*^9, 3.578706286981154*^9}}],
+  3.578706282865533*^9, 3.578706286981154*^9}, {3.578707653670045*^9, 
+  3.578707654092298*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -788,7 +957,7 @@ Date().getTime()]);\"\>", "}"}]}], "]"}], ",",
               RowBox[{
                RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"shortlink\"\>"}], ",", 
                RowBox[{"\<\"href\"\>", 
-                "\[Rule]", "\<\"https://www.edx.org/node/639\"\>"}]}], "}"}], 
+                "\[Rule]", "\<\"https://www.edx.org/node/811\"\>"}]}], "}"}], 
              ",", 
              RowBox[{"{", "}"}]}], "]"}], ",", 
            RowBox[{"XMLElement", "[", 
@@ -821,8 +990,8 @@ Date().getTime()]);\"\>", "}"}]}], "]"}], ",",
                
                RowBox[{"\<\"href\"\>", 
                 "\[Rule]", \
-"\<\"https://www.edx.org/course/harvard-university/spu27x/science-cooking-\
-haute-cuisine/639\"\>"}]}], "}"}], ",", 
+"\<\"https://www.edx.org/course/georgetown-university/phlx101-01/introduction-\
+bioethics/811\"\>"}]}], "}"}], ",", 
              RowBox[{"{", "}"}]}], "]"}], ",", 
            RowBox[{"XMLElement", "[", 
             RowBox[{"\<\"meta\"\>", ",", 
@@ -883,8 +1052,8 @@ computer science, public health, artificial  intelligence\"\>"}]}], "}"}],
             RowBox[{"\<\"title\"\>", ",", 
              RowBox[{"{", "}"}], ",", 
              RowBox[{
-             "{", "\<\"HarvardX: SPU27x: Science & Cooking: From Haute \
-Cuisine to Soft Matter Science | edX\"\>", "}"}]}], "]"}], ",", 
+             "{", "\<\"GeorgetownX: PHLX101-01 - Introduction to Bioethics | \
+edX\"\>", "}"}]}], "]"}], ",", 
            RowBox[{"XMLElement", "[", 
             RowBox[{"\<\"style\"\>", ",", 
              RowBox[{"{", 
@@ -1048,7 +1217,7 @@ mnb9qb\"\>"}]}], "}"}], ",",
                RowBox[{"\<\"src\"\>", 
                 "\[Rule]", \
 "\<\"https://www.edx.org/sites/all/modules/lightbox2/js/lightbox.js?\
-1369717498\"\>"}]}], "}"}], ",", 
+1369718947\"\>"}]}], "}"}], ",", 
              RowBox[{"{", "}"}]}], "]"}], ",", 
            RowBox[{"XMLElement", "[", 
             RowBox[{"\<\"script\"\>", ",", 
@@ -1108,7 +1277,6 @@ js?mnb9qb\"\>"}]}], "}"}], ",",
               RowBox[{
                RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
                 ",", 
-               
                RowBox[{"\<\"src\"\>", 
                 "\[Rule]", \
 "\<\"https://www.edx.org/sites/all/themes/boron/scripts/jquery.dotdotdot.js?\
@@ -1208,7 +1376,7 @@ mnb9qb\"\>"}]}], "}"}], ",",
 settings, \
 {\\\"basePath\\\":\\\"\\\\/\\\",\\\"pathPrefix\\\":\\\"\\\",\\\"ajaxPageState\
 \\\":{\\\"theme\\\":\\\"boron\\\",\\\"theme_token\\\":\\\"\
-TQVcbMVNx4BDEPFC5xsbkDiyIIZlXedFhZumEde8k8o\\\",\\\"js\\\":{\\\"misc\\\\/\
+b5grq07LaMiJjaxJFgK1z3AdW1DAvrFmixfSk4_kcPc\\\",\\\"js\\\":{\\\"misc\\\\/\
 jquery.js\\\":1,\\\"misc\\\\/jquery.once.js\\\":1,\\\"misc\\\\/drupal.js\\\":\
 1,\\\"sites\\\\/all\\\\/modules\\\\/lightbox2\\\\/js\\\\/lightbox_video.js\\\"\
 :1,\\\"sites\\\\/all\\\\/modules\\\\/lightbox2\\\\/js\\\\/lightbox.js\\\":1,\\\
@@ -1313,7 +1481,7 @@ ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip\\\
           
           RowBox[{"\<\"class\"\>", 
            "\[Rule]", "\<\"html not-front not-logged-in no-sidebars page-node \
-page-node- page-node-639 node-type-courses domain-prod-edx-org\"\>"}], "}"}], 
+page-node- page-node-811 node-type-courses domain-prod-edx-org\"\>"}], "}"}], 
          ",", 
          RowBox[{"{", 
           RowBox[{"\<\"\\n\\n    \\n\\t\\n    \"\>", ",", 
@@ -1587,14 +1755,13 @@ pane-course-view\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"view view-course-view view-id-course_view \
-view-display-id-default view-dom-id-7762f7d108c039de7ea0504eef6c36b0\"\>"}], 
+view-display-id-default view-dom-id-8d0b378bdc62fd8c972ae6a93b96bb0d\"\>"}], 
                     "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{"\<\"\\n        \\n  \\n  \\n      \"\>", ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
-                    
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"view-content\"\>"}], "}"}], ",", 
                     RowBox[{"{", 
@@ -1647,14 +1814,15 @@ views-row-first views-row-last\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://www.edx.org/sites/default/files/cooking_course_608x211.jpg\"\>"}]\
-, ",", 
+"\<\"https://www.edx.org/sites/default/files/bioethics_608x211_0.jpg\"\>"}], 
+                    ",", 
                     RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"608\"\>"}], ",", 
                     
                     RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"211\"\>"}], ",", 
                     
                     RowBox[{"\<\"alt\"\>", 
-                    "\[Rule]", "\<\"Science & Cooking\"\>"}]}], "}"}], ",", 
+                    "\[Rule]", "\<\"Introduction to Bioethics\"\>"}]}], "}"}],
+                     ",", 
                     RowBox[{"{", "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"article\"\>", ",", 
@@ -1663,47 +1831,21 @@ views-row-first views-row-last\"\>"}], "}"}], ",",
                     "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"a\"\>", ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
-                    
-                    RowBox[{"\<\"href\"\>", 
-                    "\[Rule]", \
-"\<\"http://youtube.com/watch?v=AUEJNW3PrHI\"\>"}], ",", 
-                    
-                    RowBox[{"\<\"rel\"\>", 
-                    "\[Rule]", "\<\"lightvideo\"\>"}]}], "}"}], ",", 
-                    RowBox[{"{", "}"}]}], "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"playvideo\"\>"}],
-                     "}"}], ",", 
-                    RowBox[{"{", "}"}]}], "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"description\"\>"}], "}"}], ",", 
-                    RowBox[{
-                    "{", "\<\"Watch the Course Intro Video\"\>", "}"}]}], 
-                    "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"img\"\>", ",", 
                     RowBox[{"{", 
                     RowBox[{
                     
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://www.edx.org/sites/default/files/harvard_cooking_video_320x211.\
-jpg\"\>"}], ",", 
+"\<\"https://www.edx.org/sites/default/files/gtown_no_video_320x211_0.png\"\>\
+"}], ",", 
                     RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"320\"\>"}], ",", 
                     
                     RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"211\"\>"}], ",", 
-                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}], 
-                    ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Play Introduction to Bioethics \
+Video\"\>"}]}], "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"section\"\>", ",", 
@@ -1727,9 +1869,8 @@ jpg\"\>"}], ",",
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"h1\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
-                    RowBox[{
-                    "{", "\<\"Science & Cooking: From Haute Cuisine to Soft \
-Matter Science\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"{", "\<\"Introduction to Bioethics\"\>", "}"}]}],
+                     "]"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -1740,9 +1881,10 @@ Matter Science\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",",
                     RowBox[{"\<\"h2\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"Top chefs and Harvard researchers explore how \
-everyday cooking and haute cuisine can illuminate basic principles in physics \
-and engineering, and vice versa.\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    "{", "\<\"Introduction to Bioethics explores some of the \
+most difficult - and fascinating - moral challenges we face in health, \
+medicine, and emerging technologies. \"\>", "}"}]}], "]"}], "}"}]}], "]"}], 
+                    ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -1766,35 +1908,34 @@ and engineering, and vice versa.\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",",
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"During each week of the course, you will watch \
-as chefs reveal the secrets behind some of their most famous culinary \
-creations \[LongDash] often right in their own restaurants. Inspired by such \
-cooking mastery, the Harvard team will then explain, in simple and \
-sophisticated ways, the science behind the recipe.\"\>", "}"}]}], "]"}], 
+                    "{", "\<\"Should we clone humans? Who owns our DNA? How \
+much control should we have over how and when we die? When does medical \
+treatment turn into medical enhancement \[LongDash] and should we care? Is \
+rationing health care good, bad, necessary \[LongDash] or all of the above?\"\
+\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"This course will explore fundamental moral \
+issues that arise in medicine, health, and biotechnology. Get behind the \
+headlines \[LongDash] and polarized debates \[LongDash] and join others who \
+want to think deeply and openly about these problems. Some are as old as life \
+itself: the vulnerability of illness, the fact of death. Some are new, \
+brought on by a dizzying pace of technology that can unsettle our core ideas \
+about human nature and our place in the world. And nearly all intersect with \
+issues of racial and gender equality, as well as policies affecting the world\
+\[CloseCurlyQuote]s most vulnerable populations.\"\>", "}"}]}], "]"}], 
                     ",", "\<\"\\n\"\>", ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"Topics will include: soft matter materials, \
-such as emulsions, illustrated by aioli; elasticity, exemplified by the \
-done-ness of a steak; and diffusion, revealed by the phenomenon of \
-spherification, the culinary technique pioneered by Ferran \
-Adri\[AGrave].\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>", ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"p\"\>", ",", 
-                    RowBox[{"{", "}"}], ",", 
-                    RowBox[{
-                    "{", "\<\"To help you make the link between cooking and \
-science, an \[OpenCurlyDoubleQuote]equation of the week\
-\[CloseCurlyDoubleQuote] will capture the core scientific concept being \
-explored. You will also have the opportunity to be an experimental scientist \
-in your very own laboratory \[LongDash] your kitchen. By following along with \
-the engaging recipe of the week, taking measurements, and making \
-observations, you will learn to think both like a cook and a scientist. The \
-lab is also one of the most unique components of this course \[LongDash] \
-after all, in what other science course do you get to eat your lab?\"\>", 
-                    "}"}]}], "]"}], ",", "\<\"\\n\"\>", ",", 
+                    "{", "\<\"Designed to introduce students to the range of \
+issues that define bioethics, together with core concepts and skills, this \
+course should be of interest to undergraduates, health care professionals, \
+policy makers, and anyone interested in philosophy or ethics.\"\>", "}"}]}], 
+                    "]"}], ",", "\<\"\\n\"\>", ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
@@ -1825,6 +1966,11 @@ after all, in what other science course do you get to eat your lab?\"\>",
                     "\[Rule]", \
 "\<\"/sites/default/files/certificate_R8_plain.png\"\>"}]}], "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", "\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"\[NonBreakingSpace]\"\>", "}"}]}], 
                     "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
@@ -1853,7 +1999,7 @@ after all, in what other science course do you get to eat your lab?\"\>",
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"view view-course-view view-id-course_view \
 view-display-id-block_course_professor \
-view-dom-id-f897b0f6e19bccbcec4d862a1c870751\"\>"}], "}"}], ",", 
+view-dom-id-a3a33b044d4077e004b69492697982ba\"\>"}], "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{"\<\"\\n        \\n  \\n  \\n      \"\>", ",", 
                     RowBox[{"XMLElement", "[", 
@@ -1904,15 +2050,15 @@ views-row-first\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://www.edx.org/sites/default/files/brenner_x110.jpg\"\>"}], ",", 
+"\<\"https://www.edx.org/sites/default/files/beauchamp_x110.jpg\"\>"}], ",", 
                     RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
                     
                     RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
                     
                     RowBox[{"\<\"alt\"\>", 
-                    "\[Rule]", "\<\"Michael Brenner\"\>"}], ",", 
+                    "\[Rule]", "\<\"Tom Beauchamp Portrait\"\>"}], ",", 
                     RowBox[{"\<\"title\"\>", 
-                    "\[Rule]", "\<\"Michael Brenner\"\>"}]}], "}"}], ",", 
+                    "\[Rule]", "\<\"Tom Beauchamp\"\>"}]}], "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
                     "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
@@ -1929,8 +2075,7 @@ views-row-first\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
-                    RowBox[{"{", "\<\"Michael Brenner\"\>", "}"}]}], "]"}], 
-                    ",", 
+                    RowBox[{"{", "\<\"Tom Beauchamp\"\>", "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -1942,21 +2087,31 @@ views-row-first\"\>"}], "}"}], ",",
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Tom Beauchamp is Professor of Philosophy at \
+Georgetown University and Senior Research Scholar at the Kennedy Institute of \
+Ethics, where his research specialties include ethics of human-subjects \
+research and the place of universal principles and rights in biomedical \
+ethics. One of the founding fathers of bioethics, he was one of the lead \
+authors of the\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"em\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\" Belmont Report\"\>", "}"}]}], "]"}], 
+                    ",", "\<\", the 1978 paper that established the first \
+ethical guidelines for conducting research on humans, and is co-author with \
+Jim Childress of \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"em\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"Michael Brenner is the Glover Professor of \
-Applied Mathematics and Applied Physics, and Harvard College Professor at the \
-Harvard School of Engineering and Applied Sciences. He developed the popular \
-Harvard class, \\\"Science and Cooking: From Haute Cuisine to the Science of \
-Soft Matter,\\\" with his colleague David Weitz and chef Ferran \
-Adri\[AGrave]. His research uses mathematics to examine a wide variety of \
-problems in science and engineering, ranging from understanding the shapes of \
-bird beaks, whale flippers and fungal spores, to finding the principles for \
-designing materials that can assemble themselves, to answering ordinary \
-questions about daily life, such as why a droplet of fluid splashes when it \
-collides with a solid surface.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], 
-                    "}"}]}], "]"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
-                    ",", "\<\"  \"\>"}], "}"}]}], "]"}], ",", "\<\"\\n  \"\>",
-                     ",", 
+                    "{", "\<\"Principles of Biomedical Ethics\"\>", "}"}]}], 
+                    "]"}], ",", "\<\", currently in its 6th edition \
+\[LongDash] the world\[CloseCurlyQuote]s most widely used bioethics textbook.\
+\"\>"}], "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], 
+                    "]"}]}], "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], 
+                    "]"}], ",", "\<\"\\n  \"\>", ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -1986,6 +2141,7 @@ views-row-even\"\>"}], "}"}], ",",
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
+                    
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
                     RowBox[{"{", 
@@ -1996,14 +2152,16 @@ views-row-even\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://www.edx.org/sites/default/files/weitz_x110.jpg\"\>"}], ",", 
+"\<\"https://www.edx.org/sites/default/files/keown_x110.jpg\"\>"}], ",", 
                     RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
                     
                     RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
-                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"David Weitz\"\>"}],
-                     ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"John Keown Portrait\"\>"}], ",", 
                     RowBox[{"\<\"title\"\>", 
-                    "\[Rule]", "\<\"David Weitz\"\>"}]}], "}"}], ",", 
+                    "\[Rule]", "\<\"John Keown Portrait\"\>"}]}], "}"}], ",", 
+                    
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
                     "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
@@ -2020,7 +2178,7 @@ views-row-even\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
-                    RowBox[{"{", "\<\"David Weitz\"\>", "}"}]}], "]"}], ",", 
+                    RowBox[{"{", "\<\"John Keown\"\>", "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2033,14 +2191,207 @@ views-row-even\"\>"}], "}"}], ",",
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"David Weitz is a Professor of Physics and \
-Applied Physics, at the Harvard School of Engineering and Applied Sciences \
-and the Department of Physics. He developed the popular Harvard class, \
-\\\"Science and Cooking: From Haute Cuisine to the Science of Soft \
-Matter,\\\" with his colleague Michael Brenner and chef Ferran Adri\[AGrave]. \
-His research group studies the science of soft matter materials as well as \
-biophysics and biotechnology.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], 
-                    "}"}]}], "]"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
+                    "{", "\<\"John Keown is the Rose F. Kennedy Professor of \
+Christian Ethics at the Kennedy Institute of Ethics. His research on the \
+legal and ethical aspects of medicine has been cited by the United States \
+Supreme Court, the Law Lords, the House of Commons, the House of Lords Select \
+Committee on Medical Ethics, and the Australian Senate, before which he was \
+invited to testify. He obtained his D.Phil from the University of Oxford and \
+his Ph.D. from the University of Cambridge.\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-3 \
+views-row-odd\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/kukla_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Rebecca Kukla Portrait\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Rebecca Kukla\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Rebecca Kukla\"\>", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Rebecca Kukla is Professor of Philosophy at \
+Georgetown University and Senior Research Scholar at the Kennedy Institute of \
+Ethics. Her background in philosophy of science, philosophy of language, and \
+cultural theory inform and enrich her work in bioethics. She is especially \
+interested in how medical risk and uncertainty are represented and managed at \
+the level of individual decision-making, scientific methodology, policy, and \
+the culture at large. She gives media interviews, expert testimony, and \
+policy advice on issues in the ethics of reproductive health care. She has \
+served as co-coordinator of the Feminist Approaches to Bioethics Network and \
+is the current co-editor of the \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"em\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Kennedy Institute of Ethics Journal\"\>", 
+                    "}"}]}], "]"}], ",", "\<\".\"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-4 \
+views-row-even\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/little_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Margaret Little Portrait\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Margaret Little\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Margaret Little\"\>", "}"}]}], "]"}], 
+                    ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Maggie Little is Director of the Kennedy \
+Institute of Ethics and Associate Professor of Philosophy at Georgetown. Her \
+writings on abortion, cosmetic surgery, and reasoning about risk have been \
+widely reprinted. She has twice served as Visiting Scholar in residence at \
+the National Institutes of Health Department of Bioethics. She is a founding \
+member of The Ob-Gyn Risk Research Group, which brings together experts from \
+medical epidemiology, obstetrics and gynecology, philosophy, bioethics, \
+gender theory, and the medical humanities, for research encompassing a wide \
+variety of issues in reproductive health and clinical research ethics. \
+Together with Ruth Faden and Anne Lyerly, she co-founded The Second Wave \
+Initiative, which works to promote responsible research into the health needs \
+of pregnant women.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], 
+                    "]"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
                     ",", "\<\"  \"\>"}], "}"}]}], "]"}], ",", "\<\"\\n  \"\>",
                      ",", 
                     RowBox[{"XMLElement", "[", 
@@ -2048,7 +2399,207 @@ biophysics and biotechnology.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}],
                     RowBox[{"{", 
                     
                     RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"views-row views-row-3 views-row-odd \
+                    "\[Rule]", "\<\"views-row views-row-5 \
+views-row-odd\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/powers_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Madison Powers Portrait\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Madison Powers\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Madison Powers\"\>", "}"}]}], "]"}], 
+                    ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"Madison Powers is Professor of Philosophy at \
+Georgetown University and Senior Research Scholar at the Kennedy Institute of \
+Ethics. He is co-author, with Ruth Faden, of \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"em\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Social Justice: The Moral Foundations of Public \
+Health and Health Policy\"\>", "}"}]}], "]"}], 
+                    ",", "\<\". His current research centers on the \
+application of political philosophy in issues arising in health and \
+environmental policy. He is also author of the \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"http://www.fewresources.org/\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"FEW Project\"\>", "}"}]}], "]"}], 
+                    ",", "\<\", a web resource on the intertwined challenges \
+of Food, Energy, and Water. With a background in both law and philosophy, Dr. \
+Powers served as a member of the Privacy Working Group of the Clinton Health \
+Care Task Force and was appointed by President George W. Bush as a member of \
+the NIH Recombinant DNA Advisory Committee.\"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-6 \
+views-row-even\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/stohr_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Karen Stohr Portrait\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Karen Stohr Portrait\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Karen Stohr\"\>", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Karen Stohr is Associate Professor of \
+Philosophy at Georgetown and Senior Research Scholar at the Kennedy Institute \
+of Ethics. Her primary research interests are in Aristotelian virtue ethics \
+and Kantian ethics, with publications on topics such as moral emotion and \
+imagination, the virtue of practical wisdom, and the duty of beneficence. Dr. \
+Stohr has extensive experience teaching on a range of issues in bioethics, \
+including stem cell research, ordinary and extraordinary care, objections of \
+conscience for health care providers, and attitudes toward animals.\"\>", 
+                    "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}]}], "}"}]}], "]"}], ",", "\<\"  \"\>"}], 
+                    "}"}]}], "]"}], ",", "\<\"\\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-7 views-row-odd \
 views-row-last\"\>"}], "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
@@ -2083,17 +2634,16 @@ views-row-last\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://www.edx.org/sites/default/files/sorensen_x110.jpg\"\>"}], ",", 
+"\<\"https://www.edx.org/sites/default/files/veatch_x110.jpg\"\>"}], ",", 
                     RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
                     
                     RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
                     
                     RowBox[{"\<\"alt\"\>", 
-                    "\[Rule]", "\<\"Pia S\[ODoubleDot]rensen\"\>"}], ",", 
+                    "\[Rule]", "\<\"Robert M. Veatch  Portrait\"\>"}], ",", 
                     
                     RowBox[{"\<\"title\"\>", 
-                    "\[Rule]", "\<\"Pia S\[ODoubleDot]rensen\"\>"}]}], "}"}], 
-                    ",", 
+                    "\[Rule]", "\<\"Robert M. Veatch \"\>"}]}], "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
                     "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
@@ -2110,8 +2660,8 @@ views-row-last\"\>"}], "}"}], ",",
                     
                     RowBox[{"\<\"class\"\>", 
                     "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
-                    RowBox[{"{", "\<\"Pia S\[ODoubleDot]rensen\"\>", "}"}]}], 
-                    "]"}], ",", 
+                    RowBox[{"{", "\<\"Robert M. Veatch \"\>", "}"}]}], "]"}], 
+                    ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2124,47 +2674,19 @@ views-row-last\"\>"}], "}"}], ",",
                     RowBox[{"\<\"p\"\>", ",", 
                     RowBox[{"{", "}"}], ",", 
                     RowBox[{
-                    "{", "\<\"Pia S\[ODoubleDot]rensen is Preceptor of \
-Science and Cooking at the School of Engineering and Applied Sciences at \
-Harvard University, and the HarvardX Fellow for Science & CookingX. She \
-earned her PhD in Chemical Biology at Harvard University, studying small \
-molecule inhibitors of cell division.\"\>", "}"}]}], "]"}], 
+                    "{", "\<\"Robert M. Veatch is Professor of Medical Ethics \
+and Senior Research Scholar at the Kennedy Institute of Ethics. One of the \
+pioneers of contemporary medical ethics, Dr. Veatch served as an ethics \
+consultant in the early legal case of Karen Ann Quinlan, the woman whose \
+parents won the right to forgo life-support, and testified in the case of \
+Baby K, an anencephalic infant whose mother argued for a right of access to \
+continued ventilatory support. He has worked extensively on death and dying, \
+human experimentation, and organ transplantation.\"\>", "}"}]}], "]"}], 
                     ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], "]"}]}], 
                     "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
                     ",", "\<\"\\n    \"\>"}], "}"}]}], "]"}], 
                     ",", "\<\"\\n  \\n  \\n  \\n  \\n  \\n  \\n\"\>"}], 
                     "}"}]}], "]"}]}], "}"}]}], "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-left\"\>"}], ",", 
-                    
-                    RowBox[{"\<\"id\"\>", 
-                    "\[Rule]", "\<\"prerequisites-container\"\>"}]}], "}"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-left-title\"\>"}], "}"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"h3\"\>", ",", 
-                    RowBox[{"{", "}"}], ",", 
-                    RowBox[{"{", "\<\"Prerequisites:\"\>", "}"}]}], "]"}], 
-                    "}"}]}], "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"p\"\>", ",", 
-                    RowBox[{"{", "}"}], ",", 
-                    RowBox[{"{", "\<\"None\"\>", "}"}]}], "]"}], 
-                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2204,8 +2726,8 @@ action-register-course\"\>"}], "}"}], ",",
                     ",", 
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://courses.edx.org/mktg/HarvardX/SPU27x/2013_Oct\"\>"}]}], "}"}], 
-                    ",", 
+"\<\"https://courses.edx.org/mktg/GeorgetownX/PHLX101-01/2013_Fall\"\>"}]}], 
+                    "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
                     "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
@@ -2235,7 +2757,7 @@ action-register-course\"\>"}], "}"}], ",",
                     RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
                     "}"}], ",", 
                     RowBox[{"{", "\<\"School:\"\>", "}"}]}], "]"}], 
-                    ",", "\<\"HarvardX\"\>"}], "}"}]}], "]"}], ",", 
+                    ",", "\<\"GeorgetownX\"\>"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2249,7 +2771,7 @@ action-register-course\"\>"}], "}"}], ",",
                     RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
                     "}"}], ",", 
                     RowBox[{"{", "\<\"Course code:\"\>", "}"}]}], "]"}], 
-                    ",", "\<\"SPU27x\"\>"}], "}"}]}], "]"}], ",", 
+                    ",", "\<\"PHLX101-01\"\>"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2263,52 +2785,23 @@ action-register-course\"\>"}], "}"}], ",",
                     RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
                     "}"}], ",", 
                     RowBox[{"{", "\<\"Classes start:\"\>", "}"}]}], "]"}], 
-                    ",", "\<\"October 2013\"\>"}], "}"}]}], "]"}]}], "}"}]}], 
-                    "]"}], ",", 
+                    ",", "\<\"15 Oct 2013\"\>"}], "}"}]}], "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
                     
                     RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-right\"\>"}], "}"}], ",", 
+                    "\[Rule]", "\<\"duration last\"\>"}], "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-right-title\"\>"}], "}"}], 
-                    ",", 
-                    RowBox[{"{", "\<\"Prerequisites:\"\>", "}"}]}], "]"}], 
-                    ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-right-container\"\>"}], 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
                     "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"p\"\>", ",", 
-                    RowBox[{"{", "}"}], ",", 
-                    RowBox[{"{", "\<\"None\"\>", "}"}]}], "]"}], 
-                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
-                    RowBox[{"XMLElement", "[", 
-                    RowBox[{"\<\"div\"\>", ",", 
-                    RowBox[{"{", 
-                    RowBox[{
-                    
-                    RowBox[{"\<\"class\"\>", 
-                    "\[Rule]", "\<\"prerequisites-right-seemore\"\>"}], ",", 
-                    
-                    RowBox[{"\<\"id\"\>", 
-                    "\[Rule]", "\<\"prerequisites-seemore\"\>"}]}], "}"}], 
-                    ",", 
-                    RowBox[{"{", "\<\"see more...\"\>", "}"}]}], "]"}]}], 
-                    "}"}]}], "]"}], ",", 
+                    RowBox[{"{", "\<\"Course length:\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"6 weeks\"\>"}], "}"}]}], "]"}]}], "}"}]}], 
+                    "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
                     RowBox[{"\<\"div\"\>", ",", 
                     RowBox[{"{", 
@@ -2333,8 +2826,8 @@ action-register-course\"\>"}], "}"}], ",",
                     ",", 
                     RowBox[{"\<\"src\"\>", 
                     "\[Rule]", \
-"\<\"https://courses.edx.org/mktg/HarvardX/SPU27x/2013_Oct\"\>"}]}], "}"}], 
-                    ",", 
+"\<\"https://courses.edx.org/mktg/GeorgetownX/PHLX101-01/2013_Fall\"\>"}]}], 
+                    "}"}], ",", 
                     RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
                     "]"}], ",", 
                     RowBox[{"XMLElement", "[", 
@@ -2447,12 +2940,13 @@ https://www.edx.org.\"\>"}], ",",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
                     RowBox[{"\<\"href\"\>", 
                     "\[Rule]", \
 "\<\"mailto:?subject=Take%20a%20course%20with%20edX%20online&body=I just \
 registered for an #edX course - join me at: \
-http://www.edx.org/course/harvard-university/spu27x/science-cooking-haute-\
-cuisine/639\"\>"}], ",", 
+http://www.edx.org/course/georgetown-university/phlx101-01/introduction-\
+bioethics/811\"\>"}], ",", 
                     RowBox[{"\<\"title\"\>", 
                     "\[Rule]", "\<\"email share\"\>"}]}], "}"}], ",", 
                     RowBox[{"{", 
@@ -2492,6 +2986,7 @@ cuisine/639\"\>"}], ",",
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
                     RowBox[{"\<\"href\"\>", 
                     "\[Rule]", "\<\"http://edx.meetup.com/\"\>"}], ",", 
                     RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
@@ -2931,11 +3426,12 @@ appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=\
 NREUMQ.f;};NREUMQ.push([\\\"nrfj\\\",\\\"beacon-1.newrelic.com\\\",\\\"\
 1beac94c95\\\",\\\"1800846\\\",\\\"\
 NQQGYUZWDUNSVUMPWQxOJVZAXgxeHEZWAVM9DAVbVVAGQmxYWAJTPRcNUENoE1FUUw==\\\",0,\
-360,new Date().getTime(),\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]);\"\>",
+756,new Date().getTime(),\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]);\"\>",
                "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], 
       "}"}]}], "]"}], ",", 
    RowBox[{"{", "}"}]}], "]"}]], "Output",
- CellChangeTimes->{3.578705372436186*^9, 3.57870630440676*^9}]
+ CellChangeTimes->{3.578705372436186*^9, 3.57870630440676*^9, 
+  3.578707751244051*^9}]
 }, Closed]]
 }, Open  ]],
 
@@ -3999,143 +4495,156 @@ Cell[CellGroupData[{
 Cell[579, 22, 88, 1, 74, "Section"],
 Cell[CellGroupData[{
 Cell[692, 27, 382, 7, 30, "Input"],
-Cell[1077, 36, 301, 4, 30, "Output"]
+Cell[1077, 36, 349, 5, 30, "Output"]
 }, Open  ]],
-Cell[1393, 43, 131, 3, 30, "Text"],
+Cell[1441, 44, 131, 3, 30, "Text"],
 Cell[CellGroupData[{
-Cell[1549, 50, 119, 2, 30, "Input"],
-Cell[1671, 54, 92, 1, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[1800, 60, 511, 13, 30, "Input"],
-Cell[2314, 75, 503, 9, 50, "Output"]
-}, Open  ]],
-Cell[2832, 87, 684, 17, 30, "Input"],
-Cell[3519, 106, 9831, 222, 601, "Input"],
-Cell[13353, 330, 1568, 36, 69, "Input"],
-Cell[14924, 368, 1496, 35, 107, "Input"],
-Cell[16423, 405, 139, 4, 49, "Text"],
-Cell[CellGroupData[{
-Cell[16587, 413, 526, 13, 30, "Input"],
-Cell[17116, 428, 309, 4, 30, "Output"]
-}, Open  ]],
-Cell[17440, 435, 414, 12, 30, "Input"],
-Cell[CellGroupData[{
-Cell[17879, 451, 213, 4, 30, "Input"],
-Cell[18095, 457, 146, 3, 30, "Output"]
+Cell[1597, 51, 119, 2, 30, "Input"],
+Cell[1719, 55, 139, 2, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18278, 465, 499, 10, 50, "Input"],
-Cell[18780, 477, 335, 5, 30, "Output"]
+Cell[1895, 62, 511, 13, 30, "Input"],
+Cell[2409, 77, 551, 10, 50, "Output"]
 }, Open  ]],
-Cell[19130, 485, 138, 3, 30, "Text"],
+Cell[2975, 90, 684, 17, 30, "Input"],
+Cell[3662, 109, 9831, 222, 601, "Input"],
+Cell[13496, 333, 1568, 36, 69, "Input"],
+Cell[15067, 371, 1212, 32, 69, "Input"],
+Cell[16282, 405, 1496, 35, 107, "Input"],
+Cell[17781, 442, 177, 4, 68, "Text"],
 Cell[CellGroupData[{
-Cell[19293, 492, 696, 17, 50, "Input"],
-Cell[19992, 511, 166, 2, 30, "Output"]
-}, Open  ]],
-Cell[20173, 516, 424, 12, 30, "Input"],
-Cell[CellGroupData[{
-Cell[20622, 532, 886, 21, 69, "Input"],
-Cell[21511, 555, 910, 16, 69, "Output"],
-Cell[22424, 573, 145, 2, 30, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[22606, 580, 762, 19, 50, "Input"],
-Cell[23371, 601, 189, 3, 30, "Output"]
+Cell[17983, 450, 526, 13, 30, "Input"],
+Cell[18512, 465, 356, 5, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23597, 609, 302, 6, 30, "Input"],
-Cell[23902, 617, 210, 3, 30, "Output"]
+Cell[18905, 475, 213, 4, 30, "Input"],
+Cell[19121, 481, 190, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24149, 625, 129, 2, 30, "Input"],
-Cell[24281, 629, 4654, 89, 918, "Output"]
+Cell[19348, 489, 130, 2, 30, "Input"],
+Cell[19481, 493, 95, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19613, 499, 499, 10, 50, "Input"],
+Cell[20115, 511, 379, 5, 30, "Output"]
+}, Open  ]],
+Cell[20509, 519, 138, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[20672, 526, 696, 17, 50, "Input"],
+Cell[21371, 545, 214, 3, 30, "Output"]
+}, Open  ]],
+Cell[21600, 551, 424, 12, 30, "Input"],
+Cell[CellGroupData[{
+Cell[22049, 567, 886, 21, 69, "Input"],
+Cell[22938, 590, 933, 16, 69, "Output"],
+Cell[23874, 608, 168, 2, 30, "Output"]
+}, Open  ]],
+Cell[24057, 613, 562, 10, 87, "Text"],
+Cell[CellGroupData[{
+Cell[24644, 627, 2983, 71, 183, "Input"],
+Cell[27630, 700, 1051, 24, 156, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28718, 729, 888, 22, 50, "Input"],
+Cell[29609, 753, 237, 4, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29883, 762, 340, 6, 30, "Input"],
+Cell[30226, 770, 131, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30394, 777, 198, 4, 30, "Input"],
+Cell[30595, 783, 109, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30741, 789, 129, 2, 30, "Input"],
+Cell[30873, 793, 5222, 93, 987, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28984, 724, 90, 1, 74, "Section"],
+Cell[36144, 892, 90, 1, 74, "Section"],
 Cell[CellGroupData[{
-Cell[29099, 729, 282, 7, 30, "Input"],
-Cell[29384, 738, 106451, 2199, 8500, "Output"]
+Cell[36259, 897, 331, 8, 30, "Input"],
+Cell[36593, 907, 122601, 2526, 10191, "Output"]
 }, Closed]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[135884, 2943, 91, 1, 74, "Section"],
+Cell[159243, 3439, 91, 1, 74, "Section"],
 Cell[CellGroupData[{
-Cell[136000, 2948, 340, 9, 50, "Input"],
-Cell[136343, 2959, 4629, 130, 114, "Output"]
+Cell[159359, 3444, 340, 9, 50, "Input"],
+Cell[159702, 3455, 4629, 130, 114, "Output"]
 }, Open  ]],
-Cell[140987, 3092, 292, 8, 30, "Input"],
+Cell[164346, 3588, 292, 8, 30, "Input"],
 Cell[CellGroupData[{
-Cell[141304, 3104, 1229, 32, 69, "Input"],
-Cell[142536, 3138, 516, 14, 52, "Output"]
+Cell[164663, 3600, 1229, 32, 69, "Input"],
+Cell[165895, 3634, 516, 14, 52, "Output"]
 }, Open  ]],
-Cell[143067, 3155, 2626, 58, 189, "Input"],
+Cell[166426, 3651, 2626, 58, 189, "Input"],
 Cell[CellGroupData[{
-Cell[145718, 3217, 1203, 29, 120, "Input"],
-Cell[146924, 3248, 986, 23, 30, "Output"],
-Cell[147913, 3273, 767, 18, 171, "Output"]
+Cell[169077, 3713, 1203, 29, 120, "Input"],
+Cell[170283, 3744, 986, 23, 30, "Output"],
+Cell[171272, 3769, 767, 18, 171, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[148729, 3297, 112, 1, 74, "Section"],
-Cell[148844, 3300, 170, 3, 30, "Input"],
-Cell[149017, 3305, 500, 12, 30, "Input"],
+Cell[172088, 3793, 112, 1, 74, "Section"],
+Cell[172203, 3796, 170, 3, 30, "Input"],
+Cell[172376, 3801, 500, 12, 30, "Input"],
 Cell[CellGroupData[{
-Cell[149542, 3321, 639, 16, 30, "Input"],
-Cell[150184, 3339, 669, 12, 81, "Message"],
-Cell[150856, 3353, 669, 12, 81, "Message"],
-Cell[151528, 3367, 667, 12, 81, "Message"],
-Cell[152198, 3381, 557, 11, 24, "Message"]
+Cell[172901, 3817, 639, 16, 30, "Input"],
+Cell[173543, 3835, 669, 12, 81, "Message"],
+Cell[174215, 3849, 669, 12, 81, "Message"],
+Cell[174887, 3863, 667, 12, 81, "Message"],
+Cell[175557, 3877, 557, 11, 24, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[152792, 3397, 539, 14, 30, "Input"],
-Cell[153334, 3413, 645, 12, 81, "Message"],
-Cell[153982, 3427, 645, 12, 81, "Message"],
-Cell[154630, 3441, 645, 12, 81, "Message"],
-Cell[155278, 3455, 536, 11, 24, "Message"]
+Cell[176151, 3893, 539, 14, 30, "Input"],
+Cell[176693, 3909, 645, 12, 81, "Message"],
+Cell[177341, 3923, 645, 12, 81, "Message"],
+Cell[177989, 3937, 645, 12, 81, "Message"],
+Cell[178637, 3951, 536, 11, 24, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[155851, 3471, 450, 9, 30, "Input"],
-Cell[156304, 3482, 171, 3, 30, "Output"]
+Cell[179210, 3967, 450, 9, 30, "Input"],
+Cell[179663, 3978, 171, 3, 30, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[156512, 3490, 2296, 53, 119, "Input"],
-Cell[158811, 3545, 1023, 18, 81, "Message"],
-Cell[159837, 3565, 1025, 18, 81, "Message"],
-Cell[160865, 3585, 1022, 18, 81, "Message"],
-Cell[161890, 3605, 916, 17, 24, "Message"]
+Cell[179871, 3986, 2296, 53, 119, "Input"],
+Cell[182170, 4041, 1023, 18, 81, "Message"],
+Cell[183196, 4061, 1025, 18, 81, "Message"],
+Cell[184224, 4081, 1022, 18, 81, "Message"],
+Cell[185249, 4101, 916, 17, 24, "Message"]
 }, Open  ]],
-Cell[162821, 3625, 353, 8, 30, "Input"],
+Cell[186180, 4121, 353, 8, 30, "Input"],
 Cell[CellGroupData[{
-Cell[163199, 3637, 215, 4, 30, "Input"],
-Cell[163417, 3643, 214, 3, 30, "Output"]
+Cell[186558, 4133, 215, 4, 30, "Input"],
+Cell[186776, 4139, 214, 3, 30, "Output"]
 }, Open  ]],
-Cell[163646, 3649, 451, 12, 30, "Input"],
-Cell[164100, 3663, 450, 12, 30, "Input"],
+Cell[187005, 4145, 451, 12, 30, "Input"],
+Cell[187459, 4159, 450, 12, 30, "Input"],
 Cell[CellGroupData[{
-Cell[164575, 3679, 286, 8, 30, "Input"],
-Cell[164864, 3689, 447, 10, 49, "Message"],
-Cell[165314, 3701, 475, 10, 24, "Message"],
-Cell[165792, 3713, 477, 10, 24, "Message"]
+Cell[187934, 4175, 286, 8, 30, "Input"],
+Cell[188223, 4185, 447, 10, 49, "Message"],
+Cell[188673, 4197, 475, 10, 24, "Message"],
+Cell[189151, 4209, 477, 10, 24, "Message"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[166306, 3728, 658, 17, 30, "Input"],
-Cell[166967, 3747, 538, 11, 49, "Message"],
-Cell[167508, 3760, 566, 11, 24, "Message"],
-Cell[168077, 3773, 566, 11, 24, "Message"],
-Cell[168646, 3786, 536, 11, 49, "Message"],
-Cell[169185, 3799, 568, 11, 24, "Message"],
-Cell[169756, 3812, 625, 12, 24, "Message"],
-Cell[170384, 3826, 538, 11, 49, "Message"],
-Cell[170925, 3839, 621, 12, 24, "Message"]
+Cell[189665, 4224, 658, 17, 30, "Input"],
+Cell[190326, 4243, 538, 11, 49, "Message"],
+Cell[190867, 4256, 566, 11, 24, "Message"],
+Cell[191436, 4269, 566, 11, 24, "Message"],
+Cell[192005, 4282, 536, 11, 49, "Message"],
+Cell[192544, 4295, 568, 11, 24, "Message"],
+Cell[193115, 4308, 625, 12, 24, "Message"],
+Cell[193743, 4322, 538, 11, 49, "Message"],
+Cell[194284, 4335, 621, 12, 24, "Message"]
 }, Open  ]],
-Cell[171561, 3854, 914, 24, 30, "Input"],
-Cell[172478, 3880, 682, 17, 50, "Input"],
-Cell[173163, 3899, 674, 17, 50, "Input"],
-Cell[173840, 3918, 961, 24, 30, "Input"],
-Cell[174804, 3944, 657, 16, 50, "Input"],
-Cell[175464, 3962, 603, 16, 50, "Input"]
+Cell[194920, 4350, 914, 24, 30, "Input"],
+Cell[195837, 4376, 682, 17, 50, "Input"],
+Cell[196522, 4395, 674, 17, 50, "Input"],
+Cell[197199, 4414, 961, 24, 30, "Input"],
+Cell[198163, 4440, 657, 16, 50, "Input"],
+Cell[198823, 4458, 603, 16, 50, "Input"]
 }, Closed]]
 }
 ]
