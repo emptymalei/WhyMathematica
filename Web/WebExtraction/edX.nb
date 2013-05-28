@@ -1,0 +1,4144 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    180886,       4135]
+NotebookOptionsPosition[    176083,       3981]
+NotebookOutlinePosition[    176418,       3996]
+CellTagsIndexPosition[    176375,       3993]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Now", "Section",
+ CellChangeTimes->{{3.578696586796347*^9, 3.578696587028269*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"urlbase", "=", 
+  "\"\<https://www.edx.org/course-list/allschools/allsubjects/new\>\""}]], \
+"Input",
+ CellChangeTimes->{{3.578696605436862*^9, 3.578696606446692*^9}, {
+   3.578696643904507*^9, 3.578696653911947*^9}, 3.578697674315326*^9, 
+   3.578699080589685*^9, 3.578701013453198*^9, {3.578701794733515*^9, 
+   3.578701823362764*^9}, 3.57870224736525*^9}],
+
+Cell[BoxData["\<\"https://www.edx.org/course-list/allschools/allsubjects/new\"\
+\>"], "Output",
+ CellChangeTimes->{{3.578696651090086*^9, 3.578696655454486*^9}, 
+   3.578697675430804*^9, 3.578699080893314*^9, 3.578701013753096*^9, 
+   3.578701369543719*^9, 3.578702247919702*^9, 3.578702973571018*^9}]
+}, Open  ]],
+
+Cell["\<\
+https://www.edx.org/course-list/allschools/allsubjects/new?page=3\
+\>", "Text",
+ CellChangeTimes->{3.578702209800278*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pages", "=", "3"}]], "Input",
+ CellChangeTimes->{{3.578702276237824*^9, 3.578702277795059*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.578702278169145*^9, 3.578702975238044*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"url", "=", 
+  RowBox[{"Prepend", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"urlbase", "<>", "\"\</?page=\>\"", "<>", 
+       RowBox[{"ToString", "[", "i", "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "pages"}], "}"}]}], "]"}], ",", 
+    "urlbase"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.578702176843572*^9, 3.57870223561967*^9}, {
+  3.578702270642775*^9, 3.578702272177981*^9}, {3.578702887937271*^9, 
+  3.578702894325761*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"https://www.edx.org/course-list/allschools/allsubjects/new\"\>\
+", ",", "\<\"https://www.edx.org/course-list/allschools/allsubjects/new/?page=\
+1\"\>", ",", \
+"\<\"https://www.edx.org/course-list/allschools/allsubjects/new/?page=2\"\>", 
+   ",", "\<\"https://www.edx.org/course-list/allschools/allsubjects/new/?page=\
+3\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.578702236925661*^9, 3.578702279000783*^9}, 
+   3.578702894953486*^9, 3.578702976325596*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rawData", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"url", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<XMLObject\>\""}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"pages", "+", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.578696660078483*^9, 3.578696693220961*^9}, 
+   3.578696864220144*^9, {3.578697686618709*^9, 3.578697690846075*^9}, {
+   3.578701787936664*^9, 3.578701789783768*^9}, {3.578702257077691*^9, 
+   3.578702267778242*^9}, {3.578702901264232*^9, 3.578702901497235*^9}, 
+   3.57870533916683*^9}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<article\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<course-tile\>\""}], "}"}], 
+        ",", 
+        RowBox[{"{", "}"}]}], "]"}], ",", 
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<div\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<left-col\>\""}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<class\>\"", "\[Rule]", "\"\<new-course-ribbon\>\""}], "}"}],
+             ",", 
+            RowBox[{"{", "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<top\>\""}], "}"}], ",", 
+            
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<title\>\""}], "}"}],
+                 ",", 
+                RowBox[{"{", 
+                 RowBox[{"XMLElement", "[", 
+                  RowBox[{"\"\<h1\>\"", ",", 
+                   RowBox[{"{", "}"}], ",", 
+                   RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<span\>\"", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\"\<SPU27x:\>\"", "}"}]}], "]"}], ",", 
+                    "\"\< Science & Cooking: From Haute Cuisine to Soft \
+Matter Science\>\""}], "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+              RowBox[{"XMLElement", "[", 
+               RowBox[{"\"\<div\>\"", ",", 
+                RowBox[{"{", 
+                 RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<subtitle\>\""}], 
+                 "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "\"\<Top chefs and Harvard researchers explore how everyday \
+cooking and haute cuisine can illuminate basic principles in physics and \
+engineering, and vice versa. \>\"", ",", 
+                  RowBox[{"XMLElement", "[", 
+                   RowBox[{"\"\<a\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+                    RowBox[{
+                    "\"\<class\>\"", "\[Rule]", "\"\<go-to-course\>\""}], ",", 
+                    RowBox[{
+                    "\"\<href\>\"", "\[Rule]", 
+                    "\"\</course/harvard-university/spu27x/science-cooking-\
+haute-cuisine/639\>\""}]}], "}"}], ",", 
+                    RowBox[{"{", "\"\<more\>\"", "}"}]}], "]"}]}], "}"}]}], 
+               "]"}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<bottom\>\""}], "}"}], 
+            ",", 
+            RowBox[{"{", 
+             RowBox[{"XMLElement", "[", 
+              RowBox[{"\"\<div\>\"", ",", 
+               RowBox[{"{", 
+                RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<detail\>\""}], "}"}],
+                ",", 
+               RowBox[{"{", 
+                RowBox[{"XMLElement", "[", 
+                 RowBox[{"\"\<ul\>\"", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<clearfix\>\""}], 
+                   "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<li\>\"", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<span\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<class\>\"", "\[Rule]", "\"\<bold-title\>\""}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\"\<Starts:\>\"", "}"}]}], "]"}], ",", 
+                    "\"\< October 2013\>\""}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<li\>\"", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\"\< \[Bullet] \>\"", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<li\>\"", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<div\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<class\>\"", "\[Rule]", "\"\<instructor-list\>\""}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<span\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<class\>\"", "\[Rule]", "\"\<bold-title\>\""}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\"\<Instructors:\>\"", "}"}]}], "]"}], ",", 
+                    "\"\< M. Brenner, D. Weitz.\>\""}], "}"}]}], "]"}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<li\>\"", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\"\< \[Bullet] \>\"", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<li\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "\"\<class\>\"", "\[Rule]", "\"\<school-list\>\""}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\"\<HarvardX\>\"", "}"}]}], "]"}]}], 
+                   "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], "]"}]}], "}"}]}], 
+       "]"}], ",", 
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<div\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<right-col\>\""}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<image\>\""}], "}"}], 
+            ",", 
+            RowBox[{"{", 
+             RowBox[{"XMLElement", "[", 
+              RowBox[{"\"\<img\>\"", ",", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{
+                 "\"\<src\>\"", "\[Rule]", 
+                  "\"\<https://www.edx.org/sites/default/files/styles/course_\
+tile_image/public/cooking_course_262x136.jpg?itok=inuWnIh2\>\""}], ",", 
+                 RowBox[{"\"\<width\>\"", "\[Rule]", "\"\<277\>\""}], ",", 
+                 RowBox[{"\"\<height\>\"", "\[Rule]", "\"\<136\>\""}], ",", 
+                 RowBox[{
+                 "\"\<alt\>\"", "\[Rule]", "\"\<Science & Cooking\>\""}]}], 
+                "}"}], ",", 
+               RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+          RowBox[{"XMLElement", "[", 
+           RowBox[{"\"\<div\>\"", ",", 
+            RowBox[{"{", 
+             RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<actions clearfix\>\""}],
+              "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"XMLElement", "[", 
+              RowBox[{"\"\<div\>\"", ",", 
+               RowBox[{"{", 
+                RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<action\>\""}], "}"}],
+                ",", 
+               RowBox[{"{", 
+                RowBox[{"XMLElement", "[", 
+                 RowBox[{"\"\<div\>\"", ",", 
+                  RowBox[{"{", 
+                   RowBox[{
+                   "\"\<class\>\"", "\[Rule]", 
+                    "\"\<iframe iframe-register action-register-course\>\""}],
+                    "}"}], ",", 
+                  RowBox[{"{", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\"\<iframe\>\"", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\"\<frameborder\>\"", "\[Rule]", "\"\<1\>\""}], 
+                    ",", 
+                    RowBox[{"\"\<scrolling\>\"", "\[Rule]", "\"\<auto\>\""}], 
+                    ",", 
+                    RowBox[{
+                    "\"\<src\>\"", "\[Rule]", 
+                    "\"\<https://courses.edx.org/mktg/HarvardX/SPU27x/2013_\
+Oct\>\""}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+              "]"}], "}"}]}], "]"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<div\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<clearfix\>\""}], "}"}], ",", 
+        RowBox[{"{", "}"}]}], "]"}], ",", 
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<div\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<course-link\>\""}], ",", 
+          RowBox[{"\"\<style\>\"", "\[Rule]", "\"\<hidden\>\""}], ",", 
+          RowBox[{
+          "\"\<href\>\"", "\[Rule]", 
+           "\"\</course/harvard-university/spu27x/science-cooking-haute-\
+cuisine/639\>\""}]}], "}"}], ",", 
+        RowBox[{"{", "}"}]}], "]"}], ",", "\"\<  \>\""}], "}"}], "]"}], ","}],
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "*)"}]], "Input",
+ CellChangeTimes->{{3.578701113522685*^9, 3.57870113037792*^9}, {
+  3.578701170480768*^9, 3.578701172019493*^9}, {3.578701381963845*^9, 
+  3.578701385539681*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nameList", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Cases", "[", 
+      RowBox[{
+       RowBox[{"rawData", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"XMLElement", "[", 
+         RowBox[{"\"\<div\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<title\>\""}], "}"}], ",", 
+          
+          RowBox[{"{", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\"\<h1\>\"", ",", 
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\"\<span\>\"", ",", 
+                 RowBox[{"{", "}"}], ",", 
+                 RowBox[{"{", "id_", "}"}]}], "]"}], ",", "name_"}], "}"}]}], 
+            "]"}], "}"}]}], "]"}], "\[RuleDelayed]", 
+        RowBox[{"{", "name", "}"}]}], ",", "Infinity"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"pages", "+", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.578699215650787*^9, 3.578699322381408*^9}, {
+   3.578699415130405*^9, 3.578699433178949*^9}, {3.578699808879403*^9, 
+   3.578699810736031*^9}, 3.578701152215301*^9, {3.578701400700798*^9, 
+   3.578701418980318*^9}, {3.578701462683683*^9, 3.57870148061805*^9}, {
+   3.578701523563604*^9, 3.578701532068293*^9}, {3.578702705983142*^9, 
+   3.578702720630797*^9}, {3.578702911342391*^9, 3.578702911585772*^9}, {
+   3.578704694446764*^9, 3.5787046952562*^9}, 3.578706172846048*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"linkList", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Cases", "[", 
+      RowBox[{
+       RowBox[{"rawData", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"XMLElement", "[", 
+         RowBox[{"\"\<div\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<subtitle\>\""}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"des_", ",", 
+            RowBox[{"XMLElement", "[", 
+             RowBox[{"\"\<a\>\"", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+                RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<go-to-course\>\""}], 
+                ",", 
+                RowBox[{"\"\<href\>\"", "\[Rule]", "link_"}]}], "}"}], ",", 
+              RowBox[{"{", "\"\<more\>\"", "}"}]}], "]"}]}], "}"}]}], "]"}], 
+        "\[RuleDelayed]", 
+        RowBox[{"{", "link", "}"}]}], ",", "Infinity"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"pages", "+", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.578699438406048*^9, 3.578699486547272*^9}, {
+   3.578699814648789*^9, 3.578699816201502*^9}, {3.578700329193958*^9, 
+   3.578700346844317*^9}, {3.578703036691799*^9, 3.578703089302356*^9}, {
+   3.578703151020025*^9, 3.57870315159643*^9}, {3.578704797026725*^9, 
+   3.578704836637962*^9}, 3.578706169619167*^9}],
+
+Cell["\<\
+XMLElement[a,{shape\[Rule]rect,href\[Rule]/course/cs212},{
+\t\t\t\t\t\t}]\
+\>", "Text",
+ CellChangeTimes->{3.578699892406966*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"len", "=", 
+  RowBox[{"Total", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Length", "[", 
+      RowBox[{"nameList", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"pages", "+", "1"}]}], "}"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.578699641508577*^9, 3.57869964515165*^9}, 
+   3.578700208527731*^9, {3.578702758393738*^9, 3.578702785320889*^9}, {
+   3.578702924239524*^9, 3.578702924426926*^9}}],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{{3.578699645541459*^9, 3.578699660870132*^9}, 
+   3.578699828962156*^9, 3.578700208827407*^9, 3.578701543409469*^9, {
+   3.578702743563086*^9, 3.578702745243303*^9}, {3.578702782446279*^9, 
+   3.578702785524277*^9}, 3.578702924648965*^9, 3.578704492634207*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"desList", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"deslinkList", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.57870437385518*^9, 3.57870438937329*^9}, 
+   3.578706165158276*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"Flatten", "[", "linkList", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.578704392186541*^9, 3.57870439822717*^9}, {
+  3.57870486089116*^9, 3.578704869476983*^9}}],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{
+  3.578704398832747*^9, 3.578704810544633*^9, {3.578704862991586*^9, 
+   3.578704869923609*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"nameCleanList", "=", 
+   RowBox[{"Flatten", "[", "nameList", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Length", "[", "%", "]"}], "\[Equal]", "len"}]}], "Input",
+ CellChangeTimes->{{3.578700164967881*^9, 3.578700212317892*^9}, {
+   3.57870445734169*^9, 3.578704476355573*^9}, {3.578704520594381*^9, 
+   3.578704524305544*^9}, {3.578704574006559*^9, 3.5787046737307*^9}, {
+   3.578704712474055*^9, 3.578704729536838*^9}, 3.578706180132277*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.57870019507292*^9, 3.578700213118497*^9}, 
+   3.57870441555125*^9, {3.578704462813321*^9, 3.578704477067076*^9}, 
+   3.578704524652171*^9, 3.578704590208735*^9, 3.578704674376442*^9, {
+   3.578704720086101*^9, 3.578704730193559*^9}, 3.578705183419644*^9, 
+   3.578706180880988*^9}]
+}, Open  ]],
+
+Cell["\<\
+https://www.edx.org/course/utaustin/ut-2-01x/ideas-twentieth-century/661\
+\>", "Text",
+ CellChangeTimes->{3.578704927620823*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"linkCleanList", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"\"\<https://www.edx.org\>\"", "<>", 
+      RowBox[{
+       RowBox[{"Flatten", "[", "linkList", "]"}], "[", 
+       RowBox[{"[", "i", "]"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Length", "[", "%", "]"}], "\[Equal]", "len"}]}], "Input",
+ CellChangeTimes->{{3.578700399013367*^9, 3.578700417292952*^9}, {
+   3.578704764072954*^9, 3.578704778734273*^9}, {3.578704878356221*^9, 
+   3.578704895053046*^9}, {3.578704955245983*^9, 3.578704963071411*^9}, 
+   3.578706184515782*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.578700410441033*^9, 3.578700417822029*^9}, 
+   3.578704963885683*^9, 3.57870518462474*^9, 3.578706185354974*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"couRawData", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"linkCleanList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", "\"\<XMLObject\>\""}], "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.578706210762645*^9, 3.578706273644299*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"startList", "=", 
+  RowBox[{"Cases", "[", 
+   RowBox[{"couRawData", ",", 
+    RowBox[{
+     RowBox[{"XMLElement", "[", 
+      RowBox[{"\"\<div\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<startdate\>\""}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"XMLElement", "[", 
+          RowBox[{"\"\<div\>\"", ",", 
+           RowBox[{"{", 
+            RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<field\>\""}], "}"}], ",", 
+           RowBox[{"{", "\"\<Classes start:\>\"", "}"}]}], "]"}], ",", 
+         "date_"}], "}"}]}], "]"}], "\[RuleDelayed]", "date"}], ",", 
+    "Infinity"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Length", "[", "%", "]"}], "\[Equal]", "len"}]}], "Input",
+ CellChangeTimes->{{3.578706539643684*^9, 3.578706612057242*^9}, {
+  3.578706649934372*^9, 3.578706665331256*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"October 2013\"\>", ",", "\<\"15 Oct 2013\"\>", 
+   ",", "\<\"7 Oct 2013\"\>", ",", "\<\"1 Oct 2013\"\>", 
+   ",", "\<\"1 Oct 2013\"\>", ",", "\<\"25 Sep 2013\"\>", 
+   ",", "\<\"17 Sep 2013\"\>", ",", "\<\"16 Sep 2013\"\>", 
+   ",", "\<\"16 Sep 2013\"\>", ",", "\<\"16 Sep 2013\"\>", 
+   ",", "\<\"16 Sep 2013\"\>", ",", "\<\"15 Sep 2013\"\>", 
+   ",", "\<\"15 Sep 2013\"\>", ",", "\<\"9 Sep 2013\"\>", 
+   ",", "\<\"1 Sep 2013\"\>", ",", "\<\"1 Jun 2013\"\>", 
+   ",", "\<\"31 May 2013\"\>", ",", "\<\"15 May 2013\"\>", 
+   ",", "\<\"12 Apr 2013\"\>", ",", "\<\"09/09/2013\"\>", 
+   ",", "\<\"09/09/2013\"\>", ",", "\<\"October 2014\"\>", 
+   ",", "\<\"01/27/2014\"\>", ",", "\<\"03/04/2014\"\>", 
+   ",", "\<\"September 2014\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{{3.578706593207561*^9, 3.578706613096719*^9}, {
+  3.57870665447424*^9, 3.578706666006292*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.578706593207561*^9, 3.578706613096719*^9}, {
+  3.57870665447424*^9, 3.578706666009881*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"fullTable", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"nameCleanList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"startList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"linkCleanList", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "len"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Length", "[", "fullTable", "]"}]}], "Input",
+ CellChangeTimes->{{3.578700037979957*^9, 3.578700041852566*^9}, {
+  3.578700533936043*^9, 3.578700651687767*^9}, {3.578704976062597*^9, 
+  3.578704993137751*^9}, {3.578706672381604*^9, 3.578706678537374*^9}}],
+
+Cell[BoxData["25"], "Output",
+ CellChangeTimes->{
+  3.57870065241764*^9, 3.578704995856388*^9, {3.578705168679343*^9, 
+   3.578705196895682*^9}, 3.578706187351549*^9, 3.578706679183752*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"exp", "=", 
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<Desktop/edX.xls\>\"", ",", "fullTable"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.578700660390946*^9, 3.578700682561115*^9}, {
+  3.578705122859453*^9, 3.578705124523527*^9}, {3.578705209789157*^9, 
+  3.578705226010642*^9}}],
+
+Cell[BoxData["\<\"Desktop/edX.xls\"\>"], "Output",
+ CellChangeTimes->{
+  3.578700685977171*^9, 3.578704998953886*^9, 3.57870512533402*^9, {
+   3.578705197925964*^9, 3.578705226691497*^9}, 3.578706680261401*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", "fullTable", "]"}]], "Input",
+ CellChangeTimes->{{3.5787006322988*^9, 3.578700636254136*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\" Science & Cooking: From Haute Cuisine to Soft Matter Science\"\>", \
+"\<\"October 2013\"\>", \
+"\<\"https://www.edx.org/course/harvard-university/spu27x/science-cooking-\
+haute-cuisine/639\"\>"},
+    {"\<\" Introduction to Bioethics\"\>", "\<\"15 Oct 2013\"\>", \
+"\<\"https://www.edx.org/course/georgetown-university/phlx101-01/introduction-\
+bioethics/811\"\>"},
+    {"\<\" Electricity & Magnetism\"\>", "\<\"7 Oct 2013\"\>", \
+"\<\"https://www.edx.org/course/rice-university/phys102x/electricity-\
+magnetism/863\"\>"},
+    {"\<\" Globalization\[CloseCurlyQuote]s Winners and Losers: Challenges \
+for Developed and Developing Countries\"\>", "\<\"1 Oct 2013\"\>", \
+"\<\"https://www.edx.org/course/georgetown-university/infx523-01/\
+globalization%E2%80%99s-winners-and/797\"\>"},
+    {"\<\" Introduction to Philosophy: God, Knowledge and Consciousness\"\>", \
+"\<\"1 Oct 2013\"\>", \
+"\<\"https://www.edx.org/course/mit/24-00x/introduction-philosophy-god/888\"\>\
+"},
+    {"\<\" Introduction to Human Evolution\"\>", "\<\"25 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/wellesley/anth207x/introduction-human-\
+evolution/873\"\>"},
+    {"\<\" A Global History of Architecture: Part 1\"\>", "\<\"17 Sep \
+2013\"\>", \
+"\<\"https://www.edx.org/course/mit/4-605x/global-history-architecture-part/\
+884\"\>"},
+    {"\<\" Take Your Medicine - The Impact of Drug Development\"\>", "\<\"16 \
+Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/utaustin/ut-4-01x/take-your-medicine-impact-\
+drug/669\"\>"},
+    {"\<\" Solar Energy\"\>", "\<\"16 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/delft-university-technology/et3034tux/solar-\
+energy/770\"\>"},
+    {"\<\" Introduction to Water Treatment\"\>", "\<\"16 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/delft-university-technology/ctb3365x/\
+introduction-water-treatment/786\"\>"},
+    {"\<\" Innovation and Commercialization\"\>", "\<\"16 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/mit/3-086x/innovation-and-commercialization/\
+880\"\>"},
+    {"\<\" Ideas of the Twentieth Century\"\>", "\<\"15 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/utaustin/ut-2-01x/ideas-twentieth-century/661\
+\"\>"},
+    {"\<\" Energy 101\"\>", "\<\"15 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/utaustin/ut-1-01x/energy-101/667\"\>"},
+    {"\<\" Introduction to Aerodynamics\"\>", "\<\"9 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/mit/16-101x/introduction-aerodynamics/890\"\>\
+"},
+    {"\<\" Age of Globalization\"\>", "\<\"1 Sep 2013\"\>", \
+"\<\"https://www.edx.org/course/utaustin/ut-3-01x/age-globalization/665\"\>"},\
+
+    {"\<\" Mechanics ReView \"\>", "\<\"1 Jun 2013\"\>", \
+"\<\"https://www.edx.org/course/mit/8-mrevx/mechanics-review/748\"\>"},
+    {"\<\" Introduction to Statistics: Inference\"\>", "\<\"31 May 2013\"\>", \
+"\<\"https://www.edx.org/course/uc-berkeley/stat2-3x/introduction-statistics/\
+825\"\>"},
+    {"\<\" Human Health and Global Environmental Change\"\>", "\<\"15 May \
+2013\"\>", \
+"\<\"https://www.edx.org/course/harvard-university/ph278x/human-health-and-\
+global/573\"\>"},
+    {"\<\" Introduction to Statistics: Probability\"\>", "\<\"12 Apr \
+2013\"\>", \
+"\<\"https://www.edx.org/course/uc-berkeley/stat2-2x/introduction-statistics/\
+685\"\>"},
+    {"\<\" Classical Mechanics\"\>", "\<\"09/09/2013\"\>", \
+"\<\"https://www.edx.org/course/mit/8-01x/classical-mechanics/853\"\>"},
+    {"\<\" Flight Vehicle Aerodynamics\"\>", "\<\"09/09/2013\"\>", \
+"\<\"https://www.edx.org/course/mit/16-110x/flight-vehicle-aerodynamics/871\"\
+\>"},
+    {"\<\" Shakespeare: On the Page and in Performance\"\>", "\<\"October \
+2014\"\>", \
+"\<\"https://www.edx.org/course/wellesley/eng112x/shakespeare-page-and-\
+performance/877\"\>"},
+    {"\<\" Was Alexander Great? The Life, Leadership, and Legacies of History\
+\[CloseCurlyQuote]s Greatest Warrior\"\>", "\<\"01/27/2014\"\>", \
+"\<\"https://www.edx.org/course/wellesley/hist229x/was-alexander-great-life/\
+850\"\>"},
+    {"\<\" Genomic Medicine Gets Personal\"\>", "\<\"03/04/2014\"\>", \
+"\<\"https://www.edx.org/course/georgetown-university/medx202-01/genomic-\
+medicine-gets-personal/837\"\>"},
+    {"\<\" Introduction to Global Sociology\"\>", "\<\"September 2014\"\>", "\
+\<\"https://www.edx.org/course/wellesley/soc108x/introduction-global-\
+sociology/830\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.578700636970901*^9, 3.578700654612962*^9}, 
+   3.578705001533518*^9, 3.578705126877798*^9, {3.578705187912688*^9, 
+   3.578705199216792*^9}, 3.578706681282685*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Draft", "Section",
+ CellChangeTimes->{{3.578705364600641*^9, 3.578705365430115*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  RowBox[{
+   RowBox[{"linkCleanList", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], ",", "\"\<XMLObject\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.578705366267583*^9, 3.578705371967938*^9}, {
+  3.578706282865533*^9, 3.578706286981154*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"XMLObject", "[", "\<\"Document\"\>", "]"}], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"XMLObject", "[", "\<\"Declaration\"\>", "]"}], "[", 
+     RowBox[{
+      RowBox[{"\<\"Version\"\>", "\[Rule]", "\<\"1.0\"\>"}], ",", 
+      RowBox[{"\<\"Standalone\"\>", "\[Rule]", "\<\"yes\"\>"}]}], "]"}], 
+    "}"}], ",", 
+   RowBox[{"XMLElement", "[", 
+    RowBox[{"\<\"html\"\>", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\<\"version\"\>", 
+        "\[Rule]", "\<\"-//W3C//DTD HTML 4.01 Transitional//EN\"\>"}], ",", 
+       RowBox[{"\<\"dir\"\>", "\[Rule]", "\<\"ltr\"\>"}], ",", 
+       RowBox[{"\<\"lang\"\>", "\[Rule]", "\<\"en\"\>"}], ",", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"\<\"http://www.w3.org/2000/xmlns/\"\>", 
+          ",", "\<\"xmlns\"\>"}], "}"}], 
+        "\[Rule]", "\<\"http://www.w3.org/1999/xhtml\"\>"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"XMLElement", "[", 
+        RowBox[{"\<\"head\"\>", ",", 
+         RowBox[{"{", "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"charset\"\>", "\[Rule]", "\<\"utf-8\"\>"}], "}"}], 
+             ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}], 
+              "}"}], ",", 
+             RowBox[{
+             "{", "\<\"var \
+NREUMQ=NREUMQ||[];NREUMQ.push([\\\"mark\\\",\\\"firstbyte\\\",new \
+Date().getTime()]);\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"link\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"shortlink\"\>"}], ",", 
+               RowBox[{"\<\"href\"\>", 
+                "\[Rule]", "\<\"https://www.edx.org/node/639\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"link\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"publisher\"\>"}], ",", 
+               RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"www.edx.org\"\>"}]}], 
+              "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"link\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"shortcut icon\"\>"}], 
+               ",", 
+               
+               RowBox[{"\<\"href\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/favicon.ico\"\>"}], ",", 
+               
+               RowBox[{"\<\"type\"\>", 
+                "\[Rule]", "\<\"image/vnd.microsoft.icon\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"link\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"canonical\"\>"}], ",", 
+               
+               RowBox[{"\<\"href\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/course/harvard-university/spu27x/science-cooking-\
+haute-cuisine/639\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"copyright\"\>"}], ",", 
+               
+               
+               RowBox[{"\<\"content\"\>", 
+                "\[Rule]", "\<\"\[Copyright] 2013 edX, some rights \
+reserved.\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"keywords\"\>"}], ",", 
+               
+               RowBox[{"\<\"content\"\>", 
+                "\[Rule]", "\<\"Edx, edX, MOOC, MIT, MITx, Harvard,  \
+Harvardx, Berkeley, Georgetown, Wellesley, University of Texas System,  \
+University, College, online learning, education, humanities,  interactive, \
+computer science, public health, artificial  intelligence\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"robots\"\>"}], ",", 
+               
+               RowBox[{"\<\"content\"\>", 
+                "\[Rule]", "\<\"follow, index\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"name\"\>", "\[Rule]", "\<\"generator\"\>"}], ",", 
+               
+               
+               RowBox[{"\<\"content\"\>", 
+                "\[Rule]", "\<\"Drupal 7 (http://drupal.org)\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"meta\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               
+               RowBox[{"\<\"http-equiv\"\>", 
+                "\[Rule]", "\<\"X-UA-Compatible\"\>"}], ",", 
+               
+               RowBox[{"\<\"content\"\>", 
+                "\[Rule]", "\<\"IE=edge,chrome=1\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"title\"\>", ",", 
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{
+             "{", "\<\"HarvardX: SPU27x: Science & Cooking: From Haute \
+Cuisine to Soft Matter Science | edX\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"style\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/css\"\>"}], ",", 
+               RowBox[{"\<\"media\"\>", "\[Rule]", "\<\"all\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{
+             "{", "\<\"@import \
+url(\\\"https://www.edx.org/modules/system/system.base.css?mnb9qb\\\");\\n@\
+import url(\\\"https://www.edx.org/modules/system/system.menus.css?mnb9qb\\\")\
+;\\n@import \
+url(\\\"https://www.edx.org/modules/system/system.messages.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/modules/system/system.theme.css?mnb9qb\\\
+\");\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"style\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/css\"\>"}], ",", 
+               RowBox[{"\<\"media\"\>", "\[Rule]", "\<\"all\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{
+             "{", "\<\"@import \
+url(\\\"https://www.edx.org/modules/aggregator/aggregator.css?mnb9qb\\\");\\n@\
+import url(\\\"https://www.edx.org/sites/all/modules/date/date_api/date.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/date/date_popup/themes/\
+datepicker.1.7.css?mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/fences/field.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/modules/node/node.css?mnb9qb\\\");\\n@\
+import url(\\\"https://www.edx.org/modules/user/user.css?mnb9qb\\\");\\n@\
+import url(\\\"https://www.edx.org/sites/all/modules/views/css/views.css?\
+mnb9qb\\\");\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"style\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/css\"\>"}], ",", 
+               RowBox[{"\<\"media\"\>", "\[Rule]", "\<\"all\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{
+             "{", "\<\"@import \
+url(\\\"https://www.edx.org/sites/all/modules/ckeditor/ckeditor.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/ctools/css/ctools.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/lightbox2/css/lightbox_alt.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/panels/css/panels.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/modules/panels/plugins/layouts/flexible/\
+flexible.css?mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/default/files/ctools/css/\
+130b7bb6477a055b16c8bec527c20c64_0.css?mnb9qb\\\");\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"style\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/css\"\>"}], ",", 
+               RowBox[{"\<\"media\"\>", "\[Rule]", "\<\"all\"\>"}]}], "}"}], 
+             ",", 
+             RowBox[{
+             "{", "\<\"@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/fonts.css?mnb9qb\\\");\
+\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/header.css?mnb9qb\\\");\
+\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/layout.css?mnb9qb\\\");\
+\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/footer.css?mnb9qb\\\");\
+\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/faq.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/sites/all/themes/boron/css/filters.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/course-detail.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/how-it-works.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/courses.css?mnb9qb\\\")\
+;\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/schools.css?mnb9qb\\\")\
+;\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/school.css?mnb9qb\\\");\
+\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/internals.css?mnb9qb\\\
+\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/buttons.css?mnb9qb\\\")\
+;\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/bios.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/sites/all/themes/boron/css/open-\
+positions.css?mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/news.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/sites/all/themes/boron/css/alerts.css?\
+mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/founders.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/mediakit.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/contactus.css?mnb9qb\\\
+\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/register.css?mnb9qb\\\"\
+);\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/course-confirmation.\
+css?mnb9qb\\\");\\n@import \
+url(\\\"https://www.edx.org/sites/all/themes/boron/css/blog.css?mnb9qb\\\");\\\
+n@import url(\\\"https://www.edx.org/sites/all/themes/boron/css/homepage.css?\
+mnb9qb\\\");\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/misc/jquery.js?v=1.4.4\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", "\<\"https://www.edx.org/misc/jquery.once.js?v=1.2\
+\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/misc/drupal.js?mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/modules/lightbox2/js/lightbox_video.js?\
+mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/modules/lightbox2/js/lightbox.js?\
+1369717498\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/modules/panels/js/panels.js?mnb9qb\"\>"}]}]\
+, "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/modules/google_analytics/googleanalytics.\
+js?mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}], 
+              "}"}], ",", 
+             RowBox[{
+             "{", "\<\"\\n<!--//--><![CDATA[//><!--\\nvar _gaq = _gaq || \
+[];_gaq.push([\\\"_setAccount\\\", \
+\\\"UA-35248639-1\\\"]);_gaq.push([\\\"_setDomainName\\\", \
+\\\"www.edx.org\\\"]);_gaq.push([\\\"_trackPageview\\\"]);(function() {var ga \
+= document.createElement(\\\"script\\\");ga.type = \
+\\\"text/javascript\\\";ga.async = true;ga.src = (\\\"https:\\\" == \
+document.location.protocol ? \\\"https://ssl\\\" : \\\"http://www\\\") + \
+\\\".google-analytics.com/ga.js\\\";var s = \
+document.getElementsByTagName(\\\"script\\\")[0];s.parentNode.insertBefore(ga,\
+ s);})();\\n//--><!]]>\\n\"\>", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/jquery.browserdetect.\
+js?mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/jquery.dotdotdot.js?\
+mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/jquery.imagesloaded.\
+js?mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/jquery.infinitescroll.\
+js?mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/showhide.js?mnb9qb\"\>\
+"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/completesubmenu.js?\
+mnb9qb\"\>"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/regex.js?mnb9qb\"\>"}]\
+}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/edx.js?mnb9qb\"\>"}]}]\
+, "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}],
+                ",", 
+               
+               RowBox[{"\<\"src\"\>", 
+                "\[Rule]", \
+"\<\"https://www.edx.org/sites/all/themes/boron/scripts/scroll.js?mnb9qb\"\>"}\
+]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}], 
+              "}"}], ",", 
+             RowBox[{
+             "{", "\<\"\\n<!--//--><![CDATA[//><!--\\njQuery.extend(Drupal.\
+settings, \
+{\\\"basePath\\\":\\\"\\\\/\\\",\\\"pathPrefix\\\":\\\"\\\",\\\"ajaxPageState\
+\\\":{\\\"theme\\\":\\\"boron\\\",\\\"theme_token\\\":\\\"\
+TQVcbMVNx4BDEPFC5xsbkDiyIIZlXedFhZumEde8k8o\\\",\\\"js\\\":{\\\"misc\\\\/\
+jquery.js\\\":1,\\\"misc\\\\/jquery.once.js\\\":1,\\\"misc\\\\/drupal.js\\\":\
+1,\\\"sites\\\\/all\\\\/modules\\\\/lightbox2\\\\/js\\\\/lightbox_video.js\\\"\
+:1,\\\"sites\\\\/all\\\\/modules\\\\/lightbox2\\\\/js\\\\/lightbox.js\\\":1,\\\
+\"sites\\\\/all\\\\/modules\\\\/panels\\\\/js\\\\/panels.js\\\":1,\\\"sites\\\
+\\/all\\\\/modules\\\\/google_analytics\\\\/googleanalytics.js\\\":1,\\\"0\\\"\
+:1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/scripts\\\\/jquery.\
+browserdetect.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/scripts\\\\/\
+jquery.dotdotdot.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/scripts\\\
+\\/jquery.imagesloaded.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/\
+scripts\\\\/jquery.infinitescroll.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/\
+boron\\\\/scripts\\\\/showhide.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/\
+boron\\\\/scripts\\\\/completesubmenu.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\
+\\/boron\\\\/scripts\\\\/regex.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/\
+boron\\\\/scripts\\\\/edx.js\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/\
+scripts\\\\/scroll.js\\\":1},\\\"css\\\":{\\\"modules\\\\/system\\\\/system.\
+base.css\\\":1,\\\"modules\\\\/system\\\\/system.menus.css\\\":1,\\\"modules\\\
+\\/system\\\\/system.messages.css\\\":1,\\\"modules\\\\/system\\\\/system.\
+theme.css\\\":1,\\\"modules\\\\/aggregator\\\\/aggregator.css\\\":1,\\\"sites\
+\\\\/all\\\\/modules\\\\/date\\\\/date_api\\\\/date.css\\\":1,\\\"sites\\\\/\
+all\\\\/modules\\\\/date\\\\/date_popup\\\\/themes\\\\/datepicker.1.7.css\\\":\
+1,\\\"modules\\\\/field\\\\/theme\\\\/field.css\\\":1,\\\"modules\\\\/node\\\\\
+/node.css\\\":1,\\\"modules\\\\/user\\\\/user.css\\\":1,\\\"sites\\\\/all\\\\/\
+modules\\\\/views\\\\/css\\\\/views.css\\\":1,\\\"sites\\\\/all\\\\/modules\\\
+\\/ckeditor\\\\/ckeditor.css\\\":1,\\\"sites\\\\/all\\\\/modules\\\\/ctools\\\
+\\/css\\\\/ctools.css\\\":1,\\\"sites\\\\/all\\\\/modules\\\\/lightbox2\\\\/\
+css\\\\/lightbox_alt.css\\\":1,\\\"sites\\\\/all\\\\/modules\\\\/panels\\\\/\
+css\\\\/panels.css\\\":1,\\\"sites\\\\/all\\\\/modules\\\\/panels\\\\/plugins\
+\\\\/layouts\\\\/flexible\\\\/flexible.css\\\":1,\\\"public:\\\\/\\\\/ctools\\\
+\\/css\\\\/130b7bb6477a055b16c8bec527c20c64_0.css\\\":1,\\\"sites\\\\/all\\\\/\
+themes\\\\/boron\\\\/css\\\\/fonts.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/\
+boron\\\\/css\\\\/header.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/\
+css\\\\/layout.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+footer.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+registration.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+news-events.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+testimonials.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+client-lists.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/\
+contact.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/faq.css\\\
+\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/filters.css\\\":1,\\\"\
+sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/course-detail.css\\\":1,\\\"\
+sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/how-it-works.css\\\":1,\\\"\
+sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/courses.css\\\":1,\\\"sites\\\\\
+/all\\\\/themes\\\\/boron\\\\/css\\\\/schools.css\\\":1,\\\"sites\\\\/all\\\\/\
+themes\\\\/boron\\\\/css\\\\/school.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\\
+/boron\\\\/css\\\\/internals.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\
+\\\\/css\\\\/buttons.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\
+\\\\/bios.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/open-\
+positions.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/news.\
+css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/alerts.css\\\":1,\
+\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/founders.css\\\":1,\\\"\
+sites\\\\/all\\\\/themes\\\\/boron\\\\/css\\\\/mediakit.css\\\":1,\\\"sites\\\
+\\/all\\\\/themes\\\\/boron\\\\/css\\\\/contactus.css\\\":1,\\\"sites\\\\/all\
+\\\\/themes\\\\/boron\\\\/css\\\\/register.css\\\":1,\\\"sites\\\\/all\\\\/\
+themes\\\\/boron\\\\/css\\\\/course-confirmation.css\\\":1,\\\"sites\\\\/all\\\
+\\/themes\\\\/boron\\\\/css\\\\/blog.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\
+\\/boron\\\\/css\\\\/homepage.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/\
+boron\\\\/css\\\\/ie8.css\\\":1,\\\"sites\\\\/all\\\\/themes\\\\/boron\\\\/\
+css\\\\/ie7.css\\\":1}},\\\"edxtweak\\\":{\\\"base_path_edx_courses\\\":\\\"\
+course-list\\\"},\\\"lightbox2\\\":{\\\"rtl\\\":0,\\\"file_path\\\":\\\"\\\\/(\
+\\\\\\\\w\\\\\\\\w\\\\/)public:\\\\/\\\",\\\"default_image\\\":\\\"\\\\/sites\
+\\\\/all\\\\/modules\\\\/lightbox2\\\\/images\\\\/brokenimage.jpg\\\",\\\"\
+border_size\\\":20,\\\"font_color\\\":\\\"ffffff\\\",\\\"box_color\\\":\\\"\
+363636\\\",\\\"top_position\\\":\\\"0\\\",\\\"overlay_opacity\\\":\\\"0.4\\\",\
+\\\"overlay_color\\\":\\\"363636\\\",\\\"disable_close_click\\\":1,\\\"resize_\
+sequence\\\":0,\\\"resize_speed\\\":100,\\\"fade_in_speed\\\":200,\\\"slide_\
+down_speed\\\":300,\\\"use_alt_layout\\\":1,\\\"disable_resize\\\":0,\\\"\
+disable_zoom\\\":0,\\\"force_show_nav\\\":0,\\\"show_caption\\\":1,\\\"loop_\
+items\\\":0,\\\"node_link_text\\\":\\\"View Image \
+Details\\\",\\\"node_link_target\\\":0,\\\"image_count\\\":\\\"Image !current \
+of !total\\\",\\\"video_count\\\":\\\"Video !current of \
+!total\\\",\\\"page_count\\\":\\\"Page !current of \
+!total\\\",\\\"lite_press_x_close\\\":\\\"press \\\\u003Ca \
+href=\\\\u0022#\\\\u0022 onclick=\\\\u0022hideLightbox(); return \
+FALSE;\\\\u0022\\\\u003E\\\\u003Ckbd\\\\u003Ex\\\\u003C\\\\/kbd\\\\u003E\\\\\
+u003C\\\\/a\\\\u003E to \
+close\\\",\\\"download_link_text\\\":\\\"\\\",\\\"enable_login\\\":false,\\\"\
+enable_contact\\\":false,\\\"keys_close\\\":\\\"c x \
+27\\\",\\\"keys_previous\\\":\\\"p 37\\\",\\\"keys_next\\\":\\\"n \
+39\\\",\\\"keys_zoom\\\":\\\"z\\\",\\\"keys_play_pause\\\":\\\"32\\\",\\\"\
+display_image_size\\\":\\\"original\\\",\\\"image_node_sizes\\\":\\\"()\\\",\\\
+\"trigger_lightbox_classes\\\":\\\"\\\",\\\"trigger_lightbox_group_classes\\\"\
+:\\\"\\\",\\\"trigger_slideshow_classes\\\":\\\"\\\",\\\"trigger_lightframe_\
+classes\\\":\\\"\\\",\\\"trigger_lightframe_group_classes\\\":\\\"\\\",\\\"\
+custom_class_handler\\\":0,\\\"custom_trigger_classes\\\":\\\"\\\",\\\"\
+disable_for_gallery_lists\\\":true,\\\"disable_for_acidfree_gallery_lists\\\":\
+true,\\\"enable_acidfree_videos\\\":true,\\\"slideshow_interval\\\":5000,\\\"\
+slideshow_automatic_start\\\":true,\\\"slideshow_automatic_exit\\\":true,\\\"\
+show_play_pause\\\":true,\\\"pause_on_next_click\\\":false,\\\"pause_on_\
+previous_click\\\":true,\\\"loop_slides\\\":false,\\\"iframe_width\\\":600,\\\
+\"iframe_height\\\":400,\\\"iframe_border\\\":1,\\\"enable_video\\\":1,\\\"\
+flvPlayer\\\":\\\"\\\\/\\\",\\\"flvFlashvars\\\":\\\"autoplay=1\\\\u0026amp;\
+playerMode=normal\\\\u0026amp;rel=0\\\"},\\\"googleanalytics\\\":{\\\"\
+trackOutbound\\\":1,\\\"trackMailto\\\":1,\\\"trackDownload\\\":1,\\\"\
+trackDownloadExtensions\\\":\\\"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|\
+flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|\
+ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip\\\
+\",\\\"trackDomainMode\\\":\\\"1\\\"}});\\n//--><!]]>\\n\"\>", "}"}]}], 
+            "]"}]}], "}"}]}], "]"}], ",", 
+       RowBox[{"XMLElement", "[", 
+        RowBox[{"\<\"body\"\>", ",", 
+         RowBox[{"{", 
+          
+          RowBox[{"\<\"class\"\>", 
+           "\[Rule]", "\<\"html not-front not-logged-in no-sidebars page-node \
+page-node- page-node-639 node-type-courses domain-prod-edx-org\"\>"}], "}"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"\<\"\\n\\n    \\n\\t\\n    \"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"header\"\>", ",", 
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", "\<\"\\n\\t   \\t\"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"div\"\>", ",", 
+             RowBox[{"{", 
+              
+              RowBox[{"\<\"class\"\>", 
+               "\[Rule]", "\<\"header-menu clearfix\"\>"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"\\n\\t   \\t\\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"logo\"\>"}], "}"}],
+                  ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"     \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"/\"\>"}]}], "}"}],
+                     ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"edX\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"edX\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/edx-logo-header.png\"\>"}]}], "}"}], ",", 
+                    
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}]}], "}"}]}], 
+                "]"}], ",", "\<\"            \\n\\t   \\t\\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"nav\"\>", ",", 
+                 RowBox[{"{", 
+                  
+                  RowBox[{"\<\"class\"\>", 
+                   "\[Rule]", "\<\"menu clearfix\"\>"}], "}"}], ",", 
+                 RowBox[{"{", "}"}]}], "]"}], ",", "\<\"\\n\\t\\t\\t\\t\"\>", 
+               ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"ul\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"menu\"\>"}], "}"}],
+                  ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"first leaf\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/how-it-works\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\<\"how it works\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}], ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"leaf\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/course-list\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\<\"courses\"\>", "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"leaf\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"/schools\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\<\"schools\"\>", "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"last leaf\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"https://courses.edx.org/register\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}],
+                     ",", 
+                    RowBox[{"{", "\<\"Register Now\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}]}], "}"}]}], "]"}], 
+               ",", "\<\"\\t\\t\\t\\n            \"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"sign-in\"\>"}], 
+                  "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"\\n                \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"login-button\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"https://courses.edx.org/login\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"log in\"\>", "}"}]}], "]"}], 
+                   ",", "\<\"\\n            \"\>"}], "}"}]}], "]"}], 
+               ",", "\<\"\\n            \"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"dashboard\"\>"}], 
+                  "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"\\n                \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"id\"\>", 
+                    "\[Rule]", "\<\"dashboard-button\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"https://courses.edx.org/dashboard\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "\<\"dashboard\"\>", "}"}]}], "]"}], 
+                   ",", "\<\"\\n            \"\>"}], "}"}]}], "]"}], 
+               ",", "\<\"\\n\\n\\t\\t\"\>"}], "}"}]}], "]"}], 
+           ",", "\<\"\\n\\t\\n\\t\\n\\t\\n\\t\"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"div\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"page-wrapper\"\>"}], 
+              "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"\\n\\t\\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"page\"\>"}], "}"}], 
+                 ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\" \\n            \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"content\"\>"}], ",", 
+                    RowBox[{"\<\"role\"\>", "\[Rule]", "\<\"main\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"\\n        \\t\\t                            \
+                    \\n                                                \\n    \
+           \\n                  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"region region-content\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"panel-flexible panels-flexible-18 \
+clearfix\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"panel-flexible-inside \
+panels-flexible-18-inside\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"panels-flexible-region \
+panels-flexible-region-18-center panels-flexible-region-first \
+panels-flexible-region-last course-detail-container\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"inside panels-flexible-region-inside \
+panels-flexible-region-18-center-inside panels-flexible-region-inside-first \
+panels-flexible-region-inside-last\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"panel-pane pane-views \
+pane-course-view\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n  \\n      \\n  \\n  \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"pane-content\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"view view-course-view view-id-course_view \
+view-display-id-default view-dom-id-7762f7d108c039de7ea0504eef6c36b0\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n        \\n  \\n  \\n      \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"view-content\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-1 views-row-odd \
+views-row-first views-row-last\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"header-white\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"header-white-title\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h2\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"Course detail\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"section\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-header clearfix\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"article\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"col-izq\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/cooking_course_608x211.jpg\"\>"}]\
+, ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"608\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"211\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Science & Cooking\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"article\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"col-der\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"http://youtube.com/watch?v=AUEJNW3PrHI\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"rel\"\>", 
+                    "\[Rule]", "\<\"lightvideo\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"playvideo\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"description\"\>"}], "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Watch the Course Intro Video\"\>", "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/harvard_cooking_video_320x211.\
+jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"320\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"211\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"section\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-detail clearfix\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"article\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"col-izq\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"title\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h1\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Science & Cooking: From Haute Cuisine to Soft \
+Matter Science\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"subtitle\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h2\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Top chefs and Harvard researchers explore how \
+everyday cooking and haute cuisine can illuminate basic principles in physics \
+and engineering, and vice versa.\"\>", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"about-title\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h3\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"ABOUT THIS COURSE\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"about\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"During each week of the course, you will watch \
+as chefs reveal the secrets behind some of their most famous culinary \
+creations \[LongDash] often right in their own restaurants. Inspired by such \
+cooking mastery, the Harvard team will then explain, in simple and \
+sophisticated ways, the science behind the recipe.\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Topics will include: soft matter materials, \
+such as emulsions, illustrated by aioli; elasticity, exemplified by the \
+done-ness of a steak; and diffusion, revealed by the phenomenon of \
+spherification, the culinary technique pioneered by Ferran \
+Adri\[AGrave].\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"To help you make the link between cooking and \
+science, an \[OpenCurlyDoubleQuote]equation of the week\
+\[CloseCurlyDoubleQuote] will capture the core scientific concept being \
+explored. You will also have the opportunity to be an experimental scientist \
+in your very own laboratory \[LongDash] your kitchen. By following along with \
+the engaging recipe of the week, taking measurements, and making \
+observations, you will learn to think both like a cook and a scientist. The \
+lab is also one of the most unique components of this course \[LongDash] \
+after all, in what other science course do you get to eat your lab?\"\>", 
+                    "}"}]}], "]"}], ",", "\<\"\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/default/files/edX-SampleCertificate-x900.png\"\>"}], ",", 
+                    RowBox[{"\<\"rel\"\>", "\[Rule]", "\<\"lightbox\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"target\"\>", "\[Rule]", "\<\"_blank\"\>"}]}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"How can you take this edX Course?\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/default/files/certificate_R8_plain.png\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-title\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h3\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"COURSE STAFF\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"view view-course-view view-id-course_view \
+view-display-id-block_course_professor \
+view-dom-id-f897b0f6e19bccbcec4d862a1c870751\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n        \\n  \\n  \\n      \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"view-content\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-1 views-row-odd \
+views-row-first\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/brenner_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Michael Brenner\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Michael Brenner\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Michael Brenner\"\>", "}"}]}], "]"}], 
+                    ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Michael Brenner is the Glover Professor of \
+Applied Mathematics and Applied Physics, and Harvard College Professor at the \
+Harvard School of Engineering and Applied Sciences. He developed the popular \
+Harvard class, \\\"Science and Cooking: From Haute Cuisine to the Science of \
+Soft Matter,\\\" with his colleague David Weitz and chef Ferran \
+Adri\[AGrave]. His research uses mathematics to examine a wide variety of \
+problems in science and engineering, ranging from understanding the shapes of \
+bird beaks, whale flippers and fungal spores, to finding the principles for \
+designing materials that can assemble themselves, to answering ordinary \
+questions about daily life, such as why a droplet of fluid splashes when it \
+collides with a solid surface.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], 
+                    "}"}]}], "]"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
+                    ",", "\<\"  \"\>"}], "}"}]}], "]"}], ",", "\<\"\\n  \"\>",
+                     ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-2 \
+views-row-even\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/weitz_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"David Weitz\"\>"}],
+                     ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"David Weitz\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"David Weitz\"\>", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"David Weitz is a Professor of Physics and \
+Applied Physics, at the Harvard School of Engineering and Applied Sciences \
+and the Department of Physics. He developed the popular Harvard class, \
+\\\"Science and Cooking: From Haute Cuisine to the Science of Soft \
+Matter,\\\" with his colleague Michael Brenner and chef Ferran Adri\[AGrave]. \
+His research group studies the science of soft matter materials as well as \
+biophysics and biotechnology.\"\>", "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], 
+                    "}"}]}], "]"}]}], "}"}]}], "]"}]}], "}"}]}], "]"}], 
+                    ",", "\<\"  \"\>"}], "}"}]}], "]"}], ",", "\<\"\\n  \"\>",
+                     ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"views-row views-row-3 views-row-odd \
+views-row-last\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\n\\n\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row clearfix\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-left\"\>"}], "}"}], ",", 
+                    
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-photo\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://www.edx.org/sites/default/files/sorensen_x110.jpg\"\>"}], ",", 
+                    RowBox[{"\<\"width\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"height\"\>", "\[Rule]", "\<\"110\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"Pia S\[ODoubleDot]rensen\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Pia S\[ODoubleDot]rensen\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-row-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-name\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Pia S\[ODoubleDot]rensen\"\>", "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-staff-resume\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Pia S\[ODoubleDot]rensen is Preceptor of \
+Science and Cooking at the School of Engineering and Applied Sciences at \
+Harvard University, and the HarvardX Fellow for Science & CookingX. She \
+earned her PhD in Chemical Biology at Harvard University, studying small \
+molecule inhibitors of cell division.\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \\n  \\n  \\n  \\n  \\n  \\n\"\>"}], 
+                    "}"}]}], "]"}]}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-left\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"id\"\>", 
+                    "\[Rule]", "\<\"prerequisites-container\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-left-title\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"h3\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"Prerequisites:\"\>", "}"}]}], "]"}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"None\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"closing-statement-title\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"closing-statement-body\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"action\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"iframe iframe-register \
+action-register-course\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"iframe\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"frameborder\"\>", "\[Rule]", "\<\"1\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"scrolling\"\>", "\[Rule]", "\<\"auto\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://courses.edx.org/mktg/HarvardX/SPU27x/2013_Oct\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"article\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"col-der\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"info\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"institution\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"School:\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"HarvardX\"\>"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"code\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"Course code:\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"SPU27x\"\>"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"startdate\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"field\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"Classes start:\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"October 2013\"\>"}], "}"}]}], "]"}]}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-right\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-right-title\"\>"}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "\<\"Prerequisites:\"\>", "}"}]}], "]"}], 
+                    ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-right-container\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"p\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", "\<\"None\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"prerequisites-right-seemore\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"id\"\>", 
+                    "\[Rule]", "\<\"prerequisites-seemore\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "\<\"see more...\"\>", "}"}]}], "]"}]}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"action\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"iframe iframe-register \
+action-register-course\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"iframe\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"frameborder\"\>", "\[Rule]", "\<\"1\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"scrolling\"\>", "\[Rule]", "\<\"auto\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"https://courses.edx.org/mktg/HarvardX/SPU27x/2013_Oct\"\>"}]}], "}"}], 
+                    ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"course-social\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"ul\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"https://twitter.com/intent/tweet?text=I \
+just registered for an #edX course \[Hyphen] join me at \
+https://www.edx.org.\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"Twitter\"\>"}]}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-tweet.png\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Twitter\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"separator\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-separator.png\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"http://www.facebook.com/EdxOnline\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Facebook\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-like.png\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Facebook\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"separator\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-separator.png\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"mailto:?subject=Take%20a%20course%20with%20edX%20online&body=I just \
+registered for an #edX course - join me at: \
+http://www.edx.org/course/harvard-university/spu27x/science-cooking-haute-\
+cuisine/639\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"email share\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-email.png\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"alt\"\>", 
+                    "\[Rule]", "\<\"email share\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"separator\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-separator.png\"\>"}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"http://edx.meetup.com/\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"Meetup\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"img\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"src\"\>", 
+                    "\[Rule]", \
+"\<\"/sites/all/themes/boron/images/ico-meetup.png\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Meetup\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], "}"}]}], "]"}], "}"}]}], 
+                    "]"}]}], "}"}]}], "]"}], "}"}]}], "]"}], 
+                    ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \\n  \\n  \\n  \\n  \\n  \\n\"\>"}], 
+                    "}"}]}], "]"}], ",", "\<\"  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\\n  \\n  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n\"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n  \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                            \"\>"}], "}"}]}],
+                     "]"}], ",", "\<\" \\n        \\n            \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"main-wrapper\"\>"}],
+                     "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"clearfix with-navigation\"\>"}], ",", 
+                    RowBox[{"\<\"id\"\>", "\[Rule]", "\<\"main\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"\\n        \\n                \"\>", "}"}]}], 
+                    "]"}], ",", "\<\"\\n            \"\>"}], "}"}]}], "]"}], 
+                   ",", "\<\" \\n        \\n            \\n\\t\\n    \
+\\t\"\>"}], "}"}]}], "]"}], ",", "\<\"\\n\\n    \\t\\n    \\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"script\"\>", ",", 
+                 RowBox[{"{", 
+                  
+                  RowBox[{"\<\"type\"\>", 
+                   "\[Rule]", "\<\"text/javascript\"\>"}], "}"}], ",", 
+                 RowBox[{
+                 "{", "\<\"\\n\\t\\t\\t  // WebFontConfig = {\\n\\t\\t\\t  // \
+  google: { families: [ \
+'Open+Sans:400italic,600italic,700italic,400,600,700:latin' ] }\\n\\t\\t\\t  \
+// };\\n\\t\\t\\t  // (function() {\\n\\t\\t\\t  //   var wf = \
+document.createElement('script');\\n\\t\\t\\t  //   wf.src = ('https:' == \
+document.location.protocol ? 'https' : 'http') +\\n\\t\\t\\t  //     \
+'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';\\n\\t\\t\\t  //   \
+wf.type = 'text/javascript';\\n\\t\\t\\t  //   wf.async = 'true';\\n\\t\\t\\t \
+ //   var s = document.getElementsByTagName('script')[0];\\n\\t\\t\\t  //   \
+s.parentNode.insertBefore(wf, s);\\n\\t\\t\\t  // })(); \\n\\t\\t\"\>", 
+                  "}"}]}], "]"}], ",", "\<\" \\n    \\t\\n    \"\>"}], 
+              "}"}]}], "]"}], ",", "\<\" \\n\\n    \"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"footer\"\>", ",", 
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{"{", "}"}]}], "]"}], ",", "\<\"\\n    \\t\"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"div\"\>", ",", 
+             RowBox[{"{", 
+              
+              RowBox[{"\<\"class\"\>", 
+               "\[Rule]", "\<\"footer-inside clearfix\"\>"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"\\n    \\t\\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"left-col\"\>"}], 
+                  "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"\\n    \\t\\t\\t\"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"links\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\t\\t\\t\\t\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"ul\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"clearfix\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/about-us\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "\<\"About Us\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"/jobs\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"Jobs\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/in-the-news\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Press\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/student-faq\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "\<\"FAQ\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"/contact\"\>"}]}],
+                     "}"}], ",", 
+                    RowBox[{"{", "\<\"Contact\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}]}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n    \\t\\t\\t\"\>"}], "}"}]}], "]"}], 
+                   ",", "\<\"\\n    \\t\\t\\t\"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"logo clearfix\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n    \\t\\t\\t\\t\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"image\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "\<\"\\n    \\t\\t\\t\\t\"\>", "}"}]}], 
+                    "]"}], ",", "\<\"\\n    \\t\\t\\t\\t\"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"description\"\>"}], "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"\\nEdX is a non-profit created by founding \
+partners Harvard and MIT.  We're bringing the best of higher education to \
+students around the world. EdX offers MOOCs and interactive online classes in \
+subjects including law, history, business, social sciences, computer science, \
+public health, and artificial intelligence (AI).    \\t\\t\\t\\t\"\>", 
+                    "}"}]}], "]"}], ",", "\<\"\\n    \\t\\t\\t\"\>"}], 
+                    "}"}]}], "]"}], ",", "\<\"\\n    \\t\\t\"\>"}], "}"}]}], 
+                "]"}], ",", "\<\"\\n    \\t\\t\"\>", ",", 
+               RowBox[{"XMLElement", "[", 
+                RowBox[{"\<\"div\"\>", ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"right-col\"\>"}], 
+                  "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"\<\"\\n                \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"social clearfix\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"icon_meetup\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"http://www.meetup.com/edX-Global-Community/\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Meetup\"\>"}], ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"Meetup\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"icon_facebook\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"https://www.facebook.com/EdxOnline\"\>"}],
+                     ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Facebook\"\>"}], 
+                    ",", 
+                    
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"Facebook\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"icon_linkedin\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"http://www.linkedin.com/company/edx\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"LinkedIn\"\>"}], 
+                    ",", 
+                    
+                    RowBox[{"\<\"title\"\>", 
+                    "\[Rule]", "\<\"LinkedIn\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"                   \\n                    \"\>",
+                     ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"icon_twitter\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"https://twitter.com/edXOnline\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Twitter\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"Twitter\"\>"}]}],
+                     "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    
+                    RowBox[{"\<\"class\"\>", 
+                    "\[Rule]", "\<\"icon_googleplus\"\>"}], "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                        \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"data-popup\"\>", "\[Rule]", "\<\"true\"\>"}],
+                     ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", \
+"\<\"https://plus.google.com/108235383044095082735/posts\"\>"}], ",", 
+                    RowBox[{"\<\"alt\"\>", "\[Rule]", "\<\"Google+\"\>"}], 
+                    ",", 
+                    RowBox[{"\<\"title\"\>", "\[Rule]", "\<\"Google+\"\>"}]}],
+                     "}"}], ",", 
+                    RowBox[{"{", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                    \"\>"}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                \"\>"}], "}"}]}], "]"}], 
+                   ",", "\<\"\\n                \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"rights\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"\\n                    \[Copyright] 2013 edX, \
+except where noted, all rights reserved. \\n                \"\>", "}"}]}], 
+                    "]"}], ",", "\<\"\\n                \"\>", ",", 
+                   RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"div\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"class\"\>", "\[Rule]", "\<\"menu\"\>"}], 
+                    "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                    \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"ul\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    RowBox[{"\<\"href\"\>", "\[Rule]", "\<\"/terms\"\>"}]}], 
+                    "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"Terms of Service and Honor Code\"\>", "}"}]}], 
+                    "]"}], ",", "\<\"\\n                        \"\>"}], 
+                    "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{
+                    "{", "\<\"\\n                            -\\n             \
+           \"\>", "}"}]}], "]"}], ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"li\"\>", ",", 
+                    RowBox[{"{", "}"}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"\<\"\\n                            \"\>", ",", 
+                    RowBox[{"XMLElement", "[", 
+                    RowBox[{"\<\"a\"\>", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"\<\"shape\"\>", "\[Rule]", "\<\"rect\"\>"}], ",", 
+                    
+                    RowBox[{"\<\"href\"\>", 
+                    "\[Rule]", "\<\"/privacypolicy\"\>"}]}], "}"}], ",", 
+                    RowBox[{"{", "\<\"Privacy Policy\"\>", "}"}]}], "]"}], 
+                    ",", "\<\"\\n                        \"\>"}], "}"}]}], 
+                    "]"}]}], "}"}]}], "]"}], 
+                    ",", "\<\"\\n                \"\>"}], "}"}]}], "]"}], 
+                   ",", "\<\"\\n            \"\>"}], "}"}]}], "]"}], 
+               ",", "\<\"\\n    \\t\"\>"}], "}"}]}], "]"}], 
+           ",", "\<\"\\n     \\n\\n\\n\\n\\n  \\n\"\>", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\<\"script\"\>", ",", 
+             RowBox[{"{", 
+              RowBox[{"\<\"type\"\>", "\[Rule]", "\<\"text/javascript\"\>"}], 
+              "}"}], ",", 
+             RowBox[{
+             "{", "\<\"if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push([\\\"\
+load\\\",new Date().getTime()]);var \
+e=document.createElement(\\\"script\\\");e.type=\\\"text/javascript\\\";e.src=\
+((\\\"http:\\\"===document.location.protocol)?\\\"http:\\\":\\\"https:\\\")+\\\
+\"//\\\"+\\\"d1ros97qkrwjf5.cloudfront.net/42/eum/rum.js\\\";document.body.\
+appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=\
+NREUMQ.f;};NREUMQ.push([\\\"nrfj\\\",\\\"beacon-1.newrelic.com\\\",\\\"\
+1beac94c95\\\",\\\"1800846\\\",\\\"\
+NQQGYUZWDUNSVUMPWQxOJVZAXgxeHEZWAVM9DAVbVVAGQmxYWAJTPRcNUENoE1FUUw==\\\",0,\
+360,new Date().getTime(),\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\",\\\"\\\"]);\"\>",
+               "}"}]}], "]"}], ",", "\<\"\\n\"\>"}], "}"}]}], "]"}]}], 
+      "}"}]}], "]"}], ",", 
+   RowBox[{"{", "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.578705372436186*^9, 3.57870630440676*^9}]
+}, Closed]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Former", "Section",
+ CellChangeTimes->{{3.578696581829334*^9, 3.578696583276066*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "$initialUrl", "=", "\"\<http://www.guokr.com/question/456758/\>\""}], 
+  ";"}], "\n", 
+ RowBox[{"$dom", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{"$initialUrl", ",", "\"\<XMLObject\>\""}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.574927538105431*^9, 3.574927548426603*^9}, 
+   3.574927869666268*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   PanelBox[GridBox[{
+      {
+       StyleBox[
+        StyleBox[
+         DynamicBox[ToBoxes[
+           FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+           StandardForm],
+          ImageSizeCache->{407., {3., 11.}}],
+         StripOnInput->False,
+         DynamicUpdating->True], "Panel",
+        StripOnInput->False,
+        Background->None]},
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{
+          RowBox[{"XMLObject", "[", "\<\"Document\"\>", "]"}], "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"XMLObject", "[", "\<\"Declaration\"\>", "]"}], "[", 
+             RowBox[{
+              RowBox[{"\<\"Version\"\>", "\[Rule]", "\<\"1.0\"\>"}], ",", 
+              RowBox[{"\<\"Standalone\"\>", "\[Rule]", "\<\"yes\"\>"}]}], 
+             "]"}], "}"}], ",", 
+           RowBox[{"\[LeftSkeleton]", "1", "\[RightSkeleton]"}], ",", 
+           RowBox[{"{", "}"}]}], "]"}],
+         Short[#, 5]& ],
+        Background->GrayLevel[1],
+        BaseStyle->{Deployed -> False},
+        Frame->True,
+        FrameStyle->GrayLevel[0, 0.2],
+        StripOnInput->False]},
+      {
+       RowBox[{
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+             StandardForm],
+            ImageSizeCache->{72., {0., 11.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 2, 23432559730251675615, 5/2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+             StandardForm],
+            ImageSizeCache->{76., {0., 11.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 2, 23432559730251675615, 5 2],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+             StandardForm],
+            ImageSizeCache->{117., {3., 11.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>OutputSizeLimit`ButtonFunction[
+          Identity, 2, 23432559730251675615, Infinity],
+         Enabled->True,
+         Evaluator->Automatic,
+         Method->"Queued"], "\[ThinSpace]", 
+        ButtonBox[
+         StyleBox[
+          StyleBox[
+           DynamicBox[ToBoxes[
+             FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+             StandardForm],
+            ImageSizeCache->{108., {0., 11.}}],
+           StripOnInput->False,
+           DynamicUpdating->True], "Panel",
+          StripOnInput->False,
+          Background->None],
+         Appearance->Automatic,
+         ButtonFunction:>FrontEndExecute[{
+            FrontEnd`SetOptions[
+            FrontEnd`$FrontEnd, 
+             FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+            FrontEnd`FrontEndToken["PreferencesDialog"]}],
+         Evaluator->None,
+         Method->"Preemptive"]}]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[1.2]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    DefaultBaseStyle->{},
+    FrameMargins->5],
+   Deploy,
+   DefaultBaseStyle->{Deployed -> True}],
+  Out[2]]], "Output",
+ CellChangeTimes->{3.574927870956675*^9, 3.575496077059698*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"info", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{
+    "\"\<http://www.guokr.com/question/456758/\>\"", ",", 
+     "\"\<XMLObject\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.574928901018049*^9, 3.574928928482558*^9}, 
+   3.575274323180974*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"labels", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"info", ",", 
+     RowBox[{
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<span\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answers-num gfl\>\""}], 
+         "}"}], ",", "label_"}], "]"}], "\[RuleDelayed]", 
+      RowBox[{"First", "[", "label", "]"}]}], ",", "Infinity"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"values", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"info", ",", 
+     RowBox[{
+      RowBox[{"XMLElement", "[", 
+       RowBox[{"\"\<span\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answers-num gfl\>\""}], 
+         "}"}], ",", "value_"}], "]"}], "\[RuleDelayed]", 
+      RowBox[{"First", "[", "value", "]"}]}], ",", "Infinity"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"labels", ",", "values"}], "}"}], ",", 
+   RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.574928344842696*^9, 3.574928344845207*^9}, {
+  3.574928433569535*^9, 3.574928446436261*^9}, {3.57492850600468*^9, 
+  3.574928510770973*^9}, {3.574928563466551*^9, 3.574928584758736*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[GridBox[{
+     {""},
+     {""}
+    },
+    AutoDelete->False,
+    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"],
+  Grid[{{}, {}}, Dividers -> All]]], "Output",
+ CellChangeTimes->{
+  3.574928345691907*^9, {3.574928434564535*^9, 3.574928447079115*^9}, 
+   3.574928511288299*^9, 3.574928585475695*^9, 3.574928918047108*^9, 
+   3.575274331756963*^9, 3.5754960774567213`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", "  ", 
+  RowBox[{
+   RowBox[{
+   "Here", " ", "is", " ", "the", " ", "important", " ", "part", " ", "af", 
+    " ", "the", " ", 
+    RowBox[{"XMLObject", ".", "\[IndentingNewLine]", "\"\< \>\""}]}], ",", 
+   RowBox[{"XMLElement", "[", 
+    RowBox[{"\"\<div\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer\>\""}], ",", 
+       RowBox[{"\"\<id\>\"", "\[Rule]", "\"\<answer469620\>\""}]}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<\\n            \>\"", ",", 
+       RowBox[{"XMLElement", "[", 
+        RowBox[{"\"\<div\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer-digg digg\>\""}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"\"\<\\n                \>\"", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\"\<a\>\"", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+               RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer-digg-up\>\""}],
+                ",", 
+               RowBox[{
+               "\"\<href\>\"", "\[Rule]", "\"\<javascript:void 0;\>\""}], ",", 
+               RowBox[{
+               "\"\<data-operation\>\"", "\[Rule]", "\"\<support\>\""}], ",", 
+               RowBox[{"\"\<data-id\>\"", "\[Rule]", "\"\<469620\>\""}], ",", 
+               RowBox[{
+               "\"\<title\>\"", "\[Rule]", 
+                "\"\<\:652f\:6301\:ff08+1\:ff09\>\""}]}], "}"}], ",", 
+             RowBox[{"{", "\"\<20\>\"", "}"}]}], "]"}], ",", 
+           "\"\<\\n                \>\"", ",", 
+           RowBox[{"XMLElement", "[", 
+            RowBox[{"\"\<a\>\"", ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+               RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer-digg-dw\>\""}],
+                ",", 
+               RowBox[{
+               "\"\<href\>\"", "\[Rule]", "\"\<javascript:void 0;\>\""}], ",", 
+               RowBox[{
+               "\"\<data-operation\>\"", "\[Rule]", "\"\<oppose\>\""}], ",", 
+               RowBox[{"\"\<data-id\>\"", "\[Rule]", "\"\<469620\>\""}], ",", 
+               RowBox[{
+               "\"\<title\>\"", "\[Rule]", "\"\<\:53cd\:5bf9(-1)\>\""}]}], 
+              "}"}], ",", 
+             RowBox[{"{", "\"\<0\>\"", "}"}]}], "]"}], ",", 
+           "\"\<\\n            \>\""}], "}"}]}], "]"}], ","}], 
+      "\[IndentingNewLine]"}]}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.574929554949097*^9, 3.57492957969565*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"label1", "=", 
+  RowBox[{"Cases", "[", 
+   RowBox[{"info", ",", 
+    RowBox[{
+     RowBox[{"XMLElement", "[", 
+      RowBox[{"\"\<a\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+         RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer-digg-up\>\""}], ",", 
+         
+         RowBox[{"\"\<href\>\"", "\[Rule]", "\"\<javascript:void 0;\>\""}], 
+         ",", 
+         RowBox[{"\"\<data-operation\>\"", "\[Rule]", "\"\<support\>\""}], 
+         ",", 
+         RowBox[{"\"\<data-id\>\"", "\[Rule]", "labela_"}], ",", 
+         RowBox[{
+         "\"\<title\>\"", "\[Rule]", "\"\<\:652f\:6301\:ff08+1\:ff09\>\""}]}],
+         "}"}], ",", "labelb_"}], "]"}], "\[RuleDelayed]", 
+     RowBox[{"{", 
+      RowBox[{"labela", ",", 
+       RowBox[{"First", "[", "labelb", "]"}]}], "}"}]}], ",", "Infinity"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Grid", "[", 
+  RowBox[{"%", ",", 
+   RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.574929035230927*^9, 3.574929126394593*^9}, {
+  3.574929166113818*^9, 3.574929331116626*^9}, {3.574929366002734*^9, 
+  3.574929548339894*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"470042\"\>", ",", "\<\"95\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"469620\"\>", ",", "\<\"53\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"470405\"\>", ",", "\<\"47\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"470682\"\>", ",", "\<\"25\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"470066\"\>", ",", "\<\"6\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"471698\"\>", ",", "\<\"6\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"470493\"\>", ",", "\<\"0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"473910\"\>", ",", "\<\"0\"\>"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"473593\"\>", ",", "\<\"0\"\>"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.574929217982809*^9, 3.574929257949173*^9}, {
+   3.574929309054544*^9, 3.574929331910142*^9}, {3.574929366617612*^9, 
+   3.574929548956224*^9}, 3.57527433591268*^9, 3.575496080699907*^9}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"470042\"\>", "\<\"95\"\>"},
+    {"\<\"469620\"\>", "\<\"53\"\>"},
+    {"\<\"470405\"\>", "\<\"47\"\>"},
+    {"\<\"470682\"\>", "\<\"25\"\>"},
+    {"\<\"470066\"\>", "\<\"6\"\>"},
+    {"\<\"471698\"\>", "\<\"6\"\>"},
+    {"\<\"470493\"\>", "\<\"0\"\>"},
+    {"\<\"473910\"\>", "\<\"0\"\>"},
+    {"\<\"473593\"\>", "\<\"0\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.574929217982809*^9, 3.574929257949173*^9}, {
+   3.574929309054544*^9, 3.574929331910142*^9}, {3.574929366617612*^9, 
+   3.574929548956224*^9}, 3.57527433591268*^9, 3.575496080703907*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Beginning of the Universe", "Section",
+ CellChangeTimes->{{3.575497234823919*^9, 3.5754972395371885`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  RowBox[{"NotebookDirectory", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.575498128635886*^9, 3.575498157386737*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"StringJoin", "[", 
+     RowBox[{"\"\<http://www.guokr.com/question/\>\"", ",", 
+      RowBox[{"ToString", "[", 
+       RowBox[{"456758", "+", "i"}], "]"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "0", ",", "100"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.575274497858735*^9, 3.575274505279113*^9}, {
+  3.575274555169802*^9, 3.575274565437135*^9}, {3.57527460326896*^9, 
+  3.575274632632419*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rawData", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<http://www.guokr.com/question/\>\"", ",", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"458369", "-", "i"}], "]"}]}], "]"}], ",", 
+       "\"\<XMLObject\>\""}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "800"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5754961433004875`*^9, 3.575496168923953*^9}, {
+  3.575496204457985*^9, 3.5754962287563753`*^9}, {3.575497886721051*^9, 
+  3.5754978930546618`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458327\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754962426651707`*^9, 3.5754964229874845`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458314\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754962426651707`*^9, 3.5754964259436536`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458311\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754962426651707`*^9, 3.575496426375678*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(FetchURL \
+:: conopen\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754962426651707`*^9, 3.57549642640668*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rawDataexp1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{
+       RowBox[{"StringJoin", "[", 
+        RowBox[{"\"\<http://www.guokr.com/question/\>\"", ",", 
+         RowBox[{"ToString", "[", 
+          RowBox[{"458369", "-", "i"}], "]"}]}], "]"}], ",", 
+       "\"\<XMLObject\>\""}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "200"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575497906720286*^9, 3.575497919871109*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458327\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754979621135864`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458314\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754979712552023`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458311\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754979731584053`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(FetchURL \
+:: conopen\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754979733300056`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"expRawData", "=", 
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\<Data\\\\RawData.xml\>\"", ",", "rawDataexp1", ",", "\"\<XML\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.575496231977559*^9, 3.5754962693636975`*^9}, {
+  3.5754963434799366`*^9, 3.5754963478121843`*^9}, {3.5754972697529163`*^9, 
+  3.5754972715430193`*^9}, {3.575497370851699*^9, 3.5754973746709175`*^9}, {
+  3.575497928513524*^9, 3.575497929153126*^9}}],
+
+Cell[BoxData["\<\"Data\\\\RawData.xml\"\>"], "Output",
+ CellChangeTimes->{
+  3.575498057009757*^9, {3.575498106717848*^9, 3.575498109151452*^9}, 
+   3.575498232588621*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dataSource", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Cases", "[", 
+      RowBox[{
+       RowBox[{"Import", "[", 
+        RowBox[{
+         RowBox[{"StringJoin", "[", 
+          RowBox[{"\"\<http://www.guokr.com/question/\>\"", ",", 
+           RowBox[{"ToString", "[", 
+            RowBox[{"458369", "-", "i"}], "]"}]}], "]"}], ",", 
+         "\"\<XMLObject\>\""}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"XMLElement", "[", 
+         RowBox[{"\"\<a\>\"", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<shape\>\"", "\[Rule]", "\"\<rect\>\""}], ",", 
+            RowBox[{"\"\<class\>\"", "\[Rule]", "\"\<answer-digg-up\>\""}], 
+            ",", 
+            RowBox[{"\"\<href\>\"", "\[Rule]", "\"\<javascript:void 0;\>\""}],
+             ",", 
+            RowBox[{"\"\<data-operation\>\"", "\[Rule]", "\"\<support\>\""}], 
+            ",", 
+            RowBox[{"\"\<data-id\>\"", "\[Rule]", "labela_"}], ",", 
+            RowBox[{
+            "\"\<title\>\"", "\[Rule]", 
+             "\"\<\:652f\:6301\:ff08+1\:ff09\>\""}]}], "}"}], ",", 
+          "labelb_"}], "]"}], "\[RuleDelayed]", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"labela", ",", 
+           RowBox[{"First", "[", "labelb", "]"}]}], "}"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ",", "Infinity"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", "400"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeleteCases", "[", 
+   RowBox[{"%", ",", 
+    RowBox[{"{", "}"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Flatten", "[", "%", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.575274362624823*^9, 3.575274406372827*^9}, {
+   3.575274442328466*^9, 3.575274455227437*^9}, {3.575275157164793*^9, 
+   3.575275172168734*^9}, {3.57533416061506*^9, 3.575334194900104*^9}, 
+   3.575334234406276*^9, {3.575334500384793*^9, 3.575334522514185*^9}, {
+   3.575334846174257*^9, 3.575334852255153*^9}, {3.575335164293816*^9, 
+   3.575335165975538*^9}, {3.575357056694592*^9, 3.575357056984734*^9}, {
+   3.575357225799822*^9, 3.575357232375316*^9}, 3.575359255276626*^9, {
+   3.575359731679039*^9, 3.57535974445424*^9}, {3.575359780504522*^9, 
+   3.575359786186676*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458327\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.575274457423694*^9, 3.575275177282165*^9, {3.575334169558103*^9, 
+   3.575334196893442*^9}, 3.575334253235729*^9, {3.575334508215468*^9, 
+   3.575334525581556*^9}, 3.57533486128791*^9, 3.575335184734227*^9, 
+   3.575357065722248*^9, 3.575357237357045*^9, 3.575359259878776*^9, {
+   3.575359774769418*^9, 3.575359801708248*^9}, 3.575359844526995*^9, 
+   3.575496107196422*^9, 3.575496775919671*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458314\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.575274457423694*^9, 3.575275177282165*^9, {3.575334169558103*^9, 
+   3.575334196893442*^9}, 3.575334253235729*^9, {3.575334508215468*^9, 
+   3.575334525581556*^9}, 3.57533486128791*^9, 3.575335184734227*^9, 
+   3.575357065722248*^9, 3.575357237357045*^9, 3.575359259878776*^9, {
+   3.575359774769418*^9, 3.575359801708248*^9}, 3.575359844526995*^9, 
+   3.575496107196422*^9, 3.5754967788788404`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"FetchURL", "::", "conopen"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The connection to URL \
+\[NoBreak]\\!\\(\\\"http://www.guokr.com/question/458311\\\"\\)\[NoBreak] \
+cannot be opened. If the URL is correct, you might need to configure your \
+firewall program, or you might need to set a proxy in the Internet \
+connectivity tab of the Preferences dialog (or by calling SetInternetProxy).  \
+For HTTPS connections, you might need to inspect the authenticity of the \
+server's SSL certificate and choose to accept it.\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.575274457423694*^9, 3.575275177282165*^9, {3.575334169558103*^9, 
+   3.575334196893442*^9}, 3.575334253235729*^9, {3.575334508215468*^9, 
+   3.575334525581556*^9}, 3.57533486128791*^9, 3.575335184734227*^9, 
+   3.575357065722248*^9, 3.575357237357045*^9, 3.575359259878776*^9, {
+   3.575359774769418*^9, 3.575359801708248*^9}, 3.575359844526995*^9, 
+   3.575496107196422*^9, 3.57549677940287*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(FetchURL \
+:: conopen\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during \
+this calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.575274457423694*^9, 3.575275177282165*^9, {3.575334169558103*^9, 
+   3.575334196893442*^9}, 3.575334253235729*^9, {3.575334508215468*^9, 
+   3.575334525581556*^9}, 3.57533486128791*^9, 3.575335184734227*^9, 
+   3.575357065722248*^9, 3.575357237357045*^9, 3.575359259878776*^9, {
+   3.575359774769418*^9, 3.575359801708248*^9}, 3.575359844526995*^9, 
+   3.575496107196422*^9, 3.5754967794068704`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"correctedData", "=", 
+   RowBox[{"ToExpression", "[", 
+    RowBox[{"DeleteCases", "[", 
+     RowBox[{"dataSource", ",", 
+      RowBox[{"{", "}"}]}], "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575357354243468*^9, 3.575357374060859*^9}, {
+   3.575357779947409*^9, 3.575357785389676*^9}, 3.57535979089093*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lenTotal", "=", 
+  RowBox[{"Length", "[", "correctedData", "]"}]}]], "Input",
+ CellChangeTimes->{{3.57535725379043*^9, 3.575357317092862*^9}, {
+  3.575357350344447*^9, 3.575357370266165*^9}}],
+
+Cell[BoxData["223"], "Output",
+ CellChangeTimes->{{3.575357261350055*^9, 3.575357318072353*^9}, 
+   3.575357376443304*^9, 3.575357788178256*^9, 3.575359399686126*^9, 
+   3.575360087779605*^9, 3.575496861603572*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lenTable", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Length", "[", 
+      RowBox[{"correctedData", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "lenTotal"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.575357321765123*^9, 3.575357339121583*^9}, {
+   3.575357381284368*^9, 3.575357415138686*^9}, 3.575359795826972*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"totTable", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Total", "[", 
+      RowBox[{"correctedData", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "lenTotal"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.575357500334755*^9, 3.575357550402551*^9}, {
+   3.575357800703926*^9, 3.575357803513742*^9}, 3.575359798544289*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"correctedData", "[", 
+    RowBox[{"[", "1", "]"}], "]"}], "/", 
+   RowBox[{"totTable", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575357850776732*^9, 3.575357888550023*^9}, 
+   3.575359807167052*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(1\\/0\\)\[NoBreak] \
+encountered. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754968619805937`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575496862014595*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5754968620175953`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"perTable", "=", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"correctedData", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "/", 
+       RowBox[{"totTable", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "1", ",", "lenTotal"}], "}"}]}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{"Indeterminate", "\[Rule]", "0"}], "}"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575357808754959*^9, 3.575357841997621*^9}, {
+   3.575357891506731*^9, 3.575357910239782*^9}, {3.575357959751345*^9, 
+   3.575357963657692*^9}, 3.575359770054448*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(1\\/0\\)\[NoBreak] \
+encountered. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.5754968620725985`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.575496862074599*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.575496862076599*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(1\\/0\\)\[NoBreak] \
+encountered. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.575496862079599*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.5754968620845995`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(Infinity \
+:: indet\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.5754968620855994`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(1\\/0\\)\[NoBreak] \
+encountered. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.5754968620875998`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(Power :: \
+infy\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.575357911513026*^9, 3.575357963956831*^9, 
+  3.575359400117891*^9, 3.575360088027487*^9, 3.5754968620895996`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mainTable", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"lenTable", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"perTable", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}], ",", 
+       RowBox[{"correctedData", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "lenTotal"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", 
+       RowBox[{"lenTable", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575358902093736*^9, 3.575358911753898*^9}, {
+   3.575359018782008*^9, 3.575359052342676*^9}, {3.57535908612879*^9, 
+   3.575359089582947*^9}, {3.575359149327663*^9, 3.57535922389953*^9}, 
+   3.5753597601502*^9}],
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{"mainTable", ",", 
+   RowBox[{"ChartBaseStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"EdgeForm", "[", "None", "]"}], ",", 
+      RowBox[{"Opacity", "[", "0.4", "]"}]}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<No. of Answers\>\"", ",", "\"\<Percent of Vote-ups\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<An Example of Analyzing Q&A Data\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.575358984079001*^9, 3.575358984093079*^9}, {
+  3.575359238973072*^9, 3.575359242561861*^9}, {3.575360696326367*^9, 
+  3.575360696755255*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{"mainTable", ",", 
+   RowBox[{"ChartStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Opacity", "[", "0", "]"}], "}"}]}], ",", 
+   RowBox[{"ChartBaseStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Opacity", "[", "0.4", "]"}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<No. of Answers\>\"", ",", "\"\<Percent of Vote-ups\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<An Example of Analyzing Q&A Data\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.575360488232668*^9, 3.575360494278646*^9}, {
+  3.575360528340886*^9, 3.57536055973769*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"mainTable2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"lenTable", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"correctedData", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}], ",", 
+       RowBox[{"perTable", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "j"}], "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "lenTotal"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"j", ",", "1", ",", 
+       RowBox[{"lenTable", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.575358902093736*^9, 3.575358911753898*^9}, {
+   3.575359018782008*^9, 3.575359052342676*^9}, {3.57535908612879*^9, 
+   3.575359089582947*^9}, {3.575359149327663*^9, 3.57535922389953*^9}, 
+   3.5753597601502*^9, {3.575360612890413*^9, 3.575360630947672*^9}}],
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{"mainTable2", ",", 
+   RowBox[{"ChartBaseStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"EdgeForm", "[", "None", "]"}], ",", 
+      RowBox[{"Opacity", "[", "0.5", "]"}]}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<No. of Answers\>\"", ",", "\"\<Percent of Vote-ups\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<An Example of Analyzing Q&A Data\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.575358984079001*^9, 3.575358984093079*^9}, {
+   3.575359238973072*^9, 3.575359242561861*^9}, 3.575360637137973*^9}],
+
+Cell[BoxData[
+ RowBox[{"BubbleChart", "[", 
+  RowBox[{"mainTable2", ",", 
+   RowBox[{"ChartStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Opacity", "[", "0", "]"}], "}"}]}], ",", 
+   RowBox[{"ChartBaseStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"Opacity", "[", "0.4", "]"}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<No. of Answers\>\"", ",", "\"\<Percent of Vote-ups\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", "\"\<An Example of Analyzing Q&A Data\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{3.575360742496801*^9}]
+}, Closed]]
+},
+WindowSize->{1280, 776},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Linux x86 (32-bit) (October 10, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 88, 1, 74, "Section"],
+Cell[CellGroupData[{
+Cell[692, 27, 382, 7, 30, "Input"],
+Cell[1077, 36, 301, 4, 30, "Output"]
+}, Open  ]],
+Cell[1393, 43, 131, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[1549, 50, 119, 2, 30, "Input"],
+Cell[1671, 54, 92, 1, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1800, 60, 511, 13, 30, "Input"],
+Cell[2314, 75, 503, 9, 50, "Output"]
+}, Open  ]],
+Cell[2832, 87, 684, 17, 30, "Input"],
+Cell[3519, 106, 9831, 222, 601, "Input"],
+Cell[13353, 330, 1568, 36, 69, "Input"],
+Cell[14924, 368, 1496, 35, 107, "Input"],
+Cell[16423, 405, 139, 4, 49, "Text"],
+Cell[CellGroupData[{
+Cell[16587, 413, 526, 13, 30, "Input"],
+Cell[17116, 428, 309, 4, 30, "Output"]
+}, Open  ]],
+Cell[17440, 435, 414, 12, 30, "Input"],
+Cell[CellGroupData[{
+Cell[17879, 451, 213, 4, 30, "Input"],
+Cell[18095, 457, 146, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18278, 465, 499, 10, 50, "Input"],
+Cell[18780, 477, 335, 5, 30, "Output"]
+}, Open  ]],
+Cell[19130, 485, 138, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[19293, 492, 696, 17, 50, "Input"],
+Cell[19992, 511, 166, 2, 30, "Output"]
+}, Open  ]],
+Cell[20173, 516, 424, 12, 30, "Input"],
+Cell[CellGroupData[{
+Cell[20622, 532, 886, 21, 69, "Input"],
+Cell[21511, 555, 910, 16, 69, "Output"],
+Cell[22424, 573, 145, 2, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22606, 580, 762, 19, 50, "Input"],
+Cell[23371, 601, 189, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23597, 609, 302, 6, 30, "Input"],
+Cell[23902, 617, 210, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24149, 625, 129, 2, 30, "Input"],
+Cell[24281, 629, 4654, 89, 918, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28984, 724, 90, 1, 74, "Section"],
+Cell[CellGroupData[{
+Cell[29099, 729, 282, 7, 30, "Input"],
+Cell[29384, 738, 106451, 2199, 8500, "Output"]
+}, Closed]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[135884, 2943, 91, 1, 74, "Section"],
+Cell[CellGroupData[{
+Cell[136000, 2948, 340, 9, 50, "Input"],
+Cell[136343, 2959, 4629, 130, 114, "Output"]
+}, Open  ]],
+Cell[140987, 3092, 292, 8, 30, "Input"],
+Cell[CellGroupData[{
+Cell[141304, 3104, 1229, 32, 69, "Input"],
+Cell[142536, 3138, 516, 14, 52, "Output"]
+}, Open  ]],
+Cell[143067, 3155, 2626, 58, 189, "Input"],
+Cell[CellGroupData[{
+Cell[145718, 3217, 1203, 29, 120, "Input"],
+Cell[146924, 3248, 986, 23, 30, "Output"],
+Cell[147913, 3273, 767, 18, 171, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[148729, 3297, 112, 1, 74, "Section"],
+Cell[148844, 3300, 170, 3, 30, "Input"],
+Cell[149017, 3305, 500, 12, 30, "Input"],
+Cell[CellGroupData[{
+Cell[149542, 3321, 639, 16, 30, "Input"],
+Cell[150184, 3339, 669, 12, 81, "Message"],
+Cell[150856, 3353, 669, 12, 81, "Message"],
+Cell[151528, 3367, 667, 12, 81, "Message"],
+Cell[152198, 3381, 557, 11, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[152792, 3397, 539, 14, 30, "Input"],
+Cell[153334, 3413, 645, 12, 81, "Message"],
+Cell[153982, 3427, 645, 12, 81, "Message"],
+Cell[154630, 3441, 645, 12, 81, "Message"],
+Cell[155278, 3455, 536, 11, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[155851, 3471, 450, 9, 30, "Input"],
+Cell[156304, 3482, 171, 3, 30, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[156512, 3490, 2296, 53, 119, "Input"],
+Cell[158811, 3545, 1023, 18, 81, "Message"],
+Cell[159837, 3565, 1025, 18, 81, "Message"],
+Cell[160865, 3585, 1022, 18, 81, "Message"],
+Cell[161890, 3605, 916, 17, 24, "Message"]
+}, Open  ]],
+Cell[162821, 3625, 353, 8, 30, "Input"],
+Cell[CellGroupData[{
+Cell[163199, 3637, 215, 4, 30, "Input"],
+Cell[163417, 3643, 214, 3, 30, "Output"]
+}, Open  ]],
+Cell[163646, 3649, 451, 12, 30, "Input"],
+Cell[164100, 3663, 450, 12, 30, "Input"],
+Cell[CellGroupData[{
+Cell[164575, 3679, 286, 8, 30, "Input"],
+Cell[164864, 3689, 447, 10, 49, "Message"],
+Cell[165314, 3701, 475, 10, 24, "Message"],
+Cell[165792, 3713, 477, 10, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[166306, 3728, 658, 17, 30, "Input"],
+Cell[166967, 3747, 538, 11, 49, "Message"],
+Cell[167508, 3760, 566, 11, 24, "Message"],
+Cell[168077, 3773, 566, 11, 24, "Message"],
+Cell[168646, 3786, 536, 11, 49, "Message"],
+Cell[169185, 3799, 568, 11, 24, "Message"],
+Cell[169756, 3812, 625, 12, 24, "Message"],
+Cell[170384, 3826, 538, 11, 49, "Message"],
+Cell[170925, 3839, 621, 12, 24, "Message"]
+}, Open  ]],
+Cell[171561, 3854, 914, 24, 30, "Input"],
+Cell[172478, 3880, 682, 17, 50, "Input"],
+Cell[173163, 3899, 674, 17, 50, "Input"],
+Cell[173840, 3918, 961, 24, 30, "Input"],
+Cell[174804, 3944, 657, 16, 50, "Input"],
+Cell[175464, 3962, 603, 16, 50, "Input"]
+}, Closed]]
+}
+]
+*)
+
+(* End of internal cache information *)
