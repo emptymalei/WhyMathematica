@@ -1,0 +1,1143 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     42610,       1134]
+NotebookOptionsPosition[     40160,       1051]
+NotebookOutlinePosition[     40605,       1068]
+CellTagsIndexPosition[     40562,       1065]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["What\[CloseCurlyQuote]s Here", "Section",
+ CellChangeTimes->{{3.5809931301136627`*^9, 3.5809931336080694`*^9}}],
+
+Cell["\<\
+This notes shows some primary calculations on the propulsion system using \
+only gas.\
+\>", "Text",
+ CellChangeTimes->{{3.580993137133675*^9, 3.580993161313718*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Pre", "Section",
+ CellChangeTimes->{{3.580993922518055*^9, 3.5809939227988553`*^9}}],
+
+Cell["Image size is defined", "Text",
+ CellChangeTimes->{{3.580993928664466*^9, 3.580993932985673*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"imgSize", "=", "500"}], ";"}]], "Input",
+ CellChangeTimes->{{3.580993935934078*^9, 3.580993944264493*^9}, {
+  3.580994874043726*^9, 3.580994888130551*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Fundamental Physics & Mathematics\
+\>", "Section",
+ CellChangeTimes->{{3.58099318533776*^9, 3.5809932135114093`*^9}}],
+
+Cell["\<\
+This is something like the Tsiolkovsky rocket equation.\
+\>", "Text",
+ CellChangeTimes->{{3.580993224727829*^9, 3.580993258111888*^9}}],
+
+Cell[TextData[{
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"m", 
+     FractionBox[
+      RowBox[{"d", " ", "v"}], 
+      RowBox[{"d", " ", "t"}]]}], "=", 
+    RowBox[{
+     RowBox[{"-", 
+      SubscriptBox["v", "e"]}], " ", 
+     FractionBox[
+      RowBox[{"d", " ", "m"}], 
+      RowBox[{"d", " ", "t"}]]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.5809932745387163`*^9, 3.580993330012414*^9}}],
+
+Cell[TextData[{
+ "Next we assume that the velocity of gas in rocket frame ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "e"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " is constant."
+}], "Text",
+ CellChangeTimes->{{3.5809933353788233`*^9, 3.5809933974357324`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Dashing[{0, Small}], 
+    CircleBox[{0.647933889319604, 0.5408112439538302}, \
+{0.3625196145366554, 0.36251961453665615`}]}, InsetBox[
+    StyleBox[Cell[TextData[{
+      "Area of this output\nis ",
+      Cell[BoxData[
+       FormBox["A", TraditionalForm]],
+       FormatType->"TraditionalForm"]
+     }],
+      GeneratedCell->False,
+      CellAutoOverwrite->False,
+      CellBaseline->Baseline,
+      TextAlignment->Left],
+     FontSize->14,
+     Magnification->1.,
+     Background->GrayLevel[1.]], {0.4314831573655106, 0.5620613373554548}, {
+    Left, Baseline},
+    Alignment->{Left, Top}]},
+  ContentSelectable->True,
+  ImagePadding->{{0., 0.}, {0., 0.}},
+  ImageSize->{236.79999999999876`, 176.8},
+  PlotRange->{{0., 1.3333333333333335`}, {0., 1.}},
+  PlotRangePadding->Automatic]], "Input",
+ CellChangeTimes->{{3.5809934667466545`*^9, 3.5809935326255703`*^9}}],
+
+Cell["\<\
+We assume the outlet of the gas is a constant area, and the density of gas at \
+the outlet is \[Rho] (assuming this is constant since we already assumed that \
+the output velocity is constant). Thus we can calculate the mass leakage of \
+the system which works as the propulsion of the equipment.\
+\>", "Text",
+ CellChangeTimes->{{3.58099353835078*^9, 3.5809937145530896`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   RowBox[{"v", "-", 
+    SubscriptBox["v", "0"]}], "=", 
+   RowBox[{
+    SubscriptBox["v", "e"], 
+    RowBox[{"Log", "[", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"\[Rho]", " ", 
+        SubscriptBox["v", "e"], " ", "A", " ", 
+        SubscriptBox["t", "0"]}], "-", 
+       SubscriptBox["m", "0"]}], 
+      RowBox[{
+       RowBox[{"\[Rho]", " ", 
+        SubscriptBox["v", "e"], "A", " ", "t"}], "-", 
+       SubscriptBox["m", "0"]}]], "]"}]}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5809937262375097`*^9, 3.580993791493425*^9}}],
+
+Cell[TextData[{
+ "It is good to make ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["v", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["t", "0"], "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.580993805221449*^9, 3.5809938334730988`*^9}}],
+
+Cell[BoxData[
+ FormBox[
+  StyleBox[
+   RowBox[{"v", "=", 
+    RowBox[{
+     SubscriptBox["v", "e"], 
+     RowBox[{"Log", "[", 
+      FractionBox[
+       SubscriptBox["m", "0"], 
+       RowBox[{
+        RowBox[{"\[Rho]", " ", 
+         SubscriptBox["v", "e"], "A", " ", "t"}], "-", 
+        SubscriptBox["m", "0"]}]], "]"}]}]}],
+   FontColor->GrayLevel[0]], TraditionalForm]], "Input",
+ CellChangeTimes->{{3.5809938556407375`*^9, 3.580993886325991*^9}}],
+
+Cell["Acceleration", "Text",
+ CellChangeTimes->{{3.580994694737011*^9, 3.580994697311016*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["v", "e"], 
+    RowBox[{"Log", "[", 
+     FractionBox[
+      SubscriptBox["m", "0"], 
+      RowBox[{
+       RowBox[{"\[Rho]", " ", 
+        SubscriptBox["v", "e"], " ", "A", " ", "t"}], "-", 
+       SubscriptBox["m", "0"]}]], "]"}]}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5809947027710257`*^9, 3.580994750226309*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"A", " ", "\[Rho]", " ", 
+    SubsuperscriptBox["v", "e", "2"]}], 
+   RowBox[{
+    RowBox[{"-", 
+     SubscriptBox["m", "0"]}], "+", 
+    RowBox[{"A", " ", "t", " ", "\[Rho]", " ", 
+     SubscriptBox["v", "e"]}]}]]}]], "Output",
+ CellChangeTimes->{3.5809947512091103`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Now we have to determine the velocity of the gas output. A function gives us \
+the result, that is leakage current of gas is\
+\>", "Text",
+ CellChangeTimes->{{3.580996674256688*^9, 3.580996753130427*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"Q", "=", 
+   RowBox[{"\[Mu]", " ", "A", " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"2", "\[CapitalDelta]", " ", "P"}], "\[Rho]"]]}]}], 
+  TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5809967577480345`*^9, 3.580996790367692*^9}}],
+
+Cell["\<\
+Here we can choose \[Mu]\[Element][0.60,0.62]\
+\>", "Text",
+ CellChangeTimes->{{3.5809967935968976`*^9, 3.580996812410531*^9}}],
+
+Cell[TextData[{
+ "Q is just the product of A and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["v", "e"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Q", "=", 
+    RowBox[{
+     SubscriptBox["v", "e"], " ", "A"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", i.e.,"
+}], "Text",
+ CellChangeTimes->{{3.5809968255613537`*^9, 3.580996904154292*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   SubscriptBox["v", "e"], "=", 
+   RowBox[{"\[Mu]", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"2", " ", "\[CapitalDelta]", " ", "P"}], "\[Rho]"]]}]}], 
+  TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5809969106595035`*^9, 3.580996942296359*^9}}],
+
+Cell["Substitution,", "Text",
+ CellChangeTimes->{{3.58099710249304*^9, 3.580997118857469*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"v", "=", 
+   RowBox[{"\[Mu]", " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"2", 
+       RowBox[{"(", 
+        RowBox[{"P", "-", 
+         SubscriptBox["P", "0"]}], ")"}]}], 
+      RowBox[{
+       FractionBox["P", 
+        SubscriptBox["P", "0"]], 
+       SubscriptBox["\[Rho]", "0"]}]]], 
+    RowBox[{"Log", "[", 
+     FractionBox[
+      SubscriptBox["m", "0"], 
+      RowBox[{
+       SubscriptBox["m", "0"], "-", 
+       RowBox[{
+        FractionBox["P", 
+         SubscriptBox["P", "0"]], 
+        SubscriptBox["\[Rho]", "0"], " ", "A", " ", "\[Mu]", " ", 
+        SqrtBox[
+         FractionBox[
+          RowBox[{"2", 
+           RowBox[{"(", 
+            RowBox[{"P", "-", 
+             SubscriptBox["P", "0"]}], ")"}]}], 
+          RowBox[{
+           FractionBox["P", 
+            SubscriptBox["P", "0"]], 
+           SubscriptBox["\[Rho]", "0"]}]]], "t"}]}]], "]"}]}]}], 
+  TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.580997123412677*^9, 3.5809972596321163`*^9}, {
+  3.5809973229058275`*^9, 3.5809973229058275`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ve", " ", 
+   RowBox[{"Log", "[", 
+    FractionBox["m0", 
+     RowBox[{"m0", "-", 
+      RowBox[{"\[Rho]", " ", "ve", " ", "A", " ", "t"}]}]], "]"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"ve", "\[Rule]", 
+     RowBox[{
+      SqrtBox["2"], " ", "\[Mu]", " ", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{"P", "-", "P0"}], 
+        RowBox[{
+         FractionBox["P", "P0"], "\[Rho]0"}]]]}]}], " ", ",", 
+    RowBox[{"\[Rho]", "\[Rule]", 
+     FractionBox[
+      RowBox[{"P", " ", "\[Rho]0"}], "P0"]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.580999706917615*^9, 3.580999821593416*^9}, {
+  3.580999907923968*^9, 3.580999917720785*^9}, {3.581001591620325*^9, 
+  3.5810015961755333`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox["2"], " ", "\[Mu]", " ", 
+  SqrtBox[
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+    RowBox[{"P", " ", "\[Rho]0"}]]], " ", 
+  RowBox[{"Log", "[", 
+   FractionBox["m0", 
+    RowBox[{"m0", "-", 
+     FractionBox[
+      RowBox[{
+       SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+       SqrtBox[
+        FractionBox[
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+         RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], 
+   "]"}]}]], "Output",
+ CellChangeTimes->{3.580999787538556*^9, 3.580999821952217*^9, 
+  3.5809999189843874`*^9, 3.5810015992019386`*^9}]
+}, Open  ]],
+
+Cell["Acceleration", "Text",
+ CellChangeTimes->{{3.58099945939198*^9, 3.5809994618879843`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{
+    SqrtBox["2"], " ", "\[Mu]", " ", 
+    RowBox[{"Log", "[", 
+     FractionBox["m0", 
+      RowBox[{"m0", "-", 
+       FractionBox[
+        RowBox[{
+         SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+         SqrtBox[
+          FractionBox[
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+           RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], "]"}],
+     " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+      RowBox[{"P", " ", "\[Rho]0"}]]]}], ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.5809994714820013`*^9, 3.580999474617607*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", "A", " ", 
+   RowBox[{"(", 
+    RowBox[{"P", "-", "P0"}], ")"}], " ", 
+   SuperscriptBox["\[Mu]", "2"]}], 
+  RowBox[{"m0", "-", 
+   FractionBox[
+    RowBox[{
+     SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+     SqrtBox[
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+       RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]]], "Output",
+ CellChangeTimes->{3.580999475772009*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analysis", "Section",
+ CellChangeTimes->{{3.580993199096984*^9, 3.5809932214830236`*^9}, {
+  3.5809933721324883`*^9, 3.5809933793397007`*^9}}],
+
+Cell["\<\
+Now we just show the scheme of this result\
+\>", "Text",
+ CellChangeTimes->{{3.580993894235205*^9, 3.5809939047496233`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{"func", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "1"}], "}"}], ",", 
+       RowBox[{"PlotStyle", "\[Rule]", 
+        RowBox[{"func", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+       RowBox[{"AxesOrigin", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+       RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", "imgSize"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"func", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           FractionBox["1", 
+            RowBox[{"1", "-", "t"}]], ",", "Green"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Log", "[", 
+            FractionBox["1", 
+             RowBox[{"1", "-", "t"}]], "]"}], ",", "Red"}], "}"}]}], "}"}]}], 
+      "}"}]}], "]"}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Green for Acceleration; Red for Velocity\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5809930531275277`*^9, 3.5809930705215583`*^9}, {
+  3.580993951300105*^9, 3.580993979754555*^9}, {3.580994774827552*^9, 
+  3.5809948642625093`*^9}, {3.580994895493764*^9, 3.580995030699201*^9}, {
+  3.580995072725675*^9, 3.5809950787004857`*^9}, {3.580995122146562*^9, 
+  3.5809952100527163`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0, 1, 0], LineBox[CompressedData["
+1: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
+      "]]}}, {{}, {}, 
+    {RGBColor[1, 0, 0], LineBox[CompressedData["
+1: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
+N3yCjoIHL97f2i8ESd8wvWA3Ovo/FIVPIQ==
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesOrigin->{0, 0},
+  Frame->True,
+  ImageSize->500,
+  PlotLabel->FormBox[
+   "\"Green for Acceleration; Red for Velocity\"", TraditionalForm],
+  PlotRange->{{0, 1}, {0, 12.167939740489897`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{
+  3.58099307147316*^9, {3.580993953484109*^9, 3.580993980222556*^9}, {
+   3.5809948321732526`*^9, 3.5809949278950205`*^9}, {3.5809949579250736`*^9, 
+   3.5809949660526876`*^9}, 3.5809950314324026`*^9, 3.580995079340087*^9, {
+   3.5809951356717854`*^9, 3.5809951755922556`*^9}, 3.580995211347519*^9}]
+}, Open  ]],
+
+Cell["\<\
+Maybe we want to know the physics of different parameters.\
+\>", "Text",
+ CellChangeTimes->{{3.5809939853081656`*^9, 3.580994004090598*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Grid", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"ve", " ", 
+          RowBox[{"Log", "[", 
+           FractionBox["m0", 
+            RowBox[{"m0", "-", 
+             RowBox[{"\[Rho]", " ", "ve", " ", "A", " ", "t"}]}]], "]"}]}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", 
+           RowBox[{
+            RowBox[{"m0", "/", "\[Rho]"}], " ", "ve", " ", "A"}]}], "}"}], 
+         ",", 
+         RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+         RowBox[{"FrameLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Time\>\"", ",", "\"\<Velocity\>\""}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"LogPlot", "[", 
+        RowBox[{
+         RowBox[{"ve", " ", 
+          RowBox[{"Log", "[", 
+           FractionBox["m0", 
+            RowBox[{"m0", "-", 
+             RowBox[{"\[Rho]", " ", "ve", " ", "A", " ", "t"}]}]], "]"}]}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", 
+           RowBox[{
+            RowBox[{"m0", "/", "\[Rho]"}], " ", "ve", " ", "A"}]}], "}"}], 
+         ",", 
+         RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+         RowBox[{"FrameLabel", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Time\>\"", ",", "\"\<Velocity\>\""}], "}"}]}], ",", 
+         RowBox[{"ImageSize", "\[Rule]", 
+          RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}], "}"}]}], "}"}], "]"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"ve", ",", "1", ",", "\"\<Velocity of Gas\>\""}], "}"}], ",", 
+     "1", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m0", ",", "1", ",", "\"\<Initial Mass of Equipment\>\""}], 
+      "}"}], ",", "1", ",", "10", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]", ",", "1", ",", "\"\<Density of Gas at Outlet\>\""}], 
+      "}"}], ",", "1", ",", "50", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", ",", "1", ",", "\"\<Area of Outlet\>\""}], "}"}], ",", "1",
+      ",", "10", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5809940056662006`*^9, 3.580994108860382*^9}, {
+  3.5809941743492975`*^9, 3.5809943057015276`*^9}, {3.580994336917183*^9, 
+  3.58099437529325*^9}, {3.580994409769311*^9, 3.5809945536795635`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 1, $CellContext`m0$$ = 
+    1, $CellContext`ve$$ = 1, $CellContext`\[Rho]$$ = 1, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`ve$$], 1, "Velocity of Gas"}, 1, 10, 1}, {{
+       Hold[$CellContext`m0$$], 1, "Initial Mass of Equipment"}, 1, 10, 1}, {{
+       Hold[$CellContext`\[Rho]$$], 1, "Density of Gas at Outlet"}, 1, 50, 
+      1}, {{
+       Hold[$CellContext`A$$], 1, "Area of Outlet"}, 1, 10, 1}}, 
+    Typeset`size$$ = {500., {322.5, 329.5}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`ve$18727$$ = 0, $CellContext`m0$18728$$ = 
+    0, $CellContext`\[Rho]$18729$$ = 0, $CellContext`A$18730$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`A$$ = 1, $CellContext`m0$$ = 
+        1, $CellContext`ve$$ = 1, $CellContext`\[Rho]$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`ve$$, $CellContext`ve$18727$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$18728$$, 0], 
+        Hold[$CellContext`\[Rho]$$, $CellContext`\[Rho]$18729$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$18730$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Grid[{{
+          
+          Plot[$CellContext`ve$$ 
+           Log[$CellContext`m0$$/($CellContext`m0$$ - $CellContext`\[Rho]$$ \
+$CellContext`ve$$ $CellContext`A$$ $CellContext`t)], {$CellContext`t, 
+            0, ($CellContext`m0$$/$CellContext`\[Rho]$$) $CellContext`ve$$ \
+$CellContext`A$$}, Frame -> True, FrameLabel -> {"Time", "Velocity"}, 
+           ImageSize -> $CellContext`imgSize 0.8]}, {
+          
+          LogPlot[$CellContext`ve$$ 
+           Log[$CellContext`m0$$/($CellContext`m0$$ - $CellContext`\[Rho]$$ \
+$CellContext`ve$$ $CellContext`A$$ $CellContext`t)], {$CellContext`t, 
+            0, ($CellContext`m0$$/$CellContext`\[Rho]$$) $CellContext`ve$$ \
+$CellContext`A$$}, Frame -> True, FrameLabel -> {"Time", "Velocity"}, 
+           ImageSize -> $CellContext`imgSize 0.8]}}], 
+      "Specifications" :> {{{$CellContext`ve$$, 1, "Velocity of Gas"}, 1, 10, 
+         1}, {{$CellContext`m0$$, 1, "Initial Mass of Equipment"}, 1, 10, 
+         1}, {{$CellContext`\[Rho]$$, 1, "Density of Gas at Outlet"}, 1, 50, 
+         1}, {{$CellContext`A$$, 1, "Area of Outlet"}, 1, 10, 1}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{559., {432., 439.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.5809943081819324`*^9, {3.5809943408483896`*^9, 3.580994376822053*^9}, {
+   3.5809944144181185`*^9, 3.5809944396277633`*^9}, {3.580994469735816*^9, 
+   3.580994554069564*^9}, 3.580994901577774*^9, 3.5810005482124925`*^9}]
+}, Open  ]],
+
+Cell["If we put every number in it,", "Text",
+ CellChangeTimes->{{3.5810017931258793`*^9, 3.581001802829096*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P0", "=", "101325"}], "}"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       RowBox[{
+        SqrtBox["2"], " ", "\[Mu]", " ", 
+        RowBox[{"Log", "[", 
+         FractionBox["m0", 
+          RowBox[{"m0", "-", 
+           FractionBox[
+            RowBox[{
+             SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+             SqrtBox[
+              FractionBox[
+               RowBox[{
+                RowBox[{"(", 
+                 RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+               RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], 
+         "]"}], " ", 
+        SqrtBox[
+         FractionBox[
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+          RowBox[{"P", " ", "\[Rho]0"}]]]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"m0", "/", 
+          FractionBox[
+           RowBox[{
+            SqrtBox["2"], " ", "A", " ", "P", " ", "\[Mu]", " ", 
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+              RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]}], 
+        "}"}], ",", 
+       RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Time\>\"", ",", "\"\<Velocity\>\""}], "}"}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", ",", "0.6", ",", "\"\<Leakage Constant\>\""}], "}"}], 
+     ",", "0.6", ",", "0.62", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P", ",", "200000", ",", "\"\<Constant Pressure\>\""}], "}"}], 
+     ",", "101325", ",", "1000000", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m0", ",", "50", ",", "\"\<Initial Mass of Equipment\>\""}], 
+      "}"}], ",", "1", ",", "80", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]0", ",", "1.16", ",", "\"\<Density of Air\>\""}], "}"}], 
+     ",", "1.42", ",", "1.14", ",", 
+     RowBox[{"-", "0.01"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", ",", "0.01", ",", "\"\<Area of Outlet\>\""}], "}"}], ",", 
+     "0.001", ",", "1", ",", "0.001"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.5809973939795523`*^9, {3.580997440920035*^9, 3.580997756461789*^9}, {
+   3.5809977898458476`*^9, 3.5809978362403293`*^9}, {3.580997875942399*^9, 
+   3.5809978957388334`*^9}, {3.5809979671245584`*^9, 3.580998011023036*^9}, {
+   3.5809981763677263`*^9, 3.5809982701706915`*^9}, {3.5809984492590055`*^9, 
+   3.580998456310218*^9}, {3.5810017150789423`*^9, 3.581001716732545*^9}, {
+   3.581001776121849*^9, 3.5810017797410555`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
+    50, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+    0.6, $CellContext`\[Rho]0$$ = 1.16, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Mu]$$], 0.6, "Leakage Constant"}, 0.6, 0.62, 
+      0.01}, {{
+       Hold[$CellContext`P$$], 200000, "Constant Pressure"}, 101325, 1000000, 
+      1000}, {{
+       Hold[$CellContext`m0$$], 50, "Initial Mass of Equipment"}, 1, 80, 1}, {{
+       Hold[$CellContext`\[Rho]0$$], 1.16, "Density of Air"}, 1.42, 
+      1.14, -0.01}, {{
+       Hold[$CellContext`A$$], 0.01, "Area of Outlet"}, 0.001, 1, 0.001}}, 
+    Typeset`size$$ = {500., {158., 165.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Mu]$19459$$ = 0, $CellContext`P$19460$$ = 
+    0, $CellContext`m0$19461$$ = 0, $CellContext`\[Rho]0$19462$$ = 
+    0, $CellContext`A$19463$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
+        50, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+        0.6, $CellContext`\[Rho]0$$ = 1.16}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$19459$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$19460$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$19461$$, 0], 
+        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$19462$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$19463$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Block[{$CellContext`P0 = 101325}, 
+        Plot[
+        2^Rational[1, 2] $CellContext`\[Mu]$$ 
+         Log[$CellContext`m0$$/($CellContext`m0$$ - 
+           2^Rational[
+             1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`t \
+$CellContext`\[Mu]$$ (($CellContext`P$$ - $CellContext`P0) \
+$CellContext`P0/($CellContext`P$$ $CellContext`\[Rho]0$$))^
+            Rational[
+             1, 2] $CellContext`\[Rho]0$$/$CellContext`P0)] \
+(($CellContext`P$$ - $CellContext`P0) $CellContext`P0/($CellContext`P$$ \
+$CellContext`\[Rho]0$$))^Rational[1, 2], {$CellContext`t, 
+          0, $CellContext`m0$$/(
+          2^Rational[
+            1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`\[Mu]$$ \
+(($CellContext`P$$ - $CellContext`P0) $CellContext`P0/($CellContext`P$$ \
+$CellContext`\[Rho]0$$))^
+           Rational[1, 2] $CellContext`\[Rho]0$$/$CellContext`P0)}, Frame -> 
+         True, FrameLabel -> {"Time", "Velocity"}, 
+         ImageSize -> $CellContext`imgSize 0.8]], 
+      "Specifications" :> {{{$CellContext`\[Mu]$$, 0.6, "Leakage Constant"}, 
+         0.6, 0.62, 0.01}, {{$CellContext`P$$, 200000, "Constant Pressure"}, 
+         101325, 1000000, 
+         1000}, {{$CellContext`m0$$, 50, "Initial Mass of Equipment"}, 1, 80, 
+         1}, {{$CellContext`\[Rho]0$$, 1.16, "Density of Air"}, 1.42, 
+         1.14, -0.01}, {{$CellContext`A$$, 0.01, "Area of Outlet"}, 0.001, 1, 
+         0.001}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{559., {284., 291.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.580997764417803*^9, 3.5809978387207336`*^9, {3.5809979989018145`*^9, 
+   3.5809980117874374`*^9}, {3.580998209736185*^9, 3.580998270545092*^9}, {
+   3.580998450241808*^9, 3.5809984571994195`*^9}, 3.5810005546241035`*^9, 
+   3.581001717559346*^9, 3.581001780099856*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P0", "=", "101325"}], "}"}], ",", 
+     RowBox[{"Plot", "[", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"2", " ", "A", " ", 
+         RowBox[{"(", 
+          RowBox[{"P", "-", "P0"}], ")"}], " ", 
+         SuperscriptBox["\[Mu]", "2"]}], 
+        RowBox[{"m0", "-", 
+         FractionBox[
+          RowBox[{
+           SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+             RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", 
+         RowBox[{"m0", "/", 
+          FractionBox[
+           RowBox[{
+            SqrtBox["2"], " ", "A", " ", "P", " ", "\[Mu]", " ", 
+            SqrtBox[
+             FractionBox[
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+              RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]}], 
+        "}"}], ",", 
+       RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+       RowBox[{"FrameLabel", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<Time\>\"", ",", "\"\<Acceleration\>\""}], "}"}]}], ",", 
+       RowBox[{"ImageSize", "\[Rule]", 
+        RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", ",", "0.6", ",", "\"\<Leakage Constant\>\""}], "}"}], 
+     ",", "0.6", ",", "0.62", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P", ",", "200000", ",", "\"\<Constant Pressure\>\""}], "}"}], 
+     ",", "101325", ",", "1000000", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m0", ",", "10", ",", "\"\<Initial Mass of Equipment\>\""}], 
+      "}"}], ",", "1", ",", "60", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]0", ",", "1.16", ",", "\"\<Density of Air\>\""}], "}"}], 
+     ",", "1.42", ",", "1.14", ",", 
+     RowBox[{"-", "0.01"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", ",", "0.01", ",", "\"\<Area of Outlet\>\""}], "}"}], ",", 
+     "0.001", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.5809973939795523`*^9, {3.580997440920035*^9, 3.580997756461789*^9}, {
+   3.5809977898458476`*^9, 3.5809978362403293`*^9}, {3.580997875942399*^9, 
+   3.5809978957388334`*^9}, {3.5809979671245584`*^9, 3.580998011023036*^9}, {
+   3.5809981763677263`*^9, 3.5809982701706915`*^9}, {3.5809984492590055`*^9, 
+   3.580998456310218*^9}, 3.580999541962925*^9, {3.581001753501809*^9, 
+   3.581001755420613*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
+    10, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+    0.6, $CellContext`\[Rho]0$$ = 1.16, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Mu]$$], 0.6, "Leakage Constant"}, 0.6, 0.62, 
+      0.01}, {{
+       Hold[$CellContext`P$$], 200000, "Constant Pressure"}, 101325, 1000000, 
+      1000}, {{
+       Hold[$CellContext`m0$$], 10, "Initial Mass of Equipment"}, 1, 60, 1}, {{
+       Hold[$CellContext`\[Rho]0$$], 1.16, "Density of Air"}, 1.42, 
+      1.14, -0.01}, {{
+       Hold[$CellContext`A$$], 0.01, "Area of Outlet"}, 0.001, 1}}, 
+    Typeset`size$$ = {500., {157., 165.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Mu]$19534$$ = 0, $CellContext`P$19535$$ = 
+    0, $CellContext`m0$19536$$ = 0, $CellContext`\[Rho]0$19537$$ = 
+    0, $CellContext`A$19538$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
+        10, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+        0.6, $CellContext`\[Rho]0$$ = 1.16}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$19534$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$19535$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$19536$$, 0], 
+        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$19537$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$19538$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Block[{$CellContext`P0 = 101325}, 
+        Plot[
+        2 $CellContext`A$$ ($CellContext`P$$ - $CellContext`P0) $CellContext`\
+\[Mu]$$^2/($CellContext`m0$$ - 
+         2^Rational[
+           1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`t \
+$CellContext`\[Mu]$$ (($CellContext`P$$ - $CellContext`P0) \
+$CellContext`P0/($CellContext`P$$ $CellContext`\[Rho]0$$))^
+          Rational[
+           1, 2] $CellContext`\[Rho]0$$/$CellContext`P0), {$CellContext`t, 
+          0, $CellContext`m0$$/(
+          2^Rational[
+            1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`\[Mu]$$ \
+(($CellContext`P$$ - $CellContext`P0) $CellContext`P0/($CellContext`P$$ \
+$CellContext`\[Rho]0$$))^
+           Rational[1, 2] $CellContext`\[Rho]0$$/$CellContext`P0)}, Frame -> 
+         True, FrameLabel -> {"Time", "Acceleration"}, 
+         ImageSize -> $CellContext`imgSize 0.8]], 
+      "Specifications" :> {{{$CellContext`\[Mu]$$, 0.6, "Leakage Constant"}, 
+         0.6, 0.62, 0.01}, {{$CellContext`P$$, 200000, "Constant Pressure"}, 
+         101325, 1000000, 
+         1000}, {{$CellContext`m0$$, 10, "Initial Mass of Equipment"}, 1, 60, 
+         1}, {{$CellContext`\[Rho]0$$, 1.16, "Density of Air"}, 1.42, 
+         1.14, -0.01}, {{$CellContext`A$$, 0.01, "Area of Outlet"}, 0.001, 
+         1}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{559., {283., 290.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.5809995480625353`*^9, {3.581001756091414*^9, 3.5810017854194655`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "Section",
+ CellChangeTimes->{{3.580995339766944*^9, 3.58099534318335*^9}}],
+
+Cell["We take an example here.", "Text",
+ CellChangeTimes->{{3.580995348066159*^9, 3.580995356318573*^9}}],
+
+Cell["\<\
+Mass of equipment with everything attached including the gas: 10kg\
+\>", "Text",
+ CellChangeTimes->{{3.5809953697345967`*^9, 3.5809953942110395`*^9}}],
+
+Cell["", "Text"]
+}, Open  ]]
+},
+WindowSize->{944, 917},
+WindowMargins->{{0, Automatic}, {Automatic, 10}},
+Magnification:>FEPrivate`If[
+  FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 117, 1, 88, "Section"],
+Cell[699, 25, 175, 4, 34, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[911, 34, 90, 1, 88, "Section"],
+Cell[1004, 37, 103, 1, 34, "Text"],
+Cell[1110, 40, 190, 4, 35, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1337, 49, 127, 3, 88, "Section"],
+Cell[1467, 54, 145, 3, 34, "Text"],
+Cell[1615, 59, 455, 17, 45, "Text"],
+Cell[2073, 78, 281, 8, 34, "Text"],
+Cell[2357, 88, 897, 25, 239, "Input"],
+Cell[3257, 115, 387, 6, 76, "Text"],
+Cell[3647, 123, 633, 19, 50, "Text"],
+Cell[4283, 144, 393, 15, 34, "Text"],
+Cell[4679, 161, 452, 14, 62, "Input"],
+Cell[5134, 177, 94, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[5253, 182, 405, 12, 53, "Input"],
+Cell[5661, 196, 327, 10, 59, "Output"]
+}, Open  ]],
+Cell[6003, 209, 214, 4, 34, "Text"],
+Cell[6220, 215, 323, 9, 64, "Text"],
+Cell[6546, 226, 137, 3, 34, "Text"],
+Cell[6686, 231, 412, 15, 34, "Text"],
+Cell[7101, 248, 336, 10, 64, "Text"],
+Cell[7440, 260, 94, 1, 34, "Text"],
+Cell[7537, 263, 1117, 36, 97, "Text"],
+Cell[CellGroupData[{
+Cell[8679, 303, 740, 22, 79, "Input"],
+Cell[9422, 327, 733, 23, 94, "Output"]
+}, Open  ]],
+Cell[10170, 353, 95, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[10290, 358, 776, 24, 95, "Input"],
+Cell[11069, 384, 522, 16, 90, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11640, 406, 148, 2, 88, "Section"],
+Cell[11791, 410, 134, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[11950, 417, 1498, 40, 117, "Input"],
+Cell[13451, 459, 5957, 106, 431, "Output"]
+}, Open  ]],
+Cell[19423, 568, 150, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[19598, 575, 2592, 69, 279, "Input"],
+Cell[22193, 646, 3437, 63, 891, "Output"]
+}, Open  ]],
+Cell[25645, 712, 113, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[25783, 717, 3095, 81, 347, "Input"],
+Cell[28881, 800, 4115, 77, 595, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33033, 882, 2883, 75, 297, "Input"],
+Cell[35919, 959, 3793, 72, 593, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39761, 1037, 92, 1, 88, "Section"],
+Cell[39856, 1040, 106, 1, 34, "Text"],
+Cell[39965, 1043, 160, 3, 34, "Text"],
+Cell[40128, 1048, 16, 0, 34, "Text"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
