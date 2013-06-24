@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     52094,       1380]
-NotebookOptionsPosition[     49021,       1275]
-NotebookOutlinePosition[     49465,       1292]
-CellTagsIndexPosition[     49422,       1289]
+NotebookDataLength[     52084,       1366]
+NotebookOptionsPosition[     49156,       1269]
+NotebookOutlinePosition[     49600,       1286]
+CellTagsIndexPosition[     49557,       1283]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -138,8 +138,7 @@ Cell[TextData[Cell[BoxData[
       RowBox[{
        RowBox[{"\[Rho]", " ", 
         SubscriptBox["v", "e"], "A", " ", "t"}], "-", 
-       SubscriptBox["m", "0"]}]], "]"}]}]}], TraditionalForm]],
- FormatType->"TraditionalForm"]], "Text",
+       SubscriptBox["m", "0"]}]], "]"}]}]}], TraditionalForm]]]], "Text",
  CellChangeTimes->{{3.5809937262375097`*^9, 3.580993791493425*^9}}],
 
 Cell[TextData[{
@@ -172,13 +171,12 @@ Cell[BoxData[
         RowBox[{"\[Rho]", " ", 
          SubscriptBox["v", "e"], "A", " ", "t"}], "-", 
         SubscriptBox["m", "0"]}]], "]"}]}]}],
-   FontColor->GrayLevel[0]], TraditionalForm]], "Input",
- CellChangeTimes->{{3.5809938556407375`*^9, 3.580993886325991*^9}}],
+   FontColor->GrayLevel[0]], TraditionalForm]], "Text",
+ CellChangeTimes->{{3.5809938556407375`*^9, 3.580993886325991*^9}, 
+   3.5810588235397353`*^9}],
 
 Cell["Acceleration", "Text",
  CellChangeTimes->{{3.580994694737011*^9, 3.580994697311016*^9}}],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"D", "[", 
@@ -191,8 +189,9 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"\[Rho]", " ", 
         SubscriptBox["v", "e"], " ", "A", " ", "t"}], "-", 
-       SubscriptBox["m", "0"]}]], "]"}]}], ",", "t"}], "]"}]], "Input",
- CellChangeTimes->{{3.5809947027710257`*^9, 3.580994750226309*^9}}],
+       SubscriptBox["m", "0"]}]], "]"}]}], ",", "t"}], "]"}]], "Text",
+ CellChangeTimes->{{3.5809947027710257`*^9, 3.580994750226309*^9}, 
+   3.5810588141845193`*^9}],
 
 Cell[BoxData[
  RowBox[{"-", 
@@ -203,9 +202,8 @@ Cell[BoxData[
     RowBox[{"-", 
      SubscriptBox["m", "0"]}], "+", 
     RowBox[{"A", " ", "t", " ", "\[Rho]", " ", 
-     SubscriptBox["v", "e"]}]}]]}]], "Output",
- CellChangeTimes->{3.5809947512091103`*^9}]
-}, Open  ]],
+     SubscriptBox["v", "e"]}]}]]}]], "Text",
+ CellChangeTimes->{3.5809947512091103`*^9, 3.5810588141845193`*^9}],
 
 Cell[CellGroupData[{
 
@@ -304,8 +302,6 @@ Cell[TextData[Cell[BoxData[
  CellChangeTimes->{{3.580997123412677*^9, 3.5809972596321163`*^9}, {
   3.5809973229058275`*^9, 3.5809973229058275`*^9}}],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"ve", " ", 
@@ -325,10 +321,10 @@ Cell[BoxData[
          FractionBox["P", "P0"], "\[Rho]0"}]]]}]}], " ", ",", 
     RowBox[{"\[Rho]", "\[Rule]", 
      FractionBox[
-      RowBox[{"P", " ", "\[Rho]0"}], "P0"]}]}], "}"}]}]], "Input",
+      RowBox[{"P", " ", "\[Rho]0"}], "P0"]}]}], "}"}]}]], "Text",
  CellChangeTimes->{{3.580999706917615*^9, 3.580999821593416*^9}, {
-  3.580999907923968*^9, 3.580999917720785*^9}, {3.581001591620325*^9, 
-  3.5810015961755333`*^9}}],
+   3.580999907923968*^9, 3.580999917720785*^9}, {3.581001591620325*^9, 
+   3.5810015961755333`*^9}, 3.5810588367861586`*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -351,10 +347,9 @@ Cell[BoxData[
           RowBox[{"(", 
            RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
          RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], 
-   "]"}]}]], "Output",
+   "]"}]}]], "Text",
  CellChangeTimes->{3.580999787538556*^9, 3.580999821952217*^9, 
-  3.5809999189843874`*^9, 3.5810015992019386`*^9}]
-}, Open  ]],
+  3.5809999189843874`*^9, 3.5810015992019386`*^9, 3.5810588367861586`*^9}],
 
 Cell["\<\
 Before we use this expression, we need to split the m0 into two parts, one is \
@@ -368,8 +363,6 @@ Cell["m0 -> M0+m0", "Text",
 
 Cell["result is", "Text",
  CellChangeTimes->{{3.5810021269824133`*^9, 3.5810021322864227`*^9}}],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
@@ -397,9 +390,9 @@ Cell[BoxData[
   RowBox[{"{", 
    RowBox[{"m0", "\[Rule]", 
     RowBox[{"(", 
-     RowBox[{"M0", "+", "m0"}], ")"}]}], "}"}]}]], "Input",
+     RowBox[{"M0", "+", "m0"}], ")"}]}], "}"}]}]], "Text",
  CellChangeTimes->{{3.581002134595227*^9, 3.5810021491656523`*^9}, {
-  3.5810022379922085`*^9, 3.5810022471026244`*^9}}],
+   3.5810022379922085`*^9, 3.5810022471026244`*^9}, 3.581058845303774*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -423,14 +416,12 @@ Cell[BoxData[
           RowBox[{"(", 
            RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
          RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]], 
-   "]"}]}]], "Output",
- CellChangeTimes->{{3.581002239193411*^9, 3.581002247679826*^9}}]
-}, Open  ]],
+   "]"}]}]], "Text",
+ CellChangeTimes->{{3.581002239193411*^9, 3.581002247679826*^9}, 
+   3.581058845303774*^9}],
 
 Cell["Acceleration", "Text",
  CellChangeTimes->{{3.58099945939198*^9, 3.5809994618879843`*^9}}],
-
-Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"D", "[", 
@@ -455,8 +446,9 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"(", 
         RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
-      RowBox[{"P", " ", "\[Rho]0"}]]]}], ",", "t"}], "]"}]], "Input",
- CellChangeTimes->{{3.5809994714820013`*^9, 3.580999474617607*^9}}],
+      RowBox[{"P", " ", "\[Rho]0"}]]]}], ",", "t"}], "]"}]], "Text",
+ CellChangeTimes->{{3.5809994714820013`*^9, 3.580999474617607*^9}, 
+   3.581058851154784*^9}],
 
 Cell[BoxData[
  FractionBox[
@@ -473,9 +465,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"(", 
          RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
-       RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]]], "Output",
- CellChangeTimes->{3.580999475772009*^9}]
-}, Open  ]]
+       RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]]], "Text",
+ CellChangeTimes->{3.580999475772009*^9, 3.581058851154784*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -645,7 +636,8 @@ N3yCjoIHL97f2i8ESd8wvWA3Ovo/FIVPIQ==
   3.58099307147316*^9, {3.580993953484109*^9, 3.580993980222556*^9}, {
    3.5809948321732526`*^9, 3.5809949278950205`*^9}, {3.5809949579250736`*^9, 
    3.5809949660526876`*^9}, 3.5809950314324026`*^9, 3.580995079340087*^9, {
-   3.5809951356717854`*^9, 3.5809951755922556`*^9}, 3.580995211347519*^9}]
+   3.5809951356717854`*^9, 3.5809951755922556`*^9}, 3.580995211347519*^9, {
+   3.581058858065596*^9, 3.581058859017198*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -747,17 +739,17 @@ Cell[BoxData[
        Hold[$CellContext`A$$], 1, "Area of Outlet"}, 1, 10, 1}}, 
     Typeset`size$$ = {500., {322.5, 329.5}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`ve$18727$$ = 0, $CellContext`m0$18728$$ = 
-    0, $CellContext`\[Rho]$18729$$ = 0, $CellContext`A$18730$$ = 0}, 
+    True, $CellContext`ve$2532$$ = 0, $CellContext`m0$2533$$ = 
+    0, $CellContext`\[Rho]$2534$$ = 0, $CellContext`A$2535$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`A$$ = 1, $CellContext`m0$$ = 
         1, $CellContext`ve$$ = 1, $CellContext`\[Rho]$$ = 1}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`ve$$, $CellContext`ve$18727$$, 0], 
-        Hold[$CellContext`m0$$, $CellContext`m0$18728$$, 0], 
-        Hold[$CellContext`\[Rho]$$, $CellContext`\[Rho]$18729$$, 0], 
-        Hold[$CellContext`A$$, $CellContext`A$18730$$, 0]}, 
+        Hold[$CellContext`ve$$, $CellContext`ve$2532$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$2533$$, 0], 
+        Hold[$CellContext`\[Rho]$$, $CellContext`\[Rho]$2534$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$2535$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -795,7 +787,8 @@ $CellContext`A$$}, Frame -> True, FrameLabel -> {"Time", "Velocity"},
  CellChangeTimes->{
   3.5809943081819324`*^9, {3.5809943408483896`*^9, 3.580994376822053*^9}, {
    3.5809944144181185`*^9, 3.5809944396277633`*^9}, {3.580994469735816*^9, 
-   3.580994554069564*^9}, 3.580994901577774*^9, 3.5810005482124925`*^9}]
+   3.580994554069564*^9}, 3.580994901577774*^9, 3.5810005482124925`*^9, 
+   3.5810588603432*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -994,21 +987,21 @@ Cell[BoxData[
        Hold[$CellContext`M0$$], 50, "Mass of Everything Else"}, 10, 100, 1}}, 
     Typeset`size$$ = {508., {785.5, 13.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`\[Mu]$23925$$ = 0, $CellContext`P$23926$$ = 
-    0, $CellContext`m0$23927$$ = 0, $CellContext`\[Rho]0$23928$$ = 
-    0, $CellContext`A$23929$$ = 0, $CellContext`M0$23930$$ = 0}, 
+    True, $CellContext`\[Mu]$2837$$ = 0, $CellContext`P$2838$$ = 
+    0, $CellContext`m0$2839$$ = 0, $CellContext`\[Rho]0$2840$$ = 
+    0, $CellContext`A$2841$$ = 0, $CellContext`M0$2842$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
         10, $CellContext`M0$$ = 50, $CellContext`P$$ = 
         200000, $CellContext`\[Mu]$$ = 0.6, $CellContext`\[Rho]0$$ = 1.16}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$23925$$, 0], 
-        Hold[$CellContext`P$$, $CellContext`P$23926$$, 0], 
-        Hold[$CellContext`m0$$, $CellContext`m0$23927$$, 0], 
-        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$23928$$, 0], 
-        Hold[$CellContext`A$$, $CellContext`A$23929$$, 0], 
-        Hold[$CellContext`M0$$, $CellContext`M0$23930$$, 0]}, 
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$2837$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$2838$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$2839$$, 0], 
+        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$2840$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$2841$$, 0], 
+        Hold[$CellContext`M0$$, $CellContext`M0$2842$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -1080,7 +1073,8 @@ $CellContext`\[Rho]0$$))^
    Deployed->True,
    StripOnInput->False],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{{3.5810052717370157`*^9, 3.5810052926722527`*^9}}]
+ CellChangeTimes->{{3.5810052717370157`*^9, 3.5810052926722527`*^9}, 
+   3.581058863010805*^9}]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1212,21 +1206,21 @@ Cell[BoxData[
        Hold[$CellContext`M0$$], 50, "Mass of Everything Else"}, 10, 100, 1}}, 
     Typeset`size$$ = {500., {158., 165.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`\[Mu]$19915$$ = 0, $CellContext`P$19916$$ = 
-    0, $CellContext`m0$19917$$ = 0, $CellContext`\[Rho]0$19918$$ = 
-    0, $CellContext`A$19919$$ = 0, $CellContext`M0$19920$$ = 0}, 
+    True, $CellContext`\[Mu]$2924$$ = 0, $CellContext`P$2925$$ = 
+    0, $CellContext`m0$2926$$ = 0, $CellContext`\[Rho]0$2927$$ = 
+    0, $CellContext`A$2928$$ = 0, $CellContext`M0$2929$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`A$$ = 0.01, $CellContext`m0$$ = 
         10, $CellContext`M0$$ = 50, $CellContext`P$$ = 
         200000, $CellContext`\[Mu]$$ = 0.6, $CellContext`\[Rho]0$$ = 1.16}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$19915$$, 0], 
-        Hold[$CellContext`P$$, $CellContext`P$19916$$, 0], 
-        Hold[$CellContext`m0$$, $CellContext`m0$19917$$, 0], 
-        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$19918$$, 0], 
-        Hold[$CellContext`A$$, $CellContext`A$19919$$, 0], 
-        Hold[$CellContext`M0$$, $CellContext`M0$19920$$, 0]}, 
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$2924$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$2925$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$2926$$, 0], 
+        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$2927$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$2928$$, 0], 
+        Hold[$CellContext`M0$$, $CellContext`M0$2929$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -1269,7 +1263,7 @@ $CellContext`\[Rho]0$$))^
   Manipulate`InterpretManipulate[1]]], "Output",
  CellChangeTimes->{
   3.5809995480625353`*^9, {3.581001756091414*^9, 3.5810017854194655`*^9}, 
-   3.581004162029067*^9}]
+   3.581004162029067*^9, 3.58105886586561*^9}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1307,79 +1301,71 @@ Cell[1615, 59, 455, 17, 45, "Text"],
 Cell[2073, 78, 281, 8, 34, "Text"],
 Cell[2357, 88, 897, 25, 239, "Input"],
 Cell[3257, 115, 387, 6, 76, "Text"],
-Cell[3647, 123, 633, 19, 50, "Text"],
-Cell[4283, 144, 393, 15, 34, "Text"],
-Cell[4679, 161, 452, 14, 62, "Input"],
-Cell[5134, 177, 94, 1, 34, "Text"],
+Cell[3647, 123, 601, 18, 50, "Text"],
+Cell[4251, 143, 393, 15, 34, "Text"],
+Cell[4647, 160, 479, 15, 54, "Text"],
+Cell[5129, 177, 94, 1, 34, "Text"],
+Cell[5226, 180, 432, 13, 52, "Text"],
+Cell[5661, 195, 349, 10, 58, "Text"],
 Cell[CellGroupData[{
-Cell[5253, 182, 405, 12, 53, "Input"],
-Cell[5661, 196, 327, 10, 59, "Output"]
+Cell[6035, 209, 102, 1, 32, "Subsubsection"],
+Cell[6140, 212, 214, 4, 34, "Text"],
+Cell[6357, 218, 323, 9, 64, "Text"],
+Cell[6683, 229, 137, 3, 34, "Text"],
+Cell[6823, 234, 412, 15, 34, "Text"],
+Cell[7238, 251, 336, 10, 64, "Text"],
+Cell[7577, 263, 94, 1, 34, "Text"],
+Cell[7674, 266, 1117, 36, 97, "Text"],
+Cell[8794, 304, 765, 22, 78, "Text"],
+Cell[9562, 328, 755, 23, 93, "Text"],
+Cell[10320, 353, 253, 5, 55, "Text"],
+Cell[10576, 360, 94, 1, 34, "Text"],
+Cell[10673, 363, 95, 1, 34, "Text"],
+Cell[10771, 366, 911, 28, 93, "Text"],
+Cell[11685, 396, 745, 24, 93, "Text"],
+Cell[12433, 422, 95, 1, 34, "Text"],
+Cell[12531, 425, 801, 25, 93, "Text"],
+Cell[13335, 452, 542, 16, 89, "Text"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6025, 211, 102, 1, 32, "Subsubsection"],
-Cell[6130, 214, 214, 4, 34, "Text"],
-Cell[6347, 220, 323, 9, 64, "Text"],
-Cell[6673, 231, 137, 3, 34, "Text"],
-Cell[6813, 236, 412, 15, 34, "Text"],
-Cell[7228, 253, 336, 10, 64, "Text"],
-Cell[7567, 265, 94, 1, 34, "Text"],
-Cell[7664, 268, 1117, 36, 97, "Text"],
+Cell[13926, 474, 148, 2, 88, "Section"],
 Cell[CellGroupData[{
-Cell[8806, 308, 740, 22, 79, "Input"],
-Cell[9549, 332, 733, 23, 94, "Output"]
+Cell[14099, 480, 111, 1, 32, "Subsubsection"],
+Cell[14213, 483, 134, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[14372, 490, 1498, 40, 117, "Input"],
+Cell[15873, 532, 6007, 107, 431, "Output"]
+}, Open  ]]
 }, Open  ]],
-Cell[10297, 358, 253, 5, 55, "Text"],
-Cell[10553, 365, 94, 1, 34, "Text"],
-Cell[10650, 368, 95, 1, 34, "Text"],
 Cell[CellGroupData[{
-Cell[10770, 373, 889, 28, 95, "Input"],
-Cell[11662, 403, 721, 23, 94, "Output"]
+Cell[21929, 645, 107, 1, 32, "Subsubsection"],
+Cell[22039, 648, 150, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[22214, 655, 2592, 69, 279, "Input"],
+Cell[24809, 726, 3453, 64, 891, "Output"]
+}, Open  ]]
 }, Open  ]],
-Cell[12398, 429, 95, 1, 34, "Text"],
 Cell[CellGroupData[{
-Cell[12518, 434, 776, 24, 95, "Input"],
-Cell[13297, 460, 522, 16, 90, "Output"]
+Cell[28311, 796, 106, 1, 32, "Subsubsection"],
+Cell[28420, 799, 113, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[28558, 804, 6779, 163, 753, "Input"],
+Cell[35340, 969, 5825, 107, 1107, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[13880, 483, 148, 2, 88, "Section"],
-Cell[CellGroupData[{
-Cell[14053, 489, 111, 1, 32, "Subsubsection"],
-Cell[14167, 492, 134, 3, 34, "Text"],
-Cell[CellGroupData[{
-Cell[14326, 499, 1498, 40, 117, "Input"],
-Cell[15827, 541, 5957, 106, 431, "Output"]
-}, Open  ]]
+Cell[41226, 1083, 92, 1, 88, "Section"],
+Cell[41321, 1086, 106, 1, 34, "Text"],
+Cell[41430, 1089, 160, 3, 34, "Text"],
+Cell[41593, 1094, 16, 0, 34, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21833, 653, 107, 1, 32, "Subsubsection"],
-Cell[21943, 656, 150, 3, 34, "Text"],
+Cell[41646, 1099, 92, 1, 88, "Section"],
 Cell[CellGroupData[{
-Cell[22118, 663, 2592, 69, 279, "Input"],
-Cell[24713, 734, 3437, 63, 891, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[28199, 803, 106, 1, 32, "Subsubsection"],
-Cell[28308, 806, 113, 1, 34, "Text"],
-Cell[CellGroupData[{
-Cell[28446, 811, 6779, 163, 753, "Input"],
-Cell[35228, 976, 5811, 106, 1107, "Output"]
-}, Open  ]]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[41100, 1089, 92, 1, 88, "Section"],
-Cell[41195, 1092, 106, 1, 34, "Text"],
-Cell[41304, 1095, 160, 3, 34, "Text"],
-Cell[41467, 1100, 16, 0, 34, "Text"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[41520, 1105, 92, 1, 88, "Section"],
-Cell[CellGroupData[{
-Cell[41637, 1110, 3190, 82, 363, "Input"],
-Cell[44830, 1194, 4163, 77, 631, "Output"]
+Cell[41763, 1104, 3190, 82, 363, "Input"],
+Cell[44956, 1188, 4172, 77, 631, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
