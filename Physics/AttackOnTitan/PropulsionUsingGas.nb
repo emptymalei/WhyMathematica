@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    150936,       3330]
-NotebookOptionsPosition[    147008,       3202]
-NotebookOutlinePosition[    147452,       3219]
-CellTagsIndexPosition[    147409,       3216]
+NotebookDataLength[    173925,       3941]
+NotebookOptionsPosition[    169166,       3788]
+NotebookOutlinePosition[    169611,       3805]
+CellTagsIndexPosition[    169568,       3802]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -268,8 +268,7 @@ Cell[TextData[Cell[BoxData[
     SqrtBox[
      FractionBox[
       RowBox[{"2", " ", "\[CapitalDelta]", " ", "P"}], "\[Rho]"]]}]}], 
-  TraditionalForm]],
- FormatType->"TraditionalForm"]], "Text",
+  TraditionalForm]]]], "Text",
  CellChangeTimes->{{3.5809969106595035`*^9, 3.580996942296359*^9}}],
 
 Cell["Substitution,", "Text",
@@ -478,6 +477,217 @@ Cell[BoxData[
          RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
        RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]]], "Text",
  CellChangeTimes->{3.580999475772009*^9, 3.581058851154784*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Air Drag", "Subsection",
+ CellChangeTimes->{{3.581083257812575*^9, 3.5810832616813817`*^9}}],
+
+Cell["\<\
+(*Parasitic air drag can be decomposed into three parts,*)\
+\>", "Text",
+ CellChangeTimes->{{3.5810832649573874`*^9, 3.581083294550639*^9}, {
+  3.5810864553150516`*^9, 3.581086458180216*^9}}],
+
+Cell["Just the simplest case,", "Text",
+ CellChangeTimes->{{3.581086461566409*^9, 3.581086468323796*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"f", "=", 
+   RowBox[{
+    FractionBox["1", "2"], "\[Rho]0", " ", 
+    SuperscriptBox["v", "2"], 
+    SubscriptBox["C", "D"], "Ab"}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.581086472608041*^9, 3.581086506494979*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"dm", "=", 
+   RowBox[{
+    SubscriptBox["v", "e"], " ", "\[Rho]", " ", "A", " ", "dt"}]}], 
+  TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.581087826353471*^9, 3.5810878458345847`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{"m", "=", 
+   RowBox[{
+    SubscriptBox["m", "0"], "-", 
+    RowBox[{"\[Rho]", " ", 
+     SubscriptBox["v", "e"], " ", "A", " ", "t"}]}]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5810878655707135`*^9, 3.581087885800871*^9}}],
+
+Cell["\<\
+Finally we have the differential equation\
+\>", "Text",
+ CellChangeTimes->{{3.5810879487514715`*^9, 3.5810879607641582`*^9}}],
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  RowBox[{
+   FractionBox["dv", 
+    RowBox[{
+     RowBox[{
+      FractionBox["1", "2"], 
+      SubscriptBox["\[Rho]", "0"], " ", 
+      SubscriptBox["C", "D"], 
+      SubscriptBox["A", "0"], 
+      SuperscriptBox["v", "2"]}], "-", 
+     RowBox[{
+      SuperscriptBox[
+       SubscriptBox["v", "e"], "2"], "\[Rho]", " ", "A"}]}]], "=", 
+   FractionBox["dt", 
+    RowBox[{
+     SubscriptBox["m", "0"], "-", 
+     RowBox[{"\[Rho]", " ", 
+      SubscriptBox["v", "e"], "A", " ", "t"}]}]]}], TraditionalForm]],
+ FormatType->"TraditionalForm"]], "Text",
+ CellChangeTimes->{{3.5810879649844*^9, 3.5810880581157265`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["dv", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "A"}], " ", "\[Rho]", " ", 
+     SubsuperscriptBox["v", "e", "2"]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     SuperscriptBox["v", "2"], " ", 
+     SubscriptBox["A", "0"], " ", 
+     SubscriptBox["C", "D"], " ", 
+     SubscriptBox["\[Rho]", "0"]}]}]], "\[Equal]", 
+  FractionBox["dt", 
+   RowBox[{
+    SubscriptBox["m", "0"], "-", 
+    RowBox[{"A", " ", "t", " ", "\[Rho]", " ", 
+     SubscriptBox["v", "e"]}]}]]}]], "Text",
+ CellChangeTimes->{{3.5810881063894877`*^9, 3.5810881151609898`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "A"}], " ", "\[Rho]", " ", 
+         SuperscriptBox["ve", "2"]}], "+", 
+        RowBox[{
+         FractionBox["1", "2"], " ", 
+         SuperscriptBox["v", "2"], " ", "A0", " ", "C0", " ", "\[Rho]0"}]}]], 
+      ",", "v"}], "]"}], "\[Equal]", 
+    RowBox[{"Integrate", "[", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"m0", "-", 
+        RowBox[{"A", " ", "t", " ", "\[Rho]", " ", "ve"}]}]], ",", "t"}], 
+     "]"}]}], ",", "v"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"v", "/.", 
+   RowBox[{"%", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"ve", "\[Rule]", 
+     RowBox[{
+      SqrtBox["2"], " ", "\[Mu]", " ", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{"P", "-", "P0"}], 
+        RowBox[{
+         FractionBox["P", "P0"], "\[Rho]0"}]]]}]}], " ", ",", 
+    RowBox[{"\[Rho]", "\[Rule]", 
+     FractionBox[
+      RowBox[{"P", " ", "\[Rho]0"}], "P0"]}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.5810878177839804`*^9, 3.5810878202041187`*^9}, {
+  3.5810881344750943`*^9, 3.58108819122834*^9}, {3.5810882484706144`*^9, 
+  3.5810882920851088`*^9}, {3.5810883780580263`*^9, 3.581088394799984*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"v", "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      SqrtBox["2"], " ", 
+      SqrtBox["A"], " ", "ve", " ", 
+      SqrtBox["\[Rho]"], " ", 
+      RowBox[{"Tanh", "[", 
+       FractionBox[
+        RowBox[{
+         SqrtBox["A0"], " ", 
+         SqrtBox["C0"], " ", 
+         SqrtBox["\[Rho]0"], " ", 
+         RowBox[{"Log", "[", 
+          RowBox[{"m0", "-", 
+           RowBox[{"A", " ", "t", " ", "ve", " ", "\[Rho]"}]}], "]"}]}], 
+        RowBox[{
+         SqrtBox["2"], " ", 
+         SqrtBox["A"], " ", 
+         SqrtBox["\[Rho]"]}]], "]"}]}], 
+     RowBox[{
+      SqrtBox["A0"], " ", 
+      SqrtBox["C0"], " ", 
+      SqrtBox["\[Rho]0"]}]]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5810881520621*^9, 3.581088192170394*^9}, {
+  3.581088266625653*^9, 3.5810882967823772`*^9}, {3.5810883840263677`*^9, 
+  3.5810883953450155`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SqrtBox["A"], " ", "\[Mu]", " ", 
+   SqrtBox[
+    FractionBox[
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+     RowBox[{"P", " ", "\[Rho]0"}]]], " ", 
+   SqrtBox[
+    FractionBox[
+     RowBox[{"P", " ", "\[Rho]0"}], "P0"]], " ", 
+   RowBox[{"Tanh", "[", 
+    FractionBox[
+     RowBox[{
+      SqrtBox["A0"], " ", 
+      SqrtBox["C0"], " ", 
+      SqrtBox["\[Rho]0"], " ", 
+      RowBox[{"Log", "[", 
+       RowBox[{"m0", "-", 
+        FractionBox[
+         RowBox[{
+          SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+          SqrtBox[
+           FractionBox[
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+            RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}], 
+       "]"}]}], 
+     RowBox[{
+      SqrtBox["2"], " ", 
+      SqrtBox["A"], " ", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{"P", " ", "\[Rho]0"}], "P0"]]}]], "]"}]}], 
+  RowBox[{
+   SqrtBox["A0"], " ", 
+   SqrtBox["C0"], " ", 
+   SqrtBox["\[Rho]0"]}]]], "Output",
+ CellChangeTimes->{{3.5810881520621*^9, 3.581088192170394*^9}, {
+  3.581088266625653*^9, 3.5810882967823772`*^9}, {3.5810883840263677`*^9, 
+  3.5810883953520155`*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -3008,6 +3218,382 @@ hQtfz8IdrRLXOytI4Pg/kIX/A/tOC+Q=
    3.581081618943658*^9, 3.5810817079886146`*^9}, {3.5810822394815483`*^9, 
    3.5810822585915813`*^9}}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Air Drag", "Subsection",
+ CellChangeTimes->{{3.581083182745243*^9, 3.581083190576457*^9}}],
+
+Cell["\<\
+However, the air drag could be quite significant in this case since the \
+velocity is so large.\
+\>", "Text",
+ CellChangeTimes->{{3.5810831983764706`*^9, 3.581083244895752*^9}}],
+
+Cell[TextData[{
+ "v is ",
+ Cell[BoxData[
+  FractionBox[
+   RowBox[{"2", " ", 
+    SqrtBox["A"], " ", "\[Mu]", " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+      RowBox[{"P", " ", "\[Rho]0"}]]], " ", 
+    SqrtBox[
+     FractionBox[
+      RowBox[{"P", " ", "\[Rho]0"}], "P0"]], " ", 
+    RowBox[{"Tanh", "[", 
+     FractionBox[
+      RowBox[{
+       SqrtBox["A0"], " ", 
+       SqrtBox["C0"], " ", 
+       SqrtBox["\[Rho]0"], " ", 
+       RowBox[{"Log", "[", 
+        RowBox[{"m0", "-", 
+         FractionBox[
+          RowBox[{
+           SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+           SqrtBox[
+            FractionBox[
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+             RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}], 
+        "]"}]}], 
+      RowBox[{
+       SqrtBox["2"], " ", 
+       SqrtBox["A"], " ", 
+       SqrtBox[
+        FractionBox[
+         RowBox[{"P", " ", "\[Rho]0"}], "P0"]]}]], "]"}]}], 
+   RowBox[{
+    SqrtBox["A0"], " ", 
+    SqrtBox["C0"], " ", 
+    SqrtBox["\[Rho]0"]}]]],
+  CellChangeTimes->{{3.5810881520621*^9, 3.581088192170394*^9}, {
+   3.581088266625653*^9, 3.5810882967823772`*^9}, {3.5810883840263677`*^9, 
+   3.5810883953520155`*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.5810883343205247`*^9, 3.5810883423969865`*^9}, 
+   3.581088423303614*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", "   ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\"\<Leakage Constant:\>\"", "<>", 
+     RowBox[{"ToString", "[", "\[Mu]", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Constant Pressure:\>\"", "<>", 
+     RowBox[{"ToString", "[", "P", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Initial Mass of Gas:\>\"", "<>", 
+     RowBox[{"ToString", "[", "m0", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Density of Air:\>\"", "<>", 
+     RowBox[{"ToString", "[", "\[Rho]0", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Area of Outlet:\>\"", "<>", 
+     RowBox[{"ToString", "[", "A", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"\"\<Mass of Everything Else:\>\"", "<>", 
+     RowBox[{"ToString", "[", "M0", "]"}], "<>", "\"\<;\\n\>\""}], 
+    "\[IndentingNewLine]", 
+    RowBox[{"Grid", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Block", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"P0", "=", "101325"}], "}"}], ",", 
+          RowBox[{"Plot", "[", 
+           RowBox[{
+            FractionBox[
+             RowBox[{"2", " ", 
+              SqrtBox["A"], " ", "\[Mu]", " ", 
+              SqrtBox[
+               FractionBox[
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+                RowBox[{"P", " ", "\[Rho]0"}]]], " ", 
+              SqrtBox[
+               FractionBox[
+                RowBox[{"P", " ", "\[Rho]0"}], "P0"]], " ", 
+              RowBox[{"Tanh", "[", 
+               FractionBox[
+                RowBox[{
+                 SqrtBox["A0"], " ", 
+                 SqrtBox["C0"], " ", 
+                 SqrtBox["\[Rho]0"], " ", 
+                 RowBox[{"Log", "[", 
+                  RowBox[{"m0", "-", 
+                   FractionBox[
+                    RowBox[{
+                    SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", 
+                    " ", 
+                    SqrtBox[
+                    FractionBox[
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+                    RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], 
+                    "P0"]}], "]"}]}], 
+                RowBox[{
+                 SqrtBox["2"], " ", 
+                 SqrtBox["A"], " ", 
+                 SqrtBox[
+                  FractionBox[
+                   RowBox[{"P", " ", "\[Rho]0"}], "P0"]]}]], "]"}]}], 
+             RowBox[{
+              SqrtBox["A0"], " ", 
+              SqrtBox["C0"], " ", 
+              SqrtBox["\[Rho]0"]}]], ",", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "0", ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"m0", "+", "M0"}], ")"}], "/", 
+               FractionBox[
+                RowBox[{
+                 SqrtBox["2"], " ", "A", " ", "P", " ", "\[Mu]", " ", 
+                 SqrtBox[
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+                   RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], 
+                "P0"]}]}], "}"}], ",", 
+            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+            RowBox[{"FrameLabel", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<Time\>\"", ",", "\"\<Velocity\>\""}], "}"}]}], ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Block", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"P0", "=", "101325"}], "}"}], ",", 
+          RowBox[{"Plot", "[", 
+           RowBox[{
+            FractionBox[
+             RowBox[{"2", " ", "A", " ", 
+              RowBox[{"(", 
+               RowBox[{"P", "-", "P0"}], ")"}], " ", 
+              SuperscriptBox["\[Mu]", "2"]}], 
+             RowBox[{"M0", "+", "m0", "-", 
+              FractionBox[
+               RowBox[{
+                SqrtBox["2"], " ", "A", " ", "P", " ", "t", " ", "\[Mu]", " ", 
+                SqrtBox[
+                 FractionBox[
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+                  RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], "P0"]}]],
+             ",", 
+            RowBox[{"{", 
+             RowBox[{"t", ",", "0", ",", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"M0", "+", "m0"}], ")"}], "/", 
+               FractionBox[
+                RowBox[{
+                 SqrtBox["2"], " ", "A", " ", "P", " ", "\[Mu]", " ", 
+                 SqrtBox[
+                  FractionBox[
+                   RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"P", "-", "P0"}], ")"}], " ", "P0"}], 
+                   RowBox[{"P", " ", "\[Rho]0"}]]], " ", "\[Rho]0"}], 
+                "P0"]}]}], "}"}], ",", 
+            RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+            RowBox[{"FrameLabel", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<Time\>\"", ",", "\"\<Acceleration\>\""}], "}"}]}], 
+            ",", 
+            RowBox[{"ImageSize", "\[Rule]", 
+             RowBox[{"imgSize", "*", "0.8"}]}]}], "]"}]}], "]"}], "}"}]}], 
+      "}"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Mu]", ",", "0.6", ",", "\"\<Leakage Constant\>\""}], "}"}], 
+     ",", "0.6", ",", "0.62", ",", "0.01"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P", ",", "200000", ",", "\"\<Constant Pressure\>\""}], "}"}], 
+     ",", "101325", ",", "1000000", ",", "1000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m0", ",", "10", ",", "\"\<Initial Mass of Gas\>\""}], "}"}], 
+     ",", "1", ",", "50", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\[Rho]0", ",", "1.16", ",", "\"\<Density of Air\>\""}], "}"}], 
+     ",", "1.42", ",", "1.14", ",", 
+     RowBox[{"-", "0.01"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A", ",", "0.001", ",", "\"\<Area of Outlet\>\""}], "}"}], ",", 
+     "0.001", ",", "1", ",", "0.001"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"M0", ",", "50", ",", "\"\<Mass of Everything Else\>\""}], 
+      "}"}], ",", "10", ",", "100", ",", "1"}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"A0", ",", "1", ",", "\"\<Area of Body\>\""}], "}"}], ",", 
+     "0.5", ",", "2"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"C0", ",", "1", ",", "\"\<Drag Coeficient\>\""}], "}"}], ",", 
+     "0.4", ",", "1.2"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.5810885670008335`*^9, 3.5810886695897007`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`A$$ = 0.001, $CellContext`A0$$ = 
+    1, $CellContext`C0$$ = 1, $CellContext`m0$$ = 10, $CellContext`M0$$ = 
+    50, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+    0.6, $CellContext`\[Rho]0$$ = 1.16, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Mu]$$], 0.6, "Leakage Constant"}, 0.6, 0.62, 
+      0.01}, {{
+       Hold[$CellContext`P$$], 200000, "Constant Pressure"}, 101325, 1000000, 
+      1000}, {{
+       Hold[$CellContext`m0$$], 10, "Initial Mass of Gas"}, 1, 50, 1}, {{
+       Hold[$CellContext`\[Rho]0$$], 1.16, "Density of Air"}, 1.42, 
+      1.14, -0.01}, {{
+       Hold[$CellContext`A$$], 0.001, "Area of Outlet"}, 0.001, 1, 0.001}, {{
+       Hold[$CellContext`M0$$], 50, "Mass of Everything Else"}, 10, 100, 1}, {{
+       Hold[$CellContext`A0$$], 1, "Area of Body"}, 0.5, 2}, {{
+       Hold[$CellContext`C0$$], 1, "Drag Coeficient"}, 0.4, 1.2}}, 
+    Typeset`size$$ = {508., {787.5, 13.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`\[Mu]$22770$$ = 0, $CellContext`P$22771$$ = 
+    0, $CellContext`m0$22772$$ = 0, $CellContext`\[Rho]0$22773$$ = 
+    0, $CellContext`A$22774$$ = 0, $CellContext`M0$22775$$ = 
+    0, $CellContext`A0$22776$$ = 0, $CellContext`C0$22777$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`A$$ = 0.001, $CellContext`A0$$ = 
+        1, $CellContext`C0$$ = 1, $CellContext`m0$$ = 10, $CellContext`M0$$ = 
+        50, $CellContext`P$$ = 200000, $CellContext`\[Mu]$$ = 
+        0.6, $CellContext`\[Rho]0$$ = 1.16}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Mu]$$, $CellContext`\[Mu]$22770$$, 0], 
+        Hold[$CellContext`P$$, $CellContext`P$22771$$, 0], 
+        Hold[$CellContext`m0$$, $CellContext`m0$22772$$, 0], 
+        Hold[$CellContext`\[Rho]0$$, $CellContext`\[Rho]0$22773$$, 0], 
+        Hold[$CellContext`A$$, $CellContext`A$22774$$, 0], 
+        Hold[$CellContext`M0$$, $CellContext`M0$22775$$, 0], 
+        Hold[$CellContext`A0$$, $CellContext`A0$22776$$, 0], 
+        Hold[$CellContext`C0$$, $CellContext`C0$22777$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> StringJoin["Leakage Constant:", 
+         ToString[$CellContext`\[Mu]$$], ";\n"] 
+       StringJoin["Constant Pressure:", 
+         ToString[$CellContext`P$$], ";\n"] StringJoin["Initial Mass of Gas:", 
+         ToString[$CellContext`m0$$], ";\n"] StringJoin["Density of Air:", 
+         ToString[$CellContext`\[Rho]0$$], ";\n"] 
+       StringJoin["Area of Outlet:", 
+         ToString[$CellContext`A$$], ";\n"] 
+       StringJoin["Mass of Everything Else:", 
+         ToString[$CellContext`M0$$], ";\n"] Grid[{{
+           Block[{$CellContext`P0 = 101325}, 
+            Plot[
+            2 $CellContext`A$$^
+              Rational[
+               1, 2] $CellContext`\[Mu]$$ (($CellContext`P$$ - \
+$CellContext`P0) $CellContext`P0/($CellContext`P$$ $CellContext`\[Rho]0$$))^
+              Rational[
+               1, 2] ($CellContext`P$$ \
+$CellContext`\[Rho]0$$/$CellContext`P0)^Rational[1, 2] 
+             Tanh[$CellContext`A0$$^Rational[1, 2] $CellContext`C0$$^
+                Rational[1, 2] $CellContext`\[Rho]0$$^Rational[1, 2] 
+               Log[$CellContext`m0$$ - 
+                 2^Rational[
+                   1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`t \
+$CellContext`\[Mu]$$ (($CellContext`P$$ - $CellContext`P0) \
+$CellContext`P0/($CellContext`P$$ $CellContext`\[Rho]0$$))^
+                  Rational[1, 2] $CellContext`\[Rho]0$$/$CellContext`P0]/(
+               2^Rational[1, 2] $CellContext`A$$^
+                Rational[
+                 1, 2] ($CellContext`P$$ \
+$CellContext`\[Rho]0$$/$CellContext`P0)^Rational[1, 2])]/($CellContext`A0$$^
+              Rational[1, 2] $CellContext`C0$$^
+              Rational[1, 2] $CellContext`\[Rho]0$$^
+              Rational[1, 2]), {$CellContext`t, 
+              0, ($CellContext`m0$$ + $CellContext`M0$$)/(
+              2^Rational[
+                1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`\[Mu]$$ \
+(($CellContext`P$$ - $CellContext`P0) $CellContext`P0/($CellContext`P$$ \
+$CellContext`\[Rho]0$$))^
+               Rational[1, 2] $CellContext`\[Rho]0$$/$CellContext`P0)}, Frame -> 
+             True, FrameLabel -> {"Time", "Velocity"}, 
+             ImageSize -> $CellContext`imgSize 0.8]]}, {
+           Block[{$CellContext`P0 = 101325}, 
+            Plot[
+            2 $CellContext`A$$ ($CellContext`P$$ - $CellContext`P0) \
+$CellContext`\[Mu]$$^2/($CellContext`M0$$ + $CellContext`m0$$ - 
+             2^Rational[
+               1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`t \
+$CellContext`\[Mu]$$ (($CellContext`P$$ - $CellContext`P0) \
+$CellContext`P0/($CellContext`P$$ $CellContext`\[Rho]0$$))^
+              Rational[
+               1, 2] $CellContext`\[Rho]0$$/$CellContext`P0), {$CellContext`t,
+               0, ($CellContext`M0$$ + $CellContext`m0$$)/(
+              2^Rational[
+                1, 2] $CellContext`A$$ $CellContext`P$$ $CellContext`\[Mu]$$ \
+(($CellContext`P$$ - $CellContext`P0) $CellContext`P0/($CellContext`P$$ \
+$CellContext`\[Rho]0$$))^
+               Rational[1, 2] $CellContext`\[Rho]0$$/$CellContext`P0)}, Frame -> 
+             True, FrameLabel -> {"Time", "Acceleration"}, 
+             ImageSize -> $CellContext`imgSize 0.8]]}}], 
+      "Specifications" :> {{{$CellContext`\[Mu]$$, 0.6, "Leakage Constant"}, 
+         0.6, 0.62, 0.01}, {{$CellContext`P$$, 200000, "Constant Pressure"}, 
+         101325, 1000000, 
+         1000}, {{$CellContext`m0$$, 10, "Initial Mass of Gas"}, 1, 50, 
+         1}, {{$CellContext`\[Rho]0$$, 1.16, "Density of Air"}, 1.42, 
+         1.14, -0.01}, {{$CellContext`A$$, 0.001, "Area of Outlet"}, 0.001, 1,
+          0.001}, {{$CellContext`M0$$, 50, "Mass of Everything Else"}, 10, 
+         100, 1}, {{$CellContext`A0$$, 1, "Area of Body"}, 0.5, 
+         2}, {{$CellContext`C0$$, 1, "Drag Coeficient"}, 0.4, 1.2}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{1006., {434., 441.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.581088676613103*^9}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -3200,7 +3786,7 @@ $CellContext`\[Mu]$$) (($CellContext`P$$ - $CellContext`P0) \
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{944, 939},
+WindowSize->{1234, 939},
 WindowMargins->{{0, Automatic}, {Automatic, 9}},
 Magnification:>FEPrivate`If[
   FEPrivate`Equal[FEPrivate`$VersionNumber, 6.], 1.25, 1.25 Inherited],
@@ -3250,86 +3836,111 @@ Cell[6482, 223, 214, 4, 34, "Text"],
 Cell[6699, 229, 323, 9, 64, "Text"],
 Cell[7025, 240, 137, 3, 34, "Text"],
 Cell[7165, 245, 412, 15, 34, "Text"],
-Cell[7580, 262, 336, 10, 64, "Text"],
-Cell[7919, 274, 94, 1, 34, "Text"],
-Cell[8016, 277, 1117, 36, 97, "Text"],
-Cell[9136, 315, 765, 22, 78, "Text"],
-Cell[9904, 339, 755, 23, 93, "Text"],
-Cell[10662, 364, 253, 5, 55, "Text"],
-Cell[10918, 371, 94, 1, 34, "Text"],
-Cell[11015, 374, 95, 1, 34, "Text"],
-Cell[11113, 377, 911, 28, 93, "Text"],
-Cell[12027, 407, 745, 24, 93, "Text"],
-Cell[12775, 433, 95, 1, 34, "Text"],
-Cell[12873, 436, 801, 25, 93, "Text"],
-Cell[13677, 463, 542, 16, 89, "Text"]
-}, Open  ]]
+Cell[7580, 262, 304, 9, 64, "Text"],
+Cell[7887, 273, 94, 1, 34, "Text"],
+Cell[7984, 276, 1117, 36, 97, "Text"],
+Cell[9104, 314, 765, 22, 78, "Text"],
+Cell[9872, 338, 755, 23, 93, "Text"],
+Cell[10630, 363, 253, 5, 55, "Text"],
+Cell[10886, 370, 94, 1, 34, "Text"],
+Cell[10983, 373, 95, 1, 34, "Text"],
+Cell[11081, 376, 911, 28, 93, "Text"],
+Cell[11995, 406, 745, 24, 93, "Text"],
+Cell[12743, 432, 95, 1, 34, "Text"],
+Cell[12841, 435, 801, 25, 93, "Text"],
+Cell[13645, 462, 542, 16, 89, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14268, 485, 148, 2, 88, "Section"],
+Cell[14224, 483, 98, 1, 46, "Subsection"],
+Cell[14325, 486, 201, 4, 34, "Text"],
+Cell[14529, 492, 105, 1, 34, "Text"],
+Cell[14637, 495, 310, 8, 44, "Text"],
+Cell[14950, 505, 271, 7, 34, "Text"],
+Cell[15224, 514, 316, 8, 34, "Text"],
+Cell[15543, 524, 135, 3, 34, "Text"],
+Cell[15681, 529, 652, 20, 54, "Text"],
+Cell[16336, 551, 598, 18, 63, "Text"],
 Cell[CellGroupData[{
-Cell[14441, 491, 111, 1, 32, "Subsubsection"],
-Cell[14555, 494, 134, 3, 34, "Text"],
-Cell[CellGroupData[{
-Cell[14714, 501, 1498, 40, 117, "Input"],
-Cell[16215, 543, 6029, 107, 431, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[22293, 656, 107, 1, 32, "Subsubsection"],
-Cell[22403, 659, 142, 1, 34, "Text"],
-Cell[CellGroupData[{
-Cell[22570, 664, 2592, 69, 279, "Input"],
-Cell[25165, 735, 3473, 64, 889, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[28687, 805, 106, 1, 32, "Subsubsection"],
-Cell[28796, 808, 113, 1, 34, "Text"],
-Cell[CellGroupData[{
-Cell[28934, 813, 6808, 164, 753, "Input"],
-Cell[35745, 979, 5887, 107, 1111, "Output"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[41681, 1092, 118, 1, 46, "Subsection"],
-Cell[41802, 1095, 152, 3, 34, "Text"],
-Cell[41957, 1100, 7583, 165, 720, "Input"],
-Cell[49543, 1267, 212, 4, 35, "Input"],
-Cell[CellGroupData[{
-Cell[49780, 1275, 421, 8, 35, "Input"],
-Cell[50204, 1285, 327, 4, 35, "Output"]
-}, Open  ]],
-Cell[50546, 1292, 160, 2, 38, "Text"],
-Cell[CellGroupData[{
-Cell[50731, 1298, 10093, 223, 972, "Input"],
-Cell[60827, 1523, 26307, 458, 917, "Output"]
-}, Open  ]],
-Cell[87149, 1984, 131, 1, 38, "Text"],
-Cell[87283, 1987, 108, 1, 34, "Text"],
-Cell[CellGroupData[{
-Cell[87416, 1992, 9580, 209, 900, "Input"],
-Cell[96999, 2203, 12483, 230, 913, "Output"]
-}, Open  ]],
-Cell[109497, 2436, 253, 6, 38, "Text"],
-Cell[109753, 2444, 135, 3, 34, "Text"],
-Cell[CellGroupData[{
-Cell[109913, 2451, 9668, 209, 878, "Input"],
-Cell[119584, 2662, 19371, 346, 907, "Output"]
+Cell[16959, 573, 1359, 40, 136, "Input"],
+Cell[18321, 615, 899, 28, 76, "Output"],
+Cell[19223, 645, 1301, 43, 123, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[139016, 3015, 92, 1, 88, "Section"],
-Cell[139111, 3018, 106, 1, 34, "Text"],
-Cell[139220, 3021, 160, 3, 34, "Text"],
-Cell[139383, 3026, 16, 0, 34, "Text"]
+Cell[20585, 695, 148, 2, 88, "Section"],
+Cell[CellGroupData[{
+Cell[20758, 701, 111, 1, 32, "Subsubsection"],
+Cell[20872, 704, 134, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[21031, 711, 1498, 40, 117, "Input"],
+Cell[22532, 753, 6029, 107, 431, "Output"]
+}, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[139436, 3031, 92, 1, 88, "Section"],
+Cell[28610, 866, 107, 1, 32, "Subsubsection"],
+Cell[28720, 869, 142, 1, 34, "Text"],
 Cell[CellGroupData[{
-Cell[139553, 3036, 3190, 82, 363, "Input"],
-Cell[142746, 3120, 4234, 78, 631, "Output"]
+Cell[28887, 874, 2592, 69, 279, "Input"],
+Cell[31482, 945, 3473, 64, 889, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35004, 1015, 106, 1, 32, "Subsubsection"],
+Cell[35113, 1018, 113, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[35251, 1023, 6808, 164, 753, "Input"],
+Cell[42062, 1189, 5887, 107, 1111, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47998, 1302, 118, 1, 46, "Subsection"],
+Cell[48119, 1305, 152, 3, 34, "Text"],
+Cell[48274, 1310, 7583, 165, 720, "Input"],
+Cell[55860, 1477, 212, 4, 35, "Input"],
+Cell[CellGroupData[{
+Cell[56097, 1485, 421, 8, 35, "Input"],
+Cell[56521, 1495, 327, 4, 35, "Output"]
+}, Open  ]],
+Cell[56863, 1502, 160, 2, 38, "Text"],
+Cell[CellGroupData[{
+Cell[57048, 1508, 10093, 223, 972, "Input"],
+Cell[67144, 1733, 26307, 458, 917, "Output"]
+}, Open  ]],
+Cell[93466, 2194, 131, 1, 38, "Text"],
+Cell[93600, 2197, 108, 1, 34, "Text"],
+Cell[CellGroupData[{
+Cell[93733, 2202, 9580, 209, 900, "Input"],
+Cell[103316, 2413, 12483, 230, 913, "Output"]
+}, Open  ]],
+Cell[115814, 2646, 253, 6, 38, "Text"],
+Cell[116070, 2654, 135, 3, 34, "Text"],
+Cell[CellGroupData[{
+Cell[116230, 2661, 9668, 209, 878, "Input"],
+Cell[125901, 2872, 19371, 346, 907, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[145321, 3224, 96, 1, 46, "Subsection"],
+Cell[145420, 3227, 187, 4, 34, "Text"],
+Cell[145610, 3233, 1469, 48, 114, "Text"],
+Cell[CellGroupData[{
+Cell[147104, 3285, 7130, 182, 724, "Input"],
+Cell[154237, 3469, 6876, 125, 895, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161174, 3601, 92, 1, 88, "Section"],
+Cell[161269, 3604, 106, 1, 34, "Text"],
+Cell[161378, 3607, 160, 3, 34, "Text"],
+Cell[161541, 3612, 16, 0, 34, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161594, 3617, 92, 1, 88, "Section"],
+Cell[CellGroupData[{
+Cell[161711, 3622, 3190, 82, 363, "Input"],
+Cell[164904, 3706, 4234, 78, 631, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
