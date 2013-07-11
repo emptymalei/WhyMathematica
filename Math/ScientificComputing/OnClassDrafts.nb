@@ -1,0 +1,74 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1690,         65]
+NotebookOptionsPosition[      1272,         45]
+NotebookOutlinePosition[      1618,         60]
+CellTagsIndexPosition[      1575,         57]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Week4-10.x", "Section",
+ CellChangeTimes->{{3.58253325911512*^9, 3.582533274715147*^9}}],
+
+Cell["Jacobi iteration method.", "Text",
+ CellChangeTimes->{{3.582533323049432*^9, 3.5825333313018465`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Re", "@", 
+  RowBox[{"(", 
+   RowBox[{"1", " ", "+", " ", 
+    RowBox[{"I", " ", "3"}]}], " ", ")"}]}]], "Input",
+ CellChangeTimes->{{3.5825354748090115`*^9, 3.5825354816730237`*^9}, {
+  3.5825355204390917`*^9, 3.582535525852301*^9}, {3.5825363718742695`*^9, 
+  3.582536388660229*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{
+  3.5825354820006237`*^9, {3.582536378764663*^9, 3.5825363890172496`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{944, 855},
+WindowMargins->{{264, Automatic}, {Automatic, 54}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 94, 1, 71, "Section"],
+Cell[676, 25, 108, 1, 29, "Text"],
+Cell[CellGroupData[{
+Cell[809, 30, 309, 7, 31, "Input"],
+Cell[1121, 39, 123, 2, 30, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
