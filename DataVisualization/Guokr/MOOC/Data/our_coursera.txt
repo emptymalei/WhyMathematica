@@ -1,0 +1,352 @@
+Discrete Optimization
+Introduction to Systematic Program Design - Part 1
+Bioinformatics Algorithms (Part 1)
+Startup Engineering
+Introduction to Systems Biology
+Histología básica: los cuatro tejidos fundamentales
+Survey of Music Technology
+Creative Programming for Digital Media & Mobile Apps
+Social Network Analysis
+Canine Theriogenology for Dog Enthusiasts
+Introduction to Finance
+A Look at Nuclear Science and Technology
+Computational Neuroscience
+Synapses, Neurons and Brains
+First-Year Composition 2.0
+Inquiry Science Learning: Perspectives & Practices 4 - Student-Centered Inquiry
+Engaging Students through Cooperative Learning
+Nutrition for Health Promotion and Disease Prevention
+Fantasy and Science Fiction: The Human Mind, Our Modern World
+Bioelectricity: A Quantitative Approach
+An Introduction to Operations Management
+Metadata: Organizing and Discovering Information
+Computational Molecular Evolution
+Clinical Terminology for International and U.S. Students
+Developing Innovative Ideas for New Companies: The 1st Step in Entrepreneurship
+Introduction to Psychology
+The Diversity of Exoplanets
+Growing Old Around the Globe
+History of Rock, Part One
+Software Defined Networking
+Computer Networks
+Model Thinking
+The Hardware/Software Interface
+Climate Literacy: Navigating Climate Change Conversations
+Drug Discovery, Development & Commercialization
+The Science of Safety in Healthcare
+Internet History, Technology, and Security
+Chemistry: Concept Development and Application
+Sustainability of Food Systems: A Global Life Cycle Perspective
+Creativity, Innovation, and Change
+From the Big Bang to Dark Energy
+Introduction to Genetics and Evolution
+Children Acquiring Literacy Naturally
+Vaccine Trials: Methods and Best Practices
+Archaeology's Dirty Little Secrets
+Cryptography I
+Drugs and the Brain
+Medical Neuroscience
+Fundamentals of Audio and Music Engineering: Part 1 Musical Sound & Electronic
+The Fiction of Relationship
+Critical Thinking in Global Challenges
+Foundations of Teaching for Learning 7: Being a Professional
+Epigenetic Control of Gene Expression
+Global Sustainable Energy: Past, Present and Future
+Scientific Computing
+Economic Issues, Food & You
+Innovación educativa con recursos abiertos
+Analytical Chemistry / Instrumental Analysis
+Fundamentals of Human Nutrition
+Antimicrobial Stewardship: Optimization of Antibiotic Practices
+Computing for Data Analysis
+Fundamentals of Online Education: Planning and Application
+The Role of the Renminbi in the International Monetary System
+Guinea Pigs, Heroes & Desperate Patients: The History & Ethics of Human Research
+Globalization and You
+"Pay Attention!!" ADHD Through the Lifespan
+Inquiry Science Learning: Perspectives and Practices 3 - Science Content Survey
+Analysis of Algorithms
+Desarrollo rápido de productos innovadores para mercados emergentes
+Continuidad y desarrollo de la empresa familiar
+Cardiac Arrest, Hypothermia, and Resuscitation Science
+History of Rock, Part Two
+Writing II: Rhetorical Composing
+Cryptography II
+Origins - Formation of the Universe, Solar System, Earth and Life
+Experimental Genome Science
+Maps and the Geospatial Revolution
+Case-Based Introduction to Biostatistics
+Design: Creation of Artifacts in Society
+Sustainable Agricultural Land Management
+Introduction to International Criminal Law
+Intermediate Organic Chemistry - Part 1
+Programmed cell death
+Learn to Program: Crafting Quality Code
+A Beginner's Guide to Irrational Behavior
+Early Renaissance Architecture in Italy: from Alberti to Bramante
+Law and the Entrepreneur
+Reason and Persuasion: Thinking Through Three Dialogues By Plato
+Introduction à la programmation orientée objet (en Java)
+Introductory Organic Chemistry - Part 2
+Introduction to Music Production
+Algorithms, Part I
+A New History for a New China, 1700-2000: New Data and New Methods, Part 1
+Exercise Physiology: Understanding the Athlete Within
+Vaccines
+Healthcare Innovation and Entrepreneurship
+Structure Standing Still: The Statics of Everyday Objects
+The Modern and the Postmodern
+Art and Inquiry: Museum Teaching Strategies For Your Classroom
+MOS Transistors
+E-learning and Digital Cultures
+Energy, the Environment, and Our Future
+Climate Change
+The Holocaust
+Community Change in Public Health
+Foundations of Teaching for Learning 5: Planning for Teaching and Learning
+Property and Liability: An Introduction to Law and Economics
+Training and Learning Programs for Volunteer Community Health Workers
+编译原理
+Statistics: Making Sense of Data
+Introduction to Data Science
+Nutrition, Health, and Lifestyle: Issues and Insights
+Malicious Software and itsUnderground Economy: Two Sides to Every Story
+Social Psychology
+Computational Methods for Data Analysis
+Latin American Culture
+Health Policy and the Affordable Care Act
+Human-Computer Interaction
+Mathematical Biostatistics Boot Camp 1
+Understanding Einstein: The Special Theory of Relativity
+Practical tips to improve Asian American participation in cancer clinical trials
+Introduction to Mathematical Philosophy
+The Law of the European Union: An Introduction
+Pensamiento Científico
+Social and Economic Networks: Models and Analysis
+Child Nutrition and Cooking
+Greek and Roman Mythology
+High Performance Scientific Computing
+Writing in the Sciences
+Useful Genetics
+Organizational Analysis
+Introduction to Public Speaking
+Algorithms: Design and Analysis, Part 1
+Interprofessional Healthcare Informatics
+An Introduction to Global Health
+Foundations of Business Strategy
+Analyzing the Universe
+Integrating Engineering Into Your Science Classroom
+Creating Site-Specific Dance and Performance Works
+Rationing and Allocating Scarce Medical Resources
+Volcanic Eruptions: a material science.
+Exploring Beethoven’s Piano Sonatas
+Pattern-Oriented Software Architectures for Concurrent and Networked Software
+Algorithms: Design and Analysis, Part 2
+Genes and the Human Condition (From Behavior to Biotechnology)
+Introductory Physics I with Laboratory
+Calculus: Single Variable
+New Models of Business in Society
+Big Data in Education
+Health for All Through Primary Health Care
+Social Epidemiology
+Foundations of Teaching for Learning 3: Learners and Learning
+Analytic Combinatorics
+Statistical Molecular Thermodynamics
+Songwriting
+Critical Perspectives on Management
+Inquiry Science Learning: Perspectives and Practices 2 - Techniques for Success
+Basic Behavioral Neurology
+Modern & Contemporary American Poetry
+Evolution: A Course for Educators
+Inquiry Science Learning: Perspectives and Practices 1 - Science Leadership
+AccountableTalk®: Conversation that Works
+English Common Law: Structure and Principles
+The Ancient Greeks
+9/11 and Its Aftermath -- Part I
+Genetics and Society: A Course for Educators
+Design Thinking for Business Innovation
+Grow to Greatness: Smart Growth for Private Businesses, Part II
+Introduction to Mathematical Thinking
+Online Games: Literature, New Media, and Narrative
+Generation Rx: The Science Behind Prescription Drug Abuse
+Contraception: Choices, Culture and Consequences
+Introduction to Pharmacy
+The Future of Humankind
+Coaching Teachers: Promoting Changes that Stick
+Emerging Trends & Technologies in the Virtual K-12 Classroom
+A History of the World since 1300
+An Introduction to Financial Accounting
+Foundations of Virtual Instruction
+Soul Beliefs: Causes and Consequences
+Understanding Media by Understanding Google
+The Language of Hollywood: Storytelling, Sound, and Color
+Foundations of Teaching for Learning 2: Being a Teacher
+Data Management for Clinical Research
+Introduction to Environmental Law and Policy
+Introduction to Engineering Mechanics
+Initiation à la théorie des distributions
+Unpredictable? Randomness, Chance and Free Will
+Crafting an Effective Writer: Tools of the Trade
+Initiation à la programmation (en C++)
+Computer Architecture
+Write Like Mozart: An Introduction to Classical Music Composition
+Financial Engineering and Risk Management Part II
+Moralities of Everyday Life
+The Beauty of Kunqu Opera 
+Roman Architecture
+AIDS
+Dynamical Modeling Methods for Systems Biology
+Human Evolution: Past and Future
+Statistics One
+Pre-Calculus
+Initiation à la programmation (en Java)
+Everything is the Same: Modeling Engineered Systems
+Introduction to Tissue Engineering
+Using The Next Generation Science Standards for Students’ Deeper Understanding
+Leading Strategic Innovation in Organizations
+التقانة والمستشعرات النانوية
+Artificial Intelligence Planning
+Grow to Greatness: Smart Growth for Private Businesses, Part I
+Games without Chance: Combinatorial Game Theory
+Globalizing Higher Education and Research for the ‘Knowledge Economy’
+Equine Nutrition
+Astrobiology and the Search for Extraterrestrial Life
+Constitutional Law
+Tinkering Fundamentals: Integrating Making Activities into Your STEM Classroom
+Foundations of Teaching for Learning 6: Introduction to Student Assessment
+Surviving Disruptive Technologies
+Corporate Finance
+Content Strategy for Professionals: Engaging Audiences for Your Organization
+Nanotechnology and Nanosensors
+Foundations of Teaching for Learning 8: Developing Relationships
+Student Thinking at the Core
+Confronting The Big Questions: Highlights of Modern Astronomy
+Gamification
+Terrorism and Counterterrorism: Comparing Theory and Practice
+Constitutional Struggles in the Muslim World
+International Organizations Management
+Democratic Development
+Financial Markets
+Foundations of Teaching for Learning 4: Curriculum
+Scandinavian Film and Television
+Introduction à la programmation orientée objet (en C++)
+Coding the Matrix: Linear Algebra through Computer Science Applications
+Competitive Strategy
+General Game Playing
+Introduction to Recommender Systems
+Functional Programming Principles in Scala
+Introduction to Logic
+The Camera Never Lies
+English Composition I: Achieving Expertise
+Machine Learning
+Computational Investing, Part I
+Network Analysis in Systems Biology
+Introduction to Programming for Musicians and Digital Artists
+Game Theory
+Teaching Character and Creating Positive Classrooms
+Virology I: How Viruses Work
+Image and video processing: From Mars to Hollywood with a stop at the hospital
+Natural Language Processing
+C++ For C Programmers
+Information Security and Risk Management in Context
+Building an Information Risk Management Toolkit
+Computer Security
+Web Intelligence and Big Data
+Natural Language Processing
+Neural Networks for Machine Learning
+Probabilistic Graphical Models
+Machine Learning
+Learn to Program: The Fundamentals
+Securing Digital Democracy
+Instructional Methods in Health Professions Education
+Control of Mobile Robots
+Computational Photography
+Programming Languages
+Creative, Serious and Playful Science of Android Apps
+Algorithms, Part II
+Ser más creativos
+Computer Vision: From 3D Reconstruction to Visual Recognition
+First Year Teaching (Elementary Grades) - Success from the Start
+機率
+A Brief History of Humankind
+Disaster Preparedness
+Surviving Your Rookie Year of Teaching: 3 Key Ideas & High Leverage Techniques
+Einführung in Computer Vision
+Networked Life
+Compilers
+Heterogeneous Parallel Programming
+Fundamentals of Digital Image and Video Processing
+An Introduction to Interactive Programming in Python
+Markets with Frictions
+Foundations of Teaching for Learning 1: Introduction
+First Year Teaching (Secondary Grades) - Success from the Start
+Caries Management by Risk Assessment (CAMBRA)
+The Global Business of Sports
+Effective Classroom Interactions: Supporting Young Children’s Development
+Designing and Executing Information Security Strategies
+Financial Engineering and Risk Management Part I
+Preparation for Introductory Biology: DNA to Organisms
+Aboriginal Worldviews and Education
+El ABC del emprendimiento esbelto
+Computer Science 101
+Introduction to Databases
+Networks: Friends, Money, and Bytes
+VLSI CAD: Logic to Layout
+Linear and Integer Programming
+Conception et mise en oeuvre d'algorithmes.
+Microeconomics Principles
+Introductory Human Physiology
+Ser más creativos
+Linear and Discrete Optimization
+Videogames and Learning
+Animal Behaviour
+Common Core in Action: Literacy Across Content Areas
+Inspiring Leadership through Emotional Intelligence
+Fundamentals of Rehearsing Music Ensembles
+Automata
+The Dynamic Earth: A Course for Educators
+Common Core in Action: Math Formative Assessment
+Tecnologías de información y comunicación en la educación
+On the Hunt for Feedback: Self-Directed Teacher Improvement
+Structural Equation Model and its Applications
+Mathematical Methods for Quantitative Finance
+Financial Engineering and Risk Management
+Principles of Macroeconomics
+Generating the Wealth of Nations
+Introduction to Computational Finance and Financial Econometrics
+Principles of Obesity Economics
+Understanding economic policymaking
+Nutrition and Physical Activity for Health
+Networks Illustrated: Principles without Calculus
+Introduction to Art: Concepts & Techniques
+Instructional Methods in Health Professions Education
+Introductory Organic Chemistry - Part 1
+Principles of Economics for Scientists
+Principles of Microeconomics
+The Brain-Targeted Teaching® Model for 21st Century Schools
+Matemáticas y movimiento
+Think Again: How to Reason and Argue
+The Science of Gastronomy
+Comic Books and Graphic Novels
+Live!: A History of Art for Artists, Animators and Gamers
+Epidemics - the Dynamics of Infectious Diseases
+What a Plant Knows (and other things you didn’t know about plants)
+Diabetes - a Global Challenge
+Nanotechnology: The Basics
+Epidemiology: The Basic Science of Public Health
+The Fall and Rise of Jerusalem
+Calvin - Histoire et Réception d'une Réforme
+Egiptología (Egyptology)
+The New Nordic Diet - from Gastronomy to Health
+Intermediate Organic Chemistry - Part 2
+Diabetes: Diagnosis, Treatment, and Opportunities
+21st Century American Foreign Policy
+Introduction to Philosophy
+Global Health: Interdisciplinary Overview
+Søren Kierkegaard - Subjectivity, Irony and the Crisis of Modernity
+Care of Elders with Alzheimer's Disease and other Major Neurocognitive Disorders
+Conditions of War and Peace
+From the Repertoire: Western Music History through Performance
+Aléatoire : une Introduction aux Probabilités
+Analysis of a Complex Kind
+Fundamentals of Electrical Engineering
