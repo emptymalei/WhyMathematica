@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      8005,        269]
+NotebookOptionsPosition[      6421,        211]
+NotebookOutlinePosition[      6786,        227]
+CellTagsIndexPosition[      6743,        224]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Pre", "Section",
+ CellChangeTimes->{{3.565609679342049*^9, 3.5656096851613817`*^9}}],
+
+Cell["Load package", "Text",
+ CellChangeTimes->{{3.5656073088334637`*^9, 3.5656073134937305`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Units`\>\"", "]"}]], "Input"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Heat Transfer Rate", "Section",
+ CellChangeTimes->{{3.565606814365182*^9, 3.5656068338802977`*^9}, {
+  3.565609694202899*^9, 3.5656096952749605`*^9}}],
+
+Cell["\<\
+This document calculates the heat transfer rate from a bladder full of urine \
+to organs nearby.\
+\>", "Text",
+ CellChangeTimes->{{3.5656068369404736`*^9, 3.565606900945134*^9}, {
+  3.565609699659211*^9, 3.5656097304859743`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Some facts and assumptions", "Subsection",
+ CellChangeTimes->{{3.5656071711985917`*^9, 3.5656071769999237`*^9}}],
+
+Cell["\<\
+Average volume of bladder. (ml)\
+\>", "Text",
+ CellChangeTimes->{{3.5656071925788145`*^9, 3.5656072274938116`*^9}, {
+  3.5656097388204513`*^9, 3.5656097404775457`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"vol", "=", 
+   RowBox[{"400", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "3"}]], "Liter"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.565607215180107*^9, 3.565607220403406*^9}, {
+  3.565607329483645*^9, 3.5656073498578105`*^9}}],
+
+Cell["\<\
+Assume the bladder is a sphere. Its surface area is\
+\>", "Text",
+ CellChangeTimes->{{3.5656073603674116`*^9, 3.5656074321455173`*^9}, {
+  3.565607625972603*^9, 3.5656076311008964`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sur", "=", 
+   RowBox[{"180", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "4"}]], 
+    RowBox[{"Meter", "^", "2"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5656073734301586`*^9, 3.5656073878709846`*^9}, {
+  3.5656074380808563`*^9, 3.5656074439721937`*^9}, {3.56560751070201*^9, 
+  3.5656075197385273`*^9}, {3.565607634714103*^9, 3.565607642589554*^9}, {
+  3.5656094450166464`*^9, 3.5656094452516603`*^9}}],
+
+Cell["Thickness of bladder", "Text",
+ CellChangeTimes->{{3.5656076625036926`*^9, 3.565607668174017*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"thi", "=", 
+   RowBox[{"2", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "3"}]], "Meter"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.565607670097127*^9, 3.5656076821668177`*^9}}],
+
+Cell["Temperature gradient", "Text",
+ CellChangeTimes->{{3.5656076901752753`*^9, 3.5656076946735325`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dT", "=", 
+   RowBox[{"1", " ", "Celsius"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5656076988167696`*^9, 3.565607710857458*^9}, {
+  3.565608010673607*^9, 3.56560803188482*^9}}],
+
+Cell["Fourier constant of water", "Text",
+ CellChangeTimes->{{3.5656081409050555`*^9, 3.5656081492105308`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Lambda]w", "=", 
+   RowBox[{"0.62", " ", 
+    RowBox[{"Watt", "/", 
+     RowBox[{"(", 
+      RowBox[{"Meter", " ", "Celsius"}], ")"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5656081830064635`*^9, 3.5656082319232616`*^9}, {
+  3.5656084775823126`*^9, 3.5656084970054235`*^9}, {3.5656086386065226`*^9, 
+  3.56560864695*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Heat transfer rate", "Subsection",
+ CellChangeTimes->{{3.5656086791128397`*^9, 3.5656086824530306`*^9}}],
+
+Cell["\<\
+Heat transfer rate using Fourier law\
+\>", "Text",
+ CellChangeTimes->{{3.56560865656555*^9, 3.5656086757226458`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"hr", "=", 
+  RowBox[{"\[Lambda]w", " ", "dT", " ", 
+   RowBox[{"sur", "/", "thi"}]}]}]], "Input",
+ CellChangeTimes->{{3.5656086911995306`*^9, 3.565608721416259*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5.58`", " ", "Watt"}]], "Output",
+ CellChangeTimes->{3.56560872265633*^9, 3.565609457342352*^9, 
+  3.565646938522173*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Subsection",
+ CellChangeTimes->{{3.5656087511479597`*^9, 3.565608757784339*^9}}],
+
+Cell["\<\
+What is the energy transfered in one day\
+\>", "Text",
+ CellChangeTimes->{{3.5656087665538406`*^9, 3.5656087795905867`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ene1", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Convert", "[", 
+     RowBox[{"#", ",", "Calorie"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"hr", " ", "86400", " ", "Second"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.5656087858149424`*^9, 3.5656088491585655`*^9}, {
+  3.5656089189065547`*^9, 3.565608957894785*^9}, {3.5656090530672283`*^9, 
+  3.565609068202094*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"115150.47291487532`", " ", "Calorie"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5656088179397798`*^9, 3.565608845159337*^9}, 
+   3.565608952367469*^9, {3.5656090592745833`*^9, 3.565609068744125*^9}, 
+   3.5656094601715136`*^9, 3.565646938553373*^9}]
+}, Open  ]],
+
+Cell["\<\
+We are taking in 2000 KCal energy everyday on average.\
+\>", "Text",
+ CellChangeTimes->{{3.56560976099572*^9, 3.565609768453146*^9}, {
+  3.5656098818756337`*^9, 3.5656099459552984`*^9}}],
+
+Cell["In five minutes", "Text",
+ CellChangeTimes->{{3.5656469564466043`*^9, 3.565646962546215*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"hr", " ", "300", " ", "Second"}], "\[IndentingNewLine]", 
+ RowBox[{"ene2", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Convert", "[", 
+     RowBox[{"#", ",", "Calorie"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"hr", " ", "300", " ", "Second"}], "}"}]}]}]}], "Input",
+ CellChangeTimes->{{3.5656099267081976`*^9, 3.5656099284452972`*^9}, {
+  3.5656469489429913`*^9, 3.565647026100726*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1674.`", " ", "Second", " ", "Watt"}]], "Output",
+ CellChangeTimes->{{3.5656469819058485`*^9, 3.5656470267247276`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"399.8280309544282`", " ", "Calorie"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5656469819058485`*^9, 3.5656470267247276`*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1016, 681},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+ShowSelection->True,
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (February 23, 2011)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 90, 1, 71, "Section"],
+Cell[672, 25, 98, 1, 30, "Text"],
+Cell[773, 28, 71, 1, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[881, 34, 156, 2, 71, "Section"],
+Cell[1040, 38, 239, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[1304, 47, 118, 1, 36, "Subsection"],
+Cell[1425, 50, 178, 4, 30, "Text"],
+Cell[1606, 56, 269, 7, 31, "Input"],
+Cell[1878, 65, 196, 4, 30, "Text"],
+Cell[2077, 71, 449, 10, 31, "Input"],
+Cell[2529, 83, 104, 1, 30, "Text"],
+Cell[2636, 86, 218, 6, 31, "Input"],
+Cell[2857, 94, 106, 1, 30, "Text"],
+Cell[2966, 97, 214, 5, 31, "Input"],
+Cell[3183, 104, 111, 1, 30, "Text"],
+Cell[3297, 107, 364, 9, 31, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3698, 121, 110, 1, 36, "Subsection"],
+Cell[3811, 124, 127, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[3963, 131, 189, 4, 31, "Input"],
+Cell[4155, 137, 145, 3, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4349, 146, 100, 1, 36, "Subsection"],
+Cell[4452, 149, 134, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[4611, 156, 404, 10, 31, "Input"],
+Cell[5018, 168, 289, 5, 32, "Output"]
+}, Open  ]],
+Cell[5322, 176, 196, 4, 30, "Text"],
+Cell[5521, 182, 99, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[5645, 187, 421, 10, 52, "Input"],
+Cell[6069, 199, 143, 2, 32, "Output"],
+Cell[6215, 203, 166, 3, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

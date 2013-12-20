@@ -1,0 +1,409 @@
+This is XeTeX, Version 3.1415926-2.2-0.9995.2 (Web2C 2009) (format=xelatex 2009.11.12)  1 APR 2012 14:30
+entering extended mode
+ %&-line parsing enabled.
+**DustBlackHole.tex
+(./DustBlackHole.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, pinyin, loaded.
+(c:/TeXLive/current/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(c:/TeXLive/current/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks14
+\thm@bodyfont=\toks15
+\thm@headfont=\toks16
+\thm@notefont=\toks17
+\thm@headpunct=\toks18
+\thm@preskip=\skip43
+\thm@postskip=\skip44
+\thm@headsep=\skip45
+\dth@everypar=\toks19
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\@emptytoks=\toks20
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 138.
+LaTeX Info: Redefining \bm on input line 204.
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip46
+
+For additional information on amsmath, use the `?' option.
+(c:/TeXLive/current/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(c:/TeXLive/current/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen103
+))
+(c:/TeXLive/current/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+LaTeX Info: Redefining \boldsymbol on input line 54.
+\pmbraise@=\dimen104
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks22
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks23
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks24
+\multlinegap=\skip47
+\multlinetaggap=\skip48
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup9
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+(c:/TeXLive/current/texmf-dist/tex/xelatex/fontspec/fontspec.sty
+Package: fontspec 2008/08/09 v1.18 Advanced font selection for XeLaTeX
+
+(c:/TeXLive/current/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+\c@zf@newff=\count100
+\c@zf@index=\count101
+\c@zf@script=\count102
+\c@zf@language=\count103
+
+(c:/TeXLive/current/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count104
+\calc@Bcount=\count105
+\calc@Adimen=\dimen112
+\calc@Bdimen=\dimen113
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count106
+\calc@Cskip=\skip51
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(c:/TeXLive/current/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks26
+\XKV@tempa@toks=\toks27
+\XKV@depth=\count107
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(c:/TeXLive/current/texmf-dist/tex/generic/xkeyval/keyval.tex)))
+LaTeX Info: Redefining \itshape on input line 1163.
+LaTeX Info: Redefining \slshape on input line 1166.
+LaTeX Info: Redefining \scshape on input line 1169.
+LaTeX Info: Redefining \upshape on input line 1172.
+
+fontspec.cfg loaded.
+(c:/TeXLive/current/texmf-dist/tex/xelatex/fontspec/fontspec.cfg))
+(c:/TeXLive/current/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2008/02/08 v0.91 provides access to latin accents and many o
+ther characters in Unicode lower plane
+)
+\c@zf@famc@"微软雅黑"=\count108
+Package fontspec Info: Defining font family for '"微软雅黑"' with options [
+] on input line 31.
+Package fontspec Info: Could not resolve font "微软雅黑"/I (it might not ex
+ist) on input line 31.
+
+(c:/TeXLive/current/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/TeXLive/current/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/TeXLive/current/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:/TeXLive/current/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: xetex.def on input line 91.
+
+(c:/TeXLive/current/texmf-dist/tex/xelatex/xetex-def/xetex.def
+File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
+
+))
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+(./DustBlackHole.aux)
+\openout1 = `DustBlackHole.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid this).
+ on input line 57.
+\symlegacymaths=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 57.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 57.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 57.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 57.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 57.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 57.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 57.
+LaTeX Font Info:    Redeclaring math accent \check on input line 57.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 57.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 57.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 57.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 57.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 57.
+LaTeX Font Info:    Encoding `OT1' has changed to `U' for symbol font
+(Font)              `operators' in the math version `normal' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> U/"微软雅黑"(0)/m/n on input line 5
+7.
+LaTeX Font Info:    Encoding `OT1' has changed to `U' for symbol font
+(Font)              `operators' in the math version `bold' on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> U/"微软雅黑"(0)/m/n on input line 
+57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  U/"微软雅黑"(0)/m/n --> U/"微软雅黑"(0)/m/n on 
+input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  U/"微软雅黑"(0)/m/n --> U/"微软雅黑"(0)/m/n on 
+input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> U/"微软雅黑"(0)/m/it on input line
+ 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> U/"微软雅黑"(0)/bx/n on input line
+ 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> U/cmss/m/n on input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> U/cmtt/m/n on input line 57.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  U/"微软雅黑"(0)/m/n --> U/"微软雅黑"(0)/bx/n on
+ input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  U/"微软雅黑"(0)/m/n --> U/"微软雅黑"(0)/bx/n on
+ input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> U/"微软雅黑"(0)/bx/it on input li
+ne 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> U/cmss/bx/n on input line 57.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> U/cmtt/bx/n on input line 57.
+LaTeX Font Info:    Try loading font information for U+msa on input line 83.
+ (c:/TeXLive/current/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 83.
+ (c:/TeXLive/current/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 83.
+
+(c:/TeXLive/current/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+Overfull \hbox (5.8138pt too wide) in paragraph at lines 87--88
+[]\U/"微软雅黑"(0)/m/n/12 使用与时间轴正交的超曲面，直接取�
+��面的空间部分。这样一个实际上这个球体的物理的体积
+ []
+
+
+Overfull \hbox (24.0671pt too wide) in paragraph at lines 92--94
+\U/"微软雅黑"(0)/m/n/12 其中$\OML/cmm/m/it/12 m\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 r; M\OT1/cmr/m/n/12 )$\U/"微软雅黑"(0)/m/n/12 是质量分布函数
+，$\OML/cmm/m/it/12 M$\U/"微软雅黑"(0)/m/n/12 是球体总质量，$\OML/c
+mm/m/it/12 R$\U/"微软雅黑"(0)/m/n/12 是球体的半径，这个半径是�
+�的在Schwarzschild
+ []
+
+File: Figure/DustBlackHole_FixR.jpg Graphic file (type QTm)
+<use  "Figure/DustBlackHole_FixR.jpg" >
+Overfull \hbox (5.8138pt too wide) in paragraph at lines 117--118
+[]\U/"微软雅黑"(0)/m/n/12 现在可以看到，随着质量增加，密度�
+��是增加，后来减小，有一个峰值。也就是说，如果现在
+ []
+
+
+Overfull \hbox (7.22609pt too wide) in paragraph at lines 117--118
+\U/"微软雅黑"(0)/m/n/12 有个区域半径为1，我们不停的往里面�
+�加尘埃，并且使其分布满足上面提到的特定的均匀质量分
+ []
+
+
+Overfull \hbox (2.2632pt too wide) in paragraph at lines 117--118
+\U/"微软雅黑"(0)/m/n/12 布，这样这个尘埃团的密度先增加，直
+到质量达到0.427的时候，密度达到最大值0.816，之后密
+ []
+
+
+Overfull \hbox (2.47449pt too wide) in paragraph at lines 117--118
+\U/"微软雅黑"(0)/m/n/12 度反而开始减小，最后直到形成黑洞前
+，密度减小到$\OT1/cmr/m/n/12 2/\OML/cmm/m/it/12 ^^Y$\U/"微软雅黑"(0)/
+m/n/12 。图中可以看到，在$\OML/cmm/m/it/12 M \OT1/cmr/m/n/12 = 0\OML/c
+mm/m/it/12 :\OT1/cmr/m/n/12 5$\U/"微软雅黑"(0)/m/n/12 的地方，斜
+ []
+
+
+Overfull \hbox (5.8138pt too wide) in paragraph at lines 119--120
+[]\U/"微软雅黑"(0)/m/n/12 进一步想，密度降下来，按照古旧的�
+��点来看，只能是体积减小了，因为我们一直往其中添加
+ []
+
+
+Overfull \hbox (5.8138pt too wide) in paragraph at lines 121--122
+[]\U/"微软雅黑"(0)/m/n/12 这点有点奇怪。如果体积变成了无穷�
+��，那么很多定律都变得不合理。我们是否可以把部分效
+ []
+
+
+Overfull \hbox (47.74367pt too wide) in paragraph at lines 121--122
+\U/"微软雅黑"(0)/m/n/12 应转移到质量上去而使得体积不出现奇
+性么？甚至体积变为零最好了。因为这样就可以跟Hollowgraphic
+
+ []
+
+
+Overfull \hbox (18.43456pt too wide) in paragraph at lines 128--131
+[]\U/"微软雅黑"(0)/m/n/12 这里面的$\OML/cmm/m/it/12 M$\U/"微软雅黑"
+(0)/m/n/12 是引力质量，因为这个质量要用来对时空的度规产�
+�影响，从而顺便改变体积积分。
+ []
+
+
+Overfull \hbox (2.55617pt too wide) in paragraph at lines 128--131
+\U/"微软雅黑"(0)/m/n/12 这个是很麻烦的，因为改动之后还有保
+持质量、密度和体积的表达式的自洽性。 如果引力理论不
+ []
+
+
+Overfull \hbox (8.7964pt too wide) in paragraph at lines 128--131
+\U/"微软雅黑"(0)/m/n/12 是像Einstein那样使用等效原理，而是对�
+��量这个概念作了手脚，比如引力质量换成场的耦合系数
+ []
+
+
+Overfull \hbox (2.81398pt too wide) in paragraph at lines 128--131
+\U/"微软雅黑"(0)/m/n/12 之类，就可以实现引力质量随着引力场
+强增加而减小的效果。具体如何实现，可以拿Scalar Ten-
+ []
+
+
+Overfull \hbox (8.3218pt too wide) in paragraph at lines 128--131
+\U/"微软雅黑"(0)/m/n/12 sor理论来看看。 不过改动强引力场的�
+�分会对宇宙学造成比较大的影响，因为一般要求早期宇宙
+ []
+
+[1
+
+]
+File: Figure/DustBlackHole_FixM.jpg Graphic file (type QTm)
+ <use  "Figure/DustBlackHole_FixM.jpg" >
+Overfull \hbox (4.93031pt too wide) in paragraph at lines 139--140
+[]\U/"微软雅黑"(0)/m/n/12 用来补足上面的分析。现有一个质量�
+��1的尘埃球，当$\OML/cmm/m/it/12 R$\U/"微软雅黑"(0)/m/n/12 从3开始
+越来越小的时候，密度先变大
+ []
+
+File: Figure/DustBlackHole_3D.jpg Graphic file (type QTm)
+<use  "Figure/DustBlackHole_3D.jpg" >
+Overfull \hbox (5.8138pt too wide) in paragraph at lines 153--154
+[]\U/"微软雅黑"(0)/bx/n/12 最后，其实还有个值得思考的问题，
+上面这个讨论对于不同的质量分布，是不是都适合的？比
+ []
+
+[2] [3] [4] (./DustBlackHole.aux) ) 
+Here is how much of TeX's memory you used:
+ 5669 strings out of 495713
+ 85795 string characters out of 3188646
+ 172108 words of memory out of 3000000
+ 8754 multiletter control sequences out of 15000+200000
+ 11588 words of font info for 49 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 27i,8n,32p,266b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on DustBlackHole.pdf (4 pages).
