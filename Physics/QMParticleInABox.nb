@@ -1,0 +1,71 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      1519,         62]
+NotebookOptionsPosition[      1092,         41]
+NotebookOutlinePosition[      1446,         57]
+CellTagsIndexPosition[      1403,         54]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["QM: Particles in A Box", "Section",
+ CellChangeTimes->{{3.597802589887714*^9, 3.597802601441758*^9}}],
+
+Cell["\<\
+All we have to know before solving this kind of problems is Schrodinger \
+equation.\
+\>", "Text",
+ CellChangeTimes->{{3.597802624924625*^9, 3.597802653242144*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["1D", "Subsection",
+ CellChangeTimes->{{3.597802610123062*^9, 3.5978026107484407`*^9}}],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.597802777077093*^9, 3.597802777494349*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{740, 656},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 107, 1, 80, "Section"],
+Cell[689, 25, 173, 4, 30, "Text"],
+Cell[CellGroupData[{
+Cell[887, 33, 92, 1, 44, "Subsection"],
+Cell[982, 36, 82, 1, 30, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
