@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    201116,       5149]
-NotebookOptionsPosition[    195951,       4972]
-NotebookOutlinePosition[    196308,       4988]
-CellTagsIndexPosition[    196265,       4985]
+NotebookDataLength[    201099,       5149]
+NotebookOptionsPosition[    195932,       4972]
+NotebookOutlinePosition[    196289,       4988]
+CellTagsIndexPosition[    196246,       4985]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -38,13 +38,15 @@ Cell[BoxData["\<\"/Users/leima/GitHub/WhyMathematica/exoplanets\"\>"], \
 
 Cell[CellGroupData[{
 
-Cell["Benfold\[CloseCurlyQuote]s Law", "Section",
- CellChangeTimes->{{3.609683708339014*^9, 3.60968371172128*^9}}],
+Cell["Benford\[CloseCurlyQuote]s Law", "Section",
+ CellChangeTimes->{{3.609683708339014*^9, 3.60968371172128*^9}, {
+  3.609700779802545*^9, 3.609700779964449*^9}}],
 
 Cell[CellGroupData[{
 
-Cell["Introduction to Benfold\[CloseCurlyQuote]s Law", "Subsection",
- CellChangeTimes->{{3.609683716250141*^9, 3.609683722232896*^9}}],
+Cell["Introduction to Benford\[CloseCurlyQuote]s Law", "Subsection",
+ CellChangeTimes->{{3.609683716250141*^9, 3.609683722232896*^9}, {
+  3.6097007837863073`*^9, 3.609700783890522*^9}}],
 
 Cell["\<\
 Wikipedia:https://en.wikipedia.org/wiki/Benford\[CloseCurlyQuote]s_law\
@@ -645,20 +647,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -673,12 +674,13 @@ Cell[BoxData[
    3.609684860789867*^9, 3.60968490351994*^9}, 3.6096888873616457`*^9, 
    3.609697564551228*^9}]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Benfold\[CloseCurlyQuote]s Law of Exoplents", "Subsection",
- CellChangeTimes->{{3.6096837259781446`*^9, 3.60968374672851*^9}}],
+Cell["Benford\[CloseCurlyQuote]s Law of Exoplents", "Subsection",
+ CellChangeTimes->{{3.6096837259781446`*^9, 3.60968374672851*^9}, {
+  3.60970077644569*^9, 3.6097007765785513`*^9}}],
 
 Cell["\<\
 Here we are going to test Benfold\[CloseCurlyQuote]s Law on Exoplanets.\
@@ -1028,20 +1030,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -1068,10 +1069,11 @@ Cell[BoxData[
     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
     RowBox[{
     "PlotLabel", "\[Rule]", 
-     "\"\<Benfold's Law for Mass of Exoplanets\>\""}]}], "]"}]}]], "Input",
+     "\"\<Benford's Law for Mass of Exoplanets\>\""}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.609684234565578*^9, 3.609684254312872*^9}, {
   3.609684713850381*^9, 3.609684717232966*^9}, {3.609686519180685*^9, 
-  3.609686550932313*^9}, {3.609688873036968*^9, 3.609688879499159*^9}}],
+  3.609686550932313*^9}, {3.609688873036968*^9, 3.609688879499159*^9}, {
+  3.6097008015151453`*^9, 3.609700802947592*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{{
@@ -1297,20 +1299,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}, {{
      {Opacity[0], PointBox[{{0.44545454545454544`, 0.}}]}, {{}, 
       {RGBColor[0.798413061722744, 0.824719615472648, 0.968322270542458], 
@@ -1535,20 +1537,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -2082,20 +2084,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -2764,20 +2765,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -2799,9 +2799,10 @@ Cell[BoxData[
     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
     RowBox[{
     "PlotLabel", "\[Rule]", 
-     "\"\<Benfold's Law for Mass of Exoplanet (Confirmed)\>\""}]}], 
+     "\"\<Benford's Law for Mass of Exoplanet (Confirmed)\>\""}]}], 
    "]"}]}]], "Input",
- CellChangeTimes->{{3.60970018106152*^9, 3.609700194581492*^9}}],
+ CellChangeTimes->{{3.60970018106152*^9, 3.609700194581492*^9}, {
+  3.6097008128517523`*^9, 3.6097008130126266`*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{{
@@ -3026,20 +3027,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}, {{
      {Opacity[0], PointBox[{{0.44545454545454544`, 0.}}]}, {{}, 
       {RGBColor[0.798413061722744, 0.824719615472648, 0.968322270542458], 
@@ -3264,20 +3265,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -3866,20 +3867,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -3902,9 +3902,10 @@ Cell[BoxData[
     RowBox[{"ImageSize", "\[Rule]", "800"}], ",", 
     RowBox[{
     "PlotLabel", "\[Rule]", 
-     "\"\<Benfold's Law for Mass of Exoplanet (All Data)\>\""}]}], 
+     "\"\<Benford's Law for Mass of Exoplanet (All Data)\>\""}]}], 
    "]"}]}]], "Input",
- CellChangeTimes->{{3.609699160323351*^9, 3.609699181153531*^9}}],
+ CellChangeTimes->{{3.609699160323351*^9, 3.609699181153531*^9}, {
+  3.6097008181240053`*^9, 3.609700818267599*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{{
@@ -4130,20 +4131,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}, {{
      {Opacity[0], PointBox[{{0.44545454545454544`, 0.}}]}, {{}, 
       {RGBColor[0.798413061722744, 0.824719615472648, 0.968322270542458], 
@@ -4368,20 +4369,20 @@ Cell[BoxData[
             GrayLevel[0]}], "Tooltip"]& ]}}, {}, {}}, {}, {}, GraphicsGroupBox[
       {GrayLevel[0], 
        StyleBox[
-        StyleBox[
-         StyleBox[{
+        StyleBox[{
+          {Thickness[Tiny], 
+           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+            0.}}], {}}, {
            {Thickness[Tiny], 
-            LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-             0.}}], {}}, {
-            {Thickness[Tiny], 
-             LineBox[{{0.5454545454545454, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-                0.}]}], 
-             LineBox[{{9.454545454545451, 0.}, 
-               Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-                0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-          Antialiasing->False], "GraphicsAxes",
-         StripOnInput->False],
+            LineBox[{{0.5454545454545454, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+               0.}]}], 
+            LineBox[{{9.454545454545451, 0.}, 
+              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+         "GraphicsAxes",
+         StripOnInput->False,
+         Antialiasing->False],
         Antialiasing->False]}]}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -4938,20 +4939,19 @@ Cell[BoxData[
     GraphicsGroupBox[
      {GrayLevel[0], 
       StyleBox[
-       StyleBox[
-        StyleBox[{
+       StyleBox[{
+         {Thickness[Tiny], 
+          LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
+           0.}}], {}}, {
           {Thickness[Tiny], 
-           LineBox[{{0.44545454545454544`, 0.}, {9.454545454545451, 
-            0.}}], {}}, {
-           {Thickness[Tiny], 
-            LineBox[{{0.5454545454545454, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
-               0.}]}], 
-            LineBox[{{9.454545454545451, 0.}, 
-              Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
-               0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}},
-         Antialiasing->False], "GraphicsAxes",
-        StripOnInput->False],
+           LineBox[{{0.5454545454545454, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {0.5454545454545454, 
+              0.}]}], LineBox[{{9.454545454545451, 0.}, 
+             Offset[{-1.102182119232618*^-15, -6.}, {9.454545454545451, 
+              0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}, {}}}, 
+        "GraphicsAxes",
+        StripOnInput->False,
+        Antialiasing->False],
        Antialiasing->False]}]}, {}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
@@ -4995,158 +4995,158 @@ Cell[874, 32, 146, 2, 28, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1069, 40, 114, 1, 80, "Section"],
+Cell[1069, 40, 163, 2, 80, "Section"],
 Cell[CellGroupData[{
-Cell[1208, 45, 134, 1, 44, "Subsection"],
-Cell[1345, 48, 160, 3, 30, "Text"],
-Cell[1508, 53, 315, 5, 49, "Text"],
+Cell[1257, 46, 185, 2, 44, "Subsection"],
+Cell[1445, 50, 160, 3, 30, "Text"],
+Cell[1608, 55, 315, 5, 49, "Text"],
 Cell[CellGroupData[{
-Cell[1848, 62, 248, 4, 63, "Input"],
-Cell[2099, 68, 18973, 316, 399, "Output"]
+Cell[1948, 64, 248, 4, 63, "Input"],
+Cell[2199, 70, 18973, 316, 399, "Output"]
 }, Open  ]],
-Cell[21087, 387, 158, 3, 30, "Text"],
-Cell[21248, 392, 479, 13, 28, "Input"],
+Cell[21187, 389, 158, 3, 30, "Text"],
+Cell[21348, 394, 479, 13, 28, "Input"],
 Cell[CellGroupData[{
-Cell[21752, 409, 570, 12, 28, "Input"],
-Cell[22325, 423, 9746, 250, 231, "Output"]
-}, Open  ]]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[32120, 679, 132, 1, 36, "Subsection"],
-Cell[32255, 682, 165, 3, 30, "Text"],
-Cell[32423, 687, 143, 4, 28, "Input"],
-Cell[CellGroupData[{
-Cell[32591, 695, 151, 2, 35, "Subsubsection"],
-Cell[CellGroupData[{
-Cell[32767, 701, 1085, 23, 63, "Input"],
-Cell[33855, 726, 536, 8, 28, "Output"]
-}, Open  ]],
-Cell[34406, 737, 691, 17, 28, "Input"],
-Cell[CellGroupData[{
-Cell[35122, 758, 616, 16, 46, "Input"],
-Cell[35741, 776, 498, 10, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[36276, 791, 713, 14, 28, "Input"],
-Cell[36992, 807, 9856, 251, 231, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[46885, 1063, 481, 10, 28, "Input"],
-Cell[47369, 1075, 19645, 492, 519, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[67051, 1572, 230, 4, 28, "Input"],
-Cell[67284, 1578, 146, 2, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[67467, 1585, 1029, 32, 46, "Input"],
-Cell[68499, 1619, 1392, 50, 28, "Output"],
-Cell[69894, 1671, 1699, 56, 57, "Output"]
+Cell[21852, 411, 570, 12, 28, "Input"],
+Cell[22425, 425, 9713, 249, 231, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[71642, 1733, 100, 1, 35, "Subsubsection"],
+Cell[32187, 680, 182, 2, 44, "Subsection"],
+Cell[32372, 684, 165, 3, 30, "Text"],
+Cell[32540, 689, 143, 4, 28, "Input"],
 Cell[CellGroupData[{
-Cell[71767, 1738, 616, 16, 63, "Input"],
-Cell[72386, 1756, 144, 2, 28, "Output"]
-}, Open  ]],
-Cell[72545, 1761, 739, 17, 28, "Input"],
+Cell[32708, 697, 151, 2, 35, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[73309, 1782, 647, 16, 46, "Input"],
-Cell[73959, 1800, 804, 24, 28, "Output"],
-Cell[74766, 1826, 550, 11, 28, "Output"]
+Cell[32884, 703, 1085, 23, 63, "Input"],
+Cell[33972, 728, 536, 8, 28, "Output"]
+}, Open  ]],
+Cell[34523, 739, 691, 17, 28, "Input"],
+Cell[CellGroupData[{
+Cell[35239, 760, 616, 16, 46, "Input"],
+Cell[35858, 778, 498, 10, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[75353, 1842, 764, 15, 28, "Input"],
-Cell[76120, 1859, 9644, 249, 231, "Output"]
+Cell[36393, 793, 713, 14, 28, "Input"],
+Cell[37109, 809, 9823, 250, 231, "Output"]
 }, Open  ]],
-Cell[85779, 2111, 116, 1, 30, "Text"]
+Cell[CellGroupData[{
+Cell[46969, 1064, 532, 11, 28, "Input"],
+Cell[47504, 1077, 19603, 492, 519, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67144, 1574, 230, 4, 28, "Input"],
+Cell[67377, 1580, 146, 2, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[67560, 1587, 1029, 32, 46, "Input"],
+Cell[68592, 1621, 1392, 50, 28, "Output"],
+Cell[69987, 1673, 1699, 56, 57, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[85944, 2118, 115, 1, 44, "Subsection"],
-Cell[86062, 2121, 103, 1, 30, "Text"],
+Cell[71735, 1735, 100, 1, 35, "Subsubsection"],
 Cell[CellGroupData[{
-Cell[86190, 2126, 206, 5, 28, "Input"],
-Cell[86399, 2133, 15152, 293, 633, "Output"]
+Cell[71860, 1740, 616, 16, 63, "Input"],
+Cell[72479, 1758, 144, 2, 28, "Output"]
+}, Open  ]],
+Cell[72638, 1763, 739, 17, 28, "Input"],
+Cell[CellGroupData[{
+Cell[73402, 1784, 647, 16, 46, "Input"],
+Cell[74052, 1802, 804, 24, 28, "Output"],
+Cell[74859, 1828, 550, 11, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[101588, 2431, 728, 19, 46, "Input"],
-Cell[102319, 2452, 73, 1, 28, "Output"]
+Cell[75446, 1844, 764, 15, 28, "Input"],
+Cell[76213, 1861, 9611, 248, 231, "Output"]
 }, Open  ]],
-Cell[102407, 2456, 634, 18, 46, "Input"],
-Cell[CellGroupData[{
-Cell[103066, 2478, 547, 15, 46, "Input"],
-Cell[103616, 2495, 639, 21, 28, "Output"],
-Cell[104258, 2518, 293, 6, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[104588, 2529, 433, 10, 28, "Input"],
-Cell[105024, 2541, 9209, 248, 231, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[114270, 2794, 357, 9, 28, "Input"],
-Cell[114630, 2805, 19022, 487, 519, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[133689, 3297, 185, 4, 28, "Input"],
-Cell[133877, 3303, 97, 1, 86, "Output"]
+Cell[85839, 2112, 116, 1, 30, "Text"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[134023, 3310, 163, 2, 44, "Subsection"],
+Cell[86004, 2119, 115, 1, 44, "Subsection"],
+Cell[86122, 2122, 103, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[134211, 3316, 107, 1, 35, "Subsubsection"],
-Cell[134321, 3319, 122, 3, 30, "Text"],
-Cell[CellGroupData[{
-Cell[134468, 3326, 182, 3, 28, "Input"],
-Cell[134653, 3331, 5953, 161, 180, "Output"]
+Cell[86250, 2127, 206, 5, 28, "Input"],
+Cell[86459, 2134, 15152, 293, 650, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[140643, 3497, 1275, 33, 97, "Input"],
-Cell[141921, 3532, 223, 4, 28, "Output"]
+Cell[101648, 2432, 728, 19, 46, "Input"],
+Cell[102379, 2453, 73, 1, 28, "Output"]
 }, Open  ]],
-Cell[142159, 3539, 633, 18, 46, "Input"],
-Cell[142795, 3559, 286, 7, 28, "Input"],
+Cell[102467, 2457, 634, 18, 46, "Input"],
 Cell[CellGroupData[{
-Cell[143106, 3570, 770, 18, 46, "Input"],
-Cell[143879, 3590, 810, 23, 28, "Output"],
-Cell[144692, 3615, 538, 10, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[145267, 3630, 478, 11, 28, "Input"],
-Cell[145748, 3643, 9617, 249, 235, "Output"]
+Cell[103126, 2479, 547, 15, 46, "Input"],
+Cell[103676, 2496, 639, 21, 28, "Output"],
+Cell[104318, 2519, 293, 6, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[155402, 3897, 357, 9, 28, "Input"],
-Cell[155762, 3908, 19388, 488, 519, "Output"]
+Cell[104648, 2530, 433, 10, 28, "Input"],
+Cell[105084, 2542, 9176, 247, 231, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[175187, 4401, 187, 4, 28, "Input"],
-Cell[175377, 4407, 97, 1, 28, "Output"]
+Cell[114297, 2794, 410, 10, 28, "Input"],
+Cell[114710, 2806, 18980, 487, 519, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[133727, 3298, 185, 4, 28, "Input"],
+Cell[133915, 3304, 97, 1, 28, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[175523, 4414, 108, 1, 35, "Subsubsection"],
-Cell[175634, 4417, 124, 3, 30, "Text"],
+Cell[134061, 3311, 163, 2, 44, "Subsection"],
 Cell[CellGroupData[{
-Cell[175783, 4424, 194, 4, 28, "Input"],
-Cell[175980, 4430, 6107, 162, 164, "Output"]
+Cell[134249, 3317, 107, 1, 35, "Subsubsection"],
+Cell[134359, 3320, 122, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[134506, 3327, 182, 3, 28, "Input"],
+Cell[134691, 3332, 5953, 161, 180, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[182124, 4597, 1013, 24, 63, "Input"],
-Cell[183140, 4623, 122, 2, 28, "Output"]
+Cell[140681, 3498, 1275, 33, 97, "Input"],
+Cell[141959, 3533, 223, 4, 28, "Output"]
 }, Open  ]],
-Cell[183277, 4628, 534, 14, 28, "Input"],
+Cell[142197, 3540, 633, 18, 46, "Input"],
+Cell[142833, 3560, 286, 7, 28, "Input"],
 Cell[CellGroupData[{
-Cell[183836, 4646, 651, 17, 46, "Input"],
-Cell[184490, 4665, 732, 22, 28, "Output"],
-Cell[185225, 4689, 482, 9, 28, "Output"]
+Cell[143144, 3571, 770, 18, 46, "Input"],
+Cell[143917, 3591, 810, 23, 28, "Output"],
+Cell[144730, 3616, 538, 10, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[185744, 4703, 431, 10, 28, "Input"],
-Cell[186178, 4715, 9641, 248, 234, "Output"],
-Cell[195822, 4965, 77, 1, 28, "Output"]
+Cell[145305, 3631, 478, 11, 28, "Input"],
+Cell[145786, 3644, 9584, 248, 235, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[155407, 3897, 408, 10, 28, "Input"],
+Cell[155818, 3909, 19346, 488, 519, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[175201, 4402, 187, 4, 28, "Input"],
+Cell[175391, 4408, 97, 1, 28, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[175537, 4415, 108, 1, 35, "Subsubsection"],
+Cell[175648, 4418, 124, 3, 30, "Text"],
+Cell[CellGroupData[{
+Cell[175797, 4425, 194, 4, 28, "Input"],
+Cell[175994, 4431, 6107, 162, 164, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[182138, 4598, 1013, 24, 63, "Input"],
+Cell[183154, 4624, 122, 2, 28, "Output"]
+}, Open  ]],
+Cell[183291, 4629, 534, 14, 28, "Input"],
+Cell[CellGroupData[{
+Cell[183850, 4647, 651, 17, 46, "Input"],
+Cell[184504, 4666, 732, 22, 28, "Output"],
+Cell[185239, 4690, 482, 9, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[185758, 4704, 431, 10, 28, "Input"],
+Cell[186192, 4716, 9608, 247, 234, "Output"],
+Cell[195803, 4965, 77, 1, 28, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
