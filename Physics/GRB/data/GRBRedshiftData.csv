@@ -1,0 +1,527 @@
+100316D,0.014
+110328A,0.35
+140622A,0.959
+90530,1.266
+100728B,2.8
+140428A,4.7
+120521C,6
+120422A,0.28
+111225A,0.297
+130427A,"0.34 (Gemini-North: absorption)|0.338 (NOT: absorption)|0.3399 (VLT: absorption)|0.340 (LBT: absorption)| 0.3399 (William Herschel: emission, host)| 0.3393 (BTA)"
+130925A,0.347 (VLT/UVES: emission)|0.35 (VLT/X-shooter: emission)
+130603B,"0.356 (GTC: absorption & emission)|0.356 (Magellan: emission, host)|0.356 (Gemini-South: emission)|0.3564 (VLT: absorption & emission)"
+120714B,0.3984 (VLT: absorption)
+130831A,0.4791 (Gemini-North: absorption)
+91127,0.490 (Gemini-North: emission)|0.49034 (VLT: emission)
+90618,0.54 (Lick: absorption)|0.54 (SAO RAS: emission)
+100621A,0.542 (VLT: emission)
+90424,0.544 (Gemini-South: absorption)|0.544 (WHT)
+101219B,0.5519 (ESO-VLT: tentative redshift)
+140710A,"0.558 (Gemini-North: emission, host)"
+130215A,0.597 (Lick Shane: absorption)|0.58 (GTC: derived)
+131103A,0.599 (VLT: emission & absorption)
+100418A,0.6235 (VLT: absorption)|0.624 (Gemini North: absorption)
+111209A,0.677 (arXiv:1302.2352v1)|0.677 (VLT: absorption)
+090814A,0.696 < z < 2.2 (VLT: absorption)
+111228A,0.714 (MMT: absorption)|0.716 (Gemini-South: absorption)| 0.7156 (TNG: absorption)|0.713 (NOT: absorption)|0.71627 (VLT: absorption)
+131004A,0.717 (Magellan: emission)|0.71 (TNG: emission)
+101219A,"0.718 (Gemini-North: emission, host)"
+140512A,0.725 (NOT: absorption)
+120729A,0.80 (Gemini-North: absorption)
+100816A,0.8034 (VLT: emission and absorption)|0.8035 (Gemini-North: absorption)|0.8049 (GTC: absorption)
+110715A,0.82 (VLT: absorption)
+101225A,0.847(arXiv:1302.2352v1)|0.40 (Keck I: emission)
+140506A,"0.889 (VLT: absorption, host)"
+90510,0.903 (VLT: emission)
+120722A,0.9586 (VLT: emission from host)
+120907A,0.970 (OSIRIS/GTC: absorption)
+91018,0.971 (Magellan Clay: absorption)|0.9710 (VLT: absorption)
+140318A,1.02 (WHT: emission)
+121211A,1.023 (Keck I)
+110726A,1.036 < z < 2.7 (Gemini-North)
+130604A,1.06 (Gemini-North: emission)
+091208B,1.063 (Gemini North: absorption)|1.0633 (Keck I: absorption)
+91024,1.092 (Gemini-North)|1.091 (Keck I: absorption)
+130701A,1.155 (VLT: absorption)
+100316B,1.180 (VLT: absorption)
+140213A,1.2076 (VLT: absorption)
+130418A,1.218 (GTC)|1.217 (VLT: absorption)
+130907A,1.238 (NOT: absorption)
+090926B,1.24 (VLT: emission & absorption)
+100724A,1.288 (VLT: absorption)
+131030A,1.293 (NOT: absorption)|1.295 (GTC: absorption)
+130420A,1.297 (GTC: absorption)
+130511A,1.3033 (Gemini-North: absorption)
+110808A,1.348 (VLT: emission)
+90927,1.37 (VLT: absorption)
+111229A,1.3805 (Gemini-South: absorption)
+100615A,"1.398 (VLT: emission, host)"
+100901A,"1.408 (Gemini-North: absorption, host redshift)"
+140301A,1.416 (VLT: absorption)
+100814A,1.44 (Magellan: absorption)
+90407,1.4485 (TOUGH: emission)
+110213A,1.46 (Bok: absorption)
+120724A,"1.48 (Gemini-North: absorption, tentative)"
+90102,"1.547 (NOT)|1.546 (Palomar 200: absorption)|1.55 (Hobby-Eberly: absorption)
+081230
+081228
+081226A
+081222	~2.7 (UVOT)|2.77 (Gemini-South: absorption)|2.77 (Gemini-North: absorption)
+081221	2.26 (Salvaterra)
+081211B
+081211A
+081210
+081203B
+081203A	2.1 (UVOT: absorption)
+081128
+081127
+081126
+081121	2.512 (Magellan/Clay: aborption)
+081118	2.58 (VLT: absorption)
+081109A
+081104
+081102
+081101
+081029	3.8479 (VLT: absorption, host)|3.847 (Gemini-South: absorption)
+081028A	3.038 (Magellan/Clay: absorption)
+081025
+081024A
+081022
+081017
+081016B
+081012
+081011
+081008	1.9685 (VLT: absorption)|1.967 (Gemini-South: absorption)
+081007	0.5295 (Gemini-South: absorption)
+080928	1.692 (VLT: absorption)|1.69 (Gemini-South: absorption)
+080919
+080916B
+080916A	0.689 (VLT: absorption and emission)
+080915B
+080915A
+080913	6.44 (ESO/MPI: photometric)|6.7 (VLT)
+080906	2.0 (UVOT: photometric)
+080905B	2.374 (VLT: absorption)
+080905A
+080903
+080822B
+080810	3.35 (Keck: absorption)|3.35 (RTT150: absorption)|3.35 (NOT: absorption)
+080805	1.505 (VLT: absorption)
+080804	2.2045 (VLT: absorption)|2.20 (Gemini-South: absorption)
+080802
+080727C
+080727B
+080727A
+080725
+080723A
+080721	2.602 (TNG: absorption)|2.591 (NOT: absorption)
+080714
+080710	0.845 (Gemini-South: absorption)
+080707	1.23 (VLT: absorption)
+080703
+080702B
+080702A
+080701
+080623
+080613B
+080607	3.036 (Keck I)
+080605	1.6398 (VLT: absorption)
+080604	1.416 (Gemini-North: absorption)
+080603B	2.69 (NOT)|2.69 (Hobby-Eberly: absorption)
+080602
+080524
+080523
+080520	1.545 (VLT: emission)
+080517
+080516	3.2 (MPI/ESO: photometric)
+080515
+080506
+080503
+080430	~0.75 (Calar Alto: absorption, probable)|0.767 (Hobby-Eberly: absorption)
+080426
+080413B	1.10 (VLT: absorption)|1.10 (Gemini-South: absorption)
+080413A	2.433 (VLT: absorption)|2.43 (Gemini-South: absorption)
+080411	1.03 (VLT: absorption)
+080409
+080330	1.51 (NOT: absorption)|1.51 (Hobby-Eberly: absorption)
+080328
+080325
+080320
+080319D
+080319C	1.95 (Gemini-North: absorption)
+080319B	0.937 (VLT Kueyen: absorption)|0.937 (Hobby-Eberly: absorption)
+080319A
+080315
+080310	2.4266 (Lick: absorption)|2.42 (Magellan: absorption)|2.43 (VLT-Kueyen: absorption)|2.4266 (Keck: absorption)
+080307
+080303
+080229A
+080218B
+080218A
+080212
+080210	2.641 (VLT: absorption)|2.64 (Hobby-Eberly: absorption)
+080207	2.0858 (TOUGH: emission)
+080205
+080130
+080129
+080123
+080121
+071227	0.383 (VLT: emission, host redshift)|0.384 (Magellan: emission, host redshift)
+071129
+071122	1.14 (Gemini North: absorption)
+071118
+071117	1.331 (VLT: emission)
+071112C	0.8230 (VLT: absorption)|0.823 (Gemini North: absorption)
+071112B
+071101
+071031	2.692 (VLT)
+071028B	0.94 (Paranal: host, photometric)
+071028A
+071025
+071021	2.4520 (TOUGH: emission)
+071020	>2.145 (VLT: absorption)|2.142 (BTA: absorption)
+071018
+071013
+071011
+071010C
+071010B	0.947 (Gemini North: absorption)|0.947 (Keck I: absorption)|0.947 (Keck II: absorption)
+071010A	0.98 (Keck I: absorption)
+071008
+071006
+071003	1.100 (Keck I: absorption)|>0.937 (VLT: absorption)
+071001
+070923
+070920B
+070920A
+070917
+070913
+070911
+070810B
+070810A	2.17 (Keck I: absorption)
+070809
+070808
+070805
+070802	2.45 (VLT)
+070731
+070729
+070724A	0.457 (Gemini South: emission, from host)|0.457 (VLT: emission, from host)
+070721B	proposed redshift 3.626 (VLT)
+070721A
+070714B	0.92 (Gemini: emission, from host)
+070714A
+070704
+070628
+070621
+070616
+070612B
+070612A	0.617 (Gemini North: emission)
+070611	2.04 (VLT)
+070531
+070529	2.4996 (Gemini North: absorption)
+070521	0.553 (Subaru: emission)
+070520B
+070520A
+070518
+070517
+070509
+070508	0.82 (VLT: emission, tentative)
+070506	2.31 (VLT: absorption)
+070429B	0.904 (Keck I: from probable host)
+070429A
+070427
+070420
+070419B
+070419A	0.97 (Keck I: absorption)
+070412
+070411	2.954 (VLT: absorption)
+070406
+070330
+070328
+070326
+070318	0.836 (VLT: absorption)|0.840 (Gemini/Magellan: absorption)
+070306	possible redshift:|1.497 (VLT: emission)
+070227
+070224
+070223
+070220
+070219
+070209
+070208	1.165 (Gemini-North: emission)
+070129	2.3384 (TOUGH: emission)
+070126
+070110	2.352 (VLT: absorption)
+070107
+070103	2.6208 (TOUGH: emission)
+061222B	3.355 (Magellan: absorption)
+061222A	2.088 (Perley)
+061218
+061217	0.827 (Magellan: emission)
+061210	0.41 possible host redshift (Keck: emission)
+061202
+061201	0.111 (Magellan, from probable host)
+061126
+061121	1.314 (Keck I: absorption)
+061110B	3.44 (VLT)
+061110A	0.758 (VLT: emission)
+061102
+061028
+061027
+061021	0.3463 (Fynbo)
+061019
+061007	1.261 (Magellan Clay: absorption)|1.262 (VLT: absorption)
+061006
+061004
+061002
+060929
+060927	5.6 (VLT: absorption)
+060926	3.208 (VLT: absorption)
+060923C
+060923B
+060923A
+060919
+060912A	probably host redshift:|0.937 (VLT: emission)
+060908	1.8836 (Fynbo)
+060906	3.685 (VLT: absorption)
+060904B	0.703 (VLT: absorption)
+060904A
+060825
+060814	0.84 (Keck I: emission, from host)
+060813
+060807
+060805A
+060804
+060801
+060729	0.54 (VLT, Gemini South: absorption)
+060728
+060719	1.5320 (TOUGH: emission)
+060717
+060714	2.71 (VLT: absorption)
+060712
+060708	Z<2.3 (VLT)
+060707	3.43 (VLT: absorption)
+060614	0.13 (Gemini: emission)|0.125 (VLT: emission)
+060607B
+060607A	3.082 (VLT: absorption)
+060605	3.8 (ANU: absorption)|3.7 (SALT: absorption)|3.78 (Calar Alto)
+060604	2.1357 (TOUGH: emission)
+060602A	0.787 (VLT: emission, probable)
+060526	3.21 (Magellan: absorption)
+060522	5.11 (Keck I: absorption)
+060516
+060515
+060512	0.4428 (Keck I: emission)
+060510B	4.9 (Gemini)
+060510A
+060507
+060505	0.089 (Gemini: emission)
+060502B	0.287 (Keck I-candidate: absorption)
+060502A	~1.51 (Gemini: absorption)
+060501
+060428B
+060428A
+060427
+060424
+060421
+060418	1.490 (Magellan: absorption)|1.489 (VLT: absorption)
+060413
+060403
+060323
+060322
+060319
+060313
+060312
+060306
+060223B
+060223A	4.41 (Keck: absorption)
+060219
+060218	0.0331 (MDM: emission)|0.033 (VLT: emission)|0.033 (Gemini: emission)|0.033 (BTA: emission)|0.033 (Keck I: emission)
+060211B
+060211A
+060210	3.91 (Gemini: absoption)
+060206	4.045 (NOT: absorption)|4.048 (Lick: absorption)|4.05 (Subaru: absorption)
+060204B
+060203
+060202
+060124	2.30 (MDM: absorption)|2.297 (Keck/ESI: absorption)|2.296 (Keck/LRIS: absorption)
+060123	1.099 (probable, Gemini: emission)
+060117
+060116	~4.0 or ~6.6 (VLT: photometric)
+060115	3.53 (VLT: absoprtion)
+060111B
+060111A
+060110
+060109
+060108	2.03 (Liverpool: photometric)
+060105
+060102
+051227
+051221B
+051221A	0.547 (Gemini: emission)
+051213
+051210
+051117B	0.481 (TOUGH: emission)
+051117A
+051114
+051113
+051111	1.549 (Keck: absorption)
+051109B	0.080 (Keck I: emission)
+051109A	2.346 (HET: absorption)
+051105A
+051021B
+051016B	0.9364 (Keck: emission)
+051016A
+051012
+051008
+051006	1.059 (TOUGH: emission)
+051001	2.4296 (TOUGH: emission)
+050925
+050922C	2.198 (NOT: absorption)|2.198 (TNG: absorption)|2.199 (VLT: absorption)
+050922B
+050916
+050915B
+050915A	2.5273 (TOUGH: emission)
+050911
+050908	3.350 (VLT: absorption)|3.3437 (GMOS: absorption)|3.3440 (Keck: absorption)
+050906
+050904	6 < z < 8 (SOAR, UNC: photometric)|6.10 (VLT: photometric)|6.29 (Subaru: absorption)
+050827
+050826	0.297 (MDM: emission from host)
+050824	0.83 (VLT: emission)
+050822
+050820B
+050820A	2.612 (Keck: absorption)|2.6147 (VLT: absorption)
+050819	2.5043 (TOUGH: emission)
+050815
+050814	5.3 (NOT: photometric)
+050813	1.8
+050803	possible redshift:|0.422 (Keck: emission)
+050802	1.71 (NOT: absorption)|1.434 (TOUGH: emission)
+050801
+050730	3.96855 (Magellan II: absorption)|3.97 (WHT: absorption)|3.968 (VLT: absorption)
+050726
+050724	0.257 (GMOS: absorption)|0.258 (Keck: absorption)
+050721
+050717
+050716
+050715
+050714B
+050713B
+050713A
+050712
+050701
+050607
+050603
+050528
+050525A	0.606 (GMOS: emission)
+050509B	0.225 (Keck: absorption)
+050509A
+050507
+050505	4.27 (Keck: absorption)
+050502B
+050422
+050421
+050418
+050416B
+050416A	0.6535 (Keck: emission)
+050412
+050410
+050406	2.44 (UVOT: photometric)
+050401	2.9 (VLT: absorption)
+050326
+050319	3.24 (NOT: absorption)
+050318	1.44 (Magellan: absorption)
+050315	1.949 (Magellan: absorption)
+050306
+050223	0.5915 (Magellan: emission from host)|0.584 (VLT: emission from host)
+050219B
+050219A
+050215B
+050215A
+050202
+050128
+050126	1.29 (Keck: emission)
+050124
+050117
+041228
+041226
+041224
+041223
+041220
+041219C
+041219B
+041219A
+041217"
+100728A,"1.567 (VLT: emission, host)"
+140430A,1.60 (VLT: absorption)
+090418A,1.608 (Lick: absorption)
+110503A,"1.613 (GTC: absorption)|1.61 (TNG: absorption), PAIRITEL (1.3m)"
+131105A,1.686 (VLT: emission & absorption)
+91020,1.71 (NOT)
+100906A,1.727 (Gemini-North: absorption)
+120119A,1.728 (Gemini-South: absorption)|1.73 (Lick: absorption)|1.728 (MMT: absorption)
+90113,1.7493 (TOUGH: emission)
+100425A,1.755 (VLT: absorption)
+110422A,1.77 (TNG: absorption)| 1.770 (GTC: absorption)
+121027A,1.773 (arXiv:1302.2352v1)|1.77 (Gemini-South: absorption)|1.773 (VLT: emission and absorption)
+120326A,1.798 (GTC: absorption)
+110801A,1.858 (GTC: absorption)
+110205A,"1.98 (Lick: absorption, possible)|2.22 (FLWO: absorption, host)| 2.22 (NOT: absorption)"
+130612A,2.006 (VLT: absorption)
+130610A,2.092 (VLT: absorption)
+121128A,2.20 (Gemini North: absorption)
+130505A,2.27 (Gemini-North: absorption)
+140629A,2.275 (BTA: absorption)|2.29 (TNG: absorption)
+121024A,2.298 (VLT: absorption)
+110128A,2.339 (VLT: absorption)
+120815A,2.358 (VLT/X-shooter: absorption)
+90812,2.452 (VLT: absorption)
+100424A,"2.465 (VLT: emission, host)"
+130518A,2.49 (GTC: absorption)|2.488 (Gemini-North: absorption)
+130131B,"2.539 (Keck I: emission, host)"
+90426,2.609 (Keck-I: absorption)|2.609 (VLT: absorption)
+90529,2.625 (VLT: absorption)
+120811C,2.671 (GTC: absorption)|2.67 {NOT: absorption)
+121229A,2.707 (VLT: absorption)
+90726,2.71 (SAO RAS: absoption)
+140206A,2.73 (NOT: absorption)|2.74 (TNG: absorption)
+90809,2.737 (VLT)
+91029,2.752 (Gemini-South: absorption)
+130427B,2.78 (VLT: tentative)
+120327A,2.81 (Gemini-South: absorption)|2.813 (VLT/UT2: absorption)| 2.813 (GTC: absorption)
+110731A,2.83 (Gemini-North: absorption)
+120404A,2.876 (Gemini-North: absorption)|~2.88 (VLT/UT2: absorption)
+111107A,2.893 (Gemini-South: absorption)| Consistent with Gemini-South (VLT: absorption)
+120118B,2.943 (Keck I: emission)
+090715B,3.00 (WHT)
+120922A,3.1 (MPG/ESO :photometric)
+140703A,3.14 (GTC: absorption)
+111123A,3.1516 (VLT: emission from host)
+140423A,3.26 (Gemini-North: absorption)
+110818A,3.36 (VLT: absorption)
+90313,3.375 (Gemini-South: absorption)|3.375 (VLT: absorption)|3.3721 (Melipal: absorption)
+121201A,3.385 (VLT: emission  & absorption)
+091109A,3.5 (ESO/MPI: photometric)|3.076 (VLT: absorption)
+130514A,3.6 (MPG/ESO: photometric)
+100704A,3.6 (Swift: tentative redshift)
+130408A,3.758 (VLT: absorption)|3.757 (Gemini-South)
+120802A,3.796 (Gemini-North: absorption)
+90519,3.9 (ESO/MPI: photometric)|3.85 (VLT: absorption)
+100413A,3.9 (Swift-XRT: tentative)
+120909A,3.93 (VLT: absorption)
+140419A,3.956 (Gemini-North: absorption)
+120712A,4.0 (MPG/ESO: photo-z)|4.15 (Gemini-South: absorption)| 4.1745 (VLT: absorption)
+090516A,4.109 (VLT: absorption)|4.1 (ESO/MPI: photometric)
+131117A,4.18 (MPG: photometric)|4.042 (VLT: absorption)
+140614A,4.233 (VLT: absorption)
+100219A,4.5 (MPI/ESO: photometric)|4.6667 (VLT: absorption)|4.7 (Gemini South: absorption)
+100902A,4.5 (Swift XRT: tentative redshift)
+90205,4.7 (ESO/MPI: photometric)|4.6497 (VLT: absorption)
+140518A,4.707 (Gemini-North: absorption)
+100513A,4.772 (Gemini North: absorption)
+100302A,4.813 (Gemini-North: absorption)
+140311A,4.95 (Gemini-South: absorption)|~ 5 (NOT: absorption)|4.954 (Gemini-North)
+111008A,5.0 (Gemini-South: absorption)|4.9898 (VLT: absorption)
+140304A,5.283 (GTC: absorption)| 5.28 (NOT: absorption)
+130606A,5.91 (GTC: absorption)|5.913 (MMT: absorption)|5.913 (VLT: absorption)
+140515A,6.32 (Gemini-North: absorption)
+90423,8.0 (MPI/ESO: photometric)|~8.1 (TNG)
