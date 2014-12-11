@@ -4,7 +4,10 @@ WhyMathematica
 
 现在这个 repo 已经不仅仅是当初用来放置 Mathematica 教程的 repo 了，而是一个包含了很多不同主题的 Mathematica 程序的 repo. 其中有很多是比较私人的东西。
 
+DOI
+==================
 
+[![DOI](https://zenodo.org/badge/7726/emptymalei/WhyMathematica.svg)](http://dx.doi.org/10.5281/zenodo.13199)
 
 
 
