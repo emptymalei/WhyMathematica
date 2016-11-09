@@ -1,0 +1,36 @@
+President,Years in office,Year first inaugurated,Age at inauguration,State elected from,# of electoral votes, # of popular votes , National total votes ,Total electoral votes,Rating points,Political Party,Occupation,College,% electoral,% popular
+George Washington,8,1789,57,Virginia,69,NA(),NA(),69,842,None,Planter,None,100.0,NA()
+John Adams,4,1797,61,Massachusetts,132,NA(),NA(),139,598,Federalist,Lawyer,Harvard,95.0,NA()
+Thomas Jefferson,8,1801,57,Virginia,73,NA(),NA(),137,711,Democratic-Republican,"Planter, Lawyer",William and Mary,53.3,NA()
+James Madison,8,1809,57,Virginia,122,NA(),NA(),176,567,Democratic-Republican,Lawyer,Princeton,69.3,NA()
+James Monroe,8,1817,58,Virginia,183,NA(),NA(),221,602,Democratic-Republican,Lawyer,William and Mary,82.8,NA()
+John Quincy Adams,4,1825,57,Massachusetts,84,NA(),NA(),261,564,Democratic-Republican,Lawyer,Harvard,32.2,NA()
+Andrew Jackson,8,1829,61,Tennessee,178,"  642,553 ","  1,148,018 ",261,632,Democrat,Lawyer,None,68.2,56.0
+Martin Van Buren ,4,1837,54,New York,170,"  764,176 ","  1,503,534 ",294,429,Democrat,Lawyer,None,57.8,50.8
+William Henry Harrison,0.8,1841,68,Ohio,234,"  1,275,390 ","  2,411,808 ",294,329,Whig,Soldier,Hampden-Sydney,79.6,52.9
+James K. Polk,4,1845,49,Tennessee,170,"  1,339,494 ","  2,703,659 ",275,632,Democrat,Lawyer,U. of North Carolina,61.8,49.5
+Zachary Taylor,1,1849,64,Louisiana,163,"  1,361,393 ","  2,879,184 ",290,447,Whig,Soldier,None,56.2,47.3
+Franklin Pierce,4,1853,48,New Hampshire,254,"  1,607,510 ","  3,161,830 ",296,286,Democrat,Lawyer,Bowdoin,85.8,50.8
+James Buchanan,4,1857,65,Pennsylvania,174,"  1,836,072 ","  4,054,647 ",296,259,Democrat,Lawyer,Dickinson,58.8,45.3
+Abraham Lincoln,4,1861,52,Illinois,180,"  1,865,908 ","  4,685,561 ",303,900,Republican,Lawyer,None,59.4,39.8
+Ulysses S. Grant,8,1869,46,Illinois,214,"  3,013,650 ","  5,722,440 ",294,403,Republican,Soldier,US Military Academy,72.8,52.7
+Rutherford B. Hayes,4,1877,54,Ohio,185,"  4,034,311 ","  8,413,101 ",369,477,Republican,Lawyer,Kenyon,50.1,48.0
+James A. Garfield,0.5,1881,49,Ohio,214,"  4,446,158 ","  9,210,420 ",369,444,Republican,Lawyer,Williams,58.0,48.3
+Grover Cleveland,4,1885,47,New York,219,"  4,874,621 ","  10,049,754 ",401,576,Democrat,Lawyer,None,54.6,48.5
+Benjamin Harrison,4,1889,55,Indiana,233,"  5,443,892 ","  11,383,320 ",401,426,Republican,Lawyer,Miami,58.1,47.8
+Grover Cleveland,4,1893,55,New York,277,"  5,551,883 ","  12,056,097 ",444,576,Democrat,Lawyer,None,62.4,46.1
+William McKinley,4,1897,54,Ohio,271,"  7,108,480 ","  13,935,738 ",447,601,Republican,Lawyer,Allegheny College,60.6,51.0
+William Howard Taft,4,1909,51,Ohio,321,"  7,676,258 ","  14,882,734 ",483,491,Republican,Lawyer,Yale,66.5,51.6
+Woodrow Wilson,8,1913,56,New Jersey,435,"  6,293,152 ","  15,040,963 ",531,723,Democrat,Educator,Princeton,81.9,41.8
+Warren G. Harding,2,1921,55,Ohio,404,"  16,133,314 ","  26,753,786 ",531,326,Republican,Editor,None,76.1,60.3
+Herbert Hoover,4,1929,54,California,444,"  21,411,991 ","  36,790,364 ",531,400,Republican,Engineer,Stanford,83.6,58.2
+Franklin Roosevelt,12,1933,51,New York,472,"  22,825,016 ","  39,749,382 ",531,876,Democrat,Lawyer,Harvard,88.9,57.4
+Dwight D. Eisenhower,8,1953,62,New York,442,"  33,936,137 ","  61,551,118 ",531,699,Republican,Soldier,US Military Academy,83.2,55.1
+John F. Kennedy,3,1961,43,Massachusetts,303,"  34,221,344 ","  68,828,960 ",537,704,Democrat,Author,Harvard,56.4,49.7
+Richard M. Nixon,5,1969,56,New York,301,"  31,785,148 ","  73,203,370 ",538,477,Republican,Lawyer,Whittier,55.9,43.4
+Jimmy Carter,4,1977,52,Georgia,297,"  40,830,763 ","  81,555,889 ",538,518,Democrat,Businessman,US Naval Academy,55.2,50.1
+Ronald Reagan,8,1981,69,California,489,"  43,904,153 ","  86,515,221 ",538,634,Republican,Actor,Eureka College,90.9,50.7
+George Bush,4,1989,64,Texas,426,"  48,886,097 ","  91,584,820 ",538,548,Republican,Businessman,Yale,79.2,53.4
+Bill Clinton,8,1993,46,Arkansas,370,"  44,909,326 ","  104,425,014 ",538,539,Democrat,Lawyer,Georgetown,68.8,43.0
+George W. Bush,8,2001,54,Texas,271,"  50,460,110 ","  105,417,258 ",538,,Republican,Businessman,Yale,50.4,47.9
+Barack Obama,n/a,2009,47,Illinois,365,"  69,492,376 ","  129,438,754 ",538,,Democrat,Lawyer,Columbia University,67.8,53.7
